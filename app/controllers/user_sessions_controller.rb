@@ -7,7 +7,7 @@ class UserSessionsController < ApplicationController
 		@user_session = UserSession.new(params[:user_session])  
 		if @user_session.save  
 		 flash[:notice] = "Successfully logged in."  
-		 redirect_to dashboard_url
+		 redirect_to user_path(current_user)
 		else  
 		 render :action => 'new'  
 		end  

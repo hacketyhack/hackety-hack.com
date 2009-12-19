@@ -16,9 +16,9 @@
 <h2>Comments</h2><br />
 <% @program.comments.each do |comment| %>
 <% if cycle("yes","no") == "yes" %>
-  <div style="text-align:left;float:left;max-width:550px" ><%= image_tag comment.user.avatar_url, :style => "height:2em;" %><span style="vertical-align:super"><%= comment.text %></span></div><br style="clear:both" />
+  <div style="text-align:left;float:left;max-width:550px" ><%= link_to image_tag(comment.user.avatar_url, :style => "height:2em;"), user_path(comment.user.username) %><span style="vertical-align:super"><%= comment.text %></span></div><br style="clear:both" />
 <% else %>
-  <div style="text-align:right;float:right;max-width:550px" ><span style="vertical-align:super"><%= comment.text %></span><%= image_tag comment.user.avatar_url, :style => "height:2em;" %></div><br style="clear:both" />
+  <div style="text-align:right;float:right;max-width:550px" ><span style="vertical-align:super"><%= comment.text %></span><%= link_to image_tag(comment.user.avatar_url, :style => "height:2em;"), user_path(comment.user.username) %></div><br style="clear:both" />
 <% end %>
 <% end %>
 <br style="clear:both"/>

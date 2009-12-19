@@ -5,7 +5,11 @@
     <p><%= link_to @user.link, @user.link %></p>
     <p><%= @user.about %></p>
     <% unless @user == current_user %>
-      <%= link_to "Watch #{@user.username}", watchings_path(:watches_id => @user), :method => :post %>
+      <% if current_user.watches.include? @user %>
+        <%= link_to "Stop watching #{@user.username}", watching_path(current_user.watchings.detect(@user).first), :method => :delete %>
+      <% else %>
+        <%= link_to "Watch #{@user.username}", watchings_path(:watches_id => @user), :method => :post %>
+      <% end %>
     <% else %>
       <br />
     <% end %>
@@ -21,6 +25,9 @@
   <li><%= link_to program.name, program %> - <%= program.description %></li>
   <% end %>
 </ul>
+<% if @user == current_user %>
+  <%= link_to "Make a new program", new_program_path %>
+<% end %>
 </div>
 <br style="clear:both" />
 <hr style="width:550px;" />

@@ -1,24 +1,7 @@
-<h1>Listing messages</h1>
-
-<table>
-  <tr>
-    <th>Sender</th>
-    <th>Recipient</th>
-    <th>Text</th>
-  </tr>
-
-<% @messages.each do |message| %>
-  <tr>
-    <td><%=h message.sender_id %></td>
-    <td><%=h message.recipient_id %></td>
-    <td><%=h message.text %></td>
-    <td><%= link_to 'Show', message %></td>
-    <td><%= link_to 'Edit', edit_message_path(message) %></td>
-    <td><%= link_to 'Destroy', message, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New message', new_message_path %>
+  <%= link_to "Send a message", new_message_path %><br /><br />
+  <% if @messages.count == 0 %>
+    <p>Sorry, you don't have any messages.</p>
+  <% end %>
+  <% for message in @messages %>
+  <div style="text-align:left;float:left;max-width:550px" ><%= link_to image_tag(message.sender.avatar_url, :style => "height:2em;"), user_path(message.sender.username) %><span style="vertical-align:super"><%= truncate message.text, :length => 45 %><%= link_to "(full)", message %></span></div><br style="clear:both" />
+  <% end %>

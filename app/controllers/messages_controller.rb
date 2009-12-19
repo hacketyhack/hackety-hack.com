@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
   def index
-    @messages = Message.all
+    @messages = Message.find(:all, :conditions => ["recipient_id == ?", current_user.id])
   end
 
   def show
@@ -21,7 +21,7 @@ class MessagesController < ApplicationController
 
 		if @message.save
 			flash[:notice] = 'Message was successfully created.'
-			redirect_to dashboard_url
+			redirect_to user_path(@message.recipient)
 		else
 			render :action => "new"
 		end
