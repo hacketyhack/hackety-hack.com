@@ -41,5 +41,6 @@ class ProgramsController < ApplicationController
   def destroy
     @program = Program.find(params[:id])
     @program.destroy
+		redirect_to user_path(current_user.username)
   end
 end

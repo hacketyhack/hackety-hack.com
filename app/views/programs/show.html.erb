@@ -10,7 +10,8 @@
 </div>
 
 <% if @program.user == current_user %>
-<%= link_to 'Edit this program', edit_program_path(@program) %>
+<%= link_to 'Edit', edit_program_path(@program) %> |
+<%= link_to 'Delete', program_path(@program), :method => :delete %>
 <% end %>
 
 <h2>Comments</h2><br />

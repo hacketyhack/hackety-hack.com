@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 			steve.watchings.build(:watches_id => @user.id).save
 			@user.watchings.build(:watches_id => 1).save
 			flash[:notice] = "Registration successful."  
-			redirect_to user_path(@user)
+			redirect_to user_path(@user.username)
 		else  
 			render :action => 'new'  
 	 	end  
