@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+            "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Hackety Hack!</title>
+    <%= stylesheet_link_tag "reset" %>
+    <%= stylesheet_link_tag "right" %>
+    <%= yield :head %>
+  </head>
+  <body>
+    <%= image_tag "hhhello.png", :id => "hello" %>
+    <div id="nav">
+      <%= link_to "Sign up", new_user_path %> | 
+      <%= link_to "Log in", login_path %>
+    </div>
+    <div id="pitch">
+      <h1>Hackety Hack: the coder's starter kit</h1>
+      <h2>Want to learn programming?</h2>
+      <p>Hackety Hack is easy, simple, and free.</p>
+      <p>Download: 
+        <%= link_to "Mac" %>
+        <%= link_to "PC" %>
+        <%= link_to "Linux" %>
+      </p>
+    </div>
+  </body>
+</html>

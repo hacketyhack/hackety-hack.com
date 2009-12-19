@@ -6,22 +6,14 @@
     <%= yield :head %>
   </head>
   <body>
-    <% [:notice, :error].each do |key| %>
-      <% if flash[key] %>
-        <div class="<%= key %>" id="flash">
-          <%= flash[key] %>
-        </div>
-      <% end %>
-    <% end %>
-     <div id="user_nav">  
-       <% if current_user %>  
-         <%= link_to "Edit profile", edit_user_path(:current) %>  
-         <%= link_to "Logout", logout_path %>  
-       <% else %>  
-         <%= link_to "Register", new_user_path %>  
-         <%= link_to "Log in", login_path %>  
-       <% end %>  
-     </div>  
-    <%= yield %>
+    <div id="top">
+      <%= image_tag "logo.png" %>
+    </div>
+    <div id="middle">
+      <%= yield %>
+    </div>
+    <div id="bottom">
+      <%= yield :bottom %>
+    </div>
   </body>
 </html>
