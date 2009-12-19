@@ -21,7 +21,7 @@ class MessagesController < ApplicationController
 
 		if @message.save
 			flash[:notice] = 'Message was successfully created.'
-			redirect_to user_path(@message.recipient)
+			redirect_to user_path(@message.recipient.username)
 		else
 			render :action => "new"
 		end
