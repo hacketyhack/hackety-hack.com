@@ -4,6 +4,10 @@
   <%= link_to "Watch #{@user.username}", watchings_path(:watches_id => @user), :method => :post %>
 <% end %>
 
+<% if @user == current_user %>
+  <%= link_to "Send a message", new_message_path %>
+<% end %>
+
 <%= @user.username %> is watching:
 <ul>  
 <% for watching in @user.watchings %>  

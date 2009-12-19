@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :messages
+
 
   map.resources :users, :except => :show
 	map.user "/users/:username", :controller => "users", :action => "show"
@@ -12,5 +14,7 @@ ActionController::Routing::Routes.draw do |map|
 
 	map.resources :user_sessions
 	map.resources :watchings
+
+	map.inbox "/dashboard/inbox", :controller => "dashboard", :action => "inbox"
 
 end

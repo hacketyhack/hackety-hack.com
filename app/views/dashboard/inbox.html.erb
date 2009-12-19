@@ -1,0 +1,5 @@
+<ul>
+<% for message in @messages %>
+ <li><%= message.sender.username %> says: <%= message.text %></li> 
+<% end %>
+</ul>
