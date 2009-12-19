@@ -1,1 +1,17 @@
-<%= render @user %>
+<h1><%= @user.username %>'s Page</h1>
+
+<% unless @user == current_user %>
+  <%= link_to "Watch #{@user.username}", watchings_path(:watches_id => @user), :method => :post %>
+<% end %>
+
+<%= @user.username %> is watching:
+<ul>  
+<% for watching in @user.watchings %>  
+  <li>
+    <%= watching.watches.username %>
+    <% if @user == current_user %>
+      (<%= link_to "remove", watching, :method => :delete %>)  
+    <% end %>
+  </li>  
+<% end %>    
+</ul>  

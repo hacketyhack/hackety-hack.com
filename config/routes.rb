@@ -1,5 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :users
+
+  map.resources :users, :except => :show
+	map.user "/users/:username", :controller => "users", :action => "show"
 
 	map.root :controller => "welcome"
 
@@ -9,5 +11,6 @@ ActionController::Routing::Routes.draw do |map|
 	map.logout "logout", :controller => "user_sessions", :action => "destroy"
 
 	map.resources :user_sessions
+	map.resources :watchings
 
 end
