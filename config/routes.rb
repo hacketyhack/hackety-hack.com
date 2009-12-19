@@ -18,6 +18,4 @@ ActionController::Routing::Routes.draw do |map|
 	map.resources :watchings
 	map.resources :comments
 
-	map.inbox "/dashboard/inbox", :controller => "dashboard", :action => "inbox"
-
 end

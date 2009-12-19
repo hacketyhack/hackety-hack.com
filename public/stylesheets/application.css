@@ -1,0 +1,39 @@
+body {
+}
+
+#hello {
+	position:absolute;
+	right: 0px;
+}
+
+#pitch {
+	position: absolute;
+	left: 20px;
+	top: 250px;
+	font-family: Arial, Verdana, sans;
+	background: #FFFFFF;
+	padding: 1em;
+	border: #000000 solid thick;
+}
+
+#nav {
+	position: absolute;
+	right: 170px;
+	top: 10px;
+}
+
+#pitch h1 {
+	font-size: 1.5em;
+}
+
+#pitch h2 {
+
+	padding:1em 0em 0em 0em;
+}
+
+#pitch p {
+}
+
+td {
+	padding: 0.5em 0em 0.5em 0.5em;
+}

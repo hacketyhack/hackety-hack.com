@@ -1,19 +1,31 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+            "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
   <head>
+    <meta charset="utf-8" />
     <title>Hackety Hack!</title>
-    <%= stylesheet_link_tag "app" %>
+    <%= stylesheet_link_tag "reset" %>
+    <%= stylesheet_link_tag "ruby" %>
+    <%= stylesheet_link_tag "application" %>
     <%= yield :head %>
   </head>
   <body>
-    <div id="top">
-      <%= image_tag "logo.png" %>
+    <%= image_tag "hhhello.png", :id => "hello" %>
+    <div id="nav">
+      <% if current_user %>
+        <%= link_to "Dashboard", dashboard_path %> | 
+        <%= link_to "My page", user_path(current_user.username) %> | 
+        <%= link_to "Edit info", edit_user_path(current_user.username) %> | 
+        <%= link_to "Log out", logout_path %>
+      <% else %>
+        <%= link_to "Sign up", new_user_path %> | 
+        <%= link_to "Log in", login_path %>
+      <% end %>
     </div>
-    <div id="middle">
+    <div id="pitch">
       <%= yield %>
     </div>
-    <div id="bottom">
-      <%= yield :bottom %>
-    </div>
+    <%= yield :view_javascript %>
   </body>
 </html>

@@ -1,16 +1,20 @@
 class UsersController < ApplicationController
+
 	def new  
 		@user = User.new  
 	end  
 	 
 	def create  
-	 @user = User.new(params[:user])  
-	 if @user.save  
-		 flash[:notice] = "Registration successful."  
-		 redirect_to root_url  
-	 else  
-		 render :action => 'new'  
-	 end  
+		@user = User.new(params[:user])  
+		if @user.save  
+			steve = User.first
+			steve.watchings.build(:watches_id => @user.id).save
+			@user.watchings.build(:watches_id => 1).save
+			flash[:notice] = "Registration successful."  
+			redirect_to dashboard_url
+		else  
+			render :action => 'new'  
+	 	end  
 	end  
 
 	def edit
@@ -21,7 +25,7 @@ class UsersController < ApplicationController
 		@user = current_user
 		if @user.update_attributes(params[:user])
 			flash[:notice] = "Successfully updated profile."
-			redirect_to root_url
+			redirect_to user_path(@user.username)
 		else
 			render :action => "edit"
 		end

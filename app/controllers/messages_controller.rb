@@ -21,7 +21,7 @@ class MessagesController < ApplicationController
 
 		if @message.save
 			flash[:notice] = 'Message was successfully created.'
-			redirect_to(@message)
+			redirect_to dashboard_url
 		else
 			render :action => "new"
 		end

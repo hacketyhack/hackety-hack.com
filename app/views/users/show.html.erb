@@ -1,21 +1,33 @@
-<h1><%= @user.username %>'s Page</h1>
-
-<% unless @user == current_user %>
-  <%= link_to "Watch #{@user.username}", watchings_path(:watches_id => @user), :method => :post %>
-<% end %>
-
-<% if @user == current_user %>
-  <%= link_to "Send a message", new_message_path %>
-<% end %>
-
-<%= @user.username %> is watching:
-<ul>  
-<% for watching in @user.watchings %>  
-  <li>
-    <%= watching.watches.username %>
-    <% if @user == current_user %>
-      (<%= link_to "remove", watching, :method => :delete %>)  
+<div style="margin-bottom:1em;width:550px;max-width:550px;">
+  <%= image_tag @user.avatar_url, :style => "float:left;margin-right:1em" %>
+  <div style="padding-left:1em;text-align:right;">
+    <h1><%= @user.username.humanize %></h1>
+    <p><%= link_to @user.link, @user.link %></p>
+    <p><%= @user.about %></p>
+    <% unless @user == current_user %>
+      <%= link_to "Watch #{@user.username}", watchings_path(:watches_id => @user), :method => :post %>
+    <% else %>
+      <br />
     <% end %>
-  </li>  
+  </div>
+</div>
+<br />
+<br />
+<hr style="width:550px;" />
+<div>
+<p><%= @user.username.humanize %>'s programs:</p><br />
+<ul>
+  <% @user.programs.each do |program| %>  
+  <li><%= link_to program.name, program %> - <%= program.description %></li>
+  <% end %>
+</ul>
+</div>
+<br style="clear:both" />
+<hr style="width:550px;" />
+<div>
+<p><%= @user.username.humanize %> is watching:</p><br />
+<% @user.watches.each_with_index do |watch, i| %>  
+  <%= "<div>" if i % 6 == 0 %><%= link_to image_tag(watch.avatar_url, :style => "margin-right:1em;margin-bottom:1em;"), user_path(watch.username) %> <%= "</div>" if i % 6 == 5 %>
 <% end %>    
-</ul>  
+</div>
+<%= "</div>" if @user.watches.count % 6 != 0 %>

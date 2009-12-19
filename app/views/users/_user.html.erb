@@ -1,24 +1,32 @@
+<table>
 <% form_for @user do |form| %>  
 <%= form.error_messages %>  
-<ol class="formList">  
- <li>  
-   <%= form.label :username, "Username" %>  
-   <%= form.text_field :username %>  
- </li>  
- <li>  
-   <%= form.label :email, "Email" %>  
-   <%= form.text_field :email %>  
- </li>  
- <li>  
-   <%= form.label :password, "Password" %>  
-   <%= form.password_field :password %>  
- </li>  
- <li>  
-   <%= form.label :password_confirmation, "Password confirmation" %>  
-   <%= form.password_field :password_confirmation %>  
- </li>  
- <li>  
-   <%= form.submit "Submit" %>  
- </li>  
-</ol>  
+<tr>
+   <td><%= form.label :username, "Username" %></td>
+   <td><%= form.text_field :username %></td>
+</tr>
+<tr>
+   <td><%= form.label :email, "Email" %></td>
+   <td><%= form.text_field :email %></td>
+</tr>
+<tr>
+   <td><%= form.label :password, "Password" %></td>
+   <td><%= form.password_field :password %></td>
+</tr>
+<tr>
+   <td><%= form.label :password_confirmation, "Confirm Password" %></td>
+   <td><%= form.password_field :password_confirmation %></td>
+</tr>
+<tr>
+   <td><%= form.label :link %></td>
+   <td><%= form.text_field :link %></td>
+</tr>
+<tr>
+   <td><%= form.label :about %></td>
+   <td><%= form.text_area :about %></td>
+</tr>
+<tr>
+   <td></td><td><%= form.submit "Submit" %></td>
+</tr>
 <% end %>  
+</table>

@@ -11,4 +11,9 @@ class User < ActiveRecord::Base
 	has_many :inverse_recipients, :through => :inverse_messages, :source => :users
 
 	has_many :programs
+
+	def avatar_url
+		require 'md5'
+		"http://www.gravatar.com/avatar/#{MD5::md5(email.downcase)}"
+	end
 end

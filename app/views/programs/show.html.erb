@@ -1,35 +1,31 @@
+<h1><%=h @program.name %></h1>
+<h3>A program by <%= @program.user.username.humanize %></h3>
+<br />
 <p>
-  <b>Name:</b>
-  <%=h @program.name %>
-</p>
-
-<p>
-  <b>Description:</b>
   <%=h @program.description %>
 </p>
 
-<p>
-  <b>Text:</b>
-  <%=h @program.text %>
-</p>
+<div style="margin:1em;width:550px;">
+ <p><%=syntax_highlight "<pre class='ruby'>#{@program.text}</pre>"  %></p>
+</div>
 
-<p>
-  <b>User:</b>
-  <%=h @program.user_id %>
-</p>
+<% if @program.user == current_user %>
+<%= link_to 'Edit this program', edit_program_path(@program) %>
+<% end %>
 
-
-<%= link_to 'Edit', edit_program_path(@program) %> |
-<%= link_to 'Back', programs_path %>
-
+<h2>Comments</h2><br />
+<% @program.comments.each do |comment| %>
+<% if cycle("yes","no") == "yes" %>
+  <div style="text-align:left;float:left;max-width:550px" ><%= image_tag comment.user.avatar_url, :style => "height:2em;" %><span style="vertical-align:super"><%= comment.text %></span></div><br style="clear:both" />
+<% else %>
+  <div style="text-align:right;float:right;max-width:550px" ><span style="vertical-align:super"><%= comment.text %></span><%= image_tag comment.user.avatar_url, :style => "height:2em;" %></div><br style="clear:both" />
+<% end %>
+<% end %>
+<br style="clear:both"/>
 <h2>Make a comment</h2>
 <% form_for Comment.new do |f| %>
-  <%= f.text_area :text %><br />
+  <%= f.text_area :text, :rows => 10, :cols => 65 %><br />
   <%= f.hidden_field :program_id, :value => @program.id %>
   <%= f.submit %>
 <% end %>
 
-<h2>Previous comments</h2>
-<% @program.comments.reverse.each do |comment| %>
-<p><%= comment.user.username %>: <%= comment.text %></p>
-<% end %>

@@ -10,5 +10,8 @@ Rails::Initializer.run do |config|
   config.time_zone = 'UTC'
 
 	config.gem "authlogic"
+	config.gem "hpricot"
+	config.gem "syntax"
 
 end
+

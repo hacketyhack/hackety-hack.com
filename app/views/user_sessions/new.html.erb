@@ -1,18 +1,17 @@
 <h1>Log in</h1>
-   
+<table>
 <% form_for @user_session do |form| %>  
 <%= form.error_messages %>  
-<ol class="formList">  
-  <li>  
-    <%= form.label :username, "Username" %>  
-    <%= form.text_field :username %>  
-  </li>  
-  <li>  
-    <%= form.label :password, "Password" %>  
-    <%= form.password_field :password %>  
-  </li>  
-  <li>  
-    <%= form.submit "Submit" %>  
-  </li>  
-</ol>  
+  <tr>  
+    <td><%= form.label :username, "Username" %></td>
+    <td><%= form.text_field :username %></td>
+  </tr>  
+  <tr>  
+    <td><%= form.label :password, "Password" %></td>
+    <td><%= form.password_field :password %></td>
+  </tr>  
+  <tr>  
+    <td></td><td><%= form.submit "Log in" %></td>
+  </tr>  
 <% end %>  
+</table>
