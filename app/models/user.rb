@@ -9,4 +9,6 @@ class User < ActiveRecord::Base
 	
 	has_many :inverse_messages, :class_name => "Message", :foreign_key => "recipient_id"
 	has_many :inverse_recipients, :through => :inverse_messages, :source => :users
+
+	has_many :programs
 end
