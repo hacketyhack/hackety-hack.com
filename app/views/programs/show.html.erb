@@ -21,3 +21,15 @@
 
 <%= link_to 'Edit', edit_program_path(@program) %> |
 <%= link_to 'Back', programs_path %>
+
+<h2>Make a comment</h2>
+<% form_for Comment.new do |f| %>
+  <%= f.text_area :text %><br />
+  <%= f.hidden_field :program_id, :value => @program.id %>
+  <%= f.submit %>
+<% end %>
+
+<h2>Previous comments</h2>
+<% @program.comments.reverse.each do |comment| %>
+<p><%= comment.user.username %>: <%= comment.text %></p>
+<% end %>
