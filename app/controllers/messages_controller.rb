@@ -55,4 +55,11 @@ class MessagesController < ApplicationController
 
     redirect_to(messages_url)
   end
+
+  def mark_read
+    @message = Message.find(params[:id])
+    @message.read = true
+    @message.save
+    redirect_to(@message)
+  end
 end

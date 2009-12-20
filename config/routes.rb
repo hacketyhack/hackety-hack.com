@@ -2,6 +2,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :programs
 
   map.resources :messages
+  map.mark_read "/messages/:id/mark_read", :controller => "messages", :action => "mark_read"
 
 
   map.resources :users, :except => :show
