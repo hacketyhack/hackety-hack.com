@@ -1,6 +1,9 @@
 class MessagesController < ApplicationController
 
   prepend_around_filter ApiAuthorizedFilter.new
+  
+  #ugly, but here until i can inspect the issue...
+  protect_from_forgery :except => :create
 
   def index
     @messages = Message.find(:all, :conditions => ["recipient_id == ?", current_user.id])
@@ -27,8 +30,22 @@ class MessagesController < ApplicationController
   end
 
   def create
+    if params[:recipient_username]
+      user = User.find_by_username(params[:recipient_username])
+      @message = Message.new
+      @message.recipient = user
+      @message.sender = current_user
+      @message.text = params[:text]
+      if @message.save
+        require 'yaml'; render :text => (Hash.from_xml(@message.to_xml)).to_yaml
+      else
+        render :action => "new"
+      end
+      return
+    end
+
     @message = Message.new(params[:message])
-		@message.sender = current_user
+    @message.sender = current_user
 
 		if @message.save
 			flash[:notice] = 'Message was successfully created.'
