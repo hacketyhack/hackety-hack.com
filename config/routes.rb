@@ -17,4 +17,6 @@ ActionController::Routing::Routes.draw do |map|
 	map.resources :watchings
 	map.resources :comments
 
+  map.save_program "/users/:username/programs/:name", :controller => "users", :action => "programs"
+
 end

@@ -1,6 +1,15 @@
 class ProgramsController < ApplicationController
+  prepend_around_filter ApiAuthorizedFilter.new
+  
+  #ugly, but here until i can inspect the issue...
+  protect_from_forgery :except => :create
+
   def index
-    @programs = Program.all
+    @programs = Program.find(:all, :conditions => ["user_id == ?", current_user.id])
+    respond_to do |format|
+      format.html
+      format.yaml {require 'yaml'; render :text => (Hash.from_xml(@programs.to_xml)).to_yaml}
+    end
   end
 
   def show
