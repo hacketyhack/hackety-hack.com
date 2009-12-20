@@ -1,10 +1,21 @@
 class MessagesController < ApplicationController
+
+  prepend_around_filter ApiAuthorizedFilter.new
+
   def index
     @messages = Message.find(:all, :conditions => ["recipient_id == ?", current_user.id])
+    respond_to do |format|
+      format.html
+      format.yaml {require 'yaml'; render :text => (Hash.from_xml(@messages.to_xml)).to_yaml}
+    end
   end
 
   def show
     @message = Message.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.yaml {require 'yaml'; render :text => (Hash.from_xml(@message.to_xml)).to_yaml}
+    end
   end
 
   def new

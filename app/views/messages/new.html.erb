@@ -8,6 +8,10 @@
     <td><%= f.collection_select(:recipient_id, User.find(:all, :order => :username) - [current_user], :id, :username) %></td>
   </tr>
   <tr>
+    <td><%= f.label :subject %></td>
+    <td><%= f.text_field :subject %></td>
+  </tr>
+  <tr>
     <td><%= f.label :text %></td>
     <td><%= f.text_area :text %></td>
   </tr>
