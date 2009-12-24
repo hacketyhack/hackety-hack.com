@@ -1,5 +1,5 @@
   <%= link_to "Send a message", new_message_path %><br /><br />
-  <% if @messages.count == 0 %>
+  <% if @messages.length == 0 %>
     <p>Sorry, you don't have any messages.</p>
   <% end %>
   <% for message in @messages %>
