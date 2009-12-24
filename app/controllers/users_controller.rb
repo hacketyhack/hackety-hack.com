@@ -11,6 +11,7 @@ class UsersController < ApplicationController
 	 
 	def create  
 		@user = User.new(params[:user])  
+    @user.api_key = Digest::SHA1.hexdigest(Time.now.to_s + rand(12341234).to_s)[1..16]
 		if @user.save  
 			steve = User.first
 			steve.watchings.build(:watches_id => @user.id).save
