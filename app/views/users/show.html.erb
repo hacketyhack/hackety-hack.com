@@ -6,7 +6,7 @@
     <p><%= @user.about %></p>
     <% unless @user == current_user %>
       <% if current_user.watches.include? @user %>
-        <%= link_to "Stop watching #{@user.username}", watching_path(current_user.watchings.detect(@user).first), :method => :delete %>
+        <%= link_to "Stop watching #{@user.username}", watching_path(current_user.watchings.detect{|w| w.watches_id == @user.id}), :method => :delete %>
       <% else %>
         <%= link_to "Watch #{@user.username}", watchings_path(:watches_id => @user), :method => :post %>
       <% end %>
