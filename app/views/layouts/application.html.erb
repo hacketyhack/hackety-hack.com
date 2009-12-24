@@ -14,7 +14,7 @@
     <%= image_tag "hhhello.png", :id => "hello" %>
     <div id="nav">
       <%= link_to "Blog", blog_path %> | 
-      <%= link_to "Help", blog_path %> | 
+      <%= link_to "Help", "http://wiki.github.com/steveklabnik/hacketyhack" %> | 
       <% if current_user %>
         <%= link_to "My messages", messages_path %> | 
         <%= link_to "My page", user_path(current_user.username) %> | 
