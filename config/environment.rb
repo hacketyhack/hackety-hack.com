@@ -13,6 +13,13 @@ Rails::Initializer.run do |config|
 	config.gem "hpricot"
 	config.gem "syntax"
   config.gem "bluecloth"
+  config.gem "rdiscount"
 
 end
 
+begin
+    require 'rdiscount'
+    BlueCloth = RDiscount
+rescue LoadError
+    require 'bluecloth'
+end

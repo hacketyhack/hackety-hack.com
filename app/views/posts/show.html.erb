@@ -1,6 +1,7 @@
 <h1><%= link_to @post.title, @post %></h1>
 <h2><%=h @post.created_at.to_s(:long) %></h2>
 <br />
-<p><%=h @post.body %></p>
+<% markdown = BlueCloth.new(@post.body) %>
+<p><%= markdown.to_html %></p>
 <br />
 <div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/hacketyhack/embed.js"></script><noscript><a href="http://disqus.com/forums/hacketyhack/?url=ref">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>

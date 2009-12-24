@@ -59,3 +59,13 @@ td {
 	padding: 0.5em 0em 0.5em 0.5em;
 }
 
+ul li { 
+  list-style-type: disc;
+  margin-left: 20px;
+}
+ol li { 
+  list-style-type: decimal;
+  margin-left: 20px;
+}
+ 
+
