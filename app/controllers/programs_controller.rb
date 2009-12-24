@@ -22,6 +22,10 @@ class ProgramsController < ApplicationController
 
   def edit
     @program = Program.find(params[:id])
+    if current_user != @program.user
+      redirect_to root_url
+      return
+    end
   end
 
   def create
@@ -38,6 +42,10 @@ class ProgramsController < ApplicationController
 
   def update
     @program = Program.find(params[:id])
+    if current_user != @program.user
+      redirect_to root_url
+      return
+    end
 
 		if @program.update_attributes(params[:program])
 			flash[:notice] = 'Program was successfully updated.'
@@ -49,6 +57,10 @@ class ProgramsController < ApplicationController
 
   def destroy
     @program = Program.find(params[:id])
+    if current_user != @program.user
+      redirect_to root_url
+      return
+    end
     @program.destroy
 		redirect_to user_path(current_user.username)
   end

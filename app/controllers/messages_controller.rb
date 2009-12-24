@@ -15,6 +15,10 @@ class MessagesController < ApplicationController
 
   def show
     @message = Message.find(params[:id])
+    if @message.sender != current_user && @message.recipient != current_user
+      redirect_to root_url
+      return
+    end
     respond_to do |format|
       format.html
       format.yaml {require 'yaml'; render :text => (Hash.from_xml(@message.to_xml)).to_yaml}
@@ -27,6 +31,7 @@ class MessagesController < ApplicationController
 
   def edit
     @message = Message.find(params[:id])
+    redirect_to root_url if @message.sender != current_user
   end
 
   def create
@@ -57,6 +62,10 @@ class MessagesController < ApplicationController
 
   def update
     @message = Message.find(params[:id])
+    if @message.sender != current_user
+      redirect_to root_url
+      return
+    end
 
 		if @message.update_attributes(params[:message])
 			flash[:notice] = 'Message was successfully updated.'
@@ -68,6 +77,10 @@ class MessagesController < ApplicationController
 
   def destroy
     @message = Message.find(params[:id])
+    if @message.sender != current_user
+      redirect_to root_url
+      return
+    end
     @message.destroy
 
     redirect_to(messages_url)

@@ -23,10 +23,12 @@
 <% end %>
 <% end %>
 <br style="clear:both"/>
+<% unless current_user.nil? %>
 <h2>Make a comment</h2>
 <% form_for Comment.new do |f| %>
   <%= f.text_area :text, :rows => 10, :cols => 65 %><br />
   <%= f.hidden_field :program_id, :value => @program.id %>
   <%= f.submit %>
+<% end %>
 <% end %>
 

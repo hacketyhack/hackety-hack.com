@@ -24,6 +24,10 @@ class PostsController < ApplicationController
   # GET /posts/new
   # GET /posts/new.xml
   def new
+    if current_user != User.first
+      redirect_to posts_path
+      return
+    end
     @post = Post.new
 
     respond_to do |format|
@@ -34,12 +38,20 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    if current_user != User.first
+      redirect_to posts_path
+      return
+    end
     @post = Post.find(params[:id])
   end
 
   # POST /posts
   # POST /posts.xml
   def create
+    if current_user != User.first
+      redirect_to posts_path
+      return
+    end
     @post = Post.new(params[:post])
 
     respond_to do |format|
@@ -57,6 +69,10 @@ class PostsController < ApplicationController
   # PUT /posts/1
   # PUT /posts/1.xml
   def update
+    if current_user != User.first
+      redirect_to posts_path
+      return
+    end
     @post = Post.find(params[:id])
 
     respond_to do |format|
@@ -74,6 +90,10 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.xml
   def destroy
+    if current_user != User.first
+      redirect_to posts_path
+      return
+    end
     @post = Post.find(params[:id])
     @post.destroy
 
