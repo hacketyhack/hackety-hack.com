@@ -1,0 +1,7 @@
+<% @posts.each do |post| %>
+  <h1><%=h post.title %></h1>
+  <h2><%=h post.created_at.to_s(:long) %></h2><br />
+  <p><%=h post.body %></p><br />
+  <p><%= link_to "", post_path(post) + "#disqus_thread" %></p>
+  <hr />
+<% end %>

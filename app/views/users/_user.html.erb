@@ -17,10 +17,12 @@
    <td><%= form.label :password_confirmation, "Confirm Password" %></td>
    <td><%= form.password_field :password_confirmation %></td>
 </tr>
+<% unless @user.api_key.nil? %>
 <tr>
    <td><%= form.label :api_key, "Secret Key" %></td>
    <td><%= @user.api_key %></td>
 </tr>
+<% end %>
 <tr>
    <td><%= form.label :link %></td>
    <td><%= form.text_field :link %></td>

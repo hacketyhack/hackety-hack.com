@@ -1,4 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :posts
+  map.blog "/blog", :controller => "posts", :action => "index"
+
   map.resources :programs
 
   map.resources :messages

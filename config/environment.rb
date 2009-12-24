@@ -12,6 +12,7 @@ Rails::Initializer.run do |config|
 	config.gem "authlogic"
 	config.gem "hpricot"
 	config.gem "syntax"
+  config.gem "bluecloth"
 
 end
 
