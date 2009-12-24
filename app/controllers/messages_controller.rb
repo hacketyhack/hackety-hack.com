@@ -6,7 +6,7 @@ class MessagesController < ApplicationController
   protect_from_forgery :except => :create
 
   def index
-    @messages = Message.find(:all, :conditions => ["recipient_id == ?", current_user.id])
+    @messages = Message.find(:all, :conditions => ["recipient_id = ?", current_user.id])
     respond_to do |format|
       format.html
       format.yaml {require 'yaml'; render :text => (Hash.from_xml(@messages.to_xml)).to_yaml}
