@@ -58,13 +58,6 @@ ActiveRecord::Schema.define(:version => 20091224034953) do
     t.string   "api_key"
   end
 
-  create_table "watches", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "watches_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "watchings", :force => true do |t|
     t.integer  "user_id"
     t.integer  "watches_id"
