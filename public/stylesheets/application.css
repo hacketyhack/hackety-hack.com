@@ -37,7 +37,7 @@ body {
 
 #posts {
 	position: relative;
-  max-width:550px;
+  	max-width:550px;
 	left: 20px;
 	top: 50px;
 	font-family: Arial, Verdana, sans;
@@ -46,13 +46,20 @@ body {
 	border: #000000 solid thick;
 }
 
+#posts p {
+	padding:.25em;
+	margin:.25em;
+	font-size: 1.2em;
+}
+
 #posts h1 {
-	font-size: 1.5em;
+	font-size: 2em;
 }
 
 #posts h2 {
 
 	padding:1em 0em 0em 0em;
+	font-size: 1.5em;
 }
 
 td {
@@ -67,5 +74,9 @@ ol li {
   list-style-type: decimal;
   margin-left: 20px;
 }
+
+#posts blockquote { padding:10px; margin-left:20px; margin-right:20px; border : 2px solid #000; }
+
+
  
 
