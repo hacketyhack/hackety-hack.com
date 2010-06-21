@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.xml
   def index
-    @posts = Post.all.reverse
+    @posts = Post.all.sort{|a,b| a.created_at <=> b.created_at }.reverse
 
     respond_to do |format|
       format.html # index.html.erb
