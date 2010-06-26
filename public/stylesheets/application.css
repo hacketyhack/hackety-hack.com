@@ -14,9 +14,9 @@ body {
 
 #pitch {
 	position: absolute;
-  max-width:600px;
+  	max-width:600px;
 	left: 20px;
-	top: 250px;
+	top: 50px;
 	font-family: Arial, Verdana, sans;
 	background: #FFFFFF;
 	padding: 1em;
