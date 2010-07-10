@@ -1,8 +1,0 @@
-<% @posts.each do |post| %>
-  <h1><%= link_to post.title, post %></h1>
-  <h2><%=h post.created_at.to_s(:long) %></h2><br />
-  <% markdown = BlueCloth.new(post.body) %>
-  <p><%= markdown.to_html %></p>
-  <p><%= link_to "", post_path(post) + "#disqus_thread" %></p>
-  <hr />
-<% end %>
