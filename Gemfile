@@ -1,0 +1,7 @@
+source "http://rubygems.org"
+gem "sinatra"
+gem "haml"
+gem "rspec"
+gem "cucumber"
+gem "webrat"
+gem "mongo_mapper"
