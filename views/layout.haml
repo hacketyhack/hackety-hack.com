@@ -3,5 +3,6 @@
   %head
     %title Hackety Hack
   %body
-    %div{:id => "flash"}= flash[:notice]
+    %div{:id => "flash-notice"}= flash[:notice]
+    %div{:id => "flash-error"}= flash[:error]
     = yield
