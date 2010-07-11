@@ -18,8 +18,8 @@ describe "Hackety Website" do
 
 	describe "routes" do
 		it "should display all posts at /posts" do
-			post1 = mock("Post", :title => "title", :body => "body")
-			post2 = mock("Post", :title => "title", :body => "body")
+			post1 = mock("Post", :title => "title", :body => "body", :comments => [])
+			post2 = mock("Post", :title => "title", :body => "body", :comments => [])
 			Post.should_receive(:all).and_return([post1,post2])
 			get "/posts"
 			last_response.status.should == 200
