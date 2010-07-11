@@ -56,3 +56,15 @@ get "/posts/:id" do
 	@post = Post.find(params[:id])
 	haml :posts_show
 end
+
+get "/posts/:id/edit" do
+	@post = Post.find(params[:id])
+	haml :posts_edit
+end
+
+put "/posts/:id" do
+	@post = Post.find(params[:id])
+	@post.update_attributes(params)
+	flash[:notice] = "Post Modified"
+	redirect "/posts/#{@post.id}"
+end

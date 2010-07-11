@@ -21,6 +21,14 @@ module NavigationHelpers
 	
 	when /the posts page/
 		'/posts'
+	
+	when /the edit post page for the post with the title "(.*)"/
+		post = Post.first(:title => $1)
+		"/posts/#{post.id}/edit"
+	
+	when /the post page for the post with the title "(.*)"/
+		post = Post.first(:title => $1)
+		"/posts/#{post.id}"
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

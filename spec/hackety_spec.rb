@@ -13,10 +13,17 @@ describe "Hackety Website" do
 	describe "routes" do
 		it "should display all posts at /posts" do
 			post1 = mock("Post", :title => "title", :body => "body")
-			post2 = mock("post", :title => "title", :body => "body")
+			post2 = mock("Post", :title => "title", :body => "body")
 			Post.should_receive(:all).and_return([post1,post2])
 			get "/posts"
 			last_response.status.should == 200
 		end
+
+		it "should display the edit page at /posts/:id/edit" do
+			post = mock("Post", :title => "title", :body => "body", :id => 42)
+			Post.should_receive(:find).with("42").and_return(post)
+			get "/posts/#{post.id}/edit"
+			last_response.status.should == 200
+		end	
 	end
 end
