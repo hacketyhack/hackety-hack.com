@@ -10,9 +10,20 @@ use Rack::Flash
 
 set :views, File.join(File.dirname(__FILE__), 'views')
 
-configure do
+def setup_db environ
 	MongoMapper.connection = Mongo::Connection.new('localhost')
-	MongoMapper.database = 'hackety'
+	MongoMapper.database = "hackety-#{environ}"
+end
+
+configure :test do
+	setup_db(:test)
+end
+
+configure :development do
+	setup_db(:development)
+end
+
+configure do
 	Dir.glob("#{File.expand_path(File.dirname(__FILE__))}/models/*.rb").each do |f|
 		require f
 	end
