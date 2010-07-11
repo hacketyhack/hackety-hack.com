@@ -38,7 +38,7 @@ end
 
 get "/blog" do
 	@posts = Post.all
-	haml :blog_index
+	haml :posts_index
 end
 
 get "/posts/new" do
