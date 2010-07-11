@@ -5,7 +5,7 @@
 
 %ul
   - @post.comments.each do |comment|
-    %li= comment.body
+    %li= comment.user_email + " says: " + comment.body
 
 %form{:action => "/comments", :method => "POST"}
   %input{:type => "hidden", :id => "post_id", :name => "post_id", :value => @post.id}

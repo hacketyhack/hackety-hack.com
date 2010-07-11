@@ -93,7 +93,7 @@ post "/comments" do
 		redirect "/posts"
 	end
 
-	params[:user_id] = current_user.id
+	params[:comment]['user_email'] = current_user.email
 	@post = Post.find(params[:post_id])
 	@post.comments << Comment.new(params[:comment])
 	@post.save

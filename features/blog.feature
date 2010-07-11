@@ -48,11 +48,12 @@ Feature: The Hackety Blog
 		And I go to the edit post page for the post with the title "First Post"
 		Then I should see "Sorry, buddy"	
 	Scenario: Logged in Users can comment on the blog
-		Given I'm logged in
+		Given I'm logged in as "awesome@example.com"
 		And there is a blog post
 		When I go to a blog post page
 		And I fill in "Speak your mind:" with "This post is amazing!"
 		And I press "Submit comment"
 		Then I should be on a blog post page
 		And I should see "Thanks for your comment!"
+		And I should see "awesome@example.com says:"
 		And I should see "This post is amazing!"
