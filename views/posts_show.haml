@@ -1,5 +1,6 @@
 %h1= @post.title
-%p= @post.body
+- markdown = RDiscount.new(@post.body, :smart, :filter_html)
+%p= markdown.to_html
 
 %hr
 

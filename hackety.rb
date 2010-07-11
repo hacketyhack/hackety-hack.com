@@ -4,6 +4,7 @@ require 'mongo_mapper'
 require 'sinatra-authentication'
 require 'haml'
 require 'rack-flash'
+require 'rdiscount'
 
 use Rack::Session::Cookie, :secret => 'h4ck3ty h4ck f0r gr347 g00d'
 use Rack::Flash

@@ -63,3 +63,12 @@ Feature: The Hackety Blog
 		When I go to a blog post page
 		Then should not see "Speak your mind:"
 		And I should not see "Submit comment"
+	Scenario: Blog should use Markdown
+		Given I'm logged in as admin
+		And I go to the new post page
+		When I fill in "Title" with "new title"
+		And I fill in "Body" with "new body with a link: [google](http://google.com/)"
+		And I press "Create Post"
+		Then I should see "Post Created"
+		And I should see "new title"
+		And I should see "google" within "//a"
