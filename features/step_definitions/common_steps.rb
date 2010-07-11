@@ -21,3 +21,10 @@ Given /^I'm logged in$/ do
 	login user
 end
 
+Given /^I'm logged in as "([^"]*)"$/ do |email|
+	password = "foobar"
+	user = Factory(:user,:email => email, :password => password, :password_confirmation => password)
+	login user
+end
+
+
