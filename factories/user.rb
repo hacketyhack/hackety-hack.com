@@ -9,5 +9,5 @@ Factory.define :user, :class => "MmUser" do |u|
 end
 
 Factory.define :admin, :parent => :user do |u|
-	u.permission_level -1
+	u.permission_level "-1"
 end

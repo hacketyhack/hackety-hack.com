@@ -29,6 +29,9 @@ module NavigationHelpers
 	when /the post page for the post with the title "(.*)"/
 		post = Post.first(:title => $1)
 		"/posts/#{post.id}"
+	when /a blog post page/
+		post = Post.first
+		"/posts/#{post.id}"
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

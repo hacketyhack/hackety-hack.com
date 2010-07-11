@@ -60,7 +60,9 @@ end
 get "/posts/:id/edit" do
 	unless current_user.admin?
 		flash[:notice] = "Sorry, buddy"
-		redirect "/posts"
+		u = User.get({:permission_level => -1})
+		flash[:notice] << u.id.to_s + " " + current_user.id.to_s
+		#redirect "/posts"
 	end
 
 	@post = Post.find(params[:id])
@@ -73,3 +75,18 @@ put "/posts/:id" do
 	flash[:notice] = "Post Modified"
 	redirect "/posts/#{@post.id}"
 end
+
+post "/comments" do
+	unless current_user
+		flash[:notice] = "You must be logged in to comment!"
+		redirect "/posts"
+	end
+
+	params[:user_id] = current_user.id
+	@post = Post.find(params[:post_id])
+	@post.comments << Comment.new(params[:comment])
+	@post.save
+	flash[:notice] = "Thanks for your comment!"
+	redirect "/posts/#{@post.id}" 
+end
+
