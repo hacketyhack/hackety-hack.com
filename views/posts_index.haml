@@ -1,3 +1,8 @@
-%ul
-    - @posts.each do |post|
-        %li= post.title
+#content
+  - @posts.each do |post|
+    .post
+      %h1
+        %a{:href => "/posts/#{post.id}"}= post.title
+      - markdown = RDiscount.new(post.body, :smart, :filter_html)
+      %p= markdown.to_html
+      %p= "#{post.comments.count} comments"

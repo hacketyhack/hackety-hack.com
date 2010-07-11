@@ -2,7 +2,14 @@
 %html
   %head
     %title Hackety Hack
+    %link{:rel => "stylesheet", :href => "stylesheets/site.css", :type => 'text/css'}
   %body
+    %nav{:style => "float:right;"}
+      - if logged_in?
+        %a{:href => "/logout" }Log out
+      - else 
+        %a{:href => "/users/new" }Sign Up
+        %a{:href => "/login" }Log in
     %div{:id => "flash-notice"}= flash[:notice]
     %div{:id => "flash-error"}= flash[:error]
     = yield
