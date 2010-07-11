@@ -12,3 +12,9 @@ Feature: The Hackety Blog
 		Then I should see "Post Created"
 		And I should see "new title"
 		And I should see "new body"
+	Scenario: I can view all posts
+		Given there is a blog post with the title "First Post"
+		And there is a blog post with the title "Second Post"
+		When I go to the posts page
+		Then I should see "First Post"
+		And I should see "Second Post"

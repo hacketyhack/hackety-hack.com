@@ -18,6 +18,9 @@ module NavigationHelpers
 
 	when /the new post\s? page/
 		'/posts/new'
+	
+	when /the posts page/
+		'/posts'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

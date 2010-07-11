@@ -8,6 +8,8 @@ require 'rack-flash'
 use Rack::Session::Cookie, :secret => 'h4ck3ty h4ck f0r gr347 g00d'
 use Rack::Flash
 
+set :views, File.join(File.dirname(__FILE__), 'views')
+
 configure do
 	MongoMapper.connection = Mongo::Connection.new('localhost')
 	MongoMapper.database = 'hackety'
@@ -33,6 +35,11 @@ post "/posts" do
 	@post = Post.create(params)
 	flash[:notice] = "Post Created"
 	redirect "/posts/#{@post.id}" 
+end
+
+get "/posts" do
+	@posts = Post.all
+	haml :posts_index
 end
 
 get "/posts/:id" do
