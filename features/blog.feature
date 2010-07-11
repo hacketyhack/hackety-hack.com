@@ -3,7 +3,7 @@ Feature: The Hackety Blog
 		Given there is a blog post with the title "First Post"
 		When I go to the blog page
 		Then I should see "First Post"
-	Scenario: I can create a post
+	Scenario: Admins may create a post
 		Given I'm logged in as admin
 		And I go to the new post page
 		When I fill in "Title" with "new title"
@@ -18,3 +18,11 @@ Feature: The Hackety Blog
 		When I go to the posts page
 		Then I should see "First Post"
 		And I should see "Second Post"
+	Scenario: Not logged in users cannot create a post
+		Given I'm not logged in
+		And I go to the new post page
+		Then I should see "Sorry, buddy"
+	Scenario: Non-admin users cannot create a post
+		Given I'm logged in
+		And I go to the new post page
+		Then I should see "Sorry, buddy"

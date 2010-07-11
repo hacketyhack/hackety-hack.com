@@ -28,10 +28,20 @@ get "/blog" do
 end
 
 get "/posts/new" do
+	unless current_user.admin?
+		flash[:notice] = "Sorry, buddy"
+		redirect "/posts"
+	end
+
 	haml :posts_new
 end
 
 post "/posts" do
+	unless current_user.admin?
+		flash[:notice] = "Sorry, buddy"
+		redirect "/posts"
+	end
+
 	@post = Post.create(params)
 	flash[:notice] = "Post Created"
 	redirect "/posts/#{@post.id}" 
