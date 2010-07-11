@@ -38,7 +38,7 @@ end
 
 get "/blog" do
 	@posts = Post.all
-	haml :posts_index
+	haml :'posts/index'
 end
 
 get "/posts/new" do
@@ -47,7 +47,7 @@ get "/posts/new" do
 		redirect "/posts"
 	end
 
-	haml :posts_new
+	haml :'posts/new'
 end
 
 post "/posts" do
@@ -63,12 +63,12 @@ end
 
 get "/posts" do
 	@posts = Post.all
-	haml :posts_index
+	haml :'posts/index'
 end
 
 get "/posts/:id" do
 	@post = Post.find(params[:id])
-	haml :posts_show
+	haml :'posts/show'
 end
 
 get "/posts/:id/edit" do
@@ -78,7 +78,7 @@ get "/posts/:id/edit" do
 	end
 
 	@post = Post.find(params[:id])
-	haml :posts_edit
+	haml :'posts/edit'
 end
 
 put "/posts/:id" do
