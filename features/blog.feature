@@ -57,3 +57,9 @@ Feature: The Hackety Blog
 		And I should see "Thanks for your comment!"
 		And I should see "awesome@example.com says:"
 		And I should see "This post is amazing!"
+	Scenario: Logged out users can't comment on the blog
+		Given I'm not logged in 
+		And there is a blog post
+		When I go to a blog post page
+		Then should not see "Speak your mind:"
+		And I should not see "Submit comment"

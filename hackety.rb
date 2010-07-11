@@ -9,6 +9,8 @@ use Rack::Session::Cookie, :secret => 'h4ck3ty h4ck f0r gr347 g00d'
 use Rack::Flash
 
 set :views, File.join(File.dirname(__FILE__), 'views')
+set :sinatra_authentication_view_path, Pathname(__FILE__).dirname.expand_path + "views/auth/"
+
 
 def setup_db environ
 	MongoMapper.connection = Mongo::Connection.new('localhost')

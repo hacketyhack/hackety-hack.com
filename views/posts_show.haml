@@ -7,9 +7,10 @@
   - @post.comments.each do |comment|
     %li= comment.user_email + " says: " + comment.body
 
-%form{:action => "/comments", :method => "POST"}
-  %input{:type => "hidden", :id => "post_id", :name => "post_id", :value => @post.id}
-  %label{:for => "comment_body"}Speak your mind:
-  %textarea{:id => "comment_body", :name => "comment[body]"}
-  %input{:type => "submit", :value => "Submit comment"}
+- if logged_in?
+  %form{:action => "/comments", :method => "POST"}
+    %input{:type => "hidden", :id => "post_id", :name => "post_id", :value => @post.id}
+    %label{:for => "comment_body"}Speak your mind:
+    %textarea{:id => "comment_body", :name => "comment[body]"}
+    %input{:type => "submit", :value => "Submit comment"}
 
