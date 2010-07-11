@@ -32,6 +32,10 @@ module NavigationHelpers
 	when /a blog post page/
 		post = Post.first
 		"/posts/#{post.id}"
+	when /the new user page/
+		"/signup"
+	when /the main page/
+		"/"
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
