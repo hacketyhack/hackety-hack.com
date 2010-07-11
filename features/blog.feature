@@ -37,4 +37,13 @@ Feature: The Hackety Blog
 		And I am on the post page for the post with the title "new title"
 		And I should see "new title"
 		And I should see "new body"
-		
+	Scenario: Not logged in users cannot edit a post
+		Given I'm not logged in
+		And there is a blog post with the title "First Post"
+		And I go to the edit post page for the post with the title "First Post"
+		Then I should see "Sorry, buddy"
+	Scenario: Non-admin users cannot edit a post
+		Given I'm logged in
+		And there is a blog post with the title "First Post"
+		And I go to the edit post page for the post with the title "First Post"
+		Then I should see "Sorry, buddy"	

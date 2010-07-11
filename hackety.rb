@@ -58,6 +58,11 @@ get "/posts/:id" do
 end
 
 get "/posts/:id/edit" do
+	unless current_user.admin?
+		flash[:notice] = "Sorry, buddy"
+		redirect "/posts"
+	end
+
 	@post = Post.find(params[:id])
 	haml :posts_edit
 end
