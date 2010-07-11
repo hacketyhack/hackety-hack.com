@@ -3,4 +3,5 @@
   %head
     %title Hackety Hack
   %body
+    %div{:id => "flash"}= flash[:notice]
     = yield
