@@ -31,7 +31,6 @@ Given /^there's a user with the username "([^"]*)"$/ do |username|
 	Factory(:user, :username => username)
 end
 
-
 And /^open page$/ do
   save_and_open_page
 end
