@@ -32,7 +32,7 @@ module NavigationHelpers
 	when /a blog post page/
 		post = Post.first
 		"/posts/#{post.id}"
-	when /the new user page/
+	when /the new hacker page/
 		"/signup"
 	when /the main page/
 		"/"

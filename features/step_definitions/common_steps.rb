@@ -1,14 +1,14 @@
-def login user
+def login hacker 
 	visit "/login"
-	fill_in "username", :with => user.username
-	fill_in "password", :with => user.password
+	fill_in "username", :with => hacker.username
+	fill_in "password", :with => hacker.password
 	click_button "login"
 end
 
 Given /^I'm logged in as admin$/ do
 	password = "foobar"
-	user = Factory(:admin,:password => password, :password_confirmation => password)
-	login user
+	hacker = Factory(:admin,:password => password, :password_confirmation => password)
+	login hacker
 end
 
 Given /^I'm not logged in$/ do
@@ -17,18 +17,18 @@ end
 
 Given /^I'm logged in$/ do
 	password = "foobar"
-	user = Factory(:user,:password => password, :password_confirmation => password)
-	login user
+	hacker = Factory(:hacker,:password => password, :password_confirmation => password)
+	login hacker 
 end
 
 Given /^I'm logged in as "([^"]*)"$/ do |email|
 	password = "foobar"
-	user = Factory(:user,:email => email, :password => password, :password_confirmation => password)
-	login user
+	hacker = Factory(:hacker,:email => email, :password => password, :password_confirmation => password)
+	login hacker 
 end
 
-Given /^there's a user with the username "([^"]*)"$/ do |username|
-	Factory(:user, :username => username)
+Given /^there's a hacker with the username "([^"]*)"$/ do |username|
+	Factory(:hacker, :username => username)
 end
 
 And /^open page$/ do
