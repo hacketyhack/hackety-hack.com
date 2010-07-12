@@ -20,3 +20,7 @@ Feature: User management
 		When I press "Create account"
 		Then I should see "There were some problems"
 		And I should be on the new user page
+	Scenario: User pages
+		Given there's a user with the username "steve"
+		When I go to the hacker page for "steve"
+		Then I should see "steve's page"

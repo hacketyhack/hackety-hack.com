@@ -36,6 +36,8 @@ module NavigationHelpers
 		"/signup"
 	when /the main page/
 		"/"
+	when /the hacker page for "(.*)"/
+		"/hackers/#{$1}"
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
