@@ -8,7 +8,7 @@
       - if logged_in?
         %a{:href => "/logout" }Log out
       - else 
-        %a{:href => "/users/new" }Sign Up
+        %a{:href => "/signup" }Sign Up
         %a{:href => "/login" }Log in
     %div{:id => "flash-notice"}= flash[:notice]
     %div{:id => "flash-error"}= flash[:error]

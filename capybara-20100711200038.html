@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hackety Hack</title>
+    <link href='stylesheets/site.css' rel='stylesheet' type='text/css' />
+  </head>
+  <body>
+    <nav style='float:right;'>
+      <a href='/signup'>Sign Up</a>
+      <a href='/login'>Log in</a>
+    </nav>
+    <div id='flash-notice'>There were some problems creating your account. Please be sure you've entered all your information correctly.</div>
+    <div id='flash-error'></div>
+    <div id='sinatra_authentication'>
+      <div id='sinatra_authentication_flash'>There were some problems creating your account. Please be sure you've entered all your information correctly.</div>
+      <h1 class='page_title'>Signup</h1>
+      <form action='/signup' method='post'>
+        <div class='field'>
+          <div class='label'>
+            <label for='user_email'>Email</label>
+          </div>
+          <input id='user_email' name='user[email]' size='30' type='text' />
+        </div>
+        <div class='field'>
+          <div class='label'>
+            <label for='user_username'>Username</label>
+          </div>
+          <input id='user_username' name='user[username]' size='30' type='text' />
+        </div>
+        <div class='field'>
+          <div class='label'>
+            <label for='user_password'>Password</label>
+          </div>
+          <input id='user_password' name='user[password]' size='30' type='password' />
+        </div>
+        <div class='field'>
+          <div class='label'>
+            <label for='user_password_confirmation'>Confirm Password</label>
+          </div>
+          <input id='user_password_confirmation' name='user[password_confirmation]' size='30' type='password' />
+        </div>
+        <div class='buttons'>
+          <input type='submit' value='Create account' />
+          <a class='sinatra_authentication_link' href='/login'>
+            Login
+          </a>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
