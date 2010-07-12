@@ -1,5 +1,5 @@
 #most of the stuff in this is based off of sinatra-authentication
-class User
+class Hacker
 	include MongoMapper::Document
 	key :username, String, :unique => true
 	key :email, String, :unique => true
@@ -12,13 +12,13 @@ class User
 	def password=(pass)
 		@password = pass
 		self.salt = random_string(10) if !self.salt
-		self.hashed_password = User.encrypt(@password, self.salt)
+		self.hashed_password = Hacker.encrypt(@password, self.salt)
 	end
 
 	def self.authenticate(username, pass)
-		current_user = User.first(:username => username)
+		current_user = Hacker.first(:username => username)
 		return nil if current_user.nil?
-		return current_user if User.encrypt(pass, current_user.salt) == current_user.hashed_password
+		return current_user if Hacker.encrypt(pass, current_user.salt) == current_user.hashed_password
 		nil
 	end
 

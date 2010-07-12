@@ -1,10 +1,10 @@
 get '/signup' do
-	haml :"users/signup"
+	haml :"sessions/signup"
 end
 
 post '/signup' do
-	@user = User.create(params[:user])
-	if @user && @user.valid?
+	@hacker = Hacker.create(params[:user])
+	if @hacker && @hacker.valid?
 		session[:user] = @user.id
 		flash[:notice] = "Account created."
 		redirect '/'
@@ -15,12 +15,12 @@ post '/signup' do
 end
 
 get '/login' do
-	haml :"users/login"
+	haml :"sessions/login"
 end
 
 post '/login' do
-	if user = User.authenticate(params[:username], params[:password])
-		session[:user_id] = user.id
+	if hacker = Hacker.authenticate(params[:username], params[:password])
+		session[:hacker_id] = hacker.id
 		flash[:notice] = "Login successful."
 
 		if session[:return_to]
@@ -37,7 +37,7 @@ post '/login' do
 end
 
 get '/logout' do
-	session[:user_id] = nil
+	session[:hacker_id] = nil
 	flash[:notice] = "Logout successful."
 	redirect '/'
 end
