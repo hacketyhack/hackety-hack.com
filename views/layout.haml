@@ -12,4 +12,4 @@
         %a{:href => "/login" }Log in
     %div{:id => "flash-notice"}= flash[:notice]
     %div{:id => "flash-error"}= flash[:error]
-    = yield
+    != yield
