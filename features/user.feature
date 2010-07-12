@@ -18,6 +18,5 @@ Feature: User management
 		And I fill in "Password" with "foobar"
 		And I fill in "Confirm Password" with "foobar"
 		When I press "Create account"
-		And open page
 		Then I should see "There were some problems"
 		And I should be on the new user page
