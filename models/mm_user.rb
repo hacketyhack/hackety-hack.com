@@ -1,3 +1,3 @@
 class MmUser
-	key :username, String
+	key :username, String, :unique => true
 end
