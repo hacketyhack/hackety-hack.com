@@ -1,1 +1,3 @@
 %p= @hacker.username + "'s page"
+
+%a{:href => "/messages/new/to/#{@hacker.username}" }= "Send #{@hacker.username} a message"
