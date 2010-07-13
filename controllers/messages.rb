@@ -18,3 +18,10 @@ post "/messages" do
 	#render the page of the recipient
 	redirect "/hackers/#{message.recipient}"
 end
+
+#this is the page where you can see your messages
+get "/messages" do
+	require_login!
+	@messages = Message.all({"recipient" => current_user.username})
+	haml :"messages/index"
+end

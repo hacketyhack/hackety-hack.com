@@ -38,6 +38,8 @@ module NavigationHelpers
 		"/"
 	when /the hacker page for "(.*)"/
 		"/hackers/#{$1}"
+	when /my messages page/
+		"/messages"
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
