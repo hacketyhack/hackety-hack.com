@@ -1,5 +1,5 @@
 %form{:action => "/messages", :method => "POST"}
   %input{:type => "hidden", :id => "message_recipient", :name => "message[recipient]", :value => @username}
-  %label{:for => "message_text" } Message text:
-  %textarea{:id => "message_text", :name => "message[text]"}
+  %label{:for => "message_body" } Message text:
+  %textarea{:id => "message_body", :name => "message[body]"}
   %input{:type => "submit", :value => "Send message"}
