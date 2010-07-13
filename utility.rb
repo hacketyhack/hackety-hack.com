@@ -11,3 +11,9 @@ def require_directory dirname
 		require f
 	end
 end
+
+class String
+	def to_slug
+		self.gsub(/\s/, "").downcase
+	end
+end
