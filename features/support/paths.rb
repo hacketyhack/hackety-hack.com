@@ -44,6 +44,8 @@ module NavigationHelpers
 		"/programs/new"
 	when /the "(.*)\/(.*)" program page/
 		"/programs/#{$1}/#{$2}"
+	when /the forums/
+		"/forums"
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
