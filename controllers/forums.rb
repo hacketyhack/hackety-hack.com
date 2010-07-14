@@ -20,3 +20,19 @@ get "/forums/:forum/:discussion" do
 	@discussion = Discussion.first(:forum => params[:forum], :slug => params[:discussion])
 	haml :"forums/discussion"
 end
+
+get "/forums/reply/to/:forum/:discussion" do
+	@forum = params[:forum]
+	@discussion = params[:discussion]
+
+	haml :"forums/reply"
+end
+
+post "/forums/reply/to/:forum/:discussion" do
+	@discussion = Discussion.first(:forum => params[:forum], :slug => params[:discussion])
+	@discussion.replies << Reply.new(params[:reply])
+	@discussion.save
+
+	flash[:notice] = "Replied!"
+	redirect "/forums/#{params[:forum]}/#{params[:discussion]}"
+end
