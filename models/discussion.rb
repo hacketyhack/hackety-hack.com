@@ -9,6 +9,9 @@ class Discussion
 	#this is the forum that it's in.
 	key :forum, String
 
+	#these are all the replies people make
+	many :replies
+
 	#this is the slug for the url
 	key :slug, String 
 

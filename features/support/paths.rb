@@ -42,10 +42,12 @@ module NavigationHelpers
 		"/messages"
 	when /the new program page/
 		"/programs/new"
-	when /the "(.*)\/(.*)" program page/
-		"/programs/#{$1}/#{$2}"
+	when /the "(.*)" program page/
+		"/programs/#{$1}"
 	when /the forums/
 		"/forums"
+	when /the discussion "(.*)"/
+		"/forums/#{$1}"
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

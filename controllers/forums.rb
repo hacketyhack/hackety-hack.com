@@ -14,3 +14,9 @@ get "/forums/:forum" do
 	#render the template!
 	haml :"forums/show"
 end
+
+#you view a discussion here
+get "/forums/:forum/:discussion" do
+	@discussion = Discussion.first(:forum => params[:forum], :slug => params[:discussion])
+	haml :"forums/discussion"
+end

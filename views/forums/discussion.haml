@@ -1,0 +1,5 @@
+%h1= @discussion.title
+
+%ul
+  - @discussion.replies.each do |reply|
+    %li= reply.body

@@ -5,7 +5,7 @@ Feature: Programs
 		And I fill in "Title" with "Hello world"
 		And I fill in "Body" with "puts 'Hello, world!'"
 		And I press "Create"
-		Then I should be on the "steve/helloworld" program page.
+		Then I should be on the "steve/hello_world" program page.
 		And I should see "Program created"
 		And I should see "Hello world"
 		And I should see "By steve"
