@@ -6,6 +6,9 @@ class Discussion
 	#the title of a discussion
 	key :title, String
 
+	#the text of a discussion
+	key :body, String
+
 	#this is the forum that it's in.
 	key :forum, String
 
