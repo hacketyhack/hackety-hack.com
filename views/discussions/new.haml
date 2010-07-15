@@ -1,0 +1,8 @@
+%h1 New Discussion
+
+%form{:action => "/forums/#{@forum}/discussions", :method => "POST"}
+  %label{ :for => "discussion_title"} Title: 
+  %input{ :type => "text", :name => "title", :id => "discussion_title"}
+  %label{ :for => "discussion_body"} Body:
+  %input{ :type => "text", :name => "body", :id => "discussion_body"}
+  %input{ :type => "submit", :value => "Create Discussion" }

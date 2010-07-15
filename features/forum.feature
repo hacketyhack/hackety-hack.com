@@ -29,3 +29,14 @@ Feature: The Hackety Forum
 		Then I should be on the discussion "learning_ruby/i_need_help" page
 		And I should see "Replied!"
 		And I should see "I'll help you"
+	Scenario: Make a new discussion
+		Given I'm logged in
+		And I go to the forums
+		And I follow "Learning Ruby"
+		When I follow "New Discussion"
+		And I fill in "Title" with "HALP!"
+		And I fill in "Body" with "I'm really unsure as to how to do something."
+		And I press "Create Discussion"
+		Then I should be on the discussion "learning_ruby"
+		And I should see "Discussion created!"
+		And I should see "HALP!"
