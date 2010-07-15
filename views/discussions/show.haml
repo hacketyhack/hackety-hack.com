@@ -6,4 +6,5 @@
   - @discussion.replies.each do |reply|
     %li= reply.body
 
-%a{:href => "/forums/reply/to/#{@discussion.forum}/#{@discussion.slug}"} Reply
+%a{ :href => "/forums/reply/to/#{@discussion.forum}/#{@discussion.slug}"} Reply
+%a{ :href => "/forums/#{@discussion.forum}" } Back to Discussions
