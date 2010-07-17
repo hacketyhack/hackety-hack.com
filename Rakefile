@@ -33,6 +33,7 @@ namespace :db do
 		require 'mongo_mapper'
 		MongoMapper.connection = Mongo::Connection.new('localhost')
 		MongoMapper.database = "hackety-#{environment}"
+
 		#make an admin user
 		require 'models/hacker'
 		admin = Hacker.create({
@@ -42,5 +43,48 @@ namespace :db do
 			:password_confirmation => "password",
 			:admin => true
 		})
+
+		#we're also going to make a regular user too
+		somebody = Hacker.create({
+			:username => "somebody",
+			:email => "somebody@example.com",
+			:password => "password",
+			:password_confirmation => "password",
+		})
+		#make an initial Post, with a comment
+		require 'models/post'
+		require 'models/comment'
+		post = Post.create({
+			:title => "Welcome to the Hackety Site!",
+			:body => "This is an intial post, so that you can see how everything looks. Here's a [link](http://github.com/hacketyhack/hackety-hack.com) to the source code on GitHub. Now I'm just going to do the usual stuff:
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Esse insolens mnesarchum eam id, nec ad detracto disputando. Nec malorum postulant disputationi ad. Pri menandri inimicus ut. Pro velit affert mediocritatem at, eu nec voluptua inciderint, ne mei diam praesent. No eum tamquam appetere, ex eos habemus evertitur consequat, quo et wisi tincidunt consectetuer. Vocent lobortis est cu."			
+		})
+
+		post.comments << Comment.new({
+			:body => "This post is awesome! I've never seen such insightful commentary!",
+			:user_email => "somebody@example.com",
+		})
+		post.save
+
+		#now let's make a discussion on the forum:
+		require 'models/discussion'
+		require 'models/reply'
+		require 'utility'
+		halp = Discussion.create({
+			:title => "HALP ME!",
+			:body => "I just don't understand!",
+			:forum => "learning_ruby"
+			#TODO: in the future, record who made the discussion!
+		})
+
+		#and a reply:
+		halp.replies << Reply.new({
+			:body => "I'd love to help you!"
+			#TODO: keep track of who replied!
+		})
+
+		halp.save
 	end
 end
