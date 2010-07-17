@@ -19,6 +19,5 @@ end
 
 #this lets us run 'rake features' to run cucumber tests
 Cucumber::Rake::Task.new(:features) do |t|
-	#let's do some pretty output!
-	t.cucumber_opts = "--format pretty"
+	t.cucumber_opts = "--format progress"
 end

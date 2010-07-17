@@ -15,6 +15,16 @@ Given /^I'm not logged in$/ do
 	visit "/logout"
 end
 
+Given /^I log out$/ do
+	visit "/logout"
+end
+
+When /^I log in as "([^"]*)"$/ do |username|
+	hacker = Factory(:hacker, :username => username)
+	login hacker
+end
+
+
 Given /^I'm logged in$/ do
 	password = "foobar"
 	hacker = Factory(:hacker,:password => password, :password_confirmation => password)

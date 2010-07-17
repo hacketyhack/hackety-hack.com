@@ -1,0 +1,4 @@
+%form{:action => "/forums/reply/to/#{@forum}/#{@discussion}", :method => "POST"}
+  %label{:for => "reply_body"} Body
+  %input{:type => "text", :id => "reply_body", :name => "reply[body]"}
+  %input{:type => "submit", :value => "Create Reply"}

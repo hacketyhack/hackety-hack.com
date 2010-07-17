@@ -1,0 +1,8 @@
+%ul
+- @discussions.each do |discussion|
+  %li
+    %a{ :href => "/forums/#{@forum}/#{discussion.slug}" }= discussion.title
+
+%a{:href => "/forums/#{@forum}/discussions/new"} New Discussion
+
+%a{ :href => "/forums" } Back to Forum List

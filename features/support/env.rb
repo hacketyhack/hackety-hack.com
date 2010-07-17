@@ -12,11 +12,11 @@ require 'database_cleaner/cucumber'
 DatabaseCleaner.strategy = :truncation
 
 Sinatra::Application.app_file = app_file
-Sinatra::Application.set :environment, :test
 
 World do
   Capybara.app = Sinatra::Application
   Capybara.app.set(:environment, :test)
+  Capybara.app.set(:raise_errors, true)
   include Capybara
   include Spec::Expectations
   include Spec::Matchers

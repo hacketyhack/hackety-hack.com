@@ -32,5 +32,13 @@ get "/" do
 	haml :index
 end
 
+#this will be used to make sass work
+["site"].each do |sheet|
+	get "/stylesheets/#{sheet}.css" do
+		content_type 'text/css', :charset => 'utf-8'
+		sass :"stylesheets/#{sheet}"
+	end
+end
+
 #finally, let's require all of our controllers
 require_directory "controllers"
