@@ -2,9 +2,15 @@
 %html
   %head
     %title Hackety Hack
+    %link{:rel => "stylesheet", :href => "stylesheets/reset.css", :type => 'text/css'}
     %link{:rel => "stylesheet", :href => "stylesheets/site.css", :type => 'text/css'}
+    %link{:rel => "stylesheet", :href => "stylesheets/ruby.css", :type => 'text/css'}
+    %link{:rel => "stylesheet", :href => "stylesheets/application.css", :type => 'text/css'}
   %body
     %nav{:style => "float:right;"}
+      %a{:href => "/blog"}Blog
+      %a{:href => "http://github.com/hacketyhack/hacketyhack"}Help
+      %a{:href => "/forums"}Forums
       - if logged_in?
         %a{:href => "/logout" }Log out
       - else 
@@ -12,4 +18,6 @@
         %a{:href => "/login" }Log in
     %div{:id => "flash-notice"}= flash[:notice]
     %div{:id => "flash-error"}= flash[:error]
-    != yield
+    %img{ :src => "images/hhhello.png", :id => "hello", :alt => "Hello"}
+    %div{:id => "pitch", :class => "clearfix"}
+      != yield

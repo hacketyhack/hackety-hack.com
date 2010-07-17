@@ -33,7 +33,7 @@ get "/" do
 end
 
 #this will be used to make sass work
-["site"].each do |sheet|
+["site", "application", "reset", "ruby"].each do |sheet|
 	get "/stylesheets/#{sheet}.css" do
 		content_type 'text/css', :charset => 'utf-8'
 		sass :"stylesheets/#{sheet}"
