@@ -11,6 +11,11 @@ post "/programs" do
 	redirect "/programs/#{program.creator_username}/#{program.slug}"
 end
 
+get "/programs/:username.json" do
+	programs = Program.all(:creator_username => params[:username])
+	programs.to_json
+end
+
 get "/programs/:username/:slug" do
 	@program = Program.first(:creator_username => params[:username], :slug => params[:slug])
 	haml :"programs/show"
