@@ -48,6 +48,10 @@ module NavigationHelpers
 		"/forums"
 	when /the discussion "(.*)"/
 		"/forums/#{$1}"
+	when /the help page/
+		"/help"
+	when /the github page/
+		"/hacketyhack/hacketyhack/"
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

@@ -9,7 +9,7 @@
 		%nav{:style => "float:right;"}
 			%a{:href => "/"}Home \ 
 			%a{:href => "/blog"}Blog \ 
-			%a{:href => "http://github.com/hacketyhack/hacketyhack"}Help \ 
+			%a{:href => "/help"}Help \ 
 			%a{:href => "/forums"}Forums \ 
 			- if logged_in?
 				%a{:href => "/hackers/#{current_user.username}" }Your Page \
