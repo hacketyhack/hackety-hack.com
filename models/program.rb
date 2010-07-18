@@ -3,6 +3,7 @@ class Program
 	key :creator_username, String
 	key :title, String
 	key :slug, String
+	key :code, String
 
 	validate_on_create :slug_check
 	before_save :make_slug
