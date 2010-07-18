@@ -15,3 +15,17 @@ get "/programs/:username/:slug" do
 	@program = Program.first(:creator_username => params[:username], :slug => params[:slug])
 	haml :"programs/show"
 end
+
+put "/programs/:username/:slug" do
+	require_login_or_api! :username => params[:username], :password => params[:password] 
+	if current_user.username != params[:username]
+		flash[:notice] = "Sorry, buddy"
+		redirect_to "/"
+	end
+	program = Program.first(:creator_username => params[:username], :slug => params[:slug])
+	program.update_attributes(params[:program])
+	program.save
+
+	flash[:notice] = "Program updated!"
+	redirect "/programs/#{program.creator_username}/#{program.slug}"
+end
