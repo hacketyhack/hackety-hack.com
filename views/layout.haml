@@ -12,6 +12,7 @@
 			%a{:href => "http://github.com/hacketyhack/hacketyhack"}Help \ 
 			%a{:href => "/forums"}Forums \ 
 			- if logged_in?
+				%a{:href => "/hackers/#{current_user.username}" }Your Page \
 				%a{:href => "/logout" }Log out
 			- else 
 				%a{:href => "/signup" }Sign Up \ 

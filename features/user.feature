@@ -24,3 +24,8 @@ Feature: User management
 		Given there's a hacker with the username "steve"
 		When I go to the hacker page for "steve"
 		Then I should see "steve's page"
+	Scenario: Going to your profile
+		Given I'm logged in as "steve"
+		And I go to the home page
+		When I follow "Your Page"
+		Then I should be on the hacker page for "steve"

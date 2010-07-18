@@ -31,7 +31,13 @@ Given /^I'm logged in$/ do
 	login hacker 
 end
 
-Given /^I'm logged in as "([^"]*)"$/ do |email|
+Given /^I'm logged in as "([^"]*)"$/ do |username|
+	password = "foobar"
+	hacker = Factory(:hacker,:username => username, :password => password, :password_confirmation => password)
+	login hacker 
+end
+
+Given /^I'm logged in as a user with the email "([^"]*)"$/ do |email|
 	password = "foobar"
 	hacker = Factory(:hacker,:email => email, :password => password, :password_confirmation => password)
 	login hacker 
