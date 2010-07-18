@@ -2,7 +2,6 @@
 #to make our work with sinatra easier
 
 helpers do
-
 	#this method returns the logged_in hacker
 	def current_user
 		#let's look up the Hacker by the id in the session
@@ -42,4 +41,13 @@ helpers do
 		end
 	end
 
+	#this method lets us use an api call as well as logging in
+	def require_login_or_api!(opts = {:return => "/"})
+		hacker = Hacker.authenticate(opts[:username], opts[:password])
+		if hacker
+			session[:hacker_id] = hacker.id
+		else
+			require_login!(opts)
+		end
+	end
 end

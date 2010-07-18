@@ -4,7 +4,7 @@ get "/programs/new" do
 end
 
 post "/programs" do
-	require_login!
+	require_login_or_api! :username => params[:username], :password => params[:password] 
 	params[:program]['creator_username'] = current_user.username
 	program = Program.create(params[:program])
 	flash[:notice] = "Program created!"
