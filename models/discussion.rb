@@ -6,6 +6,9 @@ class Discussion
 	#the title of a discussion
 	key :title, String
 
+	#the person who created this discussion
+	key :author, String
+
 	#the text of a discussion
 	key :body, String
 
@@ -19,10 +22,17 @@ class Discussion
 	key :slug, String 
 
 	before_save :make_slug
+	validate_on_create :author_check
  
 	private 
 	def make_slug
 		self.slug = self.title.to_slug
+	end
+
+	def author_check
+		if author.nil?
+			errors.add(:author, "Someone must have started this discussion!")
+		end
 	end
 
 end

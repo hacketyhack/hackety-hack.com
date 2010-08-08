@@ -24,9 +24,10 @@ get "/forums/:forum/discussions/new" do
 end
 
 post "/forums/:forum/discussions" do
+	params[:author] = current_user.username
 	@discussion = Discussion.create(params)
 	flash[:notice] = "Discussion created!"
-	redirect "/forums/#{params[:forum]}"
+	redirect "/forums/#{params[:forum]}/#{@discussion.slug}"
 end
 
 #you view a discussion here
@@ -44,6 +45,7 @@ end
 
 post "/forums/reply/to/:forum/:discussion" do
 	@discussion = Discussion.first(:forum => params[:forum], :slug => params[:discussion])
+	params[:reply][:author] = current_user.username
 	@discussion.replies << Reply.new(params[:reply])
 	@discussion.save
 

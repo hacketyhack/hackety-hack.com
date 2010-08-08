@@ -46,8 +46,10 @@ module NavigationHelpers
 		"/programs/#{$1}"
 	when /the forums/
 		"/forums"
-	when /the discussion "(.*)"/
+	when /the forum "(.*)"/
 		"/forums/#{$1}"
+	when /the discussion "(.*)" in "(.*)"/
+		"/forums/#{$2}/#{$1}"
 	when /the help page/
 		"/help"
 	when /the github page/
