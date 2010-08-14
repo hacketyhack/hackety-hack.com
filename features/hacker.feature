@@ -1,4 +1,4 @@
-Feature: User management
+Feature: Hacker management
 	Scenario: Users can register
 		Given I'm not logged in
 		And I go to the new hacker page
@@ -20,7 +20,7 @@ Feature: User management
 		When I press "Create account"
 		Then I should see "There were some problems"
 		And I should be on the new hacker page
-	Scenario: User pages
+	Scenario: Hacker pages
 		Given there's a hacker with the username "steve"
 		When I go to the hacker page for "steve"
 		Then I should see "steve's page"
@@ -29,3 +29,4 @@ Feature: User management
 		And I go to the home page
 		When I follow "Your Page"
 		Then I should be on the hacker page for "steve"
+		And I should not see "Send steve a message"

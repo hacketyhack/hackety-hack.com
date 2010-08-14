@@ -2,5 +2,5 @@
 %p
   %img{:src => @hacker.gravatar_url}
 
-- if logged_in?
+- if logged_in? && @hacker.username != current_user.username
   %a{:href => "/messages/new/to/#{@hacker.username}" }= "Send #{@hacker.username} a message"
