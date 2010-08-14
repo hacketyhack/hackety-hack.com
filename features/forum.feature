@@ -42,3 +42,9 @@ Feature: The Hackety Forum
 		And I should see "Discussion created!"
 		And I should see "HALP!"
 		And I should see "some_hacker says:"
+	Scenario: Can't make discussions when logged out
+		Given I'm not logged in
+		And I go to the forums
+		When I follow "Learning Ruby"
+		Then I should not see "New Discussion"
+
