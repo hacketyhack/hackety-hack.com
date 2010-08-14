@@ -1,4 +1,6 @@
 %p= @hacker.username + "'s page"
+%p
+  %img{:src => @hacker.gravatar_url}
 
 - if logged_in?
   %a{:href => "/messages/new/to/#{@hacker.username}" }= "Send #{@hacker.username} a message"

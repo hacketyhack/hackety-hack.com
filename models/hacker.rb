@@ -57,7 +57,12 @@ class Hacker
 	def admin?
 		return self.admin == true
 	end
-	
+
+	#a helper function for gravatar urls
+	def gravatar_url
+		require 'md5'
+		"http://www.gravatar.com/avatar/#{MD5::md5(email.downcase)}"
+	end
 
 	private 
 
