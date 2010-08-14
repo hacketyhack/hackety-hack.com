@@ -47,4 +47,10 @@ Feature: The Hackety Forum
 		And I go to the forums
 		When I follow "Learning Ruby"
 		Then I should not see "New Discussion"
-
+	Scenario: Can't make replies when logged out
+		Given I'm not logged in
+		And there's a discussion named "I need help" in "learning_ruby" with a reply
+		And I go to the forums
+		And I follow "Learning Ruby"
+		When I follow "I need help"
+		Then I should not see "Reply"
