@@ -40,3 +40,10 @@ Feature: Hacker management
 		And I should see "Following: 1"
 		And I go to the hacker page for "fela"
 		And I should see "Followers: 1"
+	Scenario: Seeing Followers
+		Given there's a hacker with the username "steve"
+		And there's a hacker with the username "fela"
+		And the hacker "steve" is following the hacker "fela"
+		When I go to the hacker page for "fela"
+		And I follow "1"
+		Then I should see "steve"

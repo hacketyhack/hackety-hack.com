@@ -16,11 +16,13 @@ class Hacker
 	#this is a flag to let us know if this Hacker can administrate the site or not.
 	key :admin, Boolean, :default => false
 
-	#the list of emails this user is following
-	key :following, Array, :typecast => 'ObjectId'
+	#the list of hackers this hacker is following
+	key :following_ids, Array
+	many :following, :in => :following_ids, :class_name => 'Hacker'
 
-	#the list of emails of users that are following this user
-	key :followers, Array, :typecast => 'ObjectId'
+	#the list of hackers that are following this hacker
+	key :followers_ids, Array
+	many :followers, :in => :followers_ids, :class_name => 'Hacker'
 
 	#we don't want to store the password (or the confirmation), so we just make an accessor
 	attr_accessor :password, :password_confirmation
@@ -68,6 +70,14 @@ class Hacker
 	def gravatar_url
 		require 'md5'
 		"http://www.gravatar.com/avatar/#{MD5::md5(email.downcase)}"
+	end
+
+	#this function makes the hacker follow the followee
+	def follow! followee
+		following << followee
+		save
+		followee.followers << self
+		followee.save
 	end
 
 	private 

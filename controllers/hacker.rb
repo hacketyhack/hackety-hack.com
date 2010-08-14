@@ -19,8 +19,7 @@ get '/hackers/:name/follow' do
 	@hacker = Hacker.first(:username => params[:name])
 
 	#follow them!
-	Hacker.push_uniq(current_user.id, :following => @hacker.id)
-	Hacker.push_uniq(@hacker.id, :followers => current_user.id)
+	current_user.follow! @hacker
 
 	#set a message
 	flash[:notice] = "Now following #{params[:name]}."
@@ -28,4 +27,13 @@ get '/hackers/:name/follow' do
 	#redirect back to your page!
 	redirect "/hackers/#{current_user.username}"
 
+end
+
+#this lets us see followers
+get '/hackers/:name/followers' do
+	#find the hacker with the given name
+	@hacker = Hacker.first(:username => params[:name])
+
+	#render our page
+	haml :"hackers/followers"
 end

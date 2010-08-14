@@ -2,7 +2,7 @@
 %p
 	%img{:src => @hacker.gravatar_url}
 %p Following: #{@hacker.following.count}
-%p Followers: #{@hacker.followers.count}
+%p Followers: <a href="/hackers/#{@hacker.username}/followers">#{@hacker.followers.count}</a>
 
 - if logged_in? && @hacker.username != current_user.username
 	%a{:href => "/messages/new/to/#{@hacker.username}" }= "Send #{@hacker.username} a message"
