@@ -64,7 +64,7 @@ Esse insolens mnesarchum eam id, nec ad detracto disputando. Nec malorum postula
 
 		post.comments << Comment.new({
 			:body => "This post is awesome! I've never seen such insightful commentary!",
-			:user_email => "somebody@example.com",
+			:username => "somebody",
 		})
 		post.save
 
@@ -75,14 +75,14 @@ Esse insolens mnesarchum eam id, nec ad detracto disputando. Nec malorum postula
 		halp = Discussion.create({
 			:title => "HALP ME!",
 			:body => "I just don't understand!",
-			:forum => "learning_ruby"
-			#TODO: in the future, record who made the discussion!
+			:forum => "learning_ruby",
+			:author => "somebody"
 		})
 
 		#and a reply:
 		halp.replies << Reply.new({
-			:body => "I'd love to help you!"
-			#TODO: keep track of who replied!
+			:body => "I'd love to help you!",
+			:author => "admin"
 		})
 
 		halp.save
