@@ -19,8 +19,8 @@ get '/hackers/:name/follow' do
 	@hacker = Hacker.first(:username => params[:name])
 
 	#follow them!
-	Hacker.push_uniq(current_user.id, :following => @hacker.email)
-	Hacker.push_uniq(@hacker.id, :followers => current_user.email)
+	Hacker.push_uniq(current_user.id, :following => @hacker.id)
+	Hacker.push_uniq(@hacker.id, :followers => current_user.id)
 
 	#set a message
 	flash[:notice] = "Now following #{params[:name]}."
