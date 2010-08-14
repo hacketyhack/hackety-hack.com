@@ -30,3 +30,13 @@ Feature: Hacker management
 		When I follow "Your Page"
 		Then I should be on the hacker page for "steve"
 		And I should not see "Send steve a message"
+	Scenario: Following Hackers
+		Given there's a hacker with the username "fela"
+		And I'm logged in as "steve"
+		When I go to the hacker page for "fela"
+		And I follow "Follow fela"
+		Then I should see "Now following fela."
+		And I should be on the hacker page for "steve"
+		And I should see "Following: 1"
+		And I go to the hacker page for "fela"
+		And I should see "Followers: 1"

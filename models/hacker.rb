@@ -16,6 +16,12 @@ class Hacker
 	#this is a flag to let us know if this Hacker can administrate the site or not.
 	key :admin, Boolean, :default => false
 
+	#the list of emails this user is following
+	key :following, Array
+
+	#the list of emails of users that are following this user
+	key :followers, Array
+
 	#we don't want to store the password (or the confirmation), so we just make an accessor
 	attr_accessor :password, :password_confirmation
 
