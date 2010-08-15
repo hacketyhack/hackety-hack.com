@@ -37,3 +37,12 @@ get '/hackers/:name/followers' do
 	#render our page
 	haml :"hackers/followers"
 end
+
+#this lets us see following
+get '/hackers/:name/following' do
+	#find the hacker with the given name
+	@hacker = Hacker.first(:username => params[:name])
+
+	#render our page
+	haml :"hackers/following"
+end

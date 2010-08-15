@@ -1,7 +1,7 @@
 %p= @hacker.username + "'s page"
 %p
 	%img{:src => @hacker.gravatar_url}
-%p Following: #{@hacker.following.count}
+%p Following: <a href="/hackers/#{@hacker.username}/following">#{@hacker.following.count}</a>
 %p Followers: <a href="/hackers/#{@hacker.username}/followers">#{@hacker.followers.count}</a>
 
 - if logged_in? && @hacker.username != current_user.username
