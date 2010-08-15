@@ -1,5 +1,7 @@
+%p{:style => "float:left;padding-right:1em"}
+  %img{:src => gravatar_url_for(@discussion.author)}
 %h1= @discussion.title
-%p #{@discussion.author} says:
+%p{:style => "padding-bottom:1em"} By <a href="/hackers/#{@discussion.author}">#{@discussion.author}</a>
 
 %p= @discussion.body
 

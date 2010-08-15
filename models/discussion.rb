@@ -21,6 +21,8 @@ class Discussion
 	#this is the slug for the url
 	key :slug, String 
 
+	timestamps!
+
 	before_save :make_slug
 	validate_on_create :author_check
  
