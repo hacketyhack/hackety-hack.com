@@ -9,6 +9,9 @@ class Hacker
 	#and a unique email
 	key :email, String, :unique => true
 
+	#a little bit about the Hacker
+	key :about, String
+
 	#we don't store the passwords themselves, we store a 'hash' of them. More about this down in password=
 	key :hashed_password, String
 	key :salt, String

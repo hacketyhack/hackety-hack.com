@@ -10,6 +10,30 @@ get '/hackers/:name' do
 	haml :"hackers/show"
 end
 
+#update a hacker's information
+post '/hackers/update' do
+	#you have to be logged in to update your info
+	require_login! :return => "/hackers/update"
+
+	#do they want to update their password
+	unless params[:password].nil?
+		if params[:password][:new] == params[:password][:confirm]
+			current_user.password = params[:password][:new]
+			current_user.save
+			flash[:notice] = "Password updated!"
+		else
+			flash[:notice] = "Password confirmation didn't match!"
+		end
+	else
+		current_user.update_attributes(:about => params[:hacker][:about])
+		current_user.save
+		flash[:notice] = "About information updated!"
+	end
+
+	redirect "/hackers/#{current_user.username}"
+	
+end
+
 #this lets you follow a Hacker
 get '/hackers/:name/follow' do
 	#we have to be logged in to follow someone

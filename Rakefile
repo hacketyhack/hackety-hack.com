@@ -45,7 +45,8 @@ namespace :db do
 			:email => "steve@steveklabnik.com",
 			:password => "password",
 			:password_confirmation => "password",
-			:admin => true
+			:admin => true,
+			:about => "I hack on Hackety Hack!"
 		})
 
 		#we're also going to make a regular user too
@@ -54,6 +55,7 @@ namespace :db do
 			:email => "somebody@example.com",
 			:password => "password",
 			:password_confirmation => "password",
+			:about => "I'm just a regular person!"
 		})
 		#make an initial Post, with a comment
 		require 'models/post'
