@@ -61,6 +61,7 @@ end
 post "/forums/reply/to/:forum/:discussion" do
 	@discussion = Discussion.first(:forum => params[:forum], :slug => params[:discussion])
 	params[:reply][:author] = current_user.username
+	params[:reply][:author_email] = current_user.email
 	@discussion.replies << Reply.new(params[:reply])
 	@discussion.save
 

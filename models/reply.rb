@@ -8,6 +8,7 @@ class Reply
 
 	#the person who wrote it
 	key :author, String
+	key :author_email, String
 
 	#we need to make sure we have an author
 	validate_on_create :author_check

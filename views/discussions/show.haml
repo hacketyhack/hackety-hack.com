@@ -1,14 +1,27 @@
 %p{:style => "float:left;padding-right:1em"}
-  %img{:src => gravatar_url_for(@discussion.author)}
+	%img{:src => gravatar_url_for(@discussion.author)}
 %h1= @discussion.title
 %p{:style => "padding-bottom:1em"} By <a href="/hackers/#{@discussion.author}">#{@discussion.author}</a>
 
 %p= @discussion.body
 
-%ul
-  - @discussion.replies.each do |reply|
-    %li #{reply.author} says: #{reply.body}
+%hr 
+
+- @discussion.replies.each do |reply|
+	.comment{:style => "clear:both"}
+		%div{:class => "left"}
+			%a{:href => "/hackers/#{reply.author}"}
+				%img{:src => gravatar_url_for(reply.author_email), :alt => "#{reply.author.downcase}_gravatar", :class => "comment_gravatar"}
+		%div{:style => "width:500px"}
+			%p
+				<a href="/hackers/#{reply.author}">#{reply.author}</a> says:
+			%p
+				= reply.body
+
+%hr
 
 - unless current_user.nil?
-  %a{ :href => "/forums/reply/to/#{@discussion.forum}/#{@discussion.slug}"} Reply
+	%a{ :href => "/forums/reply/to/#{@discussion.forum}/#{@discussion.slug}"} Reply
+	%br
+	%br
 %a{ :href => "/forums/#{@discussion.forum}" } Back to Discussions

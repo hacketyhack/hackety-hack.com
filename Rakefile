@@ -41,8 +41,8 @@ namespace :db do
 		#make an admin user
 		require 'models/hacker'
 		admin = Hacker.create({
-			:username => "admin",
-			:email => "admin@example.com",
+			:username => "steve",
+			:email => "steve@steveklabnik.com",
 			:password => "password",
 			:password_confirmation => "password",
 			:admin => true
@@ -90,13 +90,15 @@ Esse insolens mnesarchum eam id, nec ad detracto disputando. Nec malorum postula
 			:title => "HALP ME!",
 			:body => "I just don't understand!",
 			:forum => "learning_ruby",
-			:author => "somebody"
+			:author => "somebody",
+			:author_email => "somebody@example.com"
 		})
 
 		#and a reply:
 		halp.replies << Reply.new({
 			:body => "I'd love to help you!",
-			:author => "admin"
+			:author => "steve",
+			:author_email => "steve@steveklabnik.com"
 		})
 
 		halp.save
