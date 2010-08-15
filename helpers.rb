@@ -50,4 +50,10 @@ helpers do
 			require_login!(opts)
 		end
 	end
+
+	#gives a gravatar url for an email
+	def gravatar_url_for email
+		require 'md5'
+		"http://www.gravatar.com/avatar/#{MD5::md5(email.downcase)}"
+	end
 end

@@ -90,7 +90,7 @@ post "/comments" do
 	require_login! :return => "/posts"
 
 	#set the email of the comment to our email
-	params[:comment]['user_email'] = current_user.email
+	params[:comment]['author'] = current_user.username
 
 	#find the post we want to comment on
 	@post = Post.find(params[:post_id])
