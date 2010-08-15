@@ -56,4 +56,28 @@ helpers do
 		require 'md5'
 		"http://www.gravatar.com/avatar/#{MD5::md5(email.downcase)}"
 	end
+
+	#gives a printable forum name from a slug
+	def forum_name forum
+		case forum
+		when 'learning_ruby'
+			"Learning Ruby"
+		when 'hackety_help'
+			"Hackety Help"
+		when 'clubhouse'
+			"The Clubhouse"
+		end
+	end
+
+	#gives a description for a forum
+	def forum_description forum
+		case forum
+		when 'learning_ruby'
+				"A place to learn about the Ruby programming language."
+		when 'hackety_help'
+				"Have a question about Hackety? You're in the right place!"
+		when 'clubhouse'
+				"A place to talk to other Hackers about anything you'd like to talk about."
+		end
+	end
 end

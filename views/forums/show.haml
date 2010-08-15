@@ -1,5 +1,5 @@
-%h1 Hackety Hack Forums: #{@forum_name}
-%p{:style => "padding-top:1em;padding-bottom:1em"}= @forum_description
+%h1 Hackety Hack Forums: #{forum_name @forum}
+%p{:style => "padding-top:1em;padding-bottom:1em"}= forum_description @forum
 - unless current_user.nil?
   %a{:href => "/forums/#{@forum}/discussions/new"} New Discussion
 %ol
