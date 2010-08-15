@@ -18,6 +18,13 @@ get '/hackers/:name/follow' do
 	#find the hacker with the given name
 	@hacker = Hacker.first(:username => params[:name])
 
+	#make sure we're not following them already
+	if current_user.following? @hacker
+		flash[:notice] = "You're already following #{params[:name]}."
+		redirect "/hackers/#{current_user.username}"
+		return
+	end
+
 	#follow them!
 	current_user.follow! @hacker
 
@@ -36,8 +43,15 @@ get '/hackers/:name/unfollow' do
 
 	#find the hacker with the given name
 	@hacker = Hacker.first(:username => params[:name])
+	
+	#make sure we're not following them already
+	unless current_user.following? @hacker
+		flash[:notice] = "You're already not following #{params[:name]}."
+		redirect "/hackers/#{current_user.username}"
+		return
+	end
 
-	#follow them!
+	#unfollow them!
 	current_user.unfollow! @hacker
 
 	#set a message

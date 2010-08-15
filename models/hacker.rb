@@ -75,7 +75,7 @@ class Hacker
 		"http://www.gravatar.com/avatar/#{MD5::md5(email.downcase)}"
 	end
 
-	#this function makes the hacker follow the followee
+	#this method makes the hacker follow the followee
 	def follow! followee
 		following << followee
 		save
@@ -83,12 +83,18 @@ class Hacker
 		followee.save
 	end
 	
-	#this function makes the hacker unfollow the followee
+	#this method makes the hacker unfollow the followee
 	def unfollow! followee
 		following_ids.delete(followee.id)
 		save
 		followee.followers_ids.delete(id)
 		followee.save
+	end
+
+	#this method returns true if we're following the given Hacker, and
+	#false otherwise
+	def following? hacker
+		following.include? hacker
 	end
 
 	private 
