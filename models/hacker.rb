@@ -24,6 +24,9 @@ class Hacker
 	key :followers_ids, Array
 	many :followers, :in => :followers_ids, :class_name => 'Hacker'
 
+	#after we create a hacker, we want to have them follow steve, and vice versa!
+	after_create :follow_steve
+
 	#we don't want to store the password (or the confirmation), so we just make an accessor
 	attr_accessor :password, :password_confirmation
 
@@ -95,6 +98,15 @@ class Hacker
 		#then we grab a random element of that array, and add it onto our newpass
 		1.upto(len) { |i| newpass << chars[rand(chars.size-1)] }
 		return newpass
+	end
+
+	def follow_steve
+		return if username == "steve"
+		steve = Hacker.first(:username => 'steve')
+		return if steve.nil?
+
+		follow! steve
+		steve.follow! self
 	end
 	
 end
