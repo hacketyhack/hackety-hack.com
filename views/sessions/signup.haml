@@ -1,30 +1,31 @@
-#sinatra_authentication
-  - if Rack.const_defined?('Flash')
-    #sinatra_authentication_flash= flash[:notice]
-  %h1.page_title Signup
-  %form{:action => "/signup", :method => "post"}
-    .field
-      .label
-        %label{:for => "user_email"} Email
-      %input{ :id => "user_email", :name => "user[email]", :size => 30, :type => "text" }
-    .field
-      .label
-        %label{:for => "user_username"} Username
-      %input{ :id => "user_username", :name => "user[username]", :size => 30, :type => "text" }
-    .field
-      .label
-        %label{:for => "user_password"} Password
-      %input{ :id => "user_password", :name => "user[password]", :size => 30, :type => "password" }
-    .field
-      .label
-        %label{:for => "user_password_confirmation"} Confirm Password
-      %input{ :id => "user_password_confirmation", :name => "user[password_confirmation]", :size => 30, :type => "password" }
-    .buttons
-      %input{ :value => "Create account", :type => "submit" }
-      %a{:href => "/login", :class => 'sinatra_authentication_link'}
-        Login
-    - if Sinatra.const_defined?('FacebookObject')
-      .third_party_signup
-        %h3.section_title One click signup:
-        .login_link.facebook_login
-          = render_facebook_connect_link('Signup using facebook', :size => 'large')
+%h1 Signup
+%form{:action => "/signup", :method => "post"}
+	%table
+		%tr
+			%td
+				%label{:for => "user_email"} Email
+			%td
+				%input{ :id => "user_email", :name => "user[email]", :size => 30, :type => "text" }
+		%tr
+			%td
+				%label{:for => "user_username"} Username
+			%td
+				%input{ :id => "user_username", :name => "user[username]", :size => 30, :type => "text" }
+		%tr
+			%td
+				%label{:for => "user_password"} Password
+			%td
+				%input{ :id => "user_password", :name => "user[password]", :size => 30, :type => "password" }
+		%tr
+			%td
+				%label{:for => "user_password_confirmation"} Confirm Password
+			%td
+				%input{ :id => "user_password_confirmation", :name => "user[password_confirmation]", :size => 30, :type => "password" }
+		%tr
+			%td
+			%td
+				%input{ :value => "Create account", :type => "submit" }
+%br
+%p
+	Already have an account? 
+	%a{:href => "/login", :class => 'sinatra_authentication_link'} Log in
