@@ -7,3 +7,4 @@
 - if logged_in? && @hacker.username != current_user.username
 	%a{:href => "/messages/new/to/#{@hacker.username}" }= "Send #{@hacker.username} a message"
 	%a{:href => "/hackers/#{@hacker.username}/follow"} Follow #{@hacker.username}
+	%a{:href => "/hackers/#{@hacker.username}/unfollow"} Unfollow #{@hacker.username}

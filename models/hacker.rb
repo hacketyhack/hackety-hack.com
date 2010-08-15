@@ -82,6 +82,14 @@ class Hacker
 		followee.followers << self
 		followee.save
 	end
+	
+	#this function makes the hacker unfollow the followee
+	def unfollow! followee
+		following_ids.delete(followee.id)
+		save
+		followee.followers_ids.delete(id)
+		followee.save
+	end
 
 	private 
 
