@@ -7,18 +7,17 @@
 		%link{:rel => "stylesheet", :href => "/stylesheets/ruby.css", :type => 'text/css'}
 	%body
 		%nav{:style => "float:right;"}
-			%a{:href => "/"}Home \ 
-			%a{:href => "/blog"}Blog \ 
-			%a{:href => "/help"}Help \ 
-			%a{:href => "/forums"}Forums \ 
+			<a href="/">Home</a> \
+			<a href="/blog">Blog</a> \
+			<a href="/help">Help</a> \
+			<a href="/forum">Forums</a> \
 			- if logged_in?
-				%a{:href => "/hackers/#{current_user.username}" }Your Page \
-				%a{:href => "/logout" }Log out
+				<a href="/hackers/#{current_user.username}">Your Page</a> \
+				<a href="/logout">Log out</a>
 			- else 
-				%a{:href => "/signup" }Sign Up \ 
-				%a{:href => "/login" }Log in
+				<a href="/signup">Sign Up</a> \
+				<a href="/login">Log in</a>
 		%div{:id => "flash-notice"}= flash[:notice]
 		%div{:id => "flash-error"}= flash[:error]
-		%img{ :src => "/images/hhhello.png", :id => "hello", :alt => "Hello"}
 		%div{:id => "pitch", :class => "clearfix"}
 			!= yield

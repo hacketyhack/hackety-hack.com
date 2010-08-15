@@ -1,16 +1,18 @@
 .post
   %h1= @post.title
   - markdown = RDiscount.new(@post.body, :smart, :filter_html)
-  %p!= markdown.to_html
+  %div!= markdown.to_html
   %hr
-  %ul
-    - @post.comments.each do |comment|
-      .comment 
+  - @post.comments.each do |comment|
+    .comment{:style => "clear:both"}
+      %div{:class => "left"}
+        %a{:href => "/hackers/#{comment.author}"}
+          %img{:src => gravatar_url_for(comment.author_email), :alt => "#{comment.author.downcase}_gravatar", :class => "comment_gravatar"}
+      %div{:style => "width:500px"}
         %p
-          %div{:style => "float:left;"}
-            %a{:href => "/hackers/#{comment.author}"}
-              %img{:src => gravatar_url_for(comment.author_email), :alt => "#{comment.author.downcase}_gravatar", :style => "height:50px;width:50px"}
-          %div= comment.body
+          <a href="/hackers/#{comment.author}">#{comment.author}</a> says:
+        %p
+          = comment.body
   - if logged_in?
     %hr
     %form{:action => "/comments", :method => "POST"}
