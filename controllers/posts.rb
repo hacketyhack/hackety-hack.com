@@ -31,7 +31,7 @@ post "/posts" do
 	flash[:notice] = "Post Created"
 
 	#go check out that post
-	redirect "/posts/#{@post.id}" 
+	redirect "/posts/#{@post.slug}" 
 end
 
 #for completeness, we can also see every post at /posts
@@ -43,34 +43,34 @@ get "/posts" do
 	haml :'posts/index'
 end
 
-#an individual post can be seen at /posts/:id
-get "/posts/:id" do
-	#find the post with that id
-	@post = Post.find(params[:id])
+#an individual post can be seen at /posts/:slug
+get "/posts/:slug" do
+	#find the post with that slug
+	@post = Post.first(:slug => params[:slug])
 
 	#render our template
 	haml :'posts/show'
 end
 
-#admins can edit posts at /posts/:id/edit
-get "/posts/:id/edit" do
+#admins can edit posts at /posts/:slug/edit
+get "/posts/:slug/edit" do
 	#make sure we only let in admins!
 	admin_only!
 
 	#find the post with the right id
-	@post = Post.find(params[:id])
+	@post = Post.first(:slug => params[:slug])
 
 	#render our template
 	haml :'posts/edit'
 end
 
-#to update a post, send a PUT request to /posts/:id
-put "/posts/:id" do
+#to update a post, send a PUT request to /posts/:slug
+put "/posts/:slug" do
 	#make sure we only let in admins!
 	admin_only!
 
 	#find the post with the right id
-	@post = Post.find(params[:id])
+	@post = Post.first(:slug => params[:slug])
 
 	#update its info
 	@post.update_attributes(params)
@@ -79,7 +79,7 @@ put "/posts/:id" do
 	flash[:notice] = "Post Modified"
 
 	#and visit that post
-	redirect "/posts/#{@post.id}"
+	redirect "/posts/#{@post.slug}"
 end
 
 #I've included comments in here too, because comments can only be made on posts
@@ -93,7 +93,7 @@ post "/comments" do
 	params[:comment]['author'] = current_user.username
 
 	#find the post we want to comment on
-	@post = Post.find(params[:post_id])
+	@post = Post.first(:slug => params[:post_slug])
 
 	# create our new comment and add it to the posts' comments
 	@post.comments << Comment.new(params[:comment])
@@ -103,5 +103,5 @@ post "/comments" do
 	flash[:notice] = "Thanks for your comment!"
 
 	#go back to the page for that post
-	redirect "/posts/#{@post.id}" 
+	redirect "/posts/#{@post.slug}" 
 end

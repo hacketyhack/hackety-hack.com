@@ -18,7 +18,7 @@
 	- if logged_in?
 		%hr
 		%form{:action => "/comments", :method => "POST"}
-			%input{:type => "hidden", :id => "post_id", :name => "post_id", :value => @post.id}
+			%input{:type => "hidden", :id => "post_slug", :name => "post_slug", :value => @post.slug}
 			%label{:for => "comment_body"} Submit your opinion:
 			%br
 			%textarea{:id => "comment_body", :name => "comment[body]", :cols => 70, :rows => 5}

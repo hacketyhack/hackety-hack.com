@@ -6,6 +6,8 @@ class Post
 	key :title, String
 	key :body, String
 
+	key :slug, String
+
 	many :comments
 	timestamps!
 end
