@@ -10,10 +10,15 @@ set :haml, :escape_html => true
 
 #this method will set up our database connection for any environment
 def setup_db environ
-	#we want to connect to mongohq
-	MongoMapper.connection = Mongo::Connection.new(ENV['MONGOHQ_HOST'], ENV['MONGOHQ_PORT'])
-	MongoMapper.database = ENV['MONGOHQ_DATABASE']
-	MongoMapper.database.authenticate(ENV['MONGOHQ_USER'],ENV['MONGOHQ_PASSWORD'])
+	if environ == :production
+		#we want to connect to mongohq
+		MongoMapper.connection = Mongo::Connection.new(ENV['MONGOHQ_HOST'], ENV['MONGOHQ_PORT'])
+		MongoMapper.database = ENV['MONGOHQ_DATABASE']
+		MongoMapper.database.authenticate(ENV['MONGOHQ_USER'],ENV['MONGOHQ_PASSWORD'])
+	else
+		MongoMapper.connection = Mongo::Connection.new('localhost')
+		MongoMapper.database = "hackety-#{environ}"
+	end
 end
 
 #these configure blocks only run in one environment

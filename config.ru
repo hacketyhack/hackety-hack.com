@@ -5,7 +5,7 @@ require 'sinatra'
 require 'sass/plugin/rack'
 use Sass::Plugin::Rack
 
-set :env, :production
+set :env, :development
 
 require 'hackety'
 
