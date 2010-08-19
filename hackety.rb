@@ -2,6 +2,8 @@
 
 #first off, we need to include rubygems and sinatra
 require 'rubygems'
+
+#this bundler stuff needed for heroku
 require 'bundler'
 Bundler.setup
 
