@@ -10,8 +10,14 @@ set :haml, :escape_html => true
 
 #this method will set up our database connection for any environment
 def setup_db environ
-	#we want to connect to localhost
-	MongoMapper.connection = Mongo::Connection.new('localhost')
+	if settings.environment == :production
+		#we want to connect to mongohq
+		MongoMapper.config = {RACK_ENV => {'uri' => ENV['MONGOHQ_URL']}}
+		MongoMapper.connect(RACK_ENV)
+	else
+		#we want to connect to localhost
+		MongoMapper.connection = Mongo::Connection.new('localhost')
+	end
 	#and use the database for the environment we're on
 	#this keeps them separate so our tests don't wipe out our development information!
 	MongoMapper.database = "hackety-#{environ}"
