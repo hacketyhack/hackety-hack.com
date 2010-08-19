@@ -11,8 +11,9 @@ set :haml, :escape_html => true
 #this method will set up our database connection for any environment
 def setup_db environ
 	#we want to connect to mongohq
-	MongoMapper.config = {RACK_ENV => {'uri' => ENV['MONGOHQ_URL']}}
-	MongoMapper.connect(RACK_ENV)
+	MongoMapper.connection = Mongo::Connection.new(ENV['MONGOHQ_HOST'], ENV['MONGOHQ_PORT'])
+	MongoMapper.database = ENV['MONGOHQ_DATABASE']
+	MongoMapper.database.authenticate(ENV['MONGOHQ_USER'],ENV['MONGOHQ_PASSWORD'])
 end
 
 #these configure blocks only run in one environment
