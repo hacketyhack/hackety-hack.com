@@ -2,6 +2,9 @@
 
 #first off, we need to include rubygems and sinatra
 require 'rubygems'
+require 'bundler'
+Bundler.setup
+
 require 'sinatra'
 
 #haml gives us all of our templates
