@@ -1,0 +1,24 @@
+%h1= current_user.username + "'s admin page"
+%img{:src => current_user.gravatar_url}
+
+%p Total Hacker Count: #{@usercount}
+
+%p New Users Today: #{@newusers}
+%ul
+	- @newusernames.each do |name|
+		%li 
+			%a{:href => "/hackers/#{name.username}"}= name.username
+
+%p New Forum Discussions: #{@forumposts}
+%ul
+	- @postlinks.each do |postlink|
+		%li 
+			%a{:href => "/forums/#{postlink.title}"}= postlink.title
+
+%p New Forum Replies: #{@forumreplies}
+%ul
+	- @postlinks.each do |replylink|
+		%li 
+			%a{:href => "/forums/#{replylink.title}/#{replylink.replies.title}"}= replylink.slug
+
+

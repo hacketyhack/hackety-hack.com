@@ -6,6 +6,7 @@ class Hacker
 
 	#we're storing a unique username
 	key :username, String, :unique => true
+	timestamps!
 	#and a unique email
 	key :email, String, :unique => true
 
