@@ -24,14 +24,14 @@ module NavigationHelpers
 	
 	when /the edit post page for the post with the title "(.*)"/
 		post = Post.first(:title => $1)
-		"/posts/#{post.id}/edit"
+		"/posts/#{post.slug}/edit"
 	
 	when /the post page for the post with the title "(.*)"/
 		post = Post.first(:title => $1)
-		"/posts/#{post.id}"
+		"/posts/#{post.slug}"
 	when /a blog post page/
 		post = Post.first
-		"/posts/#{post.id}"
+		"/posts/#{post.slug}"
 	when /the new hacker page/
 		"/signup"
 	when /the main page/

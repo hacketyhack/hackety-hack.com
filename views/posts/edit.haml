@@ -1,9 +1,9 @@
-%form{:method => "POST", :action => "/posts/#{@post.id}" }
+%form{:method => "POST", :action => "/posts/#{@post.slug}" }
   %input{ :type => 'hidden', :name => "_method", :value => "PUT" }
   %label{:for => 'post_title'} Title
   %br
   %input{ :type => 'text', :name => 'title', :id => 'post_title', :value => @post.title}
-  %label{:for => 'post_slug'} Title
+  %label{:for => 'post_slug'} Slug
   %br
   %input{ :type => 'text', :name => 'slug', :id => 'post_slug', :value => @post.slug}
   %br

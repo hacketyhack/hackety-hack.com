@@ -37,11 +37,11 @@ Feature: The Hackety Forum
 		When I follow "New Discussion"
 		And I fill in "Title" with "HALP!"
 		And I fill in "Body" with "I'm really unsure as to how to do something."
-		And I press "Create Discussion"
+		And I press "Submit"
 		Then I should be on the discussion "halp" in "learning_ruby"
 		And I should see "Discussion created!"
 		And I should see "HALP!"
-		And I should see "some_hacker says:"
+		And I should see "By some_hacker"
 	Scenario: Can't make discussions when logged out
 		Given I'm not logged in
 		And I go to the forums
