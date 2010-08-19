@@ -8,6 +8,7 @@ class Discussion
 
 	#the person who created this discussion
 	key :author, String
+	key :author_email, String
 
 	#the text of a discussion
 	key :body, String

@@ -25,6 +25,7 @@ end
 
 post "/forums/:forum/discussions" do
 	params[:author] = current_user.username
+	params[:author_email] = current_user.email
 	@discussion = Discussion.create(params)
 	flash[:notice] = "Discussion created!"
 	redirect "/forums/#{params[:forum]}/#{@discussion.slug}"
