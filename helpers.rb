@@ -2,6 +2,15 @@
 #to make our work with sinatra easier
 
 helpers do
+
+	#this defines three helpers, that all test our environment:
+	#they're called 'development?', 'test?', and 'production?'
+	[:development, :production, :test].each do |environment| 
+		define_method "#{environment.to_s}?" do
+			return settings.environment == environment.to_sym
+		end
+	end
+
 	#this method returns the logged_in hacker
 	def current_user
 		#let's look up the Hacker by the id in the session
