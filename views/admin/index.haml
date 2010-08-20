@@ -13,12 +13,12 @@
 %ul
 	- @postlinks.each do |postlink|
 		%li 
-			%a{:href => "/forums/#{postlink.title}"}= postlink.title
+			%a{:href => "/forums/#{postlink.forum}/#{postlink.slug}"}= postlink.title
 
 %p New Forum Replies: #{@forumreplies}
 %ul
 	- @postlinks.each do |replylink|
 		%li 
-			%a{:href => "/forums/#{replylink.title}/#{replylink.replies.title}"}= replylink.slug
+			%a{:href => "/forums/#{replylink.forum}/#{replylink.slug}"}= replylink.slug
 
 
