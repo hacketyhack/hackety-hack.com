@@ -2,7 +2,7 @@ def login hacker
 	visit "/login"
 	fill_in "username", :with => hacker.username
 	fill_in "password", :with => hacker.password
-	click_button "login"
+	click_button "Log in"
 end
 
 Given /^I'm logged in as admin$/ do

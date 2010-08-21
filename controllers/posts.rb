@@ -89,8 +89,9 @@ post "/comments" do
 	#if we fail, return to /posts
 	require_login! :return => "/posts"
 
-	#set the email of the comment to our email
+	#set the username/email of the comment to our email
 	params[:comment]['author'] = current_user.username
+	params[:comment]['author_email'] = current_user.email
 
 	#find the post we want to comment on
 	@post = Post.first(:slug => params[:post_slug])
