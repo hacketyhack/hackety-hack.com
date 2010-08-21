@@ -1,3 +1,4 @@
 %ul
-  - @hacker.followers.each do |follower|
-    %li= follower.username
+	- @hacker.followers.each do |follower|
+		%li
+			%a{:href => "/hackers/#{follower.username}"}= follower.username
