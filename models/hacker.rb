@@ -100,6 +100,11 @@ class Hacker
 		following.include? hacker
 	end
 
+	#this method looks up the programs for a given user
+	def programs
+		Program.all(:creator_username => username)
+	end
+
 	private 
 
 	#we're going to use the SHA1 encryption method for now.

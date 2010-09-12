@@ -6,6 +6,13 @@
 %p Following: <a href="/hackers/#{@hacker.username}/following">#{@hacker.following.count}</a>
 %p Followers: <a href="/hackers/#{@hacker.username}/followers">#{@hacker.followers.count}</a>
 %hr
+%h2 Programs:
+%ul
+	- @hacker.programs.each do |program|
+		%li
+			%a{:href => "/programs/#{@hacker.username}/#{program.slug}"}= program.title
+
+%hr
 - if logged_in? 
 	- if @hacker.username != current_user.username
 		%a{:href => "/messages/new/to/#{@hacker.username}" }= "Send #{@hacker.username} a message"
