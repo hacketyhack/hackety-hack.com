@@ -21,3 +21,6 @@ Feature: Messages
 		And I go to my messages page
 		Then I should see "Hello, fela!"
 		And I should see "From: steve"
+  Scenario: I should have an inbox link
+    Given I'm logged in
+    Then I should see "Inbox"
