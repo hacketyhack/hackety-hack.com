@@ -24,7 +24,7 @@
 			<a href="/forums">Forums</a> \
 			- if logged_in?
 				<a href="/hackers/#{current_user.username}">Your Page</a> \
-				%a{:href => "/messages"} Inbox
+				<a href="/messages">Inbox</a> \
 				<a href="/logout">Log out</a>
 			- else 
 				<a href="/signup">Sign Up</a> \
