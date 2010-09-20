@@ -20,6 +20,8 @@ gem "database_cleaner", "=0.5.2"
 gem "rack-flash", "=0.1.1"
 gem "rdiscount", "=1.6.5"
 gem "autotest"
+gem "i18n"
+
 if RUBY_PLATFORM =~ /darwin/
 	gem "autotest-fsevent"
 	gem "autotest-growl"
