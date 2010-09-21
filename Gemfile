@@ -21,6 +21,7 @@ gem "rack-flash"
 gem "rdiscount"
 gem "autotest"
 gem "i18n"
+
 if RUBY_PLATFORM =~ /darwin/
 	gem "autotest-fsevent"
 	gem "autotest-growl"
