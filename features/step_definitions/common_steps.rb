@@ -1,3 +1,6 @@
+def hacker
+   @hacker ||= Factory(:hacker)
+end
 def login hacker 
 	visit "/login"
 	fill_in "username", :with => hacker.username
@@ -7,8 +10,8 @@ end
 
 Given /^I'm logged in as admin$/ do
 	password = "foobar"
-	hacker = Factory(:admin,:password => password, :password_confirmation => password)
-	login hacker
+	@hacker = Factory(:admin,:password => password, :password_confirmation => password)
+	login @hacker
 end
 
 Given /^I'm not logged in$/ do
@@ -20,27 +23,27 @@ Given /^I log out$/ do
 end
 
 When /^I log in as "([^"]*)"$/ do |username|
-	hacker = Factory(:hacker, :username => username)
-	login hacker
+	@hacker = Factory(:hacker, :username => username)
+	login @hacker
 end
 
 
 Given /^I'm logged in$/ do
 	password = "foobar"
-	hacker = Factory(:hacker,:password => password, :password_confirmation => password)
-	login hacker 
+	@hacker = Factory(:hacker,:password => password, :password_confirmation => password)
+	login @hacker 
 end
 
 Given /^I'm logged in as "([^"]*)"$/ do |username|
 	password = "foobar"
-	hacker = Factory(:hacker,:username => username, :password => password, :password_confirmation => password)
-	login hacker 
+	@hacker = Factory(:hacker,:username => username, :password => password, :password_confirmation => password)
+	login @hacker 
 end
 
 Given /^I'm logged in as a user with the email "([^"]*)"$/ do |email|
 	password = "foobar"
-	hacker = Factory(:hacker,:email => email, :password => password, :password_confirmation => password)
-	login hacker 
+	@hacker = Factory(:hacker,:email => email, :password => password, :password_confirmation => password)
+	login @hacker 
 end
 
 Given /^there's a hacker with the username "([^"]*)"$/ do |username|

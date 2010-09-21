@@ -14,6 +14,6 @@ end
 
 class String
 	def to_slug
-		self.gsub(/[^a-zA-Z _]/, "").gsub(/\s/, "_").downcase
+		self.gsub(/[^a-zA-Z _0-9]/, "").gsub(/\s/, "_").downcase
 	end
 end
