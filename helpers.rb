@@ -65,7 +65,7 @@ helpers do
     require 'md5'
     "http://www.gravatar.com/avatar/#{MD5::md5(email.downcase)}"
   end
- 
+
   #THIS IS NOT DRY!!!!
   #These two functions are also in models/discussion.rb
   #I'm not sure of the best way to combine them. Anyone want to write a patch?

@@ -106,3 +106,18 @@ post "/comments" do
   #go back to the page for that post
   redirect "/posts/#{@post.slug}"
 end
+
+#this is for the rss feed. We're using the builder gem to create it
+get "/posts.rss" do
+  #we want them to be in reverse order
+  @posts = Post.all.sort{|a,b| a.created_at <=> b.created_at }.reverse
+
+  #we need to set the proper content-type so that browsers know it's not
+  #a regular old html page
+  content_type "application/rss+xml"
+
+  require 'builder'
+
+  #we don't want to render our normal layout
+  builder :"posts/index.atom", :layout => false
+end

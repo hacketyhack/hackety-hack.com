@@ -26,11 +26,11 @@ class Discussion
 
   before_save :make_slug
   validate_on_create :author_check
-  
+
   #THIS IS NOT DRY!!!!
   #These two functions are also in helpers.rb.
   #I'm not sure of the best way to combine them. Anyone want to write a patch?
-  
+
   #gives a printable forum name from a slug
   def forum_name
     case forum
