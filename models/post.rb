@@ -1,14 +1,14 @@
 #this is our model for blog posts
 class Post
-	#it's its own document
-	include MongoMapper::Document
+  #it's its own document
+  include MongoMapper::Document
 
-	key :title, String
-	key :body, String
+  key :title, String
+  key :body, String
 
-	key :slug, String
+  key :slug, String
 
-	many :comments
-	timestamps!
+  many :comments
+  timestamps!
 end
 

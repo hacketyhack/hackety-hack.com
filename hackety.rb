@@ -34,17 +34,17 @@ require 'helpers'
 
 #here's the root route. This is what happens when you go to '/'
 get "/" do
-	haml :index
+  haml :index
 end
 
 #this will be used to make sass work
 Dir.glob("#{File.expand_path(File.dirname(__FILE__))}/views/stylesheets/*.sass").each do |sheet|
-	sheet =~ /\/([^\/]*).sass/
-	sheet_name = $1
-	get "/stylesheets/#{sheet_name}.css" do
-		content_type 'text/css', :charset => 'utf-8'
-		sass :"stylesheets/#{sheet_name}"
-	end
+  sheet =~ /\/([^\/]*).sass/
+  sheet_name = $1
+  get "/stylesheets/#{sheet_name}.css" do
+    content_type 'text/css', :charset => 'utf-8'
+    sass :"stylesheets/#{sheet_name}"
+  end
 end
 
 #finally, let's require all of our controllers

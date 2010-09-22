@@ -10,34 +10,34 @@ set :haml, :escape_html => true
 
 #this method will set up our database connection for any environment
 def setup_db environ
-	if environ == :production
-		#we want to connect to mongohq
-		MongoMapper.connection = Mongo::Connection.new(ENV['MONGOHQ_HOST'], ENV['MONGOHQ_PORT'])
-		MongoMapper.database = ENV['MONGOHQ_DATABASE']
-		MongoMapper.database.authenticate(ENV['MONGOHQ_USER'],ENV['MONGOHQ_PASSWORD'])
-	else
-		MongoMapper.connection = Mongo::Connection.new('localhost')
-		MongoMapper.database = "hackety-#{environ}"
-	end
+  if environ == :production
+    #we want to connect to mongohq
+    MongoMapper.connection = Mongo::Connection.new(ENV['MONGOHQ_HOST'], ENV['MONGOHQ_PORT'])
+    MongoMapper.database = ENV['MONGOHQ_DATABASE']
+    MongoMapper.database.authenticate(ENV['MONGOHQ_USER'],ENV['MONGOHQ_PASSWORD'])
+  else
+    MongoMapper.connection = Mongo::Connection.new('localhost')
+    MongoMapper.database = "hackety-#{environ}"
+  end
 end
 
 #these configure blocks only run in one environment
 #right now the only configuration we do special is set up the databse
 #I'm sure these can be condensed into one block, I just havn't done it yet.
 configure :test do
-	setup_db(:test)
+  setup_db(:test)
 end
 
 configure :development do
-	setup_db(:development)
+  setup_db(:development)
 end
 
 configure :production do
-	setup_db(:production)
+  setup_db(:production)
 end
 
 #for all environments,
 configure do
-	#require all of our models!
-	require_directory "models"
+  #require all of our models!
+  require_directory "models"
 end

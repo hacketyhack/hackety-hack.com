@@ -3,8 +3,8 @@
 
 #just a little factory for a post!
 Factory.define :post do |p|
-	p.title "default title"
-	p.body "This is a body"
-	p.slug "default_title"
-	p.comments []
+  p.title "default title"
+  p.body "This is a body"
+  p.slug "default_title"
+  p.comments []
 end
