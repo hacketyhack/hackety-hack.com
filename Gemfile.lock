@@ -3,6 +3,9 @@ GEM
   specs:
     activesupport (3.0.0)
     autotest (4.3.2)
+    autotest-fsevent (0.2.3)
+      sys-uname
+    autotest-growl (0.2.5)
     bson (1.0.9)
     bson_ext (1.0.9)
     builder (2.1.2)

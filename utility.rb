@@ -4,16 +4,16 @@
 #this lets us require a whole directory of .rb files!
 def require_directory dirname
 
-	#we glob every file, and loop through them
-	Dir.glob("#{File.expand_path(File.dirname(__FILE__))}/#{dirname}/*.rb").each do |f|
+  #we glob every file, and loop through them
+  Dir.glob("#{File.expand_path(File.dirname(__FILE__))}/#{dirname}/*.rb").each do |f|
 
-		#and then require them!
-		require f
-	end
+    #and then require them!
+    require f
+  end
 end
 
 class String
-	def to_slug
-		self.gsub(/[^a-zA-Z _0-9]/, "").gsub(/\s/, "_").downcase
-	end
+  def to_slug
+    self.gsub(/[^a-zA-Z _0-9]/, "").gsub(/\s/, "_").downcase
+  end
 end
