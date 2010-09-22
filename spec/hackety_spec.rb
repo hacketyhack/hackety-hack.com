@@ -14,7 +14,7 @@ end
 describe "Hackety Website" do
   include Rack::Test::Methods
   def app; Sinatra::Application; end
-  
+
 
   describe "routes" do
     it "should display all posts at /posts" do
@@ -32,7 +32,7 @@ describe "Hackety Website" do
       Post.should_receive(:find).with("42").and_return(post)
       get "/posts/#{post.id}/edit", {}, :session => {:user => user.id}
       last_response.status.should == 200
-    end  
+    end
   end
 
   describe "comments" do

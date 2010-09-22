@@ -1,3 +1,5 @@
+%p <a href="/forums">Hackety Forums</a> > <a href="#{@discussion.forum}">#{@discussion.forum_name}</a> > #{@discussion.title}
+%br
 %p{:style => "float:left;padding-right:1em"}
 	%img{:src => gravatar_url_for(@discussion.author_email)}
 %h1= @discussion.title

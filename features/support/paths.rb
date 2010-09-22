@@ -18,14 +18,14 @@ module NavigationHelpers
 
   when /the new post\s? page/
     '/posts/new'
-  
+
   when /the posts page/
     '/posts'
-  
+
   when /the edit post page for the post with the title "(.*)"/
     post = Post.first(:title => $1)
     "/posts/#{post.slug}/edit"
-  
+
   when /the post page for the post with the title "(.*)"/
     post = Post.first(:title => $1)
     "/posts/#{post.slug}"
@@ -50,6 +50,8 @@ module NavigationHelpers
     "/forums/#{$1}"
   when /the discussion "(.*)" in "(.*)"/
     "/forums/#{$2}/#{$1}"
+  when /the discussion/
+    "/forums/#{@discussion.forum}/#{@discussion.slug}"
   when /the help page/
     "/help"
   when /the github page/

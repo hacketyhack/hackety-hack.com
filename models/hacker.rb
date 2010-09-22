@@ -54,7 +54,7 @@ class Hacker
   def self.authenticate(username, pass)
     #first we have to dig up the record from the database
     current_user = Hacker.first(:username => username)
-    
+
     #and return nil if we didn't find one.
     return nil if current_user.nil?
 
@@ -85,7 +85,7 @@ class Hacker
     followee.followers << self
     followee.save
   end
-  
+
   #this method makes the hacker unfollow the followee
   def unfollow! followee
     following_ids.delete(followee.id)
@@ -130,5 +130,5 @@ class Hacker
     follow! steve
     steve.follow! self
   end
-  
+
 end

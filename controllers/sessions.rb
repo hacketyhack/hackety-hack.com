@@ -25,7 +25,7 @@ post '/signup' do
     redirect '/'
   else
     #this is what happens if the information is bad.
-    
+
     #set an error message
     flash[:notice] = 'There were some problems creating your account. Please be sure you\'ve entered all your information correctly.'
 

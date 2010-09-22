@@ -114,6 +114,7 @@ namespace :whitespace do
   end
   task :retab do
     sh %{find . -name '*.rb' -exec sed -i '' 's/\t/  /g' {} \\;}
+    sh %{find . -name '*.feature' -exec sed -i '' 's/\t/  /g' {} \\;}
   end
 end
 

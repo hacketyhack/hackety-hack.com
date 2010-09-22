@@ -1,4 +1,6 @@
 Factory.define :discussion do |d|
+  d.forum "learning_ruby"
+  d.title "A discussion"
   d.author "jane_hacker"
   d.author_email "jane_hacker@example.com"
 end

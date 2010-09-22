@@ -7,7 +7,7 @@ end
 
 #you can view an individual forum here!
 get "/forums/:forum" do
-  
+
   #we use this in the view
   @forum = params[:forum]
 

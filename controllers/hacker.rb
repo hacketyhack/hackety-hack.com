@@ -31,7 +31,7 @@ post '/hackers/update' do
   end
 
   redirect "/hackers/#{current_user.username}"
-  
+
 end
 
 #this lets you follow a Hacker
@@ -67,7 +67,7 @@ get '/hackers/:name/unfollow' do
 
   #find the hacker with the given name
   @hacker = Hacker.first(:username => params[:name])
-  
+
   #make sure we're not following them already
   unless current_user.following? @hacker
     flash[:notice] = "You're already not following #{params[:name]}."
