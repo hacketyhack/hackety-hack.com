@@ -2,3 +2,7 @@
 get "/help" do
   haml :"help/index"
 end
+
+get "/help/ruby_resources" do
+  haml :"help/ruby_resources"
+end
