@@ -7,7 +7,7 @@ source "http://rubygems.org"
 
 #see more at http://gembundler.com/
 
-gem "sinatra", "~>1.0"
+gem "sinatra", "~>1.1"
 gem "haml", "~>3.0.18"
 gem "mongo_mapper", "~>0.8.4"
 gem "rack-flash", "~>0.1.1"
