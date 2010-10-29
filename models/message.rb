@@ -18,7 +18,7 @@ class Message
 
   def send_notification
     recipient_email = Hacker.first(:username => self.recipient).email
-    Notifier.send_message_notification(recipient_email)
+    Notifier.send_message_notification(recipient_email, self.sender)
   end
 
 end
