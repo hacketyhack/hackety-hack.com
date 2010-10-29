@@ -9,6 +9,9 @@ Bundler.setup
 
 require 'sinatra'
 
+#this lets us send emails
+require 'pony'
+
 #haml gives us all of our templates
 require 'haml'
 

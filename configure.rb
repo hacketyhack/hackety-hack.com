@@ -26,14 +26,26 @@ end
 #I'm sure these can be condensed into one block, I just havn't done it yet.
 configure :test do
   setup_db(:test)
+  PONY_VIA_OPTIONS = {}
 end
 
 configure :development do
   setup_db(:development)
+  PONY_VIA_OPTIONS = {}
 end
 
 configure :production do
   setup_db(:production)
+
+  PONY_VIA_OPTIONS =  {
+    :address        => "smtp.sendgrid.net",
+    :port           => "25",
+    :authentication => :plain,
+    :user_name      => ENV['SENDGRID_USERNAME'],
+    :password       => ENV['SENDGRID_PASSWORD'],
+    :domain         => ENV['SENDGRID_DOMAIN']
+  }
+  
 end
 
 #for all environments,

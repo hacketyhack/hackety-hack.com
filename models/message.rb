@@ -11,4 +11,14 @@ class Message
 
   #this is the username of the person who sent the message
   key :sender, String
+
+  after_create :send_notification
+
+  private
+
+  def send_notification
+    recipient_email = Hacker.first(:username => self.recipient).email
+    Notifier.send_message_notification(recipient_email)
+  end
+
 end
