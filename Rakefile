@@ -1,6 +1,9 @@
 #this file sets up all of our rake tasks
 
 require 'rubygems'
+require 'bundler'
+Bundler.setup
+
 require 'spec/rake/spectask'
 require 'cucumber/rake/task'
 
@@ -57,32 +60,6 @@ namespace :db do
       :password_confirmation => "password",
       :about => "I'm just a regular person!"
     })
-    #make an initial Post, with a comment
-    require 'models/post'
-    require 'models/comment'
-    post = Post.create({
-      :title => "Welcome to the Hackety Site!",
-      :body => "This is an intial post, so that you can see how everything looks. Here's a [link](http://github.com/hacketyhack/hackety-hack.com) to the source code on GitHub. Now I'm just going to do the usual stuff:
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-And a blockquote:
-
-> Lorem ipsum dolor sit amet, consectetur adipiscicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-Esse insolens mnesarchum eam id, nec ad detracto disputando. Nec malorum postulant disputationi ad. Pri menandri inimicus ut. Pro velit affert mediocritatem at, eu nec voluptua inciderint, ne mei diam praesent. No eum tamquam appetere, ex eos habemus evertitur consequat, quo et wisi tincidunt consectetuer. Vocent lobortis est cu."      
-    })
-
-    post.comments << Comment.new({
-      :body => "This post is awesome! I've never seen such insightful commentary!",
-      :author => "somebody",
-      :author_email => "somebody@example.com"
-    })
-    post.comments << Comment.new({
-      :body => "Oh, and I almost forgot! I wanted to say something really long, so that we could see how a long comment looks, but I was in such a hurry to compliment your excellent writing that I could barely contain myself! Luckily, this time I'm much more verbose, and so it should fulfill the objective. Great!",
-      :author => "somebody",
-      :author_email => "somebody@example.com"
-    })
-    post.save
 
     #now let's make a discussion on the forum:
     require 'models/discussion'

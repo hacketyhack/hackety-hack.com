@@ -12,50 +12,30 @@ module NavigationHelpers
 
     when /the home\s?page/
       '/'
-
-  when /the blog page/
-    '/blog'
-
-  when /the new post\s? page/
-    '/posts/new'
-
-  when /the posts page/
-    '/posts'
-
-  when /the edit post page for the post with the title "(.*)"/
-    post = Post.first(:title => $1)
-    "/posts/#{post.slug}/edit"
-
-  when /the post page for the post with the title "(.*)"/
-    post = Post.first(:title => $1)
-    "/posts/#{post.slug}"
-  when /a blog post page/
-    post = Post.first
-    "/posts/#{post.slug}"
-  when /the new hacker page/
-    "/signup"
-  when /the main page/
-    "/"
-  when /the hacker page for "(.*)"/
-    "/hackers/#{$1}"
-  when /my messages page/
-    "/messages"
-  when /the new program page/
-    "/programs/new"
-  when /the "(.*)" program page/
-    "/programs/#{$1}"
-  when /the forums/
-    "/forums"
-  when /the forum "(.*)"/
-    "/forums/#{$1}"
-  when /the discussion "(.*)" in "(.*)"/
-    "/forums/#{$2}/#{$1}"
-  when /the discussion/
-    "/forums/#{@discussion.forum}/#{@discussion.slug}"
-  when /the help page/
-    "/help"
-  when /the github page/
-    "/hacketyhack/hacketyhack/"
+    when /the new hacker page/
+      "/signup"
+    when /the main page/
+      "/"
+    when /the hacker page for "(.*)"/
+      "/hackers/#{$1}"
+    when /my messages page/
+      "/messages"
+    when /the new program page/
+      "/programs/new"
+    when /the "(.*)" program page/
+      "/programs/#{$1}"
+    when /the forums/
+      "/forums"
+    when /the forum "(.*)"/
+      "/forums/#{$1}"
+    when /the discussion "(.*)" in "(.*)"/
+      "/forums/#{$2}/#{$1}"
+    when /the discussion/
+      "/forums/#{@discussion.forum}/#{@discussion.slug}"
+    when /the help page/
+      "/help"
+    when /the github page/
+      "/hacketyhack/hacketyhack/"
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
