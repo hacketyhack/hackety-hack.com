@@ -2,9 +2,10 @@ def hacker
    @hacker ||= Factory(:hacker)
 end
 def login hacker
+  password = hacker.password ? hacker.password : "foobar"
   visit "/login"
   fill_in "username", :with => hacker.username
-  fill_in "password", :with => hacker.password
+  fill_in "password", :with => password
   click_button "Log in"
 end
 
@@ -23,7 +24,8 @@ Given /^I log out$/ do
 end
 
 When /^I log in as "([^"]*)"$/ do |username|
-  @hacker = Factory(:hacker, :username => username)
+  @hacker = Hacker.first(:username => username)
+  @hacker ||= Factory(:hacker, :username => username)
   login @hacker
 end
 

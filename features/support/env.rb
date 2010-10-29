@@ -7,6 +7,7 @@ require app_file
 require 'capybara'
 require 'capybara/cucumber'
 require 'spec'
+require 'spec/stubs/cucumber'
 require 'database_cleaner'
 require 'database_cleaner/cucumber'
 DatabaseCleaner.strategy = :truncation
@@ -21,6 +22,8 @@ World do
   include Spec::Expectations
   include Spec::Matchers
 end
+
+Pony.stub(:deliver)
 
 require 'factory_girl'
 Dir.glob(File.join(File.dirname(__FILE__), '..', '..', '/factories/*.rb')).each do |factory|

@@ -19,6 +19,7 @@ Feature: Messages
     And I log out
     When I log in as "fela"
     And I go to my messages page
+    And show me the page
     Then I should see "Hello, fela!"
     And I should see "From: steve"
   Scenario: I should have an inbox link
