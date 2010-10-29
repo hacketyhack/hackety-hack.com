@@ -10,8 +10,8 @@ class Notifier
   private
 
   def self.render_haml_template(template, who)
-    engine = Haml::Engine.new(File.open("views/notifier/#{template}.haml", "rb").read, :who => who)
-    engine.render
+    engine = Haml::Engine.new(File.open("views/notifier/#{template}.haml", "rb").read)
+    engine.render(Object.new, :who => who)
   end
 end
 
