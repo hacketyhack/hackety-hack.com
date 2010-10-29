@@ -13,8 +13,8 @@ gem "mongo_mapper", "~>0.8.4"
 gem "rack-flash", "~>0.1.1"
 gem "rdiscount", "~>1.6.5"
 gem "i18n", "~>0.4.1"
-gem "actionmailer", "~>3.0.0"
 gem "bson_ext", "~>1.1"
+gem "pony", "~>1.0.1"
 
 group :test do
   gem "launchy", "~>0.3.7"
