@@ -4,25 +4,20 @@ require 'rubygems'
 require 'bundler'
 Bundler.setup
 
-require 'spec/rake/spectask'
-require 'cucumber/rake/task'
+require 'rspec/core/rake_task'
 
-#this lets us run 'rake spec' to run rspec tests
-Spec::Rake::SpecTask.new do |t|
-
-  #tell rspec where our spec files are
-  t.spec_files = FileList['spec/*_spec.rb',]
-  
-  #get some nice pretty options
-  t.spec_opts = ["--colour", "--backtrace"]
-  #
-  #include our spec helper
-  t.ruby_opts = ["-r spec/spec_helper.rb"]
+desc 'Run the code in spec'
+RSpec::Core::RakeTask.new do |t|
+  t.pattern = "spec/**/*_spec.rb"
 end
 
-#this lets us run 'rake features' to run cucumber tests
-Cucumber::Rake::Task.new(:features) do |t|
-  t.cucumber_opts = "--format progress"
+namespace :spec do
+
+  desc "Run the code examples in spec/acceptance"
+  RSpec::Core::RakeTask.new(:acceptance) do |t|
+    t.pattern = "spec/acceptance/**/*_spec.rb"
+  end
+
 end
 
 #this namespace is used for all database related tasks
