@@ -4,10 +4,6 @@ describe Message do
 
   describe "#send_notification" do
 
-    before :all do
-      Pony.stub!(:deliver!)
-    end
-
     before :each do
       @to = Factory(:hacker, :username => "steve")
       @from = Factory(:hacker, :username => "fela")
