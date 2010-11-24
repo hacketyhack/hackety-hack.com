@@ -1,12 +1,8 @@
 require 'rubygems'
 require 'rspec'
 require 'database_cleaner'
-require 'sinatra'
-require 'rack/test'
 require 'factory_girl'
-set :environment, :test
 
-require 'hackety'
 
 RSpec.configure do |config|
   config.mock_with :rspec
