@@ -1,5 +1,5 @@
 require 'rubygems'
-require 'spec'
+require 'rspec'
 require 'database_cleaner'
 require 'sinatra'
 require 'rack/test'
@@ -8,7 +8,7 @@ set :environment, :test
 
 require 'hackety'
 
-Spec::Runner.configure do |config|
+RSpec.configure do |config|
   config.mock_with :rspec
 
   config.before(:suite) do
