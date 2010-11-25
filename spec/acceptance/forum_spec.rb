@@ -68,4 +68,19 @@ feature "Forums" do
     page.should have_content "By #{@hacker.username}"
   end
 
+  scenario "Can't make discussions when logged out" do
+
+    visit "/forums"
+    click_link "Learning Ruby"
+
+    page.should_not have_content "New Discussion"
+  end
+
+  scenario "Can't make replies when logged out" do
+    Factory(:discussion, :title => "I need help!", :forum => "learning_ruby")
+    
+    visit "/forums/learning_ruby/i_need_help"
+    page.should_not have_content "Reply"
+  end
+
 end
