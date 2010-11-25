@@ -83,4 +83,12 @@ feature "Forums" do
     page.should_not have_content "Reply"
   end
 
+  scenario "breadcrumbs" do
+    discussion = Factory(:discussion, :forum => "learning_ruby")
+    visit "/forums/learning_ruby/#{discussion.slug}"
+
+    page.should have_content "Hackety Forums"
+    page.should have_content "Learning Ruby"
+  end
+
 end
