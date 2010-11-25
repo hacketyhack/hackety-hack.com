@@ -32,4 +32,21 @@ feature "Hackers" do
     page.should_not have_content "Send steve a message"
   end
 
+  scenario "follow other hackers" do
+    @fela = Factory(:hacker, :username => "fela")
+
+    @steve = Factory(:hacker, :username => "steve")
+    log_in @steve
+
+    visit "/hackers/fela"
+    click_link "Follow fela"
+
+    page.should have_content "Now following fela."
+    should_be_on "/hackers/steve"
+    page.should have_content "Following: 1"
+
+    visit "/hackers/fela"
+    page.should have_content "Followers: 1"
+  end
+
 end
