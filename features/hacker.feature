@@ -1,11 +1,4 @@
 Feature: Hacker management
-  Scenario: Seeing Following
-    Given there's a hacker with the username "steve"
-    And there's a hacker with the username "fela"
-    And the hacker "steve" is following the hacker "fela"
-    When I go to the hacker page for "steve"
-    And I follow "1"
-    Then I should see "fela"
   Scenario: Unfollowing a Hacker
     Given I'm logged in as "steve"
     And there's a hacker with the username "fela"
