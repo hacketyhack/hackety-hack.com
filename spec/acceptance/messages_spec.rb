@@ -51,4 +51,11 @@ feature "Messages" do
     page.should have_content "Hello, fela!"
     page.should have_content "From: steve"
   end
+
+  scenario "has an inbox link" do
+    @hacker = Factory(:hacker)
+    log_in @hacker
+
+    page.should have_content "Inbox"
+  end
 end
