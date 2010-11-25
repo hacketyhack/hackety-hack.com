@@ -15,3 +15,6 @@ Factory.define :hacker do |u|
   u.password_confirmation {|user| user.password }
   u.admin false
 end
+
+Factory.define :message do |m|
+end
