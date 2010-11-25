@@ -49,4 +49,16 @@ feature "Hackers" do
     page.should have_content "Followers: 1"
   end
 
+  scenario "sees other followers" do
+    @fela = Factory(:hacker, :username => "fela")
+    @steve = Factory(:hacker, :username => "steve")
+
+    @steve.follow! @fela
+
+    visit "/hackers/fela"
+
+    click_link "1"
+    page.should have_content "steve"
+  end
+
 end
