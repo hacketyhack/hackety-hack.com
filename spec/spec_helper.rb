@@ -1,7 +1,6 @@
 require 'rubygems'
-require 'rspec'
-require 'database_cleaner'
-require 'factory_girl'
+require 'bundler'
+Bundler.require(:default, :test)
 
 require "#{File.dirname(__FILE__)}/factories.rb"
 
@@ -21,4 +20,3 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 end
-
