@@ -1,7 +1,6 @@
 require File.dirname(__FILE__) + "/../spec_helper"
 
 require 'capybara/dsl'
-require 'steak'
 
 RSpec.configure do |config|
 
@@ -10,8 +9,6 @@ RSpec.configure do |config|
 end
 
 
-require 'sinatra'
-require 'rack/test'
 set :environment, :test
 
 app_file = File.join(File.dirname(__FILE__), '..', '..', 'hackety.rb')
