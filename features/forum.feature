@@ -1,17 +1,4 @@
 Feature: The Hackety Forum
-  Scenario: Make a new reply
-    Given I'm logged in as "steve"
-    And there's a discussion named "I need help" in "learning_ruby" with a reply
-    And I go to the forums
-    And I follow "Learning Ruby"
-    And I follow "I need help"
-    When I follow "Reply"
-    And I fill in "Body" with "I'll help you!"
-    And I press "Create Reply"
-    Then I should be on the discussion "i_need_help" in "learning_ruby" 
-    And I should see "Replied!"
-    And I should see "I'll help you"
-    And I should see "steve says:"
   Scenario: Make a new discussion
     Given I'm logged in as "some_hacker"
     And I go to the forums
