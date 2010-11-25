@@ -71,4 +71,19 @@ feature "Hackers" do
     page.should have_content "fela"
   end
 
+  scenario "unfollowing a hacker" do
+    @steve = Factory(:hacker, :username => "steve")
+    log_in @steve
+
+    @fela = Factory(:hacker, :username => "fela")
+    @steve.follow! @fela
+
+    visit "/hackers/fela"
+    click_link "Unfollow fela"
+    should_be_on "/hackers/steve"
+
+    page.should have_content "No longer following fela."
+    page.should have_content "Following: 0"
+  end
+
 end
