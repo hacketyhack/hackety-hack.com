@@ -1,10 +1,4 @@
 Feature: The Hackety Forum
-  Scenario: View discussions in a forum
-    Given I'm logged in
-    And there's a discussion named "I need help!" in "learning_ruby"
-    When I go to the forums
-    And I follow "Learning Ruby"
-    Then I should see "I need help!"
   Scenario: View replies to a discussion
     Given I'm logged in
     And there's a discussion named "I need help" in "learning_ruby" with a reply

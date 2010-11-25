@@ -13,4 +13,16 @@ feature "Forums" do
     page.should have_content "Clubhouse"
   end
 
+  scenario "can view discussions" do
+    @hacker = Factory(:hacker)
+    log_in @hacker
+
+    title = "I need help!"
+    Factory(:discussion, :title => title, :forum => "learning_ruby")
+
+    visit "/forums"
+    click_link "Learning Ruby"
+    page.should have_content "I need help!"
+  end
+
 end
