@@ -1,10 +1,4 @@
 Feature: The Hackety Forum
-  Scenario: View replies to a discussion
-    Given I'm logged in
-    And there's a discussion named "I need help" in "learning_ruby" with a reply
-    When I go to the discussion "i_need_help" in "learning_ruby"
-    Then I should see "I need help"
-    And I should see "I'm here to help!"
   Scenario: Make a new reply
     Given I'm logged in as "steve"
     And there's a discussion named "I need help" in "learning_ruby" with a reply
