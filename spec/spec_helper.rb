@@ -3,6 +3,7 @@ require 'rspec'
 require 'database_cleaner'
 require 'factory_girl'
 
+require "#{File.dirname(__FILE__)}/factories.rb"
 
 RSpec.configure do |config|
   config.mock_with :rspec

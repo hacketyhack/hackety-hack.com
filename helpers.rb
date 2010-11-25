@@ -23,7 +23,7 @@ helpers do
   #this method returns true if we're logged in, and false if we're not
   def logged_in?
     #pretty easy, just check the session
-    return session[:hacker_id] != nil
+    current_user != nil
   end
 
   #this helper checks if the current_user is admin, and redirects them if they're not
