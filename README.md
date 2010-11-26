@@ -58,12 +58,11 @@ And you should have everything going on localhost, at port 9292. Open your brows
 
 ## Tests
 
-We use both RSpec and Cucumber for testing. You can run these two commands to run the tests:
+We use both RSpec and Steak for testing. You can run this command to run all of the tests:
 
 `rake spec`
-`rake features`
 
-And those will run the rspec and cucumber features, respectively. We're aiming for as large of test coverage as possible, though not quite 100%. More tests are always better!
+We're aiming for as large of test coverage as possible, though not quite 100%. More tests are always better!
 
 ## Bug reports
 
