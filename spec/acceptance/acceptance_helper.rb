@@ -1,13 +1,8 @@
-require File.dirname(__FILE__) + "/../spec_helper"
-
 require 'capybara/dsl'
 
 RSpec.configure do |config|
-
   config.include Capybara
-
 end
-
 
 set :environment, :test
 

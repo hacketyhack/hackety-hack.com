@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe Message do
 
   describe "#send_notification" do
