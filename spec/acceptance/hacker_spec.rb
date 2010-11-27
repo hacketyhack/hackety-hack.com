@@ -16,13 +16,13 @@ feature "Hackers" do
     should_be_on "/"
   end
 
-  scenario "visit a profile" do
+  scenario "have visible profiles" do
     hacker = Factory(:hacker, :username => "steve")
     visit "/hackers/steve"
     page.should have_content "steve's page"
   end
 
-  scenario "visit your profile" do
+  scenario "can't send messages to themselves" do
     @hacker = Factory(:hacker)
     log_in @hacker
 
@@ -32,7 +32,7 @@ feature "Hackers" do
     page.should_not have_content "Send steve a message"
   end
 
-  scenario "follow other hackers" do
+  scenario "can follow other hackers" do
     @fela = Factory(:hacker, :username => "fela")
 
     @steve = Factory(:hacker, :username => "steve")
@@ -49,7 +49,7 @@ feature "Hackers" do
     page.should have_content "Followers: 1"
   end
 
-  scenario "sees other followers" do
+  scenario "can see followers" do
     @fela = Factory(:hacker, :username => "fela")
     @steve = Factory(:hacker, :username => "steve")
 
@@ -61,7 +61,7 @@ feature "Hackers" do
     page.should have_content "steve"
   end
 
-  scenario "sees others following" do
+  scenario "can see others following" do
     @fela = Factory(:hacker, :username => "fela")
     @steve = Factory(:hacker, :username => "steve")
     @steve.follow! @fela
@@ -71,7 +71,7 @@ feature "Hackers" do
     page.should have_content "fela"
   end
 
-  scenario "unfollowing a hacker" do
+  scenario "can unfollow other hackers" do
     @steve = Factory(:hacker, :username => "steve")
     log_in @steve
 
