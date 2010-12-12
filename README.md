@@ -27,6 +27,14 @@ This will make a 'hackety-hack.com' directory in the current directory.
 
 You probably already have Ruby 1.8.7 installed on your computer. If not, see [the download page](http://www.ruby-lang.org/en/downloads/).
 
+If you use `rvm` with Ruby, you should create a gemset:
+
+    $ rvm use 1.8.7
+    $ rvm gemset create hackety-hack.com
+    $ rvm use 1.8.7@hackety-hack.com
+
+There is an .rvmrc file to facilitate switching into the correct Ruby when you cd into the project directory.
+
 ### Bundler
 
 Bundler is a Ruby gem, so you can use the `gem` program to install it:
