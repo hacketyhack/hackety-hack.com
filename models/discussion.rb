@@ -22,6 +22,8 @@ class Discussion
   #this is the slug for the url
   key :slug, String
 
+  key :subscribed_users, Array
+
   timestamps!
 
   before_save :make_slug
@@ -53,6 +55,10 @@ class Discussion
     when 'clubhouse'
         "A place to talk to other Hackers about anything you'd like to talk about."
     end
+  end
+
+  def create_subscription! email
+    subscribed_users << email
   end
 
   private

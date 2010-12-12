@@ -13,7 +13,13 @@ class Reply
   #we need to make sure we have an author
   validate_on_create :author_check
 
+  after_save :send_subscription_notice
+
   private
+
+  def send_subscription_notice
+    _root_document.create_subscription! :author_email
+  end
 
   def author_check
     if author.nil?
