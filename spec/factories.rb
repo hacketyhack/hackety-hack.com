@@ -6,9 +6,13 @@ Factory.sequence :email do |n|
   "user#{n}@example.com"
 end
 
+Factory.sequence :username do |n|
+  "user#{n}"
+end
+
 #this factory defines a hacker
 Factory.define :hacker do |u|
-  u.username "steve"
+  u.username { Factory.next(:username)}
   u.email { Factory.next(:email) }
   u.password "foobar"
   #we need to set the password_confirmation to the same value as the password

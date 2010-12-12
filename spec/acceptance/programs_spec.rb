@@ -15,7 +15,7 @@ feature "Programs" do
 
     page.should have_content "Program created"
     page.should have_content "Hello world"
-    page.should have_content "By steve"
+    page.should have_content "By #{@hacker.username}"
     page.should have_content "puts"
 
   end
