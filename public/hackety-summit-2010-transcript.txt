@@ -1,0 +1,489 @@
+15:00 <steveklabnik> hey everybody. for those of you who don't know me, I'm 
+steve.
+15:00 -!- EricMill1 [cfac90dd@gateway/web/freenode/ip.207.172.144.221] has 
+joined #hacketyhack
+15:00 <steveklabnik> thanks for showing up
+15:00 <steveklabnik> oh hey EricMill1 
+15:00 <steveklabnik> just in time.
+15:00 <steveklabnik> anyway.
+15:00 < EricMill1> Hey hey
+15:01 <steveklabnik> I don't have hours and hours of stuff to say. I just wanted to tell you about some things that i've been working on, answer any questions about hackety, and invite anyone who's been thinking about helping out to lend a hand.
+15:01 <steveklabnik> basically.
+15:02 <steveklabnik> So, small recap of the story so far: it's been a little over a year since _why decided to leave, and I've taken over the project. in that year, I've done a little bit of work, and lately, done a lot.
+15:02 -!- i5m [~i5m@109.224.129.236] has joined #hacketyhack
+15:02 <steveklabnik> for those of you who didn't see, or dont know anything about me, i ran a tech startup company, but i've recently quit it : http://blog.steveklabnik.com/the-hardest-decision-ive-ever-made
+15:03 <steveklabnik> and i'd like to work on hackety hack as close to full-time as possible.
+15:03 <steveklabnik> but, it's not something i can or should do alone. I'd like to rebuild the community around hackety hack again.
+15:04 <steveklabnik> so... that's largely you guys. :)
+15:04 <steveklabnik> two things that are exciting in hackety's future: there's been some talk of me teaching intro to CS classes at my school with Hackety.
+15:04 <steveklabnik> not a 100% given yet.
+15:04 <steveklabnik> but it's a possiblility
+15:04 <steveklabnik> #2 is that I'm working on a book.
+15:05 -!- Burgestrand [~Adium@h-36-73.A155.priv.bahnhof.se] has joined #hacketyhack
+15:05 <steveklabnik> I've also been teaching a little bit with hackety to students outside of the formal intro to cs kind of program
+15:05 <steveklabnik> i ran two classes of 'intro to programming for english majors' and they were pretty well recieved.
+15:06 <steveklabnik> so, that's what i've been up to.
+15:06 <steveklabnik> and I'm only going to be doing more work going forward.
+15:06 <steveklabnik> so.... what _should_ I be doing? what do you guys want to see from me?
+15:06 <steveklabnik> how can I get your help?
+15:06 < cls_> ^ a book on writing ruby with hackety, in hackety fasion, is that?
+15:06 <steveklabnik> I think we've got something really good going on.
+15:06 -!- Shviller [~Shviller@91.79.57.133] has joined #hacketyhack
+15:06 -!- delinquentme [~delinquen@c-67-163-143-192.hsd1.pa.comcast.net] has joined #hacketyhack
+15:06 <steveklabnik> yep, it'd be "Learning Programming with Hackety Hack" or something similar
+15:07 <steveklabnik> a basic introductory text.
+15:07 -!- vintrepid [~vintrepid@adsl-76-212-9-255.dsl.pltn13.sbcglobal.net] has joined #hacketyhack
+15:07 < wilkie> will this book be involved with this teaching intro to CS classes possibility?
+15:07 <steveklabnik> maybe.
+15:07 <steveklabnik> it depends.
+15:07 -!- ashbb [7441418c@gateway/web/freenode/ip.116.65.65.140] has joined #hacketyhack
+15:08 < krainboltgreene> Thing?
+15:08 -!- Burgestrand [~Adium@h-36-73.A155.priv.bahnhof.se] has left 
+#hacketyhack []
+15:08 <steveklabnik> thing?
+15:08 < krainboltgreene> Oh this is the summit.
+15:08 < WecCoding4Fun> Steve, what age group is being targeted with Hackety?
+15:08 < EricMill1> Lately, I've been teaching some 5th graders in the DC public 
+school system how to make websites, basic HTML.
+15:09 < wilkie> ashbb: welcome!
+15:09 <steveklabnik> wilkie: Ideally, I'd like to focus on teenagers.
+15:09 < EricMill1> Depending on how it goes, I would love to extend it to 
+something like teaching 6th or 7th graders how to do CS/Ruby
+15:09 <steveklabnik> argh
+15:09 < EricMill1> and HH would be a great tool for that
+15:09 <steveklabnik> not wilke, WecCoding4Fun 
+15:09 <steveklabnik> ashbb: ! hey!
+15:09 <steveklabnik> thanks for waking up early!
+15:10 < EricMill1> regardless, my target audience for HH would be more like pre-teen
+15:10 <steveklabnik> Anyway, Hackety Hack should be _useful_ for everyone.
+15:10 < wilkie> EricMill1: sweet! I think it would be best to teach as early as possible. We need to improve the grade school CS education.
+15:10 <steveklabnik> i dont want to be exclusionary.
+15:10 < zzak> おはよう　さとし　さん！
+15:10 < EricMill1> This is when children are more vulnerable to mind control.
+15:10 < ashbb> Good morning. :)
+15:10 < cls_> quick check, being from the uk, what ages is {5,6,7}th grade?
+15:11 < mantycore> What should be done now/ For me, re/building community in itself seems to be most important for hackety now.
+15:11 < EricMill1> oh sorry
+15:11 < WecCoding4Fun> I've got 3 teenagers here (almost), 12, 14 and 18.  My 14 year old does things on the computer that simply amazes me.  It's a great age to pick up algorithms, problem solving, etc.
+15:11 < EricMill1> between 10 and 13
+15:11 <steveklabnik> I started when I was 7, personally.
+15:11 < EricMill1> age = grade + 5 or 6
+15:11 <steveklabnik> i think that children develop too differently to really box them in by age, you know?
+15:11 < cls_> i started when i was 11, with windows xp and notepad. :/ i wouldhave *loved* hackety hack
+15:11 < WecCoding4Fun> i was 14 when i started, just about 25 years ago now.
+15:12 < wilkie> but if there is no exposure at all, yanno, that's not good either
+15:12 < zzak> re: community building: hackety hack _needs_ to be available in more languages. i have some ideas how to make this transition
+15:12 < krainboltgreene> Hackety Hack is less CS and more programming.
+15:12 < WecCoding4Fun> (back when all computers did was flash OK when you turned them on) *wink*
+15:13 <steveklabnik> There's also one big blocker bug to i18n: https://github.com/hacketyhack/hacketyhack/issues#issue/14
+15:13 < wilkie> krainboltgreene: 1: print VIRUS 2: goto 1 :)
+15:13 < cls_> what i want from HH, basically, is .. well, about a year ago i watched that presentation by _why on HH, at the.. art-and-code thing?
+15:13 < wilkie> krainboltgreene: our intro to CS classes are generally intro to programming... so it fits the current expectation
+15:13 < cls_> and it blew my mind. and i want everything he talked about to come true :p
+15:14 <steveklabnik> cls_: yep, that's what it was. that happened about two miles from my house, actually.
+15:14 < krainboltgreene> wilkie: Crazy.
+15:14 -!- delinquentme [~delinquen@c-67-163-143-192.hsd1.pa.comcast.net] has quit [Ping timeout: 245 seconds]
+15:14 < cls_> btw, do you all know greenfoot?
+15:14 < cls_> i bring it up because i go to the uni where they develop it. and it seems to me like hh-done-wrong
+15:15 < WecCoding4Fun> "greenfoot", not familiar with that
+15:15 <steveklabnik> i don't know greenfoot
+15:15 < cls_> it's a java ide for kids
+15:15 <steveklabnik> i largely see two 'hh-done-wrong' projects: scratch and alice.
+15:15 < cls_> very graphical and such, like, yeah, scratch and alice
+15:15 <steveklabnik> http://www.greenfoot.org/ <- this?
+15:15 < WecCoding4Fun> Ah, there's a .NET project that is similar.
+15:15 < cls_> yeah
+15:15 < wilkie> cls_: interesting. any failures are good to acknowledge so as not to repeat
+15:15 < wilkie> cls_: what is wrong with it?
+15:16 <steveklabnik> WecCoding4Fun: have a link? I'm curious.
+15:16 < WecCoding4Fun> let me see if i can dig it up.
+15:16 < cls_> wilkie: it's generally a nice idea, but it's "objects-first", which is a whole java-oriented approach which invades childrens' minds :p
+15:16 < cls_> whereas it should be more like, "make cool shit-first"
+15:16 <steveklabnik> oh, and one more pretty big thing: I'm tentativly announcing HH 1.0 for Christmas.
+15:18 < cls_> i think it has some nice ideas, though. what are your experiences with, say, a 2d canvas where you can move things around? i know hh has the art section, though i've not played with it
+15:18 < WecCoding4Fun> .NET Programming for kids was call called KPL (Kids Programming Language).  It looks like it became something called Phrogram. http://phrogram.com/kpl.aspx
+15:18 < cls_> steveklabnik: that is very soon :o think it's ready?
+15:18 < mantycore> scratch, as I get it, is not a failure, it is just, well, wrong. From hh perspective ;)
+15:18 <steveklabnik> cls_: have you played with it lately?
+15:18 <steveklabnik> mantycore: yes. and their website is _fantastic_.
+15:19 -!- delinquentme [~delinquen@c-67-163-143-192.hsd1.pa.comcast.net] has joined #hacketyhack
+15:19 -!- i5m [~i5m@109.224.129.236] has quit [Quit: Colloquy for iPod touch - http://colloquy.mobi]
+15:19 < cls_> steveklabnik: yeah. not a huge amount -- i'm lacking in time atm -- but enough to get the feeling, i think
+15:19 <steveklabnik> everyone's just trying to do their best. I'd rather present a constructive "this is how we think we're better" than "they suck"
+15:19 < cls_> i mean, it's definitely close. but there are a few tiny things i think
+15:19 <steveklabnik> oh yeah.
+15:20 <steveklabnik> I have work to do between now and then.
+15:20 <steveklabnik> but it's all spit and polish.
+15:20 < krainboltgreene> WEb version of HH.
+15:20 < krainboltgreene> Broader audience, broader platform.
+15:20 < cls_> krainboltgreene: has that been discussed here or on the ml?
+15:20 < krainboltgreene> Hell if I know.
+15:20 <steveklabnik> it's been suggested as long as HH has existed.
+15:21 <steveklabnik> it would require a total re-write. something I'm not opposed to, but... seems counterproductive at the moment.
+15:21 < zzak> one thing to keep in mind is that HH is currently built upon shoes: http://shoesrb.com/
+15:21 < WecCoding4Fun> At least not before xmas :)
+15:22 < krainboltgreene> Does HH have a command line component?
+15:22 <steveklabnik> not really.
+15:22 <steveklabnik> IRB is currently built in, but I was thinking about removing it.
+15:22 <steveklabnik> I'm currently torn.
+15:22 < cls_> steveklabnik: i'd like to look into a web version in a while. i'm extremely busy right now, but around christmas i'll suddenly have loads of time on my hands.
+15:22 < mantycore> Built-in irb doesn't plays along with the rest of app.
+15:22 <steveklabnik> exactly.
+15:23 <steveklabnik> it feels out of place
+15:23 <steveklabnik> cls_: cool. i'd certainly advise.
+15:23 <steveklabnik> basically, it would be porting shoes to the web.
+15:24 < zzak> maybe then, tryruby should be removed an instead launch a terminal session of irb
+15:24 < WecCoding4Fun> I'm not very familiar with HH, but I have had some time to make available on open source and was looking for a project to contribute to.  Looks like HH is a good fit, it's for the youngin's  :)
+15:24 < Shviller> mixing shous with markaby?
+15:24 < Shviller> *shoes
+15:25 <steveklabnik> Shviller: that may be one possiblity. porting desktop apps to be web apps is non-trivial
+15:25 < cls_> Shviller: i would have expected something closer to sinatra-shoes 
+(lots of puns available)
+15:25 <steveklabnik> WecCoding4Fun: :)
+15:25 <steveklabnik> anything I can do to make it easier to contribute, i will.
+15:25 < WecCoding4Fun> where would you suggest I start?  reviewing issues on
+15:25 < cls_> steveklabnik: a nice up-to-date list of small things to do would 
+be good.
+15:25 <steveklabnik> i think the marketing needs a little bit of work. for example, cls_, you asked me about the mailing list. I thought I had pointed it out fairly prominently on the site/github.
+15:26 <steveklabnik> cls_: noted
+15:26 <steveklabnik> WecCoding4Fun: Yes. GitHub issue reviews would be good.
+15:26 <steveklabnik> they should be mostly up to date
+15:27 < WecCoding4Fun> ok.  I'll start there then.
+15:27 < mantycore> I think what the most important thing in hackety, code-vise, is the library and not the interface, so that's not porting desktop app to the web, but more of porting local-oriented library to be net-oriented.
+15:27 <steveklabnik> also just playing with it, noting where there are problems, and reporting them helps, too.
+15:27 < cls_> steveklabnik: i had a look and those i could find were either windows or osx specific (which i can't test) or seemed fixed when i tried to replicate. only one which wasn't was the floating highlight, which seemed.. harder than a first-hack
+15:27 < WecCoding4Fun> Don't hate, but I'm on a Windows platform.  Would that cause any issues if I were contributing?
+15:27 <steveklabnik> mantycore: true.
+15:28 < zzak> windows contributors are always welcome!
+15:28 < WecCoding4Fun> Excellent.
+15:28 <steveklabnik> cls_: that's because I have a Mac, I teach on Windows, and so Linux specific bugs just aren't as highly reported.
+15:28 <steveklabnik> absolutely.
+15:28 <steveklabnik> in fact, windows is probably the most important platform
+15:28 <steveklabnik> and one that I'm personally very weak at. :/
+15:28 < cls_> as much as i want that not to be true, it is, yeah
+15:29 < WecCoding4Fun> haha... then, together, we are the greater than the sum of its parts.
+15:29 <steveklabnik> mantycore: one of the things i'd like to do is make the "Hackety Standard Library" a bit more obvious, and separate
+15:29 < WecCoding4Fun> :)
+15:29 <steveklabnik> because you're right, it is important.
+15:30 <steveklabnik> another option for contributing to hackety hack is to contribute to Shoes.
+15:30 < cls_> i wasn't aware there was such a thing :p
+15:30 < zzak> have a look at the bowline project, uses webkit and you basically make web apps for the desktop. only supports mac and linux tho, so major drawback there and probably why it wasn't largely adopted.
+15:30 <steveklabnik> since Hackety Hack is the largest shoes app, contributions to shoes also help hackety
+15:30 <steveklabnik> now, shoes is really hard to contribute to at the moment.
+15:30 < mantycore> Yes. And it's in lieu with ruby philosophy of building DSLs :)
+15:30 <steveklabnik> but it's undergoing a re-write.
+15:31 <steveklabnik> it seems pretty clear to me that green_shoes will be the next shoes: https://github.com/ashbb/green_shoes
+15:31 <steveklabnik> ashbb has been working hard on it.
+15:31 <steveklabnik> it's a pure-ruby shoes implementation
+15:31 < EricMill1> Ripping out IRB is probably a good thing, especially if it causes much in the way of code complexity
+15:31 < EricMill1> especially if there's a working web-based version
+15:32 <steveklabnik> it's also not going to be 100% backwards compatible. so porting hackety to it will take some effort.
+15:32 < EricMill1> hell, the app could simply embed the website in a frame
+15:32 < cls_> steveklabnik: is hh likely to switch the green shoes in the future then?
+15:32 <steveklabnik> EricMill1: good point.
+15:32 < EricMill1> no need to dupe effort
+15:32 < cls_> why is irb not wanted btw?
+15:32 <steveklabnik> cls_: yes. or more accuratly, green shoes will become shoes 4, and so Hackety will move to it.
+15:32 <steveklabnik> irb feels like it's tacked on.
+15:33 <steveklabnik> also, it was originally put in because tryruby.org didn't exist.
+15:33 < EricMill1> it also can be done more effectively from the cloud, I think
+15:33 <steveklabnik> then why built that, and it never got moved out, basically.
+15:33 < EricMill1> that's actually not true, _why built try ruby a long time ago I believe
+15:33 < Shviller> Another problem with irb is that Windows' console is horrible.
+15:33 < EricMill1> like before Ruby was super popular
+15:33 <steveklabnik> oh yeah? I have my history wrong, then.
+15:35 < EricMill1> yeah, I think he just wanted a quick native experience
+15:35 < EricMill1> in HH
+15:35 <steveklabnik> yeah.
+15:35 <steveklabnik> another thing is that more lessons need to be written.
+15:35 <steveklabnik> id like to develop a feature where people can write and share their own lessons.
+15:35 <steveklabnik> the current hackety lessons are just the Try Ruby lessons, and the hackety tour.
+15:35 < EricMill1> I see the value of built-in lessons, especially for letting kids explore
+15:36 < zzak> it would help if hh and the website where more closely connected
+15:36 < krainboltgreene> :)
+15:36 < EricMill1> but for me, I know I'd be using a central space to guide the lessons, like a whiteboard or screen
+15:36 < cls_> oh, that would be nice. i noticed in the olpc project a lot of teachers wrote their own lessons and stuff for programs, so it would be nice to encourage that
+15:36 < EricMill1> I could teach lessons with HH without anything built in
+15:36 < cls_> might gain more acceptance in schools? maybe
+15:36 < zzak> i like the idea of being able to create an account through HH, either oauth or directly
+15:36 -!- kuremmu [~kuremmu@adsl-99-181-106-151.dsl.sfldmi.sbcglobal.net] has left #hacketyhack []
+15:36 <steveklabnik> EricMill1: where would this guidance be from? I'm not 100% sure i'm seeing it
+15:36 < zzak> and then having a place, like steve said, to share and browse lessons
+15:37 <steveklabnik> zzak: yes!
+15:37 <steveklabnik> I do think that even with community lessons, there still should be blessed hackety lessons. that come with it.
+15:37 < EricMill1> I mean that I'd be in a classroom environment
+15:37 < EricMill1> doing the teaching up front
+15:37 < zzak> people should be able to maintain an amount of settings in their account through HH or the website as well. such as: "disable hh intro animation" and language settings
+15:37 <steveklabnik> ah. okay. that'd be why, then.
+15:38 <steveklabnik> zzak also a good idea.
+15:38 < cls_> are there a lot of lessons not included in the git repo btw? i just saw a lot of things to do with cats. (the names aren't very descriptive either ;)
+15:39 < zzak> you could have "featured" teachers on the site, and people could also follow individuals to get notified when they release a new lesson
+15:39 <steveklabnik> you were thinking of samples: https://github.com/hacketyhack/hacketyhack/tree/master/samples
+15:39 <steveklabnik> (and you're right, those should be changed)
+15:39 < cls_> zzak: yeah, that might be nice.
+15:39 <steveklabnik> we're talking about lessons: https://github.com/hacketyhack/hacketyhack/tree/master/lessons
+15:39 < cls_> (though i do *love* the intro animation >.>)
+15:39 < cls_> steveklabnik: oh, i did look at both, my memory must have just merged them :p
+15:40 <steveklabnik> no worries.
+15:40 <steveklabnik> we have the great shoes-contrib project to grab some fun examples from too.
+15:40 < zzak> i like steves idea of having users code in git repositories as well, lessons could be maintained in a similar fashion
+15:40 -!- nothingHappens [~nothingHa@173-22-90-249.client.mchsi.com] has joined #hacketyhack
+15:40 < nothingHappens> sry i'm late
+15:41 <steveklabnik> no worries nothingHappens, welcome.
+15:41 < mantycore> EricMill1, built-in lessons are very vaulable for autodidacts and for other cases of learning outside of schools
+15:41 < cls_> wrt the *actual* lessons, have there been any thoughts making it more like how cucumber works? with natural language? might help people write them? then again it might not.
+15:42 <steveklabnik> the DSL is pretty simple already.
+15:42 < zzak> the lessons could very well move to YAML or something similar to format with an i18n possibility
+15:42 < wilkie> EricMill1: I'd say that a course lesson plan is different from this context... but it would be nice to say, have a book _and_ a lesson plan, eh?
+15:42 < EricMill1> Oh of course, as I said, I recognize the lessons would be very valuable
+15:42 < EricMill1> I'm just saying that a classroom environment wouldn't depend on them
+15:42 < WecCoding4Fun> Who are we targeting for doing the teaching?  standard teachers?
+15:42 < cls_> steveklabnik: yeah, i'm having a look at it now. it does lookquite simple. just thinking cuke-like might be even nicer. i might be wrong though
+15:43 <steveklabnik> i'm not sure either. it could, it could not.
+15:43 < EricMill1> what I'd be looking for in evaluating it for use in a classroom would be stability, and basic social features like sharing programs and data
+15:43 <steveklabnik> WecCoding4Fun: not entirely sure. ideally, anyone could be a 'teacher'
+15:44 < WecCoding4Fun> yes, but not all teachers are tech-savy enough to use something likt GitHub. :)
+15:44 < WecCoding4Fun> *like* GitHub I mean.
+15:44 < zzak> hh could handle most of the heavy lifting of the git api
+15:44 <steveklabnik> true. my ultimate plan for the site is to make it like a mini-github. super simple. same general idea.
+15:44 <steveklabnik> let people share and collaborate.
+15:44 < zzak> i love githubs api
+15:44 < WecCoding4Fun> Most teachers I know are still stuck to their agenda-bsaed lesson plans.
+15:45 < cls_> does hh have integrated messaging yet? i didn't see it when i looked
+15:45 < WecCoding4Fun> Argh, I can't type today. :S
+15:45 <steveklabnik> it does, actually.
+15:46 <steveklabnik> well, its not integrated into the application, 
+15:46 <steveklabnik> only on the site itself.
+15:46 <steveklabnik> we pulled messages from the app.
+15:46 <steveklabnik> they could be put back in, i just didnt like the implementation at the time.
+15:47 < cls_> i ought to uh, make an account so i can see the full feature set :p
+15:47 <steveklabnik> :)
+15:47 <steveklabnik> it's not impressive yet.
+15:47 <steveklabnik> the website is another way to contribute, too.
+15:47 <steveklabnik> it needs a lot of loving as well.
+15:47 <steveklabnik> what I have is very simplistic at the moment.
+15:48 <steveklabnik> what's nice about the site is that it has reasonable test coverage. :)
+15:48 <steveklabnik> better testing for the application would be nice.
+15:48 <steveklabnik> and easier to write if we pull the stdlib out from the ide.
+15:48 < cls_> is the preferences section supposed to be broken?
+15:48 <steveklabnik> ... on the site? or in the app?
+15:48 < cls_> app
+15:49 <steveklabnik> no. what's "broken"?
+15:49 < cls_> it asked for my details, i hit save, it said, hello! click here. i clicked here. i entered my settings. i hit save. hello.....
+15:50 < cls_> s/settings/details
+15:50 <steveklabnik> ah. so it's not so much broken as communicating badly.
+15:50 < cls_> oh, is it asking me to *change* my user/pass there..?
+15:50 <steveklabnik> the only thing in prefs right now is username-password
+15:50 <steveklabnik> yeah.
+15:50 < cls_> ohhh. yeah, that's very confusing :p
+15:50  * steveklabnik is busy filing tickets about all of this on the Issues.
+15:50 <steveklabnik> there used to be more stuff in there, now it's gone.
+15:51 <steveklabnik> see, this is why I need you guys :)
+15:51 < cls_> lol
+15:51 < WecCoding4Fun> steveklabinik: what's the best way to contact you if we have contributions, suggestions, etc?
+15:51 < zzak> tinker, hack, break stuff!
+15:51 < cls_> what's the contribution cycle like though? fork & pull request?
+15:51 <steveklabnik> WecCoding4Fun: first of all, the best way would be to post to the maling list.
+15:51 <steveklabnik> that way it's public
+15:52 < nothingHappens> ooh yeah. tyalk about contributing
+15:52 <steveklabnik> but you can always jump on here. i'm idling 24/7, i'll get back to you if i'm gone at the time
+15:52 < nothingHappens> i don'
+15:52 <steveklabnik> cls_, nothingHappens: yes. fork, pull request.
+15:52 <steveklabnik> also, steve+hackety@steveklabnik.com is my email, too
+15:53 < cls_> ok. time to work out how to use github ;p
+15:53 <steveklabnik> but really, the mailing list ( hacketyhack@librelist.com) is best, that way everyone can discuss
+15:53 <steveklabnik> cls_: check it out:
+15:53 <steveklabnik> https://github.com/hacketyhack/hacketyhack/wiki/Contributing-to-Hackety-Hack
+15:53 <steveklabnik> this is the contribution guide
+15:54 <steveklabnik> this links to this page: https://github.com/hacketyhack/hacketyhack/wiki/Just-Enough-Git
+15:54 <steveklabnik> which explains some git stuff
+15:54 < cls_> steveklabnik: thanks. hopefully git is similar to hg
+15:55 <steveklabnik> its pretty close, ish.
+15:55 <steveklabnik> at least in basic usage
+15:55 < zzak> cls_: i've heard people find dthe switch rather easily
+15:56 < wilkie> cls_: it is very close, same functionality... lots of articles that compare the two
+15:56 < wilkie> cls_: http://stackoverflow.com/questions/35837/what-is-the-difference-between-mercurial-and-git
+15:57 -!- vintrepid [~vintrepid@adsl-76-212-9-255.dsl.pltn13.sbcglobal.net] has quit [Quit: vintrepid]
+15:58 < WecCoding4Fun> ok.  I've forked it (as OakRaven)
+15:58 <steveklabnik> :)
+15:59 <steveklabnik> the website is https://github.com/hacketyhack/hackety-hack.com/
+15:59 <steveklabnik> if anyone's interested in playing with that.
+16:00 < cls_> ooh, sinatra. does it have an api?
+16:00 < cls_> (for dealing with settings, uploads, etc)
+16:00 < mantycore> Sadly, I should to go, so I'll stress my point once again: for hh community to grow, we need more strong image. So, word-of-mouth, conference talks, web or even paper publications, etc. are very important. Two years ago, hh was porered by _why's charisma; now we need to develop it charisma of its own :)
+16:01 < cls_> once 1.0 comes out, i think we'll be able to do more of that.
+16:01 < cls_> but yes, i agree
+16:01 <steveklabnik> mantycore: point taken. I'm going to be trying to work on that
+16:01 <steveklabnik> and yeah cls_, I agree. 1.0 is important, so that there's something to actually talk about
+16:02 <steveklabnik> drop by whenever you have the time! Say Hi on the mailing list!
+16:03 -!- squidca [46325ba0@gateway/web/freenode/ip.70.50.91.160] has joined #hacketyhack
+16:03 <steveklabnik> hey squidca, good to see you
+16:03 < squidca> thx
+16:04 <steveklabnik> so i think i need to make it a bit more obvious how to get going.
+16:04 <steveklabnik> too many clicks to get to the contriutions docs, for example.
+16:05 < zzak> this is true
+16:06 < zzak> you definitely have some real estate on the home page for more information
+16:06 <steveklabnik> designing on a laptop has its good and its bad points.
+16:07 < zzak> true :_
+16:07 < zzak> :)
+16:09 <steveklabnik> so... cool. I don't have a whole ton of other stuff to bring up, really. for those of you that missed my first little bit, I'm going to be trying to work on this as close to full-time as I can.
+16:09 <steveklabnik> i've got a book and some teaching in the works.
+16:10 <steveklabnik> you can always hang out here, i'm idling all the time.there's also the mailing list at hacketyhack@librelist.com
+16:10 <steveklabnik> aaaand anything I can do to help anyone, just let me know :)
+16:10 < WecCoding4Fun> <-- Just joined mailing list :)
+16:11 <steveklabnik> i jsut got your email to my phone ;)
+16:11 < WecCoding4Fun> Scarey
+16:11 < WecCoding4Fun> :)
+16:11 < ashbb> What is different HH v1.0-pre from v1.0?
+16:11 <steveklabnik> looking at your last tweet, you should check out the specs for the hackety site. I used steak. good stuff.
+16:12 <steveklabnik> hey ashbb ! basically, I want to remove Try Ruby, because I think that it doesn't fit. I need to take care of this issue: https://github.com/hacketyhack/hacketyhack/issues#issue/14 if possible for non-american users, and some general clean up kinds of things
+16:12 < WecCoding4Fun> I will definitely check out steak
+16:12 <steveklabnik> the preference pane is a bit confusing, the example programs could be better, and a triple-check of the wording of the lessons.
+16:13 < zzak> are you going to accept any new features pre or post release?
+16:13 -!- mantycore [~mantycore@109-184-7-205.dynamic.mts-nn.ru] has quit [Ping timeout: 276 seconds]
+16:14 <steveklabnik> not pre, but post, for sure.
+16:14 < zzak> like maybe a 1.1?
+16:14 <steveklabnik> squidca, I just merged in your pull request.
+16:14 < squidca> oh, good
+16:15 < squidca> is there a roadmap, or anything like that?
+16:15 <steveklabnik> but yeah ashbb, not a ton of new changes. mostly just polish.
+16:15 <steveklabnik> https://github.com/hacketyhack/hacketyhack/wiki/Roadmap
+16:15 <steveklabnik> a tiny one.
+16:15 <steveklabnik> it needs updated.
+16:16 < WecCoding4Fun> I have to run, supper's ready.  I'll leave XChat running so I don't miss anything.  :)
+16:16 <steveklabnik> :) enjoy
+16:16 < WecCoding4Fun> thnx
+16:16 <steveklabnik> i will try to post an updated roadmap later tonight.
+16:17 < squidca> I have to lurk for a bit too :(
+16:18 < ashbb> I see. Then, what is HH? IMHO, HH is a "Try Shoes" for kids.
+16:18 <steveklabnik> yes.
+16:18 <steveklabnik> it's a Shoes IDE.
+16:19 <steveklabnik> with lessons to help you get better at programming.
+16:19 <steveklabnik> it also has some extra things on top of Shoes, too. An extended library.
+16:21 < zzak> HH is to shoes as rails is to ruby
+16:21 < ashbb> An extended library... What does it refer to?
+16:22 <steveklabnik> https://github.com/hacketyhack/hacketyhack/tree/master/lib
+16:22 -!- i5m [~i5m@109.224.129.236] has joined #hacketyhack
+16:22 <steveklabnik> extra stuff on top of shoes.
+16:23  * krainboltgreene boff.
+16:24 < zzak> i love reopening classes :)
+16:24 < krainboltgreene> Someone really needs to make a syntax highlighter with Ruby.
+16:25 <steveklabnik> what do you mean?
+16:25 < ashbb> I see. We usually call them "tiny Shoes apps". :)
+16:28 < krainboltgreene> steveklabnik: See: Pygmints
+16:28 < zzak> https://github.com/hacketyhack/hacketyhack/blob/master/lib/enhancements.rb#L34 for example
+16:29 <steveklabnik> ah. okay. but why written in ruby, though?
+16:29 <steveklabnik> and hackety has the beginnings of one, it does do code highlighting. ;)
+16:30 < cls_> zzak: i've heard that described as "duck punching"
+16:30 < zzak> haha, or monkey patching
+16:32 < ashbb> "HH is to shoes as rails is to ruby".... Interesting!
+16:32 < ashbb> Shoes is on desktop, Rails is on web.
+16:33 < zzak> this is true
+16:33 < cls_> i'd say just, hh is to shoes what try ruby is to ruby
+16:34 < zzak> the thing about rails tho, it has activesupport which is like "enhancments" to ruby in order for rails to function as it does
+16:35 < zzak> it's also that "killer app" for ruby, which has a lot of great code in it and examples of how to do things in ruby
+16:35 <steveklabnik> true.
+16:35 < zzak> you can often look at hh for ideas in shoes
+16:36 -!- sarah0101 [~sarah0101@96-39-11-34.static.oxfr.ma.charter.com] has joined #hacketyhack
+16:36 <steveklabnik> yeah. i think moving the hh-library out from the ide makes a lot of sense.
+16:36 <steveklabnik> just like rails has activesupport.
+16:36 < krainboltgreene> Agreed.
+16:36 -!- krainboltgreene [~krainbolt@c-71-56-157-7.hsd1.wa.comcast.net] has left #hacketyhack ["Leaving"]
+16:36 <steveklabnik> especially when we move to green shoes
+16:36 < cls_> can you summarise what the hhlib *does*?
+16:36 -!- krainboltgreene [~krainbolt@c-71-56-157-7.hsd1.wa.comcast.net] has joined #hacketyhack
+16:36 <steveklabnik> because then they'll all just be gems. and they can pull each other in easily.
+16:36 < sarah0101> i dont get this program at all
+16:37 < sarah0101> im trying to hack skype
+16:37 <steveklabnik> cls_: basically, adds some nice sugar on top of usual ruby stuff
+16:37 < krainboltgreene> steveklabnik: Why Ruby? Because right now it's just ruby gems that point to Pygments.
+16:37 <steveklabnik> sarah0101: that's not what we're talking about, sorry.
+16:37 <steveklabnik> we can't help you with that.
+16:37 <steveklabnik> krainboltgreene: fair enough, just curious.
+16:37 < krainboltgreene> Because I need more unfinished projects, that's why.
+16:37 < zzak> hehe
+16:38 < zzak> look at nex3's rb-pygments
+16:38 < krainboltgreene> Will do.
+16:38 < zzak> theres plenty of wrappers, but thats probably a decent starting place
+16:38 <steveklabnik> cls_: think of them like "shoes helpers". nicer errors, for example. the internal evnet tracking system.
+16:38 <steveklabnik> ^event
+16:39 <steveklabnik> the sound foley and the art drawing program
+16:39 -!- sarah0101 [~sarah0101@96-39-11-34.static.oxfr.ma.charter.com] has quit [Client Quit]
+16:40 < cls_> steveklabnik: ah, i see. art/ seems a little out of place in thatdir though. like, it's all punching ducks except for art/, which is a bunch of shoes sub-apps
+16:41 <steveklabnik> yeah. that may or may not be in the right place.
+16:41 <steveklabnik> i'm thinking not, now
+16:42 <steveklabnik> because that's really part of the ide.
+16:42 -!- stwerner [~stwerner@72.95.222.185] has quit [Quit: stwerner]
+16:42 < cls_> yeah, that's what i'm thinking
+16:44 < ashbb> Rails is a tool for creating website in 15 minutes. Shoes is a tool for creating Graphical desktop app in 15 minutes.
+16:44 < zzak> :)
+16:45 < cls_> personally i think rails is a bit big for a 15 minute app
+16:45 < cls_> sinatra is way quicker
+16:45 < zzak> it can be done tho
+16:46 < cls_> it can. it just might not be best :P
+16:46 <steveklabnik> '15 minutes' was the orignal pitch
+16:46 <steveklabnik> it's really about 'full stack' vs. 'the basics'
+16:46 < zzak> yar
+16:46 < ashbb> cls_: true. :)
+16:48 -!- MegaDeus [MegaDeus@adsl-99-140-173-35.dsl.chcgil.sbcglobal.net] has joined #hacketyhack
+16:50 < squidca> sorry, is hacketyhack meant to be a way to learn about shoes/ruby, or an ide (not that it can't be both)
+16:50 <steveklabnik> a way to learn about programming, via ruby.
+16:51 < squidca> that's what I thought.
+16:51 <steveklabnik> it accomplishes this by being a very simple IDE.
+16:51 <steveklabnik> and having awesome tutorials/help system.
+16:52 < ashbb> And Sinatra (Rails) is a tool for learning Ruby programming. HH (Shoes) is a tool as the same with lots of fun.
+16:53 < zzak> :) i really love the hackety hack turtle
+16:53 <steveklabnik> yeah, fela did a great job
+16:55 < squidca> ashbb: I guess that's where my confusion lies.  I don't think of rails as a tool for learning ruby, I think of it as a tool for creating websites :)
+16:55 < squidca> so I was wondering if this meant hh was becoming a tool for doing something
+16:56 < zzak> squidca, its because many peoples first experience with ruby is rails. and also it's probably the largest ruby apps around
+16:57 < zzak> not to mention the most widely used
+16:57 < krainboltgreene> Sinatra's making it's way to the top.
+16:58 < squidca> yes, I understand it is a good gateway to ruby (mine too), butultimately it's goal isn't to teach people ruby.  and so, if hh's goal was, for instance, to allow people to easily build shoes apps, that might look like a different thing than an app to teach
+16:58 < squidca> anyway, I thnk we're all talking about the same thing :)
+16:58 < zzak> that may not be its goal, but it is certainly a side effect
+16:59 < zzak> it depends on what type of app you're building, you may want to take advanted of some of hh's features to build your shoes app
+16:59 < zzak> or maybe you're comfortable enough to just use an editor of your choice and start hacking away
+16:59 < zzak> but i dont think hh's goal is to be "the shoes IDE" at all
+17:00 < ashbb> squidca: Oh, okay. Restate. Rails is a trigger for learning Ruby.
+17:00 < squidca> that's what I'm saying
+17:00 < ashbb> Yes.
+17:00 < zzak> its the rabbit hole
+17:01 < squidca> I think of hh as a "ruby/shoes lesson ide"
+17:01 < squidca> the rabbit hole is awesome
+17:02 < squidca> basically, get someone interested in coding, show them how awesome it can be, and give them multiple paths to a next step
+17:02 < squidca> (shoes, rails, sinatra or whatev)
+17:02 <steveklabnik> i'll brb, i promised the girlfriend i'd get some food with her.
+17:02 < cls_> with all these rabbit hole references you'd think we were talking about alice :p
+17:02 < squidca> maybe that can be a lesson title :)
+17:03 < zzak> yah, maybe not because of the alice reference
+17:04 < zzak> okay steve, i might be afk by the time you get back. but thanks again for putting this together!
+17:04 < squidca> yes, thanks steve
+17:06 < ashbb> I'm glad HH also becomes a trigger for learning Ruby with lots
+of fun.
+17:06 < squidca> i had an idea for a series of lessons where you start with something easy, like the downloading example in the tour, then start peeling back the layers, showing the lower level code as you go
+17:07 < squidca> maybe you start with a function that is purposefully buggy, then show how that method is made of other methods, and you eventually fix the code
+17:08 < zzak> squidca: are you familiar with ruby_koans?
+17:08 < squidca> yes, I love those
+17:09 < zzak> you could use testunit or something similar in the background to test your methods
+17:09 < squidca> something like that, but using all the hh stuff
+17:09 < squidca> teaching testing would be cool too
+17:09 < zzak> the tests start as failing, but then when the code gets fixed it reruns tests
+17:09 < squidca> exactly!
+17:10 < zzak> yes
+17:10 < zzak> you could try implementing autotest in it too
+17:10 < zzak> so once their file is saved it runs the associated tests
+17:10 < zzak> thats a pretty interesting idea
+17:13 < squidca> so anyway, that's kind of what I think of for HH - a way that "teachers" can write ruby lessons and "students" can play with them
+17:14 < zzak> awesome
+17:14 < zzak> i think this kind of discussion is exactly what hh needs
+17:14 < zzak> either in irc or on the ML
+17:14 < squidca> I have to go (time to eat).  steve, is there some way we can 
+get a transcript of this summit?
+17:15 < squidca> yeah, I think this is great
+17:15 < zzak> i too have to take off
+17:15 < squidca> nice to meet you all, I'm sure we'll talk soon
+17:15 < zzak> the feelings mutual
+17:16 -!- squidca [46325ba0@gateway/web/freenode/ip.70.50.91.160] has quit [Quit: Page closed]
+17:16 < zzak> see you #hacketyhack, thanks for coming. see you all soon!
+17:16 < zzak> ありがとう　さとし　さん、でわまた！
