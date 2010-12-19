@@ -4,10 +4,10 @@
 	%img{:src => gravatar_url_for(@discussion.author_email)}
 %h1= @discussion.title
 %p{:style => "padding-bottom:1em"} By <a href="/hackers/#{@discussion.author}">#{@discussion.author}</a>
+:markdown
+	#{@discussion.body}
 
-%p= @discussion.body
-
-%hr 
+%hr
 
 - @discussion.replies.each do |reply|
 	.comment{:style => "clear:both"}
@@ -17,8 +17,8 @@
 		%div{:style => "width:500px"}
 			%p
 				<a href="/hackers/#{reply.author}">#{reply.author}</a> says:
-			%p
-				= reply.body
+			:markdown
+				#{reply.body}
 
 %hr
 
