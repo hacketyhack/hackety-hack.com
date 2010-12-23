@@ -68,20 +68,32 @@
       $( ".button" ).click(function() { return false; });
 
       $("#question_button").click(function() {
-        $("#input_list").hide("blind");
+        $('form').each(function(idx, elem) {
+          if($(elem).is(':visible')) {
+            $(elem).hide("blind");
+          }
+        });
         $("#question_form").show("blind");
       });
       $("#tell_button").click(function() {
-        $("#input_list").hide("blind");
+        $('form').each(function(idx, elem) {
+          if($(elem).is(':visible')) {
+            $(elem).hide("blind");
+          }
+        });
         $("#tell_form").show("blind");
       });
       $("#link_button").click(function() {
-        $("#input_list").hide("blind");
+        $('form').each(function(idx, elem) {
+          if($(elem).is(':visible')) {
+            $(elem).hide("blind");
+          }
+        });
         $("#link_form").show("blind");
       });
 
       $("a.cancel").click(function() {
-        $("#input_list").show("blind");
+        //$("#input_list").show("blind");
         $('form').each(function(idx, elem) {
           if($(elem).is(':visible')) {
             $(elem).hide("blind");
