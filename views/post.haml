@@ -1,22 +1,26 @@
-<div class="container" style="">
-<div class="span-18 prepend-3 last" style="height:100%">
-<br />
-<div class="span-9">
-<img src="/images/logo.png" style="float:left" height="64"/><p class="body" style="padding-top:20px;padding-left:80px">Hackety Hack</p>
-</div>
-<div class="span-7 prepend-2 last">
-<ul>
-<li style="display:inline"><a href="#">My Page</a></li> |
-<li style="display:inline"><a href="#">Log out</a></li>
-</div>
-<div class="span-18">
-<h2>A thing</h2>
-<p>Shared with you by <a href="#">someone</a>.</p>
-<pre>
-100.times do
-puts "yeah!"
-end
-</pre>
-</div>
+.container{:style => ""}
+  .span-18.prepend-3.last{:style => "height:100%"}
+    %br/
+    .span-9
+      %img{:height => "64", :src => "/images/logo.png", :style => "float:left"}/
+      %p.body{:style => "padding-top:20px;padding-left:80px"} Hackety Hack
+    .span-7.prepend-2.last
+      %ul
+        %li{:style => "display:inline"}
+          %a{:href => "#"} My Page
+        |
+        %li{:style => "display:inline"}
+          %a{:href => "#"} Log out
+    .span-18
+      %h2 A thing
+      %p
+        Shared with you by
+        = succeed "." do
+          %a{:href => "#"} someone
+      %pre
+        :preserve
+          
+          100.times do
+          puts "yeah!"
+          end
 
-</div>
