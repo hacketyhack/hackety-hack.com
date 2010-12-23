@@ -77,6 +77,9 @@ end
 require_directory "controllers"
 
 get '/' do
+  if logged_in?
+    redirect "/stream"
+  end
   haml :index
 end
 
