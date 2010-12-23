@@ -14,9 +14,26 @@
         $(function() {
           $(".button").button();
         });
+      - if production?
+        :javascript
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-10499799-1']);
+          _gaq.push(['_trackPageview']);
 
-      = yield_content :head
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+          })();
+        
+
+      != yield_content :head
           
   %body{:style => "background-image:url('/images/stripe.png')"}
-    = yield
+    != yield_content :body
+    .container{:style => ""}
+      .span-18.prepend-3.last{:style => "height:100%"}
+        <br />
+        <br />
+        != yield
 

@@ -1,0 +1,90 @@
+.span-9
+  %img{:height => "64", :src => "/images/logo.png", :style => "float:left"}/
+  %p.body{:style => "padding-top:20px;padding-left:80px"} Hackety Hack
+.span-4.prepend-5.last
+  %ul
+    %li{:style => "display:inline"}
+      %a{:href => "#"} My Page
+    |
+    %li{:style => "display:inline"}
+      %a{:href => "#"} Log out
+.span-18
+  %h2 Doing something fun?
+  %ul#input_list
+    %li{:style => "display:inline"}
+      %a#question_button.button{:href => "#"} Ask a question
+    %li{:style => "display:inline"}
+      %a#link_button.button{:href => "#"} Share a link
+    %li{:style => "display:inline"}
+      %a#tell_button.button{:href => "#"} Tell everyone something
+  %form#link_form{:style => "display:none"}
+    %label{:for => "link"} Share a link
+    %a.cancel{:href => "#"} x
+    %br/
+    %input#link{:size => "76", :type => "textbox"}/
+    %br/
+    %input.button{:type => "submit"}
+  %form#tell_form{:style => "display:none"}
+    %label{:for => "tell"} Tell everyone something
+    %a.cancel{:href => "#"} x
+    %br/
+    %textarea#tell
+    %br/
+    %input.button{:type => "submit"}
+  %form#question_form{:style => "display:none"}
+    %label{:for => "question"} Ask a question
+    %a.cancel{:href => "#"} x
+    %br/
+    %textarea#question
+    %br/
+    %input.button{:type => "submit"}
+.span-18
+  %h2 Here's what everyone else is up to!
+  %ul{:style => "list-style:none"}
+    %li{:style => "height:70px"}
+      %img{:height => "64", :src => "/images/logo.png", :style => "float:left"}/
+      %p{:class => "vertical-center-text"}
+        %a{:href => "#"} Hackety Hack
+        shared
+        %a{:href => "#"} a link
+    %li{:style => "height:70px"}
+      %img{:height => "64", :src => "/images/logo.png", :style => "float:left"}/
+      %p{:style => "padding-top:20px;padding-left:80px"}
+        %a{:href => "#"} Hackety Hack
+        shared
+        %a{:href => "#"} a link
+    %li{:style => "height:70px"}
+      %img{:height => "64", :src => "/images/logo.png", :style => "float:left"}/
+      %p{:style => "padding-top:20px;padding-left:80px"}
+        %a{:href => "#"} Hackety Hack
+        shared
+        %a{:href => "#"} a link
+- content_for :head do
+  :javascript
+    $(function() {
+      $( ".button").button();
+      $( ".button" ).click(function() { return false; });
+
+      $("#question_button").click(function() {
+        $("#input_list").hide("blind");
+        $("#question_form").show("blind");
+      });
+      $("#tell_button").click(function() {
+        $("#input_list").hide("blind");
+        $("#tell_form").show("blind");
+      });
+      $("#link_button").click(function() {
+        $("#input_list").hide("blind");
+        $("#link_form").show("blind");
+      });
+
+      $("a.cancel").click(function() {
+        $("#input_list").show("blind");
+        $('form').each(function(idx, elem) {
+          if($(elem).is(':visible')) {
+            $(elem).hide("blind");
+          }
+        });
+      });
+    });
+

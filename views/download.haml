@@ -1,54 +1,52 @@
-.container{:style => ""}
-  .span-18.prepend-3.last{:style => "height:100%"}
-    %br/
-    %br/
-    %br/
-    %br/
-    %h1 Now downloading Hackety Hack!
-    %p.body Your download should start in a second. If it doesn't, you can <a href="#">click here for Windows</a> or <a href="#">here for Mac OSX 10.6</a>.
-    %hr/
-    %br/
-    %h1 Make a Hackety Hack Account
-    %p.body
-      Hackety Hack has close integration with this website. You can sign up with an account here, and you'll be able to upload and share the programs you create with others.
-    %form{:action => "/signup", :method => "post"}
-      %table
-        %tr
-          %td
-            %label{:for => "user_email"} Email
-          %td
-            %input{ :id => "user_email", :name => "user[email]", :size => 30, :type => "text" }
-        %tr
-          %td
-            %label{:for => "user_username"} Username
-          %td
-            %input{ :id => "user_username", :name => "user[username]", :size => 30, :type => "text" }
-        %tr
-          %td
-            %label{:for => "user_password"} Password
-          %td
-            %input{ :id => "user_password", :name => "user[password]", :size => 30, :type => "password" }
-        %tr
-          %td
-            %label{:for => "user_password_confirmation"} Confirm Password
-          %td
-            %input{ :id => "user_password_confirmation", :name => "user[password_confirmation]", :size => 30, :type => "password" }
-        %tr
-          %td
-            %label{:for => "user_about"} About Yourself
-          %td
-            %textarea{ :id => "user_about", :name => "user[about]", :rows => 10, :cols => 30 }
-        %tr
-          %td
-          %td
-            %input{ :value => "Create account", :type => "submit", :class => "button" }
-            or 
-            %a{:href => "#"} Log in
-            if you have one!
-    %br/
-    %br/
-    %a{:href => "/"} No thanks, take me back.
-    %br/
-    %br/
-    %br/
-    /%iframe{:src => "https://github.com/downloads/hacketyhack/hacketyhack/hacketyhack-v1.0-pre.shy", :width => 0, :height => 0 }
+%br/
+%br/
+%br/
+%br/
+%h1 Now downloading Hackety Hack!
+%p.body Your download should start in a second. If it doesn't, you can <a href="#">click here for Windows</a> or <a href="#">here for Mac OSX 10.6</a>.
+%hr/
+%br/
+%h1 Make a Hackety Hack Account
+%p.body
+  Hackety Hack has close integration with this website. You can sign up with an account here, and you'll be able to upload and share the programs you create with others.
+%form{:action => "/signup", :method => "post"}
+  %table
+    %tr
+      %td
+        %label{:for => "user_email"} Email
+      %td
+        %input{ :id => "user_email", :name => "user[email]", :size => 30, :type => "text" }
+    %tr
+      %td
+        %label{:for => "user_username"} Username
+      %td
+        %input{ :id => "user_username", :name => "user[username]", :size => 30, :type => "text" }
+    %tr
+      %td
+        %label{:for => "user_password"} Password
+      %td
+        %input{ :id => "user_password", :name => "user[password]", :size => 30, :type => "password" }
+    %tr
+      %td
+        %label{:for => "user_password_confirmation"} Confirm Password
+      %td
+        %input{ :id => "user_password_confirmation", :name => "user[password_confirmation]", :size => 30, :type => "password" }
+    %tr
+      %td
+        %label{:for => "user_about"} About Yourself
+      %td
+        %textarea{ :id => "user_about", :name => "user[about]", :rows => 10, :cols => 30 }
+    %tr
+      %td
+      %td
+        %input{ :value => "Create account", :type => "submit", :class => "button" }
+        or 
+        %a{:href => "#"} Log in
+        if you have one!
+%br/
+%br/
+%a{:href => "/"} No thanks, take me back.
+%br/
+%br/
+%br/
+/%iframe{:src => "https://github.com/downloads/hacketyhack/hacketyhack/hacketyhack-v1.0-pre.shy", :width => 0, :height => 0 }

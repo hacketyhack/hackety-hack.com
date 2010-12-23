@@ -35,4 +35,7 @@ hr {
   height:1px;
   background-color:#000;
 }
-
+.vertical-center-text {
+  padding-top:20px;
+  padding-left:80px;
+}
