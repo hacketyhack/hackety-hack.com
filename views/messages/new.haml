@@ -1,0 +1,10 @@
+%h2 Sending a message to #{@username}
+%form{:action => "/messages", :method => "POST"}
+  %input{:type => "hidden", :id => "message_recipient", :name => "message[recipient]", :value => @username}
+  %br/
+  %label{:for => "message_body" } Message text:
+  %br/
+  %textarea{:id => "message_body", :name => "message[body]"}
+  %br/
+  %input{:type => "submit", :value => "Send message", :class => "button"}
+
