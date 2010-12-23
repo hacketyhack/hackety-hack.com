@@ -33,7 +33,7 @@ use Rack::Flash
 
 require 'sinatra/content_for'
 
-require 'helpers'
+require_relative 'helpers'
 
 #this makes Haml escape any html by default. See here: http://haml-lang.com/docs/yardoc/file.HAML_REFERENCE.html#options
 set :haml, :escape_html => true

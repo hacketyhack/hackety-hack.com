@@ -13,20 +13,17 @@ gem "mongo_mapper", "~>0.8.4"
 gem "rack-flash", "~>0.1.1"
 gem "rdiscount", "~>1.6.5"
 gem "i18n", "~>0.4.1"
-gem "bson_ext", "~>1.1"
+gem "bson_ext", "~>1.1.5"
 gem "pony", "~>1.0.1"
 gem "sinatra-content-for"
 
 group :test do
   gem "launchy", "~>0.3.7"
-  gem "autotest", "~>4.3.2"
   gem "capybara", "~>0.3.9"
   gem "factory_girl", "~>1.3.2"
   gem "database_cleaner", "~>0.6.0"
   gem "rspec", "~>2.1.0"
   gem "webrat", "~>0.7.1"
   gem "steak", "~>1.0.0"
-
-  gem "ruby-debug"
 end
 
