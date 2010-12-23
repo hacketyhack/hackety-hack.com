@@ -1,4 +1,4 @@
-.container{:style => ""}
+.container
   .span-18.prepend-3.last{:style => "height:100%"}
     %br/
     .span-9
@@ -11,23 +11,21 @@
         here.
       %p
         Need some help?
-        = succeed "." do
-          %a{:href => "#"} Ask a question
+        %a{:href => "#"} Ask a question
     %br/
     .span-9
       %img{:src => "/images/hackety_screenshot.png", :width => "300px"}/
       %br/
-      %a.button{:href => "#", :style => "margin-left:40px"}
+      %a.button{:href => "/download", :style => "margin-left:40px"}
         %span{:style => "font-size:2em"} Download v1.0
       %p{:style => "margin-left:70px"} Scroll down for more details!
-    %hr{:style => "height:1px;background-color:#000"}/
+    %hr/
     .span-9
-      %p.body Hackety Hack will teach you the absolute basics of programming from the ground up. No previous programming experience is needed!
+      %h3 Hackety Hack will teach you the absolute basics of programming from the ground up. No previous programming experience is needed!
     .span-9.last
-      %p.body
+      %h3
         With Hackety Hack, you'll learn the
-        = succeed "." do
-          %a{:href => "http://ruby-lang.org"} Ruby programming language
+        %a{:href => "http://ruby-lang.org"} Ruby programming language
         Ruby is used for all kinds of programs, including desktop applications and websites.
     .span-18.last
       %img{:src => "/images/lesson_screenshot.png", :width => "700px"}/
@@ -35,18 +33,17 @@
         %br/
         %hr{:style => "height:1px;background-color:#000"}/
         .span-9
-          %p.body
+          %h3
             Hackety Hack uses the
             %a{:href => "http://shoesrb.com/"} Shoes
             toolkit to make it really easy and fun to build graphical interfaces.
         .span-9.last
-          %p.body Several lessons and example programs are provided, showing you how to make all kinds of fun things!
+          %h3 Several lessons and example programs are provided, showing you how to make all kinds of fun things!
         %img{:src => "/images/rubyplusshoes.png"}/
         %br/
         %hr{:style => "height:1px;background-color:#000"}/
-    :javascript
-      $(function() {
-      $( ".button").button();
-      $( ".button" ).click(function() { return false; });
-      });
+
+- content_for :head do
+  :css 
+    div.container { background-image: url("/images/hhhello.png"); }
 

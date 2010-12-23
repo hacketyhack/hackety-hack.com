@@ -6,6 +6,8 @@ GEM
     sinatra (1.1.0)
       rack (~> 1.1)
       tilt (~> 1.1)
+    sinatra-content-for (0.2)
+      sinatra
     tilt (1.1)
 
 PLATFORMS
@@ -14,3 +16,4 @@ PLATFORMS
 DEPENDENCIES
   haml
   sinatra
+  sinatra-content-for
