@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/blueprint/screen.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="css/blueprint/print.css" type="text/css" media="print">
+    <!--[if lt IE 8]>
+      <link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection">
+    <![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" type="text/javascript" ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/jquery-ui.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/themes/black-tie/jquery-ui.css" type="text/css" />
+    
+    
+<style>
+  @font-face {
+    font-family: 'ChunkFiveRegular';
+    src: url('Chunkfive-webfont.eot');
+    src: local('☺'), url('Chunkfive-webfont.woff') format('woff'), url('Chunkfive-webfont.ttf') format('truetype'), url('Chunkfive-webfont.svg#webfontuQgtdSQh') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  h1 { font-family: 'Helvetica', arial, serif; font-size: 6em; }
+  h2 { 
+    font: 2em 'ChunkFiveRegular', Arial, sans-serif;letter-spacing: 0;
+  color:#3C3E3B}
+  p.body { font: 2em 'ChunkFiveRegular', Arial, sans-serif; letter-spacing: 0;
+    color:#3C3E3B}
+  p.body a {color:#3C3E9B}
+  p.body a:visited {color:#3C3E6B}
+  div.container {
+background:#DCDCDC;
+      }
+</style>
+
+    
+  </head>
+  <body style="background-image:url('stripe%20copy.png')" class="showgrid">
+    <div class="container" style="">
+      <div class="span-18 prepend-3 last" style="height:100%">
+        <br />
+        <div class="span-9">
+          <img src="logo.png" style="float:left" height="64"/><p class="body" style="padding-top:20px;padding-left:80px">Hackety Hack</p>
+        </div>
+        <div class="span-7 prepend-2 last">
+          <ul>
+            <li style="display:inline"><a href="#">My Page</a></li> |
+            <li style="display:inline"><a href="#">Log out</a></li>
+        </div>
+        <div class="span-18">
+          <h2>Doing something fun?</h2>
+          <ul id="input_list">
+            <li style="display:inline"><a href="#" id="question_button" class="button">Ask a question</a></li>
+            <li style="display:inline"><a href="#" id="link_button" class="button">Share a link</a></li>
+            <li style="display:inline"><a href="#" id="tell_button" class="button">Tell everyone something</a></li>
+          </ul>
+          <form id="link_form" style="display:none">
+            <label for="link">Share a link</label> <a class="cancel" href="#">x</a>
+            <br />
+            <input type="textbox" id="link" size="76" />
+            <br />
+            <input class="button" type="submit">
+          </form>
+          <form id="tell_form" style="display:none" >
+            <label for="tell">Tell everyone something</label> <a class="cancel" href="#">x</a>
+            <br />
+            <textarea id="tell"></textarea>
+            <br />
+            <input class="button" type="submit">
+          </form>
+          <form id="question_form"  style="display:none">
+            <label for="question">Ask a question</label> <a class="cancel" href="#">x</a>
+            <br />
+            <textarea id="question"></textarea>
+            <br />
+            <input class="button" type="submit">
+          </form>
+        </div>
+        <div class="span-18">
+          <h2>Here's what everyone else is up to!</h2>
+          <ul style="list-style:none">
+            <li style="height:70px">
+              <img src="logo.png" style="float:left" height="64"/>
+              <p style="padding-top:20px;padding-left:80px"><a href="#">Hackety Hack</a> shared <a href="#">a link</a>.</p>
+            </li>
+            <li style="height:70px">
+              <img src="logo.png" style="float:left" height="64"/>
+              <p style="padding-top:20px;padding-left:80px"><a href="#">Hackety Hack</a> shared <a href="#">a link</a>.</p>
+            </li>
+            <li style="height:70px">
+              <img src="logo.png" style="float:left" height="64"/>
+              <p style="padding-top:20px;padding-left:80px"><a href="#">Hackety Hack</a> shared <a href="#">a link</a>.</p>
+            </li>
+          </ul>
+        </div>
+        
+    </div>
+    <script>
+    $(function() {
+      $( ".button").button();
+      $( ".button" ).click(function() { return false; });
+      $("#question_button").click(function() {
+        $("#input_list").hide();
+        $("#question_form").show();
+      });
+      $("#tell_button").click(function() {
+        $("#input_list").hide();
+        $("#tell_form").show();
+      });
+      $("#link_button").click(function() {
+        $("#input_list").hide();
+        $("#link_form").show();
+      });
+
+      $("a.cancel").click(function() {
+        $("#input_list").show();
+        $("#question_form").hide();
+        $("#tell_form").hide();
+        $("#link_form").hide();
+      });
+    });
+    </script>
+    
+  </body>
+</html>
