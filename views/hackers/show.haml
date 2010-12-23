@@ -26,31 +26,29 @@
       %h2 Your Account
       %p You can use these forms to update your information:
       %br
-      %p
-        %form{:action => "/hackers/update", :method => "POST"}
-          %table
-            %tr
-              %td
-                %label{:for => "password[new]"} New Password
-              %td
-                %input{:type => "password", :name => "password[new]"}
-            %tr
-              %td
-                %label{:for => "password[confirm]"} Confirm New Password
-              %td
-                %input{:type => "password", :name => "password[confirm]"}
-            %tr
-              %td
-              %td
-                %input{:type => "submit", :value => "Change password"}
+      %form{:action => "/hackers/update", :method => "POST"}
+        %table
+          %tr
+            %td
+              %label{:for => "password[new]"} New Password
+            %td
+              %input{:type => "password", :name => "password[new]"}
+          %tr
+            %td
+              %label{:for => "password[confirm]"} Confirm New Password
+            %td
+              %input{:type => "password", :name => "password[confirm]"}
+          %tr
+            %td
+            %td
+              %input{:type => "submit", :value => "Change password"}
       %hr
-      %p
-        %form{:action => "/hackers/update", :method => "POST"}
-          %label{:for => "hacker[about]"} About Me
-          %br
-          %textarea{:name => "hacker[about]", :rows => 10, :cols => 40}
-          %br
-          %input{:type => "submit", :value => "Update About"}
+      %form{:action => "/hackers/update", :method => "POST"}
+        %label{:for => "hacker[about]"} About Me
+        %br
+        %textarea{:name => "hacker[about]", :rows => 10, :cols => 40}
+        %br
+        %input{:type => "submit", :value => "Update About"}
     %br
     %br
     %br
