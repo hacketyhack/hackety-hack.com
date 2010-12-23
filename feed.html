@@ -100,24 +100,26 @@ background:#DCDCDC;
     $(function() {
       $( ".button").button();
       $( ".button" ).click(function() { return false; });
+
+
       $("#question_button").click(function() {
-        $("#input_list").hide();
-        $("#question_form").show();
+        $("#input_list").hide("blind");
+        $("#question_form").show("blind");
       });
       $("#tell_button").click(function() {
-        $("#input_list").hide();
-        $("#tell_form").show();
+        $("#input_list").hide("blind");
+        $("#tell_form").show("blind");
       });
       $("#link_button").click(function() {
-        $("#input_list").hide();
-        $("#link_form").show();
+        $("#input_list").hide("blind");
+        $("#link_form").show("blind");
       });
 
       $("a.cancel").click(function() {
-        $("#input_list").show();
-        $("#question_form").hide();
-        $("#tell_form").hide();
-        $("#link_form").hide();
+        $("#input_list").show("blind");
+        $("#question_form").hide("blind");
+        $("#tell_form").hide("blind");
+        $("#link_form").hide("blind");
       });
     });
     </script>
