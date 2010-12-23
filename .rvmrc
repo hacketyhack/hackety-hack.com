@@ -1,1 +1,5 @@
-rvm 1.9.2@hackety-hack.com
+if [[ -n "$rvm_environments_path" && -s "$rvm_environments_path/ruby-1.9.2-p0@hackety-hack.com" ]] ; then
+  . "$rvm_environments_path/ruby-1.9.2-p0@hackety-hack.com"
+else
+  rvm --create use  "ruby-1.9.2-p0@hackety-hack.com"
+fi
