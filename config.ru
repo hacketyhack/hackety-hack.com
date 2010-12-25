@@ -1,4 +1,4 @@
-require './app'
+require './hackety'
 
 mime_type :ttf, "font/ttf"
 mime_type :woff, "application/x-woff"
