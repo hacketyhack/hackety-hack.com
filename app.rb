@@ -94,3 +94,4 @@ get '/stream' do
   @content_list = Content.all.reverse
   haml :stream
 end
+
