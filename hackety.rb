@@ -25,7 +25,7 @@ require 'rack-flash'
 require 'rdiscount'
 
 #we need to set up a secret to encrypt our sessions with
-use Rack::Session::Cookie, :secret => 'h4ck3ty h4ck f0r gr347 g00d'
+use Rack::Session::Cookie, :secret => 'h4ck3ty h4ck f0r gr347 g00d noep lolol'
 
 #we also have to let the world know we want to use flashes
 use Rack::Flash
@@ -62,9 +62,11 @@ end
 #for all environments,
 configure do
   if ENV['MONGOHQ_URL']
-    MongoMapper.config = {ENV['RACK_ENV'] => {'uri' => ENV['MONGOHQ_URL']}}
+    MongoMapper.connection = Mongo::Connection.new(ENV['MONGOHQ_HOST'], ENV['MONGOHQ_PORT'])
     MongoMapper.database = ENV['MONGOHQ_DATABASE']
-    MongoMapper.connect("production")
+    MongoMapper.database.authenticate(ENV['MONGOHQ_USER'],ENV['MONGOHQ_PASSWORD'])
+    
+    MongoMapper.database = ENV['MONGOHQ_DATABASE']
   else
     MongoMapper.connection = Mongo::Connection.new('localhost')
     MongoMapper.database = "hackety-development"
