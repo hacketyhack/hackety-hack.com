@@ -30,7 +30,7 @@ post '/signup' do
     flash[:notice] = 'There were some problems creating your account. Please be sure you\'ve entered all your information correctly.'
 
     #let's go back to the signup page so that they can try again.
-    redirect '/signup'
+    redirect '/download'
   end
 end
 
