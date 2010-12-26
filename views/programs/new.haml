@@ -1,0 +1,13 @@
+%form{:action => "/programs", :method => "POST"}
+  %label{:for => "program_title"} Title
+  %br/
+  %input{:type => "text", :id => "program_title", :name => "program[title]"} 
+  %br/
+  %label{:for => "program_body"} Body
+  %br/
+  %textarea{:id => "program_body", :name => "program[code]"} 
+  %br/
+  %input{:type => "submit", :value => "Create", :class => "button"}
+
+%br/
+%br/
