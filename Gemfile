@@ -16,6 +16,7 @@ gem "i18n", "~>0.4.1"
 gem "bson_ext", "~>1.1.5"
 gem "pony", "~>1.0.1"
 gem "sinatra-content-for"
+gem "exceptional"
 
 group :test do
   gem "launchy", "~>0.3.7"

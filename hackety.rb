@@ -34,6 +34,13 @@ require 'sinatra/content_for'
 
 require_relative 'helpers'
 
+if ENV['RACK_ENV'] == 'production'
+  set :raise_errors, true
+
+  require 'exceptional'
+  use Rack::Exceptional, ENV['EXCEPTIONAL_API_KEY']
+end
+
 #this makes Haml escape any html by default. See here: http://haml-lang.com/docs/yardoc/file.HAML_REFERENCE.html#options
 set :haml, :escape_html => true
 
