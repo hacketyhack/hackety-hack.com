@@ -11,6 +11,22 @@ post "/programs" do
   redirect "/programs/#{program.creator_username}/#{program.slug}"
 end
 
+post "/programs/:username/:slug/comment" do
+  @program = Program.first(:creator_username => params[:username], :slug => params[:slug])
+  if current_user
+    params[:comment][:author] = current_user.username
+    params[:comment][:author_email] = current_user.email
+  else 
+    params[:comment][:author] = "Anonymous"
+    params[:comment][:author_email] = "anonymous@example.com"
+  end
+  @program.comments << Comment.new(params[:comment])
+  @program.save
+
+  flash[:notice] = "Replied!"
+  redirect "/programs/#{params[:username]}/#{params[:slug]}"
+end
+
 get "/programs/:username.json" do
   programs = Program.all(:creator_username => params[:username])
   programs.to_json
