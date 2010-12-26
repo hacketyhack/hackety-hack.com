@@ -1,6 +1,11 @@
 post "/content" do
-  params[:content][:author] = current_user.username || "anonymous"
-  params[:content][:author_email] = current_user.email || "anonymous@example.com"
+  if current_user
+    params[:content][:author] = current_user.username
+    params[:content][:author_email] = current_user.email
+  else
+    params[:content][:author] = "anonymous"
+    params[:content][:author_email] = "anonymous@example.com"
+  end
   @content = Content.create(params[:content])
   flash[:notice] = "Thanks for your post!"
   redirect "/stream"
