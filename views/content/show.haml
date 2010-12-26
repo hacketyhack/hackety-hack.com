@@ -1,3 +1,21 @@
+.span-9
+  %a{:href => "/"}
+    %img{:height => "64", :src => "/images/logo.png", :style => "float:left"}/
+  %p.body{:style => "padding-top:20px;padding-left:80px"} Hackety Hack
+.span-4.prepend-5.last
+  - if logged_in?
+    %ul
+      %li{:style => "display:inline"}
+        %a{:href => "/hackers/#{current_user.username.to_slug}"} My Page
+      |
+      %li{:style => "display:inline"}
+        %a{:href => "/logout"} Log out
+  - else
+    %a{:href => "/login"} Log in
+
+%div{:style => "clear:both"}
+
+.span-18
 %h1 A #{@content.type}, from #{@content.author}
 %p
   :markdown
@@ -21,4 +39,6 @@
   %textarea{:id => "comment_body", :name => "comment[body]", :rows => 20, :cols => 50}
   %br
   %input{:type => "submit", :value => "Submit", :class => "button"}
+%br/
+%br/
   
