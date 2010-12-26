@@ -25,7 +25,7 @@ require 'rack-flash'
 require 'rdiscount'
 
 #we need to set up a secret to encrypt our sessions with
-use Rack::Session::Cookie, :secret => 'h4ck3ty h4ck f0r gr347 g00d noep lolol'
+use Rack::Session::Cookie, :secret => ENV['COOKIE_SECRET']
 
 #we also have to let the world know we want to use flashes
 use Rack::Flash
