@@ -62,8 +62,8 @@ helpers do
 
   #gives a gravatar url for an email
   def gravatar_url_for email
-    require 'md5'
-    "http://www.gravatar.com/avatar/#{MD5::md5(email.downcase)}"
+    require 'digest/md5'
+    "http://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(email.downcase)}"
   end
 
 end

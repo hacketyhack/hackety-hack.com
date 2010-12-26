@@ -2,3 +2,21 @@
 %p
   :markdown
     #{@content.body}
+- @content.comments.each do |reply|
+  %div
+    %a{:href => "/hackers/#{reply.author}"}
+      %img{:src => gravatar_url_for(reply.author_email), :alt => "#{reply.author.downcase}_gravatar", :class => "comment_gravatar"}
+  %div
+    %p
+      <a href="/hackers/#{reply.author}">#{reply.author}</a> says:
+    %p
+      = reply.body
+
+%h2 Add a comment
+%form{:action => "/content/#{@content.id}/comment", :method => "POST"}
+  %label{:for => "comment_body"} Body
+  %br
+  %textarea{:id => "comment_body", :name => "comment[body]", :rows => 20, :cols => 50}
+  %br
+  %input{:type => "submit", :value => "Submit", :class => "button"}
+  

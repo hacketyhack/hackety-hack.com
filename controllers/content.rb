@@ -15,3 +15,20 @@ get "/content/:id" do
   @content = Content.find(params[:id])
   haml :"content/show"
 end
+
+post "/content/:id/comment" do
+  @content = Content.first(:id => params[:id])
+  if current_user
+    params[:comment][:author] = current_user.username
+    params[:comment][:author_email] = current_user.email
+  else 
+    params[:comment][:author] = "Anonymous"
+    params[:comment][:author_email] = "anonymous@example.com"
+  end
+  @content.comments << Comment.new(params[:comment])
+  @content.save
+
+  flash[:notice] = "Replied!"
+  redirect "/content/#{@content.id}"
+end
+

@@ -6,6 +6,8 @@ class Content
 
   key :author, String
   key :author_email, String
+
+  many :comments
  
   def image
     require 'digest/md5'
