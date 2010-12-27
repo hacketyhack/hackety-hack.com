@@ -40,7 +40,38 @@
     %br/
     %hr{:style => "height:1px;background-color:#000"}/
   %div{:style => "padding-top:1em"}
-    <iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FHackety-Hack%2F155257947836619&amp;width=292&amp;connections=10&amp;stream=true&amp;header=true&amp;height=587" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:292px; height:587px;" allowTransparency="true"></iframe>
+    <iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FHackety-Hack%2F155257947836619&amp;width=292&amp;connections=10&amp;stream=true&amp;header=true&amp;height=587" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:292px; height:587px;float:left" allowTransparency="true"></iframe>
+    <script src="http://widgets.twimg.com/j/2/widget.js"></script>
+    :javascript 
+      new TWTR.Widget({
+        version: 2,
+        type: 'profile',
+        rpp: 4,
+        interval: 6000,
+        width: 250,
+        height: 300,
+        theme: {
+          shell: {
+            background: '#333333',
+            color: '#ffffff'
+          },
+          tweets: {
+            background: '#000000',
+            color: '#ffffff',
+            links: '#4aed05'
+          }
+        },
+        features: {
+          scrollbar: false,
+          loop: false,
+          live: false,
+          hashtags: true,
+          timestamp: true,
+          avatars: false,
+          behavior: 'all'
+        }
+      }).render().setUser('hacketyhack').start();
+    
 
     
 
