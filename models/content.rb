@@ -8,6 +8,8 @@ class Content
   key :author_email, String
 
   many :comments
+
+  timestamps!
  
   def image
     require 'digest/md5'

@@ -100,7 +100,7 @@ get '/download' do
 end
 
 get '/stream' do
-  @content_list = Content.all.reverse
+  @content_list = Content.all.sort{|a, b| b.updated_at <=> a.updated_at }
   haml :stream
 end
 
