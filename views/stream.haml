@@ -46,6 +46,9 @@
     %textarea#post{ :name => "content[body]" }
     %input{ :name => "content[type]", :type => "hidden", :value => "post"}/
     %br/
+    Comments are formatted via 
+    %a{:href => "http://daringfireball.net/projects/markdown/syntax"} Markdown
+    %br/
     %input.button{:type => "submit"}
   %form#question_form{:action => "/content", :style => "display:none", :method => "POST"}
     %label{:for => "question"} Ask a question
@@ -53,6 +56,9 @@
     %br/
     %textarea#question{:name => "content[body]"}
     %input{ :name => "content[type]", :type => "hidden", :value => "question"}/
+    %br/
+    Comments are formatted via 
+    %a{:href => "http://daringfireball.net/projects/markdown/syntax"} Markdown
     %br/
     %input.button{:type => "submit"}
 .span-18
