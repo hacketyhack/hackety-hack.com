@@ -10,6 +10,8 @@ class Program
 
   many :comments
 
+  timestamps!
+
   private
   def slug_check
     programs = Program.all(:creator_username => creator_username)

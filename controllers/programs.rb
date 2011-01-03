@@ -3,6 +3,11 @@ get "/programs/new" do
   haml :"programs/new"
 end
 
+get "/programs" do
+  @programs = Program.all.sort{|a, b| b.updated_at <=> a.updated_at }.first(10)
+  haml :"programs/index"
+end
+
 post "/programs" do
   require_login_or_api! :username => params[:username], :password => params[:password]
   params[:program]['creator_username'] = current_user.username
