@@ -5,7 +5,7 @@
 get '/signup' do
 
   #just render our template!
-  haml :"sessions/signup"
+  haml :"sessions/signup", :layout => :plain
 end
 
 #the form for /signup sends a POST to /signup!
@@ -36,8 +36,8 @@ end
 
 #people can log in by going to /login
 get '/login' do
-  #just gotta render that template!
-  haml :"sessions/login"
+  #just gotta render that view
+  haml :"sessions/login", :layout => :plain
 end
 
 #the form at /login sends a POST request to /login

@@ -88,7 +88,7 @@ get '/' do
   if logged_in?
     redirect "/stream"
   end
-  haml :index
+  haml :index, :layout => :plain
 end
 
 get '/post' do
@@ -96,7 +96,7 @@ get '/post' do
 end
 
 get '/download' do
-  haml :download
+  haml :download, :layout => :plain
 end
 
 get '/stream' do

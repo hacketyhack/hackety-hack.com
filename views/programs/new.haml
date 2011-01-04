@@ -1,38 +1,14 @@
-.span-9
-  %a{:href => "/"}
-    %img{:height => "64", :src => "/images/logo.png", :style => "float:left"}/
-  %p.body{:style => "padding-top:20px;padding-left:80px"} Hackety Hack
-- if logged_in?
-  .span-6.prepend-3.last
-    %ul
-      %li{:style => "display:inline"}
-        %a{:href => "/download"} Download
-      |
-      %li{:style => "display:inline"}
-        %a{:href => "/hackers/#{current_user.username.to_slug}"} My Page
-      |
-      %li{:style => "display:inline"}
-        %a{:href => "/logout"} Log out
-- else
-  .span-4.prepend-5.last
-    %ul
-      %li{:style => "display:inline"}
-        %a{:href => "/download"} Download
-      |
-      %li{:style => "display:inline"}
-        %a{:href => "/login"} Log in
-.span-18.last
-  %h1 A new program
-  %form{:action => "/programs", :method => "POST"}
-    %label{:for => "program_title"} Title
-    %br/
-    %input{:type => "text", :id => "program_title", :name => "program[title]"} 
-    %br/
-    %label{:for => "program_body"} Body
-    %br/
-    %textarea{:id => "program_body", :name => "program[code]"} 
-    %br/
-    %input{:type => "submit", :value => "Create", :class => "button"}
+%h1 A new program
+%form{:action => "/programs", :method => "POST"}
+  %label{:for => "program_title"} Title
+  %br/
+  %input{:type => "text", :id => "program_title", :name => "program[title]"} 
+  %br/
+  %label{:for => "program_body"} Body
+  %br/
+  %textarea{:id => "program_body", :name => "program[code]"} 
+  %br/
+  %input{:type => "submit", :value => "Create", :class => "button"}
 
-  %br/
-  %br/
+%br/
+%br/

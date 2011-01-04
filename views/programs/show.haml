@@ -1,48 +1,32 @@
-.span-9
-  %a{:href => "/"}
-    %img{:height => "64", :src => "/images/logo.png", :style => "float:left"}/
-  %p.body{:style => "padding-top:20px;padding-left:80px"} Hackety Hack
-.span-4.prepend-5.last
-  - if logged_in?
-    %ul
-      %li{:style => "display:inline"}
-        %a{:href => "/hackers/#{current_user.username.to_slug}"} My Page
-      |
-      %li{:style => "display:inline"}
-        %a{:href => "/logout"} Log out
-  - else
-    %a{:href => "/login"} Log in
+.span-18.last
+  %h1= @program.title
+  %h2 By #{@program.creator_username}
 
-%div{:style => "clear:both"}
+  %pre= @program.code
 
-%h1= @program.title
-%h2 By #{@program.creator_username}
+  %hr/
 
-%pre= @program.code
+  %h2 Comments
 
-%hr/
-
-%h2 Comments
-
-- @program.comments.each do |reply|
-  .comment{:style => "clear:both;padding-bottom:1em"}
-    %div{:style => "float:left;padding-right:1em"}
-      %a{:href => "/hackers/#{reply.author}"}
-        %img{:src => gravatar_url_for(reply.author_email), :alt => "#{reply.author.downcase}_gravatar", :class => "comment_gravatar"}
-    %div{:style => "width:500px"}
-      %p
-        <a href="/hackers/#{reply.author}">#{reply.author}</a> says:
-      %p
-        :markdown
-          #{reply.body}
-%br/
-%br/
-%h2 Add a comment
-%form{:action => "/programs/#{@program.creator_username}/#{@program.slug}/comment", :method => "POST"}
-  %label{:for => "comment_body"} Body
-  %br
-  %textarea{:id => "comment_body", :name => "comment[body]", :rows => 20, :cols => 50}
-  %br
-  %input{:type => "submit", :value => "Submit", :class => "button"}
-%br/
-%br/
+  - @program.comments.each do |reply|
+    .comment{:style => "clear:both;padding-bottom:1em"}
+      %div{:style => "float:left;padding-right:1em"}
+        %a{:href => "/hackers/#{reply.author}"}
+          %img{:src => gravatar_url_for(reply.author_email), :alt => "#{reply.author.downcase}_gravatar", :class => "comment_gravatar"}
+      %div{:style => "width:500px"}
+        %p
+          <a href="/hackers/#{reply.author}">#{reply.author}</a> says:
+        %p
+          :markdown
+            #{reply.body}
+  %br/
+  %br/
+  %h2 Add a comment
+  %form{:action => "/programs/#{@program.creator_username}/#{@program.slug}/comment", :method => "POST"}
+    %label{:for => "comment_body"} Body
+    %br
+    %textarea{:id => "comment_body", :name => "comment[body]", :rows => 20, :cols => 50}
+    %br
+    %input{:type => "submit", :value => "Submit", :class => "button"}
+  %br/
+  %br/

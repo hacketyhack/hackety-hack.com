@@ -1,25 +1,3 @@
-.span-9
-  %img{:height => "64", :src => "/images/logo.png", :style => "float:left"}/
-  %p.body{:style => "padding-top:20px;padding-left:80px"} Hackety Hack
-- if logged_in?
-  .span-6.prepend-3.last
-    %ul
-      %li{:style => "display:inline"}
-        %a{:href => "/download"} Download
-      |
-      %li{:style => "display:inline"}
-        %a{:href => "/hackers/#{current_user.username.to_slug}"} My Page
-      |
-      %li{:style => "display:inline"}
-        %a{:href => "/logout"} Log out
-- else
-  .span-4.prepend-5.last
-    %ul
-      %li{:style => "display:inline"}
-        %a{:href => "/download"} Download
-      |
-      %li{:style => "display:inline"}
-        %a{:href => "/login"} Log in
 .span-18.last
   #infobox{:style => "border:black 1px solid;padding:10px;margin:10px;"}
     Hello there! This is the website for Hackety Hack. You can ask a question, share programs that you've made, or just tell everyone something. Don't forget, you should <a href="http://hackety-hack.com/download">download Hackety Hack</a>, it will teach you everything you need to get started with programming! This is just a place to participate in the Hackety Hack community.
