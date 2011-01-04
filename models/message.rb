@@ -12,6 +12,8 @@ class Message
   #this is the username of the person who sent the message
   key :sender, String
 
+  timestamps!
+
   after_create :send_notification
 
   private

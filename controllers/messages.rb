@@ -30,7 +30,9 @@ end
 #this is the page where you can see your messages
 get "/messages" do
   require_login!
-  @messages = Message.all({"recipient" => current_user.username})
+  @messages = Message.all({"recipient" => current_user.username}).sort do |a, b|
+    b.created_at <=> a.created_at
+  end
   haml :"messages/index"
 end
 

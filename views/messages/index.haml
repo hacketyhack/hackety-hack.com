@@ -1,5 +1,33 @@
-%ul
-- @messages.each do |message|
-  %li From: #{message.sender}
-  %li Message: #{message.body}
+.span-9
+  %img{:height => "64", :src => "/images/logo.png", :style => "float:left"}/
+  %p.body{:style => "padding-top:20px;padding-left:80px"} Hackety Hack
+- if logged_in?
+  .span-6.prepend-3.last
+    %ul
+      %li{:style => "display:inline"}
+        %a{:href => "/download"} Download
+      |
+      %li{:style => "display:inline"}
+        %a{:href => "/hackers/#{current_user.username.to_slug}"} My Page
+      |
+      %li{:style => "display:inline"}
+        %a{:href => "/logout"} Log out
+- else
+  .span-4.prepend-5.last
+    %ul
+      %li{:style => "display:inline"}
+        %a{:href => "/download"} Download
+      |
+      %li{:style => "display:inline"}
+        %a{:href => "/login"} Log in
+.span-18.last
+  %h1 Your Messages
+  %ul
+  - @messages.each do |message|
+    %li{:style => "list-style:none"}
+      %h2 From: #{message.sender}
+      :markdown 
+        #{message.body} 
+      %a{:href => "/messages/new/to/#{message.sender}"} (reply)
+    %hr
 
