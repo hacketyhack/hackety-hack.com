@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>hackers_controller.rb</title>
+  <link rel="stylesheet" href="http://jashkenas.github.com/docco/resources/docco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <div id="jump_to">
+    Jump To &hellip;
+    <div id="jump_wrapper">
+      <div id="jump_page">
+          <a class="source" href="content_controller.html">content_controller.rb</a>
+          <a class="source" href="hackers_controller.html">hackers_controller.rb</a>
+          <a class="source" href="messages_controller.html">messages_controller.rb</a>
+          <a class="source" href="programs_controller.html">programs_controller.rb</a>
+          <a class="source" href="sessions_controller.html">sessions_controller.rb</a>
+      </div>
+    </div>
+  </div>
+  <table cellspacing=0 cellpadding=0>
+  <thead>
+    <tr>
+      <th class=docs><h1>hackers_controller.rb</h1></th>
+      <th class=code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id='section-1'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-1">#</a>
+        </div>
+        <p>This is the &lsquo;hackers&rsquo; controller. &ldquo;Hackers&rdquo; are what we call &ldquo;Users&rdquo; in HH.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-2'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-2">#</a>
+        </div>
+        <p> An individual Hacker&rsquo;s page</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="n">get</span> <span class="s1">&#39;/hackers/:name&#39;</span> <span class="k">do</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-3'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-3">#</a>
+        </div>
+        <p>find the hacker with the given name</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="vi">@hacker</span> <span class="o">=</span> <span class="no">Hacker</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="ss">:username</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span><span class="p">)</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-4'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-4">#</a>
+        </div>
+        <p>render the template</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="n">haml</span> <span class="ss">:&quot;hackers/show&quot;</span>
+<span class="k">end</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-5'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-5">#</a>
+        </div>
+        <p>update a hacker&rsquo;s information</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="n">post</span> <span class="s1">&#39;/hackers/update&#39;</span> <span class="k">do</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-6'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-6">#</a>
+        </div>
+        <p>you have to be logged in to update your info</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="n">require_login!</span> <span class="ss">:return</span> <span class="o">=&gt;</span> <span class="s2">&quot;/hackers/update&quot;</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-7'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-7">#</a>
+        </div>
+        <p>do they want to update their password</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="k">unless</span> <span class="n">params</span><span class="o">[</span><span class="ss">:password</span><span class="o">].</span><span class="n">nil?</span>
+    <span class="k">if</span> <span class="n">params</span><span class="o">[</span><span class="ss">:password</span><span class="o">][</span><span class="ss">:new</span><span class="o">]</span> <span class="o">==</span> <span class="n">params</span><span class="o">[</span><span class="ss">:password</span><span class="o">][</span><span class="ss">:confirm</span><span class="o">]</span>
+      <span class="n">current_user</span><span class="o">.</span><span class="n">password</span> <span class="o">=</span> <span class="n">params</span><span class="o">[</span><span class="ss">:password</span><span class="o">][</span><span class="ss">:new</span><span class="o">]</span>
+      <span class="n">current_user</span><span class="o">.</span><span class="n">save</span>
+      <span class="n">flash</span><span class="o">[</span><span class="ss">:notice</span><span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;Password updated!&quot;</span>
+    <span class="k">else</span>
+      <span class="n">flash</span><span class="o">[</span><span class="ss">:notice</span><span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;Password confirmation didn&#39;t match!&quot;</span>
+    <span class="k">end</span>
+  <span class="k">else</span>
+    <span class="n">current_user</span><span class="o">.</span><span class="n">update_attributes</span><span class="p">(</span><span class="ss">:about</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:hacker</span><span class="o">][</span><span class="ss">:about</span><span class="o">]</span><span class="p">)</span>
+    <span class="n">current_user</span><span class="o">.</span><span class="n">save</span>
+    <span class="n">flash</span><span class="o">[</span><span class="ss">:notice</span><span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;About information updated!&quot;</span>
+  <span class="k">end</span>
+
+  <span class="n">redirect</span> <span class="s2">&quot;/hackers/</span><span class="si">#{</span><span class="n">current_user</span><span class="o">.</span><span class="n">username</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="k">end</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-8'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-8">#</a>
+        </div>
+        <p>this lets you follow a Hacker</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="n">get</span> <span class="s1">&#39;/hackers/:name/follow&#39;</span> <span class="k">do</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-9'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-9">#</a>
+        </div>
+        <p>we have to be logged in to follow someone</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="n">require_login!</span> <span class="ss">:return</span> <span class="o">=&gt;</span> <span class="s2">&quot;/hackers/</span><span class="si">#{</span><span class="n">params</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span><span class="si">}</span><span class="s2">/follow&quot;</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-10'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-10">#</a>
+        </div>
+        <p>find the hacker with the given name</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="vi">@hacker</span> <span class="o">=</span> <span class="no">Hacker</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="ss">:username</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span><span class="p">)</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-11'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-11">#</a>
+        </div>
+        <p>make sure we&rsquo;re not following them already</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="k">if</span> <span class="n">current_user</span><span class="o">.</span><span class="n">following?</span> <span class="vi">@hacker</span>
+    <span class="n">flash</span><span class="o">[</span><span class="ss">:notice</span><span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;You&#39;re already following </span><span class="si">#{</span><span class="n">params</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span><span class="si">}</span><span class="s2">.&quot;</span>
+    <span class="n">redirect</span> <span class="s2">&quot;/hackers/</span><span class="si">#{</span><span class="n">current_user</span><span class="o">.</span><span class="n">username</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">return</span>
+  <span class="k">end</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-12'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-12">#</a>
+        </div>
+        <p>follow them!</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="n">current_user</span><span class="o">.</span><span class="n">follow!</span> <span class="vi">@hacker</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-13'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-13">#</a>
+        </div>
+        <p>set a message</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="n">flash</span><span class="o">[</span><span class="ss">:notice</span><span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;Now following </span><span class="si">#{</span><span class="n">params</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span><span class="si">}</span><span class="s2">.&quot;</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-14'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-14">#</a>
+        </div>
+        <p>redirect back to your page!</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="n">redirect</span> <span class="s2">&quot;/hackers/</span><span class="si">#{</span><span class="n">current_user</span><span class="o">.</span><span class="n">username</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="k">end</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-15'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-15">#</a>
+        </div>
+        <p>this lets you unfollow a Hacker</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="n">get</span> <span class="s1">&#39;/hackers/:name/unfollow&#39;</span> <span class="k">do</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-16'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-16">#</a>
+        </div>
+        <p>we have to be logged in to unfollow someone</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="n">require_login!</span> <span class="ss">:return</span> <span class="o">=&gt;</span> <span class="s2">&quot;/hackers/</span><span class="si">#{</span><span class="n">params</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span><span class="si">}</span><span class="s2">/unfollow&quot;</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-17'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-17">#</a>
+        </div>
+        <p>find the hacker with the given name</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="vi">@hacker</span> <span class="o">=</span> <span class="no">Hacker</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="ss">:username</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span><span class="p">)</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-18'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-18">#</a>
+        </div>
+        <p>make sure we&rsquo;re not following them already</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="k">unless</span> <span class="n">current_user</span><span class="o">.</span><span class="n">following?</span> <span class="vi">@hacker</span>
+    <span class="n">flash</span><span class="o">[</span><span class="ss">:notice</span><span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;You&#39;re already not following </span><span class="si">#{</span><span class="n">params</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span><span class="si">}</span><span class="s2">.&quot;</span>
+    <span class="n">redirect</span> <span class="s2">&quot;/hackers/</span><span class="si">#{</span><span class="n">current_user</span><span class="o">.</span><span class="n">username</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">return</span>
+  <span class="k">end</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-19'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-19">#</a>
+        </div>
+        <p>unfollow them!</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="n">current_user</span><span class="o">.</span><span class="n">unfollow!</span> <span class="vi">@hacker</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-20'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-20">#</a>
+        </div>
+        <p>set a message</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="n">flash</span><span class="o">[</span><span class="ss">:notice</span><span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;No longer following </span><span class="si">#{</span><span class="n">params</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span><span class="si">}</span><span class="s2">.&quot;</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-21'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-21">#</a>
+        </div>
+        <p>redirect back to your page!</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="n">redirect</span> <span class="s2">&quot;/hackers/</span><span class="si">#{</span><span class="n">current_user</span><span class="o">.</span><span class="n">username</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="k">end</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-22'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-22">#</a>
+        </div>
+        <p>this lets us see followers</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="n">get</span> <span class="s1">&#39;/hackers/:name/followers&#39;</span> <span class="k">do</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-23'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-23">#</a>
+        </div>
+        <p>find the hacker with the given name</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="vi">@hacker</span> <span class="o">=</span> <span class="no">Hacker</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="ss">:username</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span><span class="p">)</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-24'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-24">#</a>
+        </div>
+        <p>render our page</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="n">haml</span> <span class="ss">:&quot;hackers/followers&quot;</span>
+<span class="k">end</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-25'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-25">#</a>
+        </div>
+        <p>this lets us see following</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="n">get</span> <span class="s1">&#39;/hackers/:name/following&#39;</span> <span class="k">do</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-26'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-26">#</a>
+        </div>
+        <p>find the hacker with the given name</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="vi">@hacker</span> <span class="o">=</span> <span class="no">Hacker</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="ss">:username</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span><span class="p">)</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-27'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-27">#</a>
+        </div>
+        <p>render our page</p>
+
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="n">haml</span> <span class="ss">:&quot;hackers/following&quot;</span>
+<span class="k">end</span></pre></div>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>

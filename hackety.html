@@ -187,6 +187,20 @@
         <div class="octowrap">
           <a class="octothorpe" href="#section-10">#</a>
         </div>
+        <p> We need a secret for our sessions. This is set via an environment variable so
+ that we don&rsquo;t have to give it away in the source code. Heroku makes it really
+ easy to keep environment variables set up, so this ends up being pretty nice.
+ This also has to be included before rack-flash, or it blows up.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="n">use</span> <span class="no">Rack</span><span class="o">::</span><span class="no">Session</span><span class="o">::</span><span class="no">Cookie</span><span class="p">,</span> <span class="ss">:secret</span> <span class="o">=&gt;</span> <span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;COOKIE_SECRET&#39;</span><span class="o">]</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-11'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-11">#</a>
+        </div>
         <p> If you&rsquo;ve used Rails' flash messages, you know how convenient they are.
  rack-flash lets us use them.</p>
       </td>
@@ -195,10 +209,10 @@
 <span class="n">use</span> <span class="no">Rack</span><span class="o">::</span><span class="no">Flash</span></pre></div>
       </td>
     </tr>
-    <tr id='section-11'>
+    <tr id='section-12'>
       <td class=docs>
         <div class="octowrap">
-          <a class="octothorpe" href="#section-11">#</a>
+          <a class="octothorpe" href="#section-12">#</a>
         </div>
         <p> <a href="https://github.com/rtomayko/rdiscount">rdiscount</a> is a fast implementation
  of the Markdown markup language. The web site renders most user submitted
@@ -208,10 +222,10 @@
         <div class='highlight'><pre><span class="nb">require</span> <span class="s1">&#39;rdiscount&#39;</span></pre></div>
       </td>
     </tr>
-    <tr id='section-12'>
+    <tr id='section-13'>
       <td class=docs>
         <div class="octowrap">
-          <a class="octothorpe" href="#section-12">#</a>
+          <a class="octothorpe" href="#section-13">#</a>
         </div>
         <p> Rails has a <code>content_for</code> helper that lets you place different parts of your
  view into different places in your template. This helps a lot with
@@ -223,10 +237,10 @@
         <div class='highlight'><pre><span class="nb">require</span> <span class="s1">&#39;sinatra/content_for&#39;</span></pre></div>
       </td>
     </tr>
-    <tr id='section-13'>
+    <tr id='section-14'>
       <td class=docs>
         <div class="octowrap">
-          <a class="octothorpe" href="#section-13">#</a>
+          <a class="octothorpe" href="#section-14">#</a>
         </div>
         <p> We moved lots of helpers into a separate file. These are all things that are
  useful throughout the rest of the application. This file</p>
@@ -235,28 +249,15 @@
         <div class='highlight'><pre><span class="n">require_relative</span> <span class="s1">&#39;helpers&#39;</span></pre></div>
       </td>
     </tr>
-    <tr id='section-14'>
-      <td class=docs>
-        <div class="octowrap">
-          <a class="octothorpe" href="#section-14">#</a>
-        </div>
-        <h3>Configure settings</h3>
-      </td>
-      <td class=code>
-        <div class='highlight'><pre></pre></div>
-      </td>
-    </tr>
     <tr id='section-15'>
       <td class=docs>
         <div class="octowrap">
           <a class="octothorpe" href="#section-15">#</a>
         </div>
-        <p> We need a secret for our sessions. This is set via an environment variable so
- that we don&rsquo;t have to give it away in the source code. Heroku makes it really
- easy to keep environment variables set up, so this ends up being pretty nice.</p>
+        <h3>Configure settings</h3>
       </td>
       <td class=code>
-        <div class='highlight'><pre><span class="n">use</span> <span class="no">Rack</span><span class="o">::</span><span class="no">Session</span><span class="o">::</span><span class="no">Cookie</span><span class="p">,</span> <span class="ss">:secret</span> <span class="o">=&gt;</span> <span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;COOKIE_SECRET&#39;</span><span class="o">]</span></pre></div>
+        <div class='highlight'><pre></pre></div>
       </td>
     </tr>
     <tr id='section-16'>

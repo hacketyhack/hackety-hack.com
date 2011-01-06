@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>hacker.rb</title>
+  <link rel="stylesheet" href="http://jashkenas.github.com/docco/resources/docco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <div id="jump_to">
+    Jump To &hellip;
+    <div id="jump_wrapper">
+      <div id="jump_page">
+          <a class="source" href="comment.html">comment.rb</a>
+          <a class="source" href="content.html">content.rb</a>
+          <a class="source" href="hacker.html">hacker.rb</a>
+          <a class="source" href="message.html">message.rb</a>
+          <a class="source" href="notifier.html">notifier.rb</a>
+          <a class="source" href="program.html">program.rb</a>
+      </div>
+    </div>
+  </div>
+  <table cellspacing=0 cellpadding=0>
+  <thead>
+    <tr>
+      <th class=docs><h1>hacker.rb</h1></th>
+      <th class=code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id='section-1'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-1">#</a>
+        </div>
+        <p>This is the Hacker class. Every user of Hackety Hack gets one!
+most of the stuff in this is based off of then sinatra-authentication plugin.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="k">class</span> <span class="nc">Hacker</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-2'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-2">#</a>
+        </div>
+        <p>our Hacker model is a full-fledged Document</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="kp">include</span> <span class="no">MongoMapper</span><span class="o">::</span><span class="no">Document</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-3'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-3">#</a>
+        </div>
+        <p>we&rsquo;re storing a unique username</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="n">key</span> <span class="ss">:username</span><span class="p">,</span> <span class="nb">String</span><span class="p">,</span> <span class="ss">:unique</span> <span class="o">=&gt;</span> <span class="kp">true</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-4'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-4">#</a>
+        </div>
+        <p>and a unique email</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="n">key</span> <span class="ss">:email</span><span class="p">,</span> <span class="nb">String</span><span class="p">,</span> <span class="ss">:unique</span> <span class="o">=&gt;</span> <span class="kp">true</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-5'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-5">#</a>
+        </div>
+        <p>a little bit about the Hacker</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="n">key</span> <span class="ss">:about</span><span class="p">,</span> <span class="nb">String</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-6'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-6">#</a>
+        </div>
+        <p>we don&rsquo;t store the passwords themselves, we store a &lsquo;hash&rsquo; of them. More about this down in password=</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="n">key</span> <span class="ss">:hashed_password</span><span class="p">,</span> <span class="nb">String</span>
+  <span class="n">key</span> <span class="ss">:salt</span><span class="p">,</span> <span class="nb">String</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-7'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-7">#</a>
+        </div>
+        <p>this is a flag to let us know if this Hacker can administrate the site or not.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="n">key</span> <span class="ss">:admin</span><span class="p">,</span> <span class="no">Boolean</span><span class="p">,</span> <span class="ss">:default</span> <span class="o">=&gt;</span> <span class="kp">false</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-8'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-8">#</a>
+        </div>
+        <p>the list of hackers this hacker is following</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="n">key</span> <span class="ss">:following_ids</span><span class="p">,</span> <span class="nb">Array</span>
+  <span class="n">many</span> <span class="ss">:following</span><span class="p">,</span> <span class="ss">:in</span> <span class="o">=&gt;</span> <span class="ss">:following_ids</span><span class="p">,</span> <span class="ss">:class_name</span> <span class="o">=&gt;</span> <span class="s1">&#39;Hacker&#39;</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-9'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-9">#</a>
+        </div>
+        <p>the list of hackers that are following this hacker</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="n">key</span> <span class="ss">:followers_ids</span><span class="p">,</span> <span class="nb">Array</span>
+  <span class="n">many</span> <span class="ss">:followers</span><span class="p">,</span> <span class="ss">:in</span> <span class="o">=&gt;</span> <span class="ss">:followers_ids</span><span class="p">,</span> <span class="ss">:class_name</span> <span class="o">=&gt;</span> <span class="s1">&#39;Hacker&#39;</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-10'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-10">#</a>
+        </div>
+        <p>after we create a hacker, we want to have them follow steve, and vice versa!</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="n">after_create</span> <span class="ss">:follow_steve</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-11'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-11">#</a>
+        </div>
+        <p>we don&rsquo;t want to store the password (or the confirmation), so we just make an accessor</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="kp">attr_accessor</span> <span class="ss">:password</span><span class="p">,</span> <span class="ss">:password_confirmation</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-12'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-12">#</a>
+        </div>
+        <p>okay, this is the method that sets the password</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="k">def</span> <span class="nf">password</span><span class="o">=</span><span class="p">(</span><span class="n">pass</span><span class="p">)</span>
+    <span class="vi">@password</span> <span class="o">=</span> <span class="n">pass</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-13'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-13">#</a>
+        </div>
+        <p>okay, we need to get a &lsquo;salt&rsquo;. You can read about salts here: http://en.wikipedia.org/wiki/Salt_(cryptography)
+basically, we combine the password with the salt, and then encrypt it, and store that in the database.
+The reason that we do this is because we don&rsquo;t want to keep someone&rsquo;s
+password in the database, because you never want to write those down!
+So when we go to look up a password, we can do the same procedure.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-14'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-14">#</a>
+        </div>
+        <p>anyway, let&rsquo;s check if we&rsquo;ve got a salt yet. If not, make one.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="nb">self</span><span class="o">.</span><span class="n">salt</span> <span class="o">=</span> <span class="n">random_string</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">if</span> <span class="o">!</span><span class="nb">self</span><span class="o">.</span><span class="n">salt</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-15'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-15">#</a>
+        </div>
+        <p>then, we set the hashed password to the encrypted password + salt.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="nb">self</span><span class="o">.</span><span class="n">hashed_password</span> <span class="o">=</span> <span class="no">Hacker</span><span class="o">.</span><span class="n">encrypt</span><span class="p">(</span><span class="vi">@password</span><span class="p">,</span> <span class="nb">self</span><span class="o">.</span><span class="n">salt</span><span class="p">)</span>
+  <span class="k">end</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-16'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-16">#</a>
+        </div>
+        <p>this method lets will return the user if we&rsquo;ve given the right username
+and password for the user. Otherwise, it returns nil.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">authenticate</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">pass</span><span class="p">)</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-17'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-17">#</a>
+        </div>
+        <p>first we have to dig up the record from the database</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="n">current_user</span> <span class="o">=</span> <span class="no">Hacker</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="ss">:username</span> <span class="o">=&gt;</span> <span class="n">username</span><span class="p">)</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-18'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-18">#</a>
+        </div>
+        <p>and return nil if we didn&rsquo;t find one.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="k">return</span> <span class="kp">nil</span> <span class="k">if</span> <span class="n">current_user</span><span class="o">.</span><span class="n">nil?</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-19'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-19">#</a>
+        </div>
+        <p>then, we do the same thing that we did when we stored the hashed password:
+encrypt the password using the salt, and compare it to the one we saved
+if they&rsquo;re the same, we know they entered the right password.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="k">return</span> <span class="n">current_user</span> <span class="k">if</span> <span class="no">Hacker</span><span class="o">.</span><span class="n">encrypt</span><span class="p">(</span><span class="n">pass</span><span class="p">,</span> <span class="n">current_user</span><span class="o">.</span><span class="n">salt</span><span class="p">)</span> <span class="o">==</span> <span class="n">current_user</span><span class="o">.</span><span class="n">hashed_password</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-20'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-20">#</a>
+        </div>
+        <p>if that didn&rsquo;t work, well, you&rsquo;re all out of luck!</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="kp">nil</span>
+  <span class="k">end</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-21'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-21">#</a>
+        </div>
+        <p>this is just a nice helper function to see if a hacker is an admin</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="k">def</span> <span class="nf">admin?</span>
+    <span class="k">return</span> <span class="nb">self</span><span class="o">.</span><span class="n">admin</span> <span class="o">==</span> <span class="kp">true</span>
+  <span class="k">end</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-22'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-22">#</a>
+        </div>
+        <p>a helper function for gravatar urls</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="k">def</span> <span class="nf">gravatar_url</span>
+    <span class="nb">require</span> <span class="s1">&#39;digest/md5&#39;</span>
+    <span class="s2">&quot;http://www.gravatar.com/avatar/</span><span class="si">#{</span><span class="no">Digest</span><span class="o">::</span><span class="no">MD5</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">(</span><span class="n">email</span><span class="o">.</span><span class="n">downcase</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+  <span class="k">end</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-23'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-23">#</a>
+        </div>
+        <p>this method makes the hacker follow the followee</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="k">def</span> <span class="nf">follow!</span> <span class="n">followee</span>
+    <span class="n">following</span> <span class="o">&lt;&lt;</span> <span class="n">followee</span>
+    <span class="n">save</span>
+    <span class="n">followee</span><span class="o">.</span><span class="n">followers</span> <span class="o">&lt;&lt;</span> <span class="nb">self</span>
+    <span class="n">followee</span><span class="o">.</span><span class="n">save</span>
+  <span class="k">end</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-24'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-24">#</a>
+        </div>
+        <p>this method makes the hacker unfollow the followee</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="k">def</span> <span class="nf">unfollow!</span> <span class="n">followee</span>
+    <span class="n">following_ids</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">followee</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+    <span class="n">save</span>
+    <span class="n">followee</span><span class="o">.</span><span class="n">followers_ids</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+    <span class="n">followee</span><span class="o">.</span><span class="n">save</span>
+  <span class="k">end</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-25'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-25">#</a>
+        </div>
+        <p>this method returns true if we&rsquo;re following the given Hacker, and
+false otherwise</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="k">def</span> <span class="nf">following?</span> <span class="n">hacker</span>
+    <span class="n">following</span><span class="o">.</span><span class="n">include?</span> <span class="n">hacker</span>
+  <span class="k">end</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-26'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-26">#</a>
+        </div>
+        <p>this method looks up the programs for a given user</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="k">def</span> <span class="nf">programs</span>
+    <span class="no">Program</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="ss">:creator_username</span> <span class="o">=&gt;</span> <span class="n">username</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="kp">private</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-27'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-27">#</a>
+        </div>
+        <p>we&rsquo;re going to use the SHA1 encryption method for now.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">encrypt</span><span class="p">(</span><span class="n">password</span><span class="p">,</span> <span class="n">salt</span><span class="p">)</span>
+    <span class="no">Digest</span><span class="o">::</span><span class="no">SHA1</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">(</span><span class="n">password</span> <span class="o">+</span> <span class="n">salt</span><span class="p">)</span>
+  <span class="k">end</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-28'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-28">#</a>
+        </div>
+        <p>this is a nifty little method to give us a random string of characters</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="k">def</span> <span class="nf">random_string</span><span class="p">(</span><span class="n">len</span><span class="p">)</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-29'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-29">#</a>
+        </div>
+        <p>first, we make a bunch of random characters in an array</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="n">chars</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="o">.</span><span class="n">.</span><span class="s2">&quot;z&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">to_a</span> <span class="o">+</span> <span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="o">.</span><span class="n">.</span><span class="s2">&quot;Z&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">to_a</span> <span class="o">+</span> <span class="p">(</span><span class="s2">&quot;0&quot;</span><span class="o">.</span><span class="n">.</span><span class="s2">&quot;9&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">to_a</span>
+    <span class="n">newpass</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-30'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-30">#</a>
+        </div>
+        <p>then we grab a random element of that array, and add it onto our newpass</p>
+
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="mi">1</span><span class="o">.</span><span class="n">upto</span><span class="p">(</span><span class="n">len</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span> <span class="n">newpass</span> <span class="o">&lt;&lt;</span> <span class="n">chars</span><span class="o">[</span><span class="nb">rand</span><span class="p">(</span><span class="n">chars</span><span class="o">.</span><span class="n">size</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">]</span> <span class="p">}</span>
+    <span class="k">return</span> <span class="n">newpass</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">follow_steve</span>
+    <span class="k">return</span> <span class="k">if</span> <span class="n">username</span> <span class="o">==</span> <span class="s2">&quot;steve&quot;</span>
+    <span class="n">steve</span> <span class="o">=</span> <span class="no">Hacker</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="ss">:username</span> <span class="o">=&gt;</span> <span class="s1">&#39;steve&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="k">if</span> <span class="n">steve</span><span class="o">.</span><span class="n">nil?</span>
+
+    <span class="n">follow!</span> <span class="n">steve</span>
+    <span class="n">steve</span><span class="o">.</span><span class="n">follow!</span> <span class="nb">self</span>
+  <span class="k">end</span>
+
+<span class="k">end</span></pre></div>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>

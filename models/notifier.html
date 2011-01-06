@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>notifier.rb</title>
+  <link rel="stylesheet" href="http://jashkenas.github.com/docco/resources/docco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <div id="jump_to">
+    Jump To &hellip;
+    <div id="jump_wrapper">
+      <div id="jump_page">
+          <a class="source" href="comment.html">comment.rb</a>
+          <a class="source" href="content.html">content.rb</a>
+          <a class="source" href="hacker.html">hacker.rb</a>
+          <a class="source" href="message.html">message.rb</a>
+          <a class="source" href="notifier.html">notifier.rb</a>
+          <a class="source" href="program.html">program.rb</a>
+      </div>
+    </div>
+  </div>
+  <table cellspacing=0 cellpadding=0>
+  <thead>
+    <tr>
+      <th class=docs><h1>notifier.rb</h1></th>
+      <th class=code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id='section-1'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-1">#</a>
+        </div>
+        
+
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="k">class</span> <span class="nc">Notifier</span> 
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">send_message_notification</span><span class="p">(</span><span class="n">recipient</span><span class="p">,</span> <span class="n">who</span><span class="p">)</span>
+    <span class="no">Pony</span><span class="o">.</span><span class="n">mail</span><span class="p">(</span><span class="ss">:to</span> <span class="o">=&gt;</span> <span class="n">recipient</span><span class="p">,</span> 
+              <span class="ss">:subject</span> <span class="o">=&gt;</span> <span class="s2">&quot;Hackety Hack: New Message&quot;</span><span class="p">,</span>
+              <span class="ss">:from</span> <span class="o">=&gt;</span> <span class="s2">&quot;steve+hackety@steveklabnik.com&quot;</span><span class="p">,</span>
+              <span class="ss">:body</span> <span class="o">=&gt;</span> <span class="n">render_haml_template</span><span class="p">(</span><span class="s2">&quot;message&quot;</span><span class="p">,</span> <span class="n">who</span><span class="p">),</span>
+              <span class="ss">:via</span> <span class="o">=&gt;</span> <span class="ss">:smtp</span><span class="p">,</span> <span class="ss">:via_options</span> <span class="o">=&gt;</span> <span class="no">PONY_VIA_OPTIONS</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="kp">private</span>
+
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">render_haml_template</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">who</span><span class="p">)</span>
+    <span class="n">engine</span> <span class="o">=</span> <span class="no">Haml</span><span class="o">::</span><span class="no">Engine</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;views/notifier/</span><span class="si">#{</span><span class="n">template</span><span class="si">}</span><span class="s2">.haml&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">)</span>
+    <span class="n">engine</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="no">Object</span><span class="o">.</span><span class="n">new</span><span class="p">,</span> <span class="ss">:who</span> <span class="o">=&gt;</span> <span class="n">who</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span></pre></div>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>

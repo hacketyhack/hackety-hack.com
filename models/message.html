@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>message.rb</title>
+  <link rel="stylesheet" href="http://jashkenas.github.com/docco/resources/docco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <div id="jump_to">
+    Jump To &hellip;
+    <div id="jump_wrapper">
+      <div id="jump_page">
+          <a class="source" href="comment.html">comment.rb</a>
+          <a class="source" href="content.html">content.rb</a>
+          <a class="source" href="hacker.html">hacker.rb</a>
+          <a class="source" href="message.html">message.rb</a>
+          <a class="source" href="notifier.html">notifier.rb</a>
+          <a class="source" href="program.html">program.rb</a>
+      </div>
+    </div>
+  </div>
+  <table cellspacing=0 cellpadding=0>
+  <thead>
+    <tr>
+      <th class=docs><h1>message.rb</h1></th>
+      <th class=code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id='section-1'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-1">#</a>
+        </div>
+        <p>this is the class for inter-site messages</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="k">class</span> <span class="nc">Message</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-2'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-2">#</a>
+        </div>
+        <p>we want to include them in the database!</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="kp">include</span> <span class="no">MongoMapper</span><span class="o">::</span><span class="no">Document</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-3'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-3">#</a>
+        </div>
+        <p>this is the body text of the message</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="n">key</span> <span class="ss">:body</span><span class="p">,</span> <span class="nb">String</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-4'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-4">#</a>
+        </div>
+        <p>this is the username of the person who gets the message</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="n">key</span> <span class="ss">:recipient</span><span class="p">,</span> <span class="nb">String</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-5'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-5">#</a>
+        </div>
+        <p>this is the username of the person who sent the message</p>
+
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="n">key</span> <span class="ss">:sender</span><span class="p">,</span> <span class="nb">String</span>
+
+  <span class="n">timestamps!</span>
+
+  <span class="n">after_create</span> <span class="ss">:send_notification</span>
+
+  <span class="kp">private</span>
+
+  <span class="k">def</span> <span class="nf">send_notification</span>
+    <span class="k">unless</span> <span class="n">development?</span>
+      <span class="n">recipient_email</span> <span class="o">=</span> <span class="no">Hacker</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="ss">:username</span> <span class="o">=&gt;</span> <span class="nb">self</span><span class="o">.</span><span class="n">recipient</span><span class="p">)</span><span class="o">.</span><span class="n">email</span>
+      <span class="no">Notifier</span><span class="o">.</span><span class="n">send_message_notification</span><span class="p">(</span><span class="n">recipient_email</span><span class="p">,</span> <span class="nb">self</span><span class="o">.</span><span class="n">sender</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+<span class="k">end</span></pre></div>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>

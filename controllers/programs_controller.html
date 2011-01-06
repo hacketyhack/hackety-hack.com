@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>programs_controller.rb</title>
+  <link rel="stylesheet" href="http://jashkenas.github.com/docco/resources/docco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <div id="jump_to">
+    Jump To &hellip;
+    <div id="jump_wrapper">
+      <div id="jump_page">
+          <a class="source" href="content_controller.html">content_controller.rb</a>
+          <a class="source" href="hackers_controller.html">hackers_controller.rb</a>
+          <a class="source" href="messages_controller.html">messages_controller.rb</a>
+          <a class="source" href="programs_controller.html">programs_controller.rb</a>
+          <a class="source" href="sessions_controller.html">sessions_controller.rb</a>
+      </div>
+    </div>
+  </div>
+  <table cellspacing=0 cellpadding=0>
+  <thead>
+    <tr>
+      <th class=docs><h1>programs_controller.rb</h1></th>
+      <th class=code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id='section-1'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-1">#</a>
+        </div>
+        
+
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="n">get</span> <span class="s2">&quot;/programs/new&quot;</span> <span class="k">do</span>
+  <span class="n">require_login!</span>
+  <span class="n">haml</span> <span class="ss">:&quot;programs/new&quot;</span>
+<span class="k">end</span>
+
+<span class="n">get</span> <span class="s2">&quot;/programs&quot;</span> <span class="k">do</span>
+  <span class="vi">@programs</span> <span class="o">=</span> <span class="no">Program</span><span class="o">.</span><span class="n">all</span><span class="o">.</span><span class="n">sort</span><span class="p">{</span><span class="o">|</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">|</span> <span class="n">b</span><span class="o">.</span><span class="n">updated_at</span> <span class="o">&lt;=&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">updated_at</span> <span class="p">}</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+  <span class="n">haml</span> <span class="ss">:&quot;programs/index&quot;</span>
+<span class="k">end</span>
+
+<span class="n">post</span> <span class="s2">&quot;/programs&quot;</span> <span class="k">do</span>
+  <span class="n">require_login_or_api!</span> <span class="ss">:username</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:username</span><span class="o">]</span><span class="p">,</span> <span class="ss">:password</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:password</span><span class="o">]</span>
+  <span class="n">params</span><span class="o">[</span><span class="ss">:program</span><span class="o">][</span><span class="s1">&#39;creator_username&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="n">current_user</span><span class="o">.</span><span class="n">username</span>
+  <span class="n">program</span> <span class="o">=</span> <span class="no">Program</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:program</span><span class="o">]</span><span class="p">)</span>
+  <span class="n">flash</span><span class="o">[</span><span class="ss">:notice</span><span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;Program created!&quot;</span>
+  <span class="n">redirect</span> <span class="s2">&quot;/programs/</span><span class="si">#{</span><span class="n">program</span><span class="o">.</span><span class="n">creator_username</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">program</span><span class="o">.</span><span class="n">slug</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">end</span>
+
+<span class="n">post</span> <span class="s2">&quot;/programs/:username/:slug/comment&quot;</span> <span class="k">do</span>
+  <span class="vi">@program</span> <span class="o">=</span> <span class="no">Program</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="ss">:creator_username</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:username</span><span class="o">]</span><span class="p">,</span> <span class="ss">:slug</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:slug</span><span class="o">]</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">current_user</span>
+    <span class="n">params</span><span class="o">[</span><span class="ss">:comment</span><span class="o">][</span><span class="ss">:author</span><span class="o">]</span> <span class="o">=</span> <span class="n">current_user</span><span class="o">.</span><span class="n">username</span>
+    <span class="n">params</span><span class="o">[</span><span class="ss">:comment</span><span class="o">][</span><span class="ss">:author_email</span><span class="o">]</span> <span class="o">=</span> <span class="n">current_user</span><span class="o">.</span><span class="n">email</span>
+  <span class="k">else</span> 
+    <span class="n">params</span><span class="o">[</span><span class="ss">:comment</span><span class="o">][</span><span class="ss">:author</span><span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;Anonymous&quot;</span>
+    <span class="n">params</span><span class="o">[</span><span class="ss">:comment</span><span class="o">][</span><span class="ss">:author_email</span><span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;anonymous@example.com&quot;</span>
+  <span class="k">end</span>
+  <span class="vi">@program</span><span class="o">.</span><span class="n">comments</span> <span class="o">&lt;&lt;</span> <span class="no">Comment</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:comment</span><span class="o">]</span><span class="p">)</span>
+  <span class="vi">@program</span><span class="o">.</span><span class="n">save</span>
+
+  <span class="n">flash</span><span class="o">[</span><span class="ss">:notice</span><span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;Replied!&quot;</span>
+  <span class="n">redirect</span> <span class="s2">&quot;/programs/</span><span class="si">#{</span><span class="n">params</span><span class="o">[</span><span class="ss">:username</span><span class="o">]</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">params</span><span class="o">[</span><span class="ss">:slug</span><span class="o">]</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">end</span>
+
+<span class="n">get</span> <span class="s2">&quot;/programs/:username.json&quot;</span> <span class="k">do</span>
+  <span class="n">programs</span> <span class="o">=</span> <span class="no">Program</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="ss">:creator_username</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:username</span><span class="o">]</span><span class="p">)</span>
+  <span class="n">programs</span><span class="o">.</span><span class="n">to_json</span>
+<span class="k">end</span>
+
+<span class="n">get</span> <span class="s2">&quot;/programs/:username/:slug&quot;</span> <span class="k">do</span>
+  <span class="vi">@program</span> <span class="o">=</span> <span class="no">Program</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="ss">:creator_username</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:username</span><span class="o">]</span><span class="p">,</span> <span class="ss">:slug</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:slug</span><span class="o">]</span><span class="p">)</span>
+  <span class="n">haml</span> <span class="ss">:&quot;programs/show&quot;</span>
+<span class="k">end</span>
+
+<span class="n">put</span> <span class="s2">&quot;/programs/:username/:slug.json&quot;</span> <span class="k">do</span>
+  <span class="n">require_login_or_api!</span> <span class="ss">:username</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:username</span><span class="o">]</span><span class="p">,</span> <span class="ss">:password</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:password</span><span class="o">]</span>
+  <span class="k">if</span> <span class="n">current_user</span><span class="o">.</span><span class="n">username</span> <span class="o">!=</span> <span class="n">params</span><span class="o">[</span><span class="ss">:username</span><span class="o">]</span>
+    <span class="n">redirect</span> <span class="s2">&quot;/&quot;</span>
+  <span class="k">end</span>
+  <span class="n">program</span> <span class="o">=</span> <span class="no">Program</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="ss">:creator_username</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:username</span><span class="o">]</span><span class="p">,</span> <span class="ss">:slug</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:slug</span><span class="o">]</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">program</span><span class="o">.</span><span class="n">nil?</span>
+    <span class="n">program</span> <span class="o">=</span> <span class="no">Program</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+  <span class="k">else</span>
+    <span class="n">program</span><span class="o">.</span><span class="n">update_attributes</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+    <span class="n">program</span><span class="o">.</span><span class="n">save</span>
+  <span class="k">end</span>
+
+  <span class="n">flash</span><span class="o">[</span><span class="ss">:notice</span><span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;Program updated!&quot;</span>
+  <span class="n">redirect</span> <span class="s2">&quot;/programs/</span><span class="si">#{</span><span class="n">program</span><span class="o">.</span><span class="n">creator_username</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">program</span><span class="o">.</span><span class="n">slug</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">end</span>
+
+<span class="n">put</span> <span class="s2">&quot;/programs/:username/:slug&quot;</span> <span class="k">do</span>
+  <span class="n">require_login_or_api!</span> <span class="ss">:username</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:username</span><span class="o">]</span><span class="p">,</span> <span class="ss">:password</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:password</span><span class="o">]</span>
+  <span class="k">if</span> <span class="n">current_user</span><span class="o">.</span><span class="n">username</span> <span class="o">!=</span> <span class="n">params</span><span class="o">[</span><span class="ss">:username</span><span class="o">]</span>
+    <span class="n">flash</span><span class="o">[</span><span class="ss">:notice</span><span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;Sorry, buddy&quot;</span>
+    <span class="n">redirect</span> <span class="s2">&quot;/&quot;</span>
+  <span class="k">end</span>
+  <span class="n">program</span> <span class="o">=</span> <span class="no">Program</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="ss">:creator_username</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:username</span><span class="o">]</span><span class="p">,</span> <span class="ss">:slug</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:slug</span><span class="o">]</span><span class="p">)</span>
+  <span class="n">program</span><span class="o">.</span><span class="n">update_attributes</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:program</span><span class="o">]</span><span class="p">)</span>
+  <span class="n">program</span><span class="o">.</span><span class="n">save</span>
+
+  <span class="n">flash</span><span class="o">[</span><span class="ss">:notice</span><span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;Program updated!&quot;</span>
+  <span class="n">redirect</span> <span class="s2">&quot;/programs/</span><span class="si">#{</span><span class="n">program</span><span class="o">.</span><span class="n">creator_username</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">program</span><span class="o">.</span><span class="n">slug</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">end</span></pre></div>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>
