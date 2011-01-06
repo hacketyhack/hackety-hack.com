@@ -77,6 +77,12 @@ require 'haml'
 # store our model classes into MongoDB.
 require 'mongo_mapper'
 
+# We need a secret for our sessions. This is set via an environment variable so
+# that we don't have to give it away in the source code. Heroku makes it really
+# easy to keep environment variables set up, so this ends up being pretty nice.
+# This also has to be included before rack-flash, or it blows up.
+use Rack::Session::Cookie, :secret => ENV['COOKIE_SECRET']
+
 # If you've used Rails' flash messages, you know how convenient they are.
 # rack-flash lets us use them.
 require 'rack-flash'
@@ -99,11 +105,6 @@ require 'sinatra/content_for'
 require_relative 'helpers'
 
 #### Configure settings
-
-# We need a secret for our sessions. This is set via an environment variable so
-# that we don't have to give it away in the source code. Heroku makes it really
-# easy to keep environment variables set up, so this ends up being pretty nice.
-use Rack::Session::Cookie, :secret => ENV['COOKIE_SECRET']
 
 # We use [Exceptional](http://www.getexceptional.com/) to keep track of errors
 # that happen. This code is from their 
