@@ -30,8 +30,10 @@
         <div class="octowrap">
           <a class="octothorpe" href="#section-1">#</a>
         </div>
-        <p>this helpers file contains lots of helpful little methods
-to make our work with sinatra easier</p>
+        <p> The <strong>helpers.rb</strong> file contains all of our Sinatra helpers. This is large
+ enough that including it in a separate file makes it much easier to find;
+ otherwise, I&rsquo;d be opening <strong>hackety.rb</strong> and searching for &lsquo;helpers,&rsquo; and
+ that&rsquo;s just stupid.</p>
       </td>
       <td class=code>
         <div class='highlight'><pre><span class="n">helpers</span> <span class="k">do</span></pre></div>
@@ -42,8 +44,9 @@ to make our work with sinatra easier</p>
         <div class="octowrap">
           <a class="octothorpe" href="#section-2">#</a>
         </div>
-        <p>this defines three helpers, that all test our environment:
-they&rsquo;re called &lsquo;development?&rsquo;, &lsquo;test?&rsquo;, and &lsquo;production?&rsquo;</p>
+        <p> A tiny bit of metaprogramming goes a long way. We want to generate three
+ methods (<code>development?</code>, <code>production?</code>, and <code>test?</code>) that let us know which
+ environment we happen to be in. This is useful in a few places.</p>
       </td>
       <td class=code>
         <div class='highlight'><pre>  <span class="o">[</span><span class="ss">:development</span><span class="p">,</span> <span class="ss">:production</span><span class="p">,</span> <span class="ss">:test</span><span class="o">].</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">environment</span><span class="o">|</span>
@@ -58,10 +61,15 @@ they&rsquo;re called &lsquo;development?&rsquo;, &lsquo;test?&rsquo;, and &lsquo
         <div class="octowrap">
           <a class="octothorpe" href="#section-3">#</a>
         </div>
-        <p>this method returns the logged_in hacker</p>
+        <p> This incredibly useful helper gives us the currently logged in user. We
+ keep track of that by just setting a session variable with their id. If it
+ doesn&rsquo;t exist, we just want to return nil.</p>
       </td>
       <td class=code>
-        <div class='highlight'><pre>  <span class="k">def</span> <span class="nf">current_user</span></pre></div>
+        <div class='highlight'><pre>  <span class="k">def</span> <span class="nf">current_user</span>
+    <span class="k">return</span> <span class="no">Hacker</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="ss">:id</span> <span class="o">=&gt;</span> <span class="n">session</span><span class="o">[</span><span class="ss">:hacker_id</span><span class="o">]</span><span class="p">)</span> <span class="k">if</span> <span class="n">session</span><span class="o">[</span><span class="ss">:hacker_id</span><span class="o">]</span>
+    <span class="kp">nil</span>
+  <span class="k">end</span></pre></div>
       </td>
     </tr>
     <tr id='section-4'>
@@ -69,10 +77,13 @@ they&rsquo;re called &lsquo;development?&rsquo;, &lsquo;test?&rsquo;, and &lsquo
         <div class="octowrap">
           <a class="octothorpe" href="#section-4">#</a>
         </div>
-        <p>let&rsquo;s look up the Hacker by the id in the session</p>
+        <p> This very simple method checks if we&rsquo;ve got a logged in user. That&rsquo;s pretty
+ easy: just check our current_user.</p>
       </td>
       <td class=code>
-        <div class='highlight'><pre>    <span class="k">return</span> <span class="no">Hacker</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="ss">:id</span> <span class="o">=&gt;</span> <span class="n">session</span><span class="o">[</span><span class="ss">:hacker_id</span><span class="o">]</span><span class="p">)</span> <span class="k">if</span> <span class="n">session</span><span class="o">[</span><span class="ss">:hacker_id</span><span class="o">]</span></pre></div>
+        <div class='highlight'><pre>  <span class="k">def</span> <span class="nf">logged_in?</span>
+    <span class="n">current_user</span> <span class="o">!=</span> <span class="kp">nil</span>
+  <span class="k">end</span></pre></div>
       </td>
     </tr>
     <tr id='section-5'>
@@ -80,10 +91,16 @@ they&rsquo;re called &lsquo;development?&rsquo;, &lsquo;test?&rsquo;, and &lsquo
         <div class="octowrap">
           <a class="octothorpe" href="#section-5">#</a>
         </div>
-        <p>if we can&rsquo;t find them, just return nil</p>
+        <p> Our <code>admin_only!</code> helper will only let admin users visit the page. If
+ they&rsquo;re not an admin, we redirect them to either / or the page that we
+ specified when we called it.</p>
       </td>
       <td class=code>
-        <div class='highlight'><pre>    <span class="kp">nil</span>
+        <div class='highlight'><pre>  <span class="k">def</span> <span class="nf">admin_only!</span><span class="p">(</span><span class="n">opts</span> <span class="o">=</span> <span class="p">{</span><span class="ss">:return</span> <span class="o">=&gt;</span> <span class="s2">&quot;/&quot;</span><span class="p">})</span>
+    <span class="k">unless</span> <span class="n">logged_in?</span> <span class="o">&amp;&amp;</span> <span class="n">current_user</span><span class="o">.</span><span class="n">admin?</span>
+      <span class="n">flash</span><span class="o">[</span><span class="ss">:error</span><span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;Sorry, buddy&quot;</span>
+      <span class="n">redirect</span> <span class="n">opts</span><span class="o">[</span><span class="ss">:return</span><span class="o">]</span>
+    <span class="k">end</span>
   <span class="k">end</span></pre></div>
       </td>
     </tr>
@@ -92,10 +109,16 @@ they&rsquo;re called &lsquo;development?&rsquo;, &lsquo;test?&rsquo;, and &lsquo
         <div class="octowrap">
           <a class="octothorpe" href="#section-6">#</a>
         </div>
-        <p>this method returns true if we&rsquo;re logged in, and false if we&rsquo;re not</p>
+        <p> Similar to <code>admin_only!</code>, <code>require_login!</code> only lets logged in users access
+ a particular page, and redirects them if they&rsquo;re not.</p>
       </td>
       <td class=code>
-        <div class='highlight'><pre>  <span class="k">def</span> <span class="nf">logged_in?</span></pre></div>
+        <div class='highlight'><pre>  <span class="k">def</span> <span class="nf">require_login!</span><span class="p">(</span><span class="n">opts</span> <span class="o">=</span> <span class="p">{</span><span class="ss">:return</span> <span class="o">=&gt;</span> <span class="s2">&quot;/&quot;</span><span class="p">})</span>
+    <span class="k">unless</span> <span class="n">logged_in?</span>
+      <span class="n">flash</span><span class="o">[</span><span class="ss">:error</span><span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;Sorry, buddy&quot;</span>
+      <span class="n">redirect</span> <span class="n">opts</span><span class="o">[</span><span class="ss">:return</span><span class="o">]</span>
+    <span class="k">end</span>
+  <span class="k">end</span></pre></div>
       </td>
     </tr>
     <tr id='section-7'>
@@ -103,111 +126,10 @@ they&rsquo;re called &lsquo;development?&rsquo;, &lsquo;test?&rsquo;, and &lsquo
         <div class="octowrap">
           <a class="octothorpe" href="#section-7">#</a>
         </div>
-        <p>pretty easy, just check the session</p>
-      </td>
-      <td class=code>
-        <div class='highlight'><pre>    <span class="n">current_user</span> <span class="o">!=</span> <span class="kp">nil</span>
-  <span class="k">end</span></pre></div>
-      </td>
-    </tr>
-    <tr id='section-8'>
-      <td class=docs>
-        <div class="octowrap">
-          <a class="octothorpe" href="#section-8">#</a>
-        </div>
-        <p>this helper checks if the current_user is admin, and redirects them if they&rsquo;re not</p>
-      </td>
-      <td class=code>
-        <div class='highlight'><pre>  <span class="k">def</span> <span class="nf">admin_only!</span><span class="p">(</span><span class="n">opts</span> <span class="o">=</span> <span class="p">{</span><span class="ss">:return</span> <span class="o">=&gt;</span> <span class="s2">&quot;/&quot;</span><span class="p">})</span></pre></div>
-      </td>
-    </tr>
-    <tr id='section-9'>
-      <td class=docs>
-        <div class="octowrap">
-          <a class="octothorpe" href="#section-9">#</a>
-        </div>
-        <p>we need to be both logged_in and an admin for this to work</p>
-      </td>
-      <td class=code>
-        <div class='highlight'><pre>    <span class="k">unless</span> <span class="n">logged_in?</span> <span class="o">&amp;&amp;</span> <span class="n">current_user</span><span class="o">.</span><span class="n">admin?</span></pre></div>
-      </td>
-    </tr>
-    <tr id='section-10'>
-      <td class=docs>
-        <div class="octowrap">
-          <a class="octothorpe" href="#section-10">#</a>
-        </div>
-        <p>if we&rsquo;re not, set an error message</p>
-      </td>
-      <td class=code>
-        <div class='highlight'><pre>      <span class="n">flash</span><span class="o">[</span><span class="ss">:error</span><span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;Sorry, buddy&quot;</span></pre></div>
-      </td>
-    </tr>
-    <tr id='section-11'>
-      <td class=docs>
-        <div class="octowrap">
-          <a class="octothorpe" href="#section-11">#</a>
-        </div>
-        <p>and get redirected</p>
-      </td>
-      <td class=code>
-        <div class='highlight'><pre>      <span class="n">redirect</span> <span class="n">opts</span><span class="o">[</span><span class="ss">:return</span><span class="o">]</span>
-    <span class="k">end</span>
-  <span class="k">end</span></pre></div>
-      </td>
-    </tr>
-    <tr id='section-12'>
-      <td class=docs>
-        <div class="octowrap">
-          <a class="octothorpe" href="#section-12">#</a>
-        </div>
-        <p>this method makes sure that we&rsquo;re logged in</p>
-      </td>
-      <td class=code>
-        <div class='highlight'><pre>  <span class="k">def</span> <span class="nf">require_login!</span><span class="p">(</span><span class="n">opts</span> <span class="o">=</span> <span class="p">{</span><span class="ss">:return</span> <span class="o">=&gt;</span> <span class="s2">&quot;/&quot;</span><span class="p">})</span></pre></div>
-      </td>
-    </tr>
-    <tr id='section-13'>
-      <td class=docs>
-        <div class="octowrap">
-          <a class="octothorpe" href="#section-13">#</a>
-        </div>
-        <p>if we&rsquo;re not</p>
-      </td>
-      <td class=code>
-        <div class='highlight'><pre>    <span class="k">unless</span> <span class="n">logged_in?</span></pre></div>
-      </td>
-    </tr>
-    <tr id='section-14'>
-      <td class=docs>
-        <div class="octowrap">
-          <a class="octothorpe" href="#section-14">#</a>
-        </div>
-        <p>set an error message</p>
-      </td>
-      <td class=code>
-        <div class='highlight'><pre>      <span class="n">flash</span><span class="o">[</span><span class="ss">:error</span><span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;Sorry, buddy&quot;</span></pre></div>
-      </td>
-    </tr>
-    <tr id='section-15'>
-      <td class=docs>
-        <div class="octowrap">
-          <a class="octothorpe" href="#section-15">#</a>
-        </div>
-        <p>and get redirected</p>
-      </td>
-      <td class=code>
-        <div class='highlight'><pre>      <span class="n">redirect</span> <span class="n">opts</span><span class="o">[</span><span class="ss">:return</span><span class="o">]</span>
-    <span class="k">end</span>
-  <span class="k">end</span></pre></div>
-      </td>
-    </tr>
-    <tr id='section-16'>
-      <td class=docs>
-        <div class="octowrap">
-          <a class="octothorpe" href="#section-16">#</a>
-        </div>
-        <p>this method lets us use an api call as well as logging in</p>
+        <p> We also want to have a way for the desktop application to make calls to the
+ site. For this, we allow a username and password to be passed in, and we
+ authenticate directly, rather than relying on a previously logged in
+ session.</p>
       </td>
       <td class=code>
         <div class='highlight'><pre>  <span class="k">def</span> <span class="nf">require_login_or_api!</span><span class="p">(</span><span class="n">opts</span> <span class="o">=</span> <span class="p">{</span><span class="ss">:return</span> <span class="o">=&gt;</span> <span class="s2">&quot;/&quot;</span><span class="p">})</span>
@@ -220,12 +142,14 @@ they&rsquo;re called &lsquo;development?&rsquo;, &lsquo;test?&rsquo;, and &lsquo
   <span class="k">end</span></pre></div>
       </td>
     </tr>
-    <tr id='section-17'>
+    <tr id='section-8'>
       <td class=docs>
         <div class="octowrap">
-          <a class="octothorpe" href="#section-17">#</a>
+          <a class="octothorpe" href="#section-8">#</a>
         </div>
-        <p>gives a gravatar url for an email</p>
+        <p> <a href="http://gravatar.com/">Gravatar</a> is used for our avatars. Generating the
+ url for one is pretty simple, we just need the proper email address, and
+ then we make an md5 of it. No biggie.</p>
       </td>
       <td class=code>
         <div class='highlight'><pre>  <span class="k">def</span> <span class="nf">gravatar_url_for</span> <span class="n">email</span>
@@ -236,42 +160,33 @@ they&rsquo;re called &lsquo;development?&rsquo;, &lsquo;test?&rsquo;, and &lsquo
 <span class="k">end</span></pre></div>
       </td>
     </tr>
-    <tr id='section-18'>
+    <tr id='section-9'>
       <td class=docs>
         <div class="octowrap">
-          <a class="octothorpe" href="#section-18">#</a>
+          <a class="octothorpe" href="#section-9">#</a>
         </div>
-        <p>this lets us require a whole directory of .rb files!</p>
+        <p> This handy helper method lets us require an entire directory of <code>rb</code> files.
+ It&rsquo;s much simpler than having to require them all directly.</p>
       </td>
       <td class=code>
-        <div class='highlight'><pre><span class="k">def</span> <span class="nf">require_directory</span> <span class="n">dirname</span></pre></div>
-      </td>
-    </tr>
-    <tr id='section-19'>
-      <td class=docs>
-        <div class="octowrap">
-          <a class="octothorpe" href="#section-19">#</a>
-        </div>
-        <p>we glob every file, and loop through them</p>
-      </td>
-      <td class=code>
-        <div class='highlight'><pre>  <span class="no">Dir</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">#{</span><span class="no">File</span><span class="o">.</span><span class="n">expand_path</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="bp">__FILE__</span><span class="p">))</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">dirname</span><span class="si">}</span><span class="s2">/*.rb&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span></pre></div>
-      </td>
-    </tr>
-    <tr id='section-20'>
-      <td class=docs>
-        <div class="octowrap">
-          <a class="octothorpe" href="#section-20">#</a>
-        </div>
-        <p>and then require them!</p>
-
-      </td>
-      <td class=code>
-        <div class='highlight'><pre>    <span class="nb">require</span> <span class="n">f</span>
+        <div class='highlight'><pre><span class="k">def</span> <span class="nf">require_directory</span> <span class="n">dirname</span>
+  <span class="no">Dir</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">#{</span><span class="no">File</span><span class="o">.</span><span class="n">expand_path</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="bp">__FILE__</span><span class="p">))</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">dirname</span><span class="si">}</span><span class="s2">/*.rb&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span>
+    <span class="nb">require</span> <span class="n">f</span>
   <span class="k">end</span>
-<span class="k">end</span>
+<span class="k">end</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-10'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-10">#</a>
+        </div>
+        <p> This method is a handy monkeypatch on String. It allows us to turn any string
+ into a slug that&rsquo;s suitable for putting into URLs.</p>
 
-<span class="k">class</span> <span class="nc">String</span>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="k">class</span> <span class="nc">String</span>
   <span class="k">def</span> <span class="nf">to_slug</span>
     <span class="nb">self</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="sr">/[^a-zA-Z _0-9]/</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="sr">/\s/</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">downcase</span>
   <span class="k">end</span>
