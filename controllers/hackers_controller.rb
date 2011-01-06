@@ -1,20 +1,19 @@
 #This is the 'hackers' controller. "Hackers" are what we call "Users" in HH.
 
-# An individual Hacker's page
+# We want to give our Hackers a profile page.
 get '/hackers/:name' do
-  #find the hacker with the given name
   @hacker = Hacker.first(:username => params[:name])
 
-  #render the template
   haml :"hackers/show"
 end
 
-#update a hacker's information
+# People need to be able to update their information. Of course, this means
+# that they need to be logged in.
 post '/hackers/update' do
-  #you have to be logged in to update your info
   require_login! :return => "/hackers/update"
 
-  #do they want to update their password
+  # If they're trying to update their password, let's take care of that. If we
+  # don't, then we wouldn't want to set their password to nil! That'd be bad.
   unless params[:password].nil?
     if params[:password][:new] == params[:password][:confirm]
       current_user.password = params[:password][:new]
@@ -33,12 +32,10 @@ post '/hackers/update' do
 
 end
 
-#this lets you follow a Hacker
+# Hackers can follow each other, and this route takes care of it!
 get '/hackers/:name/follow' do
-  #we have to be logged in to follow someone
   require_login! :return => "/hackers/#{params[:name]}/follow"
 
-  #find the hacker with the given name
   @hacker = Hacker.first(:username => params[:name])
 
   #make sure we're not following them already
@@ -48,26 +45,20 @@ get '/hackers/:name/follow' do
     return
   end
 
-  #follow them!
+  # then follow them!
   current_user.follow! @hacker
 
-  #set a message
   flash[:notice] = "Now following #{params[:name]}."
-
-  #redirect back to your page!
   redirect "/hackers/#{current_user.username}"
-
 end
 
 #this lets you unfollow a Hacker
 get '/hackers/:name/unfollow' do
-  #we have to be logged in to unfollow someone
   require_login! :return => "/hackers/#{params[:name]}/unfollow"
 
-  #find the hacker with the given name
   @hacker = Hacker.first(:username => params[:name])
 
-  #make sure we're not following them already
+  #make sure we're following them already
   unless current_user.following? @hacker
     flash[:notice] = "You're already not following #{params[:name]}."
     redirect "/hackers/#{current_user.username}"
@@ -77,29 +68,21 @@ get '/hackers/:name/unfollow' do
   #unfollow them!
   current_user.unfollow! @hacker
 
-  #set a message
   flash[:notice] = "No longer following #{params[:name]}."
-
-  #redirect back to your page!
   redirect "/hackers/#{current_user.username}"
-
 end
 
-#this lets us see followers
+# this lets us see followers.
 get '/hackers/:name/followers' do
-  #find the hacker with the given name
   @hacker = Hacker.first(:username => params[:name])
 
-  #render our page
   haml :"hackers/followers"
 end
 
-#this lets us see following
+# This lets us see who is following.
 get '/hackers/:name/following' do
-  #find the hacker with the given name
   @hacker = Hacker.first(:username => params[:name])
 
-  #render our page
   haml :"hackers/following"
 end
 

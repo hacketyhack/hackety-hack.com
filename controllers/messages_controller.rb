@@ -1,35 +1,30 @@
-#people can get a form to send messages here
+# This is the new message form.
 get "/messages/new/to/:username" do
-  #gotta be logged in!
   require_login!
 
-  #we've got to save the username to put it in the view
   @username = params[:username]
-
-  #render the template
   haml :"messages/new"
 end
 
-#this is where the form POSTs to
+# This route actually creates the messages.
 post "/messages" do
-  #gotta be logged in!
   require_login!
 
+  # We wouldn't want anyone forging who messages are sent from!
   params[:message][:sender] = current_user.username
 
-  #make a new message with our params
   message = Message.create(params[:message])
 
-  #set a friendly message
   flash[:notice] = "Message sent."
 
-  #render the page of the recipient
   redirect "/hackers/#{message.recipient}"
 end
 
-#this is the page where you can see your messages
+# This is the page where you can see your messages.
 get "/messages" do
   require_login!
+
+  # Let's sort them in descending order.
   @messages = Message.all({"recipient" => current_user.username}).sort do |a, b|
     b.created_at <=> a.created_at
   end
