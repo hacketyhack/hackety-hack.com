@@ -18,6 +18,11 @@ gem "pony", "~>1.0.1"
 gem "sinatra-content-for"
 gem "exceptional"
 
+group :development do
+  gem "rocco"
+  gem "pygmentize"
+end
+
 group :test do
   gem "launchy", "~>0.3.7"
   gem "capybara", "~>0.3.9"

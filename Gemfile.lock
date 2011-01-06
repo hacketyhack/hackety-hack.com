@@ -42,12 +42,14 @@ GEM
       activesupport (>= 2.3.4)
       jnunemaker-validatable (~> 1.8.4)
       plucky (~> 0.3.6)
+    mustache (0.12.0)
     nokogiri (1.4.4)
     plucky (0.3.6)
       mongo (~> 1.1)
     polyglot (0.3.1)
     pony (1.0.1)
       mail (> 2.0)
+    pygmentize (0.0.2)
     rack (1.2.1)
     rack-flash (0.1.1)
       rack
@@ -55,6 +57,9 @@ GEM
       rack (>= 1.0)
     rake (0.8.7)
     rdiscount (1.6.5)
+    rocco (0.5)
+      mustache
+      rdiscount
     rspec (2.1.0)
       rspec-core (~> 2.1.0)
       rspec-expectations (~> 2.1.0)
@@ -98,8 +103,10 @@ DEPENDENCIES
   launchy (~> 0.3.7)
   mongo_mapper (~> 0.8.4)
   pony (~> 1.0.1)
+  pygmentize
   rack-flash (~> 0.1.1)
   rdiscount (~> 1.6.5)
+  rocco
   rspec (~> 2.1.0)
   sinatra (~> 1.1)
   sinatra-content-for
