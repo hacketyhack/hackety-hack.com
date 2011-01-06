@@ -1,3 +1,11 @@
+# This is the controller that handles all of the different kinds of Content
+# posted to the site.
+
+get "/content/:id" do
+  @content = Content.find(params[:id])
+  haml :"content/show"
+end
+
 post "/content" do
   if current_user
     params[:content][:author] = current_user.username
@@ -9,11 +17,6 @@ post "/content" do
   @content = Content.create(params[:content])
   flash[:notice] = "Thanks for your post!"
   redirect "/stream"
-end
-
-get "/content/:id" do
-  @content = Content.find(params[:id])
-  haml :"content/show"
 end
 
 post "/content/:id/comment" do
