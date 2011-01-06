@@ -33,10 +33,15 @@
         <div class="octowrap">
           <a class="octothorpe" href="#section-1">#</a>
         </div>
-        <p>people can get a form to send messages here</p>
+        <p> This is the new message form.</p>
       </td>
       <td class=code>
-        <div class='highlight'><pre><span class="n">get</span> <span class="s2">&quot;/messages/new/to/:username&quot;</span> <span class="k">do</span></pre></div>
+        <div class='highlight'><pre><span class="n">get</span> <span class="s2">&quot;/messages/new/to/:username&quot;</span> <span class="k">do</span>
+  <span class="n">require_login!</span>
+
+  <span class="vi">@username</span> <span class="o">=</span> <span class="n">params</span><span class="o">[</span><span class="ss">:username</span><span class="o">]</span>
+  <span class="n">haml</span> <span class="ss">:&quot;messages/new&quot;</span>
+<span class="k">end</span></pre></div>
       </td>
     </tr>
     <tr id='section-2'>
@@ -44,10 +49,11 @@
         <div class="octowrap">
           <a class="octothorpe" href="#section-2">#</a>
         </div>
-        <p>gotta be logged in!</p>
+        <p> This route actually creates the messages.</p>
       </td>
       <td class=code>
-        <div class='highlight'><pre>  <span class="n">require_login!</span></pre></div>
+        <div class='highlight'><pre><span class="n">post</span> <span class="s2">&quot;/messages&quot;</span> <span class="k">do</span>
+  <span class="n">require_login!</span></pre></div>
       </td>
     </tr>
     <tr id='section-3'>
@@ -55,10 +61,17 @@
         <div class="octowrap">
           <a class="octothorpe" href="#section-3">#</a>
         </div>
-        <p>we&rsquo;ve got to save the username to put it in the view</p>
+        <p> We wouldn&rsquo;t want anyone forging who messages are sent from!</p>
       </td>
       <td class=code>
-        <div class='highlight'><pre>  <span class="vi">@username</span> <span class="o">=</span> <span class="n">params</span><span class="o">[</span><span class="ss">:username</span><span class="o">]</span></pre></div>
+        <div class='highlight'><pre>  <span class="n">params</span><span class="o">[</span><span class="ss">:message</span><span class="o">][</span><span class="ss">:sender</span><span class="o">]</span> <span class="o">=</span> <span class="n">current_user</span><span class="o">.</span><span class="n">username</span>
+
+  <span class="n">message</span> <span class="o">=</span> <span class="no">Message</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:message</span><span class="o">]</span><span class="p">)</span>
+
+  <span class="n">flash</span><span class="o">[</span><span class="ss">:notice</span><span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;Message sent.&quot;</span>
+
+  <span class="n">redirect</span> <span class="s2">&quot;/hackers/</span><span class="si">#{</span><span class="n">message</span><span class="o">.</span><span class="n">recipient</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">end</span></pre></div>
       </td>
     </tr>
     <tr id='section-4'>
@@ -66,11 +79,11 @@
         <div class="octowrap">
           <a class="octothorpe" href="#section-4">#</a>
         </div>
-        <p>render the template</p>
+        <p> This is the page where you can see your messages.</p>
       </td>
       <td class=code>
-        <div class='highlight'><pre>  <span class="n">haml</span> <span class="ss">:&quot;messages/new&quot;</span>
-<span class="k">end</span></pre></div>
+        <div class='highlight'><pre><span class="n">get</span> <span class="s2">&quot;/messages&quot;</span> <span class="k">do</span>
+  <span class="n">require_login!</span></pre></div>
       </td>
     </tr>
     <tr id='section-5'>
@@ -78,71 +91,11 @@
         <div class="octowrap">
           <a class="octothorpe" href="#section-5">#</a>
         </div>
-        <p>this is where the form POSTs to</p>
-      </td>
-      <td class=code>
-        <div class='highlight'><pre><span class="n">post</span> <span class="s2">&quot;/messages&quot;</span> <span class="k">do</span></pre></div>
-      </td>
-    </tr>
-    <tr id='section-6'>
-      <td class=docs>
-        <div class="octowrap">
-          <a class="octothorpe" href="#section-6">#</a>
-        </div>
-        <p>gotta be logged in!</p>
-      </td>
-      <td class=code>
-        <div class='highlight'><pre>  <span class="n">require_login!</span>
-
-  <span class="n">params</span><span class="o">[</span><span class="ss">:message</span><span class="o">][</span><span class="ss">:sender</span><span class="o">]</span> <span class="o">=</span> <span class="n">current_user</span><span class="o">.</span><span class="n">username</span></pre></div>
-      </td>
-    </tr>
-    <tr id='section-7'>
-      <td class=docs>
-        <div class="octowrap">
-          <a class="octothorpe" href="#section-7">#</a>
-        </div>
-        <p>make a new message with our params</p>
-      </td>
-      <td class=code>
-        <div class='highlight'><pre>  <span class="n">message</span> <span class="o">=</span> <span class="no">Message</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:message</span><span class="o">]</span><span class="p">)</span></pre></div>
-      </td>
-    </tr>
-    <tr id='section-8'>
-      <td class=docs>
-        <div class="octowrap">
-          <a class="octothorpe" href="#section-8">#</a>
-        </div>
-        <p>set a friendly message</p>
-      </td>
-      <td class=code>
-        <div class='highlight'><pre>  <span class="n">flash</span><span class="o">[</span><span class="ss">:notice</span><span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;Message sent.&quot;</span></pre></div>
-      </td>
-    </tr>
-    <tr id='section-9'>
-      <td class=docs>
-        <div class="octowrap">
-          <a class="octothorpe" href="#section-9">#</a>
-        </div>
-        <p>render the page of the recipient</p>
-      </td>
-      <td class=code>
-        <div class='highlight'><pre>  <span class="n">redirect</span> <span class="s2">&quot;/hackers/</span><span class="si">#{</span><span class="n">message</span><span class="o">.</span><span class="n">recipient</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="k">end</span></pre></div>
-      </td>
-    </tr>
-    <tr id='section-10'>
-      <td class=docs>
-        <div class="octowrap">
-          <a class="octothorpe" href="#section-10">#</a>
-        </div>
-        <p>this is the page where you can see your messages</p>
+        <p> Let&rsquo;s sort them in descending order.</p>
 
       </td>
       <td class=code>
-        <div class='highlight'><pre><span class="n">get</span> <span class="s2">&quot;/messages&quot;</span> <span class="k">do</span>
-  <span class="n">require_login!</span>
-  <span class="vi">@messages</span> <span class="o">=</span> <span class="no">Message</span><span class="o">.</span><span class="n">all</span><span class="p">({</span><span class="s2">&quot;recipient&quot;</span> <span class="o">=&gt;</span> <span class="n">current_user</span><span class="o">.</span><span class="n">username</span><span class="p">})</span><span class="o">.</span><span class="n">sort</span> <span class="k">do</span> <span class="o">|</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">|</span>
+        <div class='highlight'><pre>  <span class="vi">@messages</span> <span class="o">=</span> <span class="no">Message</span><span class="o">.</span><span class="n">all</span><span class="p">({</span><span class="s2">&quot;recipient&quot;</span> <span class="o">=&gt;</span> <span class="n">current_user</span><span class="o">.</span><span class="n">username</span><span class="p">})</span><span class="o">.</span><span class="n">sort</span> <span class="k">do</span> <span class="o">|</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">|</span>
     <span class="n">b</span><span class="o">.</span><span class="n">created_at</span> <span class="o">&lt;=&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">created_at</span>
   <span class="k">end</span>
   <span class="n">haml</span> <span class="ss">:&quot;messages/index&quot;</span>

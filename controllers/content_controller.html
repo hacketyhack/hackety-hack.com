@@ -35,16 +35,47 @@
         </div>
         <p> This is the controller that handles all of the different kinds of Content
  posted to the site.</p>
-
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-2'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-2">#</a>
+        </div>
+        <p> We need a simple GET action that displays the given Content.</p>
       </td>
       <td class=code>
         <div class='highlight'><pre><span class="n">get</span> <span class="s2">&quot;/content/:id&quot;</span> <span class="k">do</span>
   <span class="vi">@content</span> <span class="o">=</span> <span class="no">Content</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:id</span><span class="o">]</span><span class="p">)</span>
   <span class="n">haml</span> <span class="ss">:&quot;content/show&quot;</span>
-<span class="k">end</span>
-
-<span class="n">post</span> <span class="s2">&quot;/content&quot;</span> <span class="k">do</span>
-  <span class="k">if</span> <span class="n">current_user</span>
+<span class="k">end</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-3'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-3">#</a>
+        </div>
+        <p> We also need a simple POST that will create content.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="n">post</span> <span class="s2">&quot;/content&quot;</span> <span class="k">do</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-4'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-4">#</a>
+        </div>
+        <p> One small wrinkle: We&rsquo;re allowing anonymous posts. So, if we&rsquo;re not logged
+ in, we need to set the author and email properly so that all of our views
+ work.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="k">if</span> <span class="n">current_user</span>
     <span class="n">params</span><span class="o">[</span><span class="ss">:content</span><span class="o">][</span><span class="ss">:author</span><span class="o">]</span> <span class="o">=</span> <span class="n">current_user</span><span class="o">.</span><span class="n">username</span>
     <span class="n">params</span><span class="o">[</span><span class="ss">:content</span><span class="o">][</span><span class="ss">:author_email</span><span class="o">]</span> <span class="o">=</span> <span class="n">current_user</span><span class="o">.</span><span class="n">email</span>
   <span class="k">else</span>
@@ -54,11 +85,33 @@
   <span class="vi">@content</span> <span class="o">=</span> <span class="no">Content</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:content</span><span class="o">]</span><span class="p">)</span>
   <span class="n">flash</span><span class="o">[</span><span class="ss">:notice</span><span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;Thanks for your post!&quot;</span>
   <span class="n">redirect</span> <span class="s2">&quot;/stream&quot;</span>
-<span class="k">end</span>
+<span class="k">end</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-5'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-5">#</a>
+        </div>
+        <p> We&rsquo;re allowing comments to be made on posts, so we need a route for that as
+ well.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="n">post</span> <span class="s2">&quot;/content/:id/comment&quot;</span> <span class="k">do</span>
+  <span class="vi">@content</span> <span class="o">=</span> <span class="no">Content</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="ss">:id</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:id</span><span class="o">]</span><span class="p">)</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-6'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-6">#</a>
+        </div>
+        <p> We have the same wrinkle as we do when making posts: We&rsquo;re allowing
+ anonymous comments. So we have to properly set all that up.</p>
 
-<span class="n">post</span> <span class="s2">&quot;/content/:id/comment&quot;</span> <span class="k">do</span>
-  <span class="vi">@content</span> <span class="o">=</span> <span class="no">Content</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="ss">:id</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:id</span><span class="o">]</span><span class="p">)</span>
-  <span class="k">if</span> <span class="n">current_user</span>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="k">if</span> <span class="n">current_user</span>
     <span class="n">params</span><span class="o">[</span><span class="ss">:comment</span><span class="o">][</span><span class="ss">:author</span><span class="o">]</span> <span class="o">=</span> <span class="n">current_user</span><span class="o">.</span><span class="n">username</span>
     <span class="n">params</span><span class="o">[</span><span class="ss">:comment</span><span class="o">][</span><span class="ss">:author_email</span><span class="o">]</span> <span class="o">=</span> <span class="n">current_user</span><span class="o">.</span><span class="n">email</span>
   <span class="k">else</span> 

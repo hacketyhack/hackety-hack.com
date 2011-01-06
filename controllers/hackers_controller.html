@@ -44,10 +44,14 @@
         <div class="octowrap">
           <a class="octothorpe" href="#section-2">#</a>
         </div>
-        <p> An individual Hacker&rsquo;s page</p>
+        <p> We want to give our Hackers a profile page.</p>
       </td>
       <td class=code>
-        <div class='highlight'><pre><span class="n">get</span> <span class="s1">&#39;/hackers/:name&#39;</span> <span class="k">do</span></pre></div>
+        <div class='highlight'><pre><span class="n">get</span> <span class="s1">&#39;/hackers/:name&#39;</span> <span class="k">do</span>
+  <span class="vi">@hacker</span> <span class="o">=</span> <span class="no">Hacker</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="ss">:username</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span><span class="p">)</span>
+
+  <span class="n">haml</span> <span class="ss">:&quot;hackers/show&quot;</span>
+<span class="k">end</span></pre></div>
       </td>
     </tr>
     <tr id='section-3'>
@@ -55,10 +59,12 @@
         <div class="octowrap">
           <a class="octothorpe" href="#section-3">#</a>
         </div>
-        <p>find the hacker with the given name</p>
+        <p> People need to be able to update their information. Of course, this means
+ that they need to be logged in.</p>
       </td>
       <td class=code>
-        <div class='highlight'><pre>  <span class="vi">@hacker</span> <span class="o">=</span> <span class="no">Hacker</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="ss">:username</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span><span class="p">)</span></pre></div>
+        <div class='highlight'><pre><span class="n">post</span> <span class="s1">&#39;/hackers/update&#39;</span> <span class="k">do</span>
+  <span class="n">require_login!</span> <span class="ss">:return</span> <span class="o">=&gt;</span> <span class="s2">&quot;/hackers/update&quot;</span></pre></div>
       </td>
     </tr>
     <tr id='section-4'>
@@ -66,41 +72,8 @@
         <div class="octowrap">
           <a class="octothorpe" href="#section-4">#</a>
         </div>
-        <p>render the template</p>
-      </td>
-      <td class=code>
-        <div class='highlight'><pre>  <span class="n">haml</span> <span class="ss">:&quot;hackers/show&quot;</span>
-<span class="k">end</span></pre></div>
-      </td>
-    </tr>
-    <tr id='section-5'>
-      <td class=docs>
-        <div class="octowrap">
-          <a class="octothorpe" href="#section-5">#</a>
-        </div>
-        <p>update a hacker&rsquo;s information</p>
-      </td>
-      <td class=code>
-        <div class='highlight'><pre><span class="n">post</span> <span class="s1">&#39;/hackers/update&#39;</span> <span class="k">do</span></pre></div>
-      </td>
-    </tr>
-    <tr id='section-6'>
-      <td class=docs>
-        <div class="octowrap">
-          <a class="octothorpe" href="#section-6">#</a>
-        </div>
-        <p>you have to be logged in to update your info</p>
-      </td>
-      <td class=code>
-        <div class='highlight'><pre>  <span class="n">require_login!</span> <span class="ss">:return</span> <span class="o">=&gt;</span> <span class="s2">&quot;/hackers/update&quot;</span></pre></div>
-      </td>
-    </tr>
-    <tr id='section-7'>
-      <td class=docs>
-        <div class="octowrap">
-          <a class="octothorpe" href="#section-7">#</a>
-        </div>
-        <p>do they want to update their password</p>
+        <p> If they&rsquo;re trying to update their password, let&rsquo;s take care of that. If we
+ don&rsquo;t, then we wouldn&rsquo;t want to set their password to nil! That&rsquo;d be bad.</p>
       </td>
       <td class=code>
         <div class='highlight'><pre>  <span class="k">unless</span> <span class="n">params</span><span class="o">[</span><span class="ss">:password</span><span class="o">].</span><span class="n">nil?</span>
@@ -122,43 +95,24 @@
 <span class="k">end</span></pre></div>
       </td>
     </tr>
-    <tr id='section-8'>
+    <tr id='section-5'>
       <td class=docs>
         <div class="octowrap">
-          <a class="octothorpe" href="#section-8">#</a>
+          <a class="octothorpe" href="#section-5">#</a>
         </div>
-        <p>this lets you follow a Hacker</p>
+        <p> Hackers can follow each other, and this route takes care of it!</p>
       </td>
       <td class=code>
-        <div class='highlight'><pre><span class="n">get</span> <span class="s1">&#39;/hackers/:name/follow&#39;</span> <span class="k">do</span></pre></div>
+        <div class='highlight'><pre><span class="n">get</span> <span class="s1">&#39;/hackers/:name/follow&#39;</span> <span class="k">do</span>
+  <span class="n">require_login!</span> <span class="ss">:return</span> <span class="o">=&gt;</span> <span class="s2">&quot;/hackers/</span><span class="si">#{</span><span class="n">params</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span><span class="si">}</span><span class="s2">/follow&quot;</span>
+
+  <span class="vi">@hacker</span> <span class="o">=</span> <span class="no">Hacker</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="ss">:username</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span><span class="p">)</span></pre></div>
       </td>
     </tr>
-    <tr id='section-9'>
+    <tr id='section-6'>
       <td class=docs>
         <div class="octowrap">
-          <a class="octothorpe" href="#section-9">#</a>
-        </div>
-        <p>we have to be logged in to follow someone</p>
-      </td>
-      <td class=code>
-        <div class='highlight'><pre>  <span class="n">require_login!</span> <span class="ss">:return</span> <span class="o">=&gt;</span> <span class="s2">&quot;/hackers/</span><span class="si">#{</span><span class="n">params</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span><span class="si">}</span><span class="s2">/follow&quot;</span></pre></div>
-      </td>
-    </tr>
-    <tr id='section-10'>
-      <td class=docs>
-        <div class="octowrap">
-          <a class="octothorpe" href="#section-10">#</a>
-        </div>
-        <p>find the hacker with the given name</p>
-      </td>
-      <td class=code>
-        <div class='highlight'><pre>  <span class="vi">@hacker</span> <span class="o">=</span> <span class="no">Hacker</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="ss">:username</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span><span class="p">)</span></pre></div>
-      </td>
-    </tr>
-    <tr id='section-11'>
-      <td class=docs>
-        <div class="octowrap">
-          <a class="octothorpe" href="#section-11">#</a>
+          <a class="octothorpe" href="#section-6">#</a>
         </div>
         <p>make sure we&rsquo;re not following them already</p>
       </td>
@@ -170,80 +124,41 @@
   <span class="k">end</span></pre></div>
       </td>
     </tr>
-    <tr id='section-12'>
+    <tr id='section-7'>
       <td class=docs>
         <div class="octowrap">
-          <a class="octothorpe" href="#section-12">#</a>
+          <a class="octothorpe" href="#section-7">#</a>
         </div>
-        <p>follow them!</p>
+        <p> then follow them!</p>
       </td>
       <td class=code>
-        <div class='highlight'><pre>  <span class="n">current_user</span><span class="o">.</span><span class="n">follow!</span> <span class="vi">@hacker</span></pre></div>
-      </td>
-    </tr>
-    <tr id='section-13'>
-      <td class=docs>
-        <div class="octowrap">
-          <a class="octothorpe" href="#section-13">#</a>
-        </div>
-        <p>set a message</p>
-      </td>
-      <td class=code>
-        <div class='highlight'><pre>  <span class="n">flash</span><span class="o">[</span><span class="ss">:notice</span><span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;Now following </span><span class="si">#{</span><span class="n">params</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span><span class="si">}</span><span class="s2">.&quot;</span></pre></div>
-      </td>
-    </tr>
-    <tr id='section-14'>
-      <td class=docs>
-        <div class="octowrap">
-          <a class="octothorpe" href="#section-14">#</a>
-        </div>
-        <p>redirect back to your page!</p>
-      </td>
-      <td class=code>
-        <div class='highlight'><pre>  <span class="n">redirect</span> <span class="s2">&quot;/hackers/</span><span class="si">#{</span><span class="n">current_user</span><span class="o">.</span><span class="n">username</span><span class="si">}</span><span class="s2">&quot;</span>
+        <div class='highlight'><pre>  <span class="n">current_user</span><span class="o">.</span><span class="n">follow!</span> <span class="vi">@hacker</span>
 
+  <span class="n">flash</span><span class="o">[</span><span class="ss">:notice</span><span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;Now following </span><span class="si">#{</span><span class="n">params</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span><span class="si">}</span><span class="s2">.&quot;</span>
+  <span class="n">redirect</span> <span class="s2">&quot;/hackers/</span><span class="si">#{</span><span class="n">current_user</span><span class="o">.</span><span class="n">username</span><span class="si">}</span><span class="s2">&quot;</span>
 <span class="k">end</span></pre></div>
       </td>
     </tr>
-    <tr id='section-15'>
+    <tr id='section-8'>
       <td class=docs>
         <div class="octowrap">
-          <a class="octothorpe" href="#section-15">#</a>
+          <a class="octothorpe" href="#section-8">#</a>
         </div>
         <p>this lets you unfollow a Hacker</p>
       </td>
       <td class=code>
-        <div class='highlight'><pre><span class="n">get</span> <span class="s1">&#39;/hackers/:name/unfollow&#39;</span> <span class="k">do</span></pre></div>
+        <div class='highlight'><pre><span class="n">get</span> <span class="s1">&#39;/hackers/:name/unfollow&#39;</span> <span class="k">do</span>
+  <span class="n">require_login!</span> <span class="ss">:return</span> <span class="o">=&gt;</span> <span class="s2">&quot;/hackers/</span><span class="si">#{</span><span class="n">params</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span><span class="si">}</span><span class="s2">/unfollow&quot;</span>
+
+  <span class="vi">@hacker</span> <span class="o">=</span> <span class="no">Hacker</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="ss">:username</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span><span class="p">)</span></pre></div>
       </td>
     </tr>
-    <tr id='section-16'>
+    <tr id='section-9'>
       <td class=docs>
         <div class="octowrap">
-          <a class="octothorpe" href="#section-16">#</a>
+          <a class="octothorpe" href="#section-9">#</a>
         </div>
-        <p>we have to be logged in to unfollow someone</p>
-      </td>
-      <td class=code>
-        <div class='highlight'><pre>  <span class="n">require_login!</span> <span class="ss">:return</span> <span class="o">=&gt;</span> <span class="s2">&quot;/hackers/</span><span class="si">#{</span><span class="n">params</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span><span class="si">}</span><span class="s2">/unfollow&quot;</span></pre></div>
-      </td>
-    </tr>
-    <tr id='section-17'>
-      <td class=docs>
-        <div class="octowrap">
-          <a class="octothorpe" href="#section-17">#</a>
-        </div>
-        <p>find the hacker with the given name</p>
-      </td>
-      <td class=code>
-        <div class='highlight'><pre>  <span class="vi">@hacker</span> <span class="o">=</span> <span class="no">Hacker</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="ss">:username</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span><span class="p">)</span></pre></div>
-      </td>
-    </tr>
-    <tr id='section-18'>
-      <td class=docs>
-        <div class="octowrap">
-          <a class="octothorpe" href="#section-18">#</a>
-        </div>
-        <p>make sure we&rsquo;re not following them already</p>
+        <p>make sure we&rsquo;re following them already</p>
       </td>
       <td class=code>
         <div class='highlight'><pre>  <span class="k">unless</span> <span class="n">current_user</span><span class="o">.</span><span class="n">following?</span> <span class="vi">@hacker</span>
@@ -253,107 +168,49 @@
   <span class="k">end</span></pre></div>
       </td>
     </tr>
-    <tr id='section-19'>
+    <tr id='section-10'>
       <td class=docs>
         <div class="octowrap">
-          <a class="octothorpe" href="#section-19">#</a>
+          <a class="octothorpe" href="#section-10">#</a>
         </div>
         <p>unfollow them!</p>
       </td>
       <td class=code>
-        <div class='highlight'><pre>  <span class="n">current_user</span><span class="o">.</span><span class="n">unfollow!</span> <span class="vi">@hacker</span></pre></div>
-      </td>
-    </tr>
-    <tr id='section-20'>
-      <td class=docs>
-        <div class="octowrap">
-          <a class="octothorpe" href="#section-20">#</a>
-        </div>
-        <p>set a message</p>
-      </td>
-      <td class=code>
-        <div class='highlight'><pre>  <span class="n">flash</span><span class="o">[</span><span class="ss">:notice</span><span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;No longer following </span><span class="si">#{</span><span class="n">params</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span><span class="si">}</span><span class="s2">.&quot;</span></pre></div>
-      </td>
-    </tr>
-    <tr id='section-21'>
-      <td class=docs>
-        <div class="octowrap">
-          <a class="octothorpe" href="#section-21">#</a>
-        </div>
-        <p>redirect back to your page!</p>
-      </td>
-      <td class=code>
-        <div class='highlight'><pre>  <span class="n">redirect</span> <span class="s2">&quot;/hackers/</span><span class="si">#{</span><span class="n">current_user</span><span class="o">.</span><span class="n">username</span><span class="si">}</span><span class="s2">&quot;</span>
+        <div class='highlight'><pre>  <span class="n">current_user</span><span class="o">.</span><span class="n">unfollow!</span> <span class="vi">@hacker</span>
 
+  <span class="n">flash</span><span class="o">[</span><span class="ss">:notice</span><span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;No longer following </span><span class="si">#{</span><span class="n">params</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span><span class="si">}</span><span class="s2">.&quot;</span>
+  <span class="n">redirect</span> <span class="s2">&quot;/hackers/</span><span class="si">#{</span><span class="n">current_user</span><span class="o">.</span><span class="n">username</span><span class="si">}</span><span class="s2">&quot;</span>
 <span class="k">end</span></pre></div>
       </td>
     </tr>
-    <tr id='section-22'>
+    <tr id='section-11'>
       <td class=docs>
         <div class="octowrap">
-          <a class="octothorpe" href="#section-22">#</a>
+          <a class="octothorpe" href="#section-11">#</a>
         </div>
-        <p>this lets us see followers</p>
+        <p> this lets us see followers.</p>
       </td>
       <td class=code>
-        <div class='highlight'><pre><span class="n">get</span> <span class="s1">&#39;/hackers/:name/followers&#39;</span> <span class="k">do</span></pre></div>
-      </td>
-    </tr>
-    <tr id='section-23'>
-      <td class=docs>
-        <div class="octowrap">
-          <a class="octothorpe" href="#section-23">#</a>
-        </div>
-        <p>find the hacker with the given name</p>
-      </td>
-      <td class=code>
-        <div class='highlight'><pre>  <span class="vi">@hacker</span> <span class="o">=</span> <span class="no">Hacker</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="ss">:username</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span><span class="p">)</span></pre></div>
-      </td>
-    </tr>
-    <tr id='section-24'>
-      <td class=docs>
-        <div class="octowrap">
-          <a class="octothorpe" href="#section-24">#</a>
-        </div>
-        <p>render our page</p>
-      </td>
-      <td class=code>
-        <div class='highlight'><pre>  <span class="n">haml</span> <span class="ss">:&quot;hackers/followers&quot;</span>
+        <div class='highlight'><pre><span class="n">get</span> <span class="s1">&#39;/hackers/:name/followers&#39;</span> <span class="k">do</span>
+  <span class="vi">@hacker</span> <span class="o">=</span> <span class="no">Hacker</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="ss">:username</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span><span class="p">)</span>
+
+  <span class="n">haml</span> <span class="ss">:&quot;hackers/followers&quot;</span>
 <span class="k">end</span></pre></div>
       </td>
     </tr>
-    <tr id='section-25'>
+    <tr id='section-12'>
       <td class=docs>
         <div class="octowrap">
-          <a class="octothorpe" href="#section-25">#</a>
+          <a class="octothorpe" href="#section-12">#</a>
         </div>
-        <p>this lets us see following</p>
-      </td>
-      <td class=code>
-        <div class='highlight'><pre><span class="n">get</span> <span class="s1">&#39;/hackers/:name/following&#39;</span> <span class="k">do</span></pre></div>
-      </td>
-    </tr>
-    <tr id='section-26'>
-      <td class=docs>
-        <div class="octowrap">
-          <a class="octothorpe" href="#section-26">#</a>
-        </div>
-        <p>find the hacker with the given name</p>
-      </td>
-      <td class=code>
-        <div class='highlight'><pre>  <span class="vi">@hacker</span> <span class="o">=</span> <span class="no">Hacker</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="ss">:username</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span><span class="p">)</span></pre></div>
-      </td>
-    </tr>
-    <tr id='section-27'>
-      <td class=docs>
-        <div class="octowrap">
-          <a class="octothorpe" href="#section-27">#</a>
-        </div>
-        <p>render our page</p>
+        <p> This lets us see who is following.</p>
 
       </td>
       <td class=code>
-        <div class='highlight'><pre>  <span class="n">haml</span> <span class="ss">:&quot;hackers/following&quot;</span>
+        <div class='highlight'><pre><span class="n">get</span> <span class="s1">&#39;/hackers/:name/following&#39;</span> <span class="k">do</span>
+  <span class="vi">@hacker</span> <span class="o">=</span> <span class="no">Hacker</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="ss">:username</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span><span class="p">)</span>
+
+  <span class="n">haml</span> <span class="ss">:&quot;hackers/following&quot;</span>
 <span class="k">end</span></pre></div>
       </td>
     </tr>
