@@ -1,15 +1,11 @@
-#this is the class for inter-site messages
+# This is the class for inter-site messages.
 class Message
-  #we want to include them in the database!
   include MongoMapper::Document
 
-  #this is the body text of the message
   key :body, String
 
-  #this is the username of the person who gets the message
   key :recipient, String
 
-  #this is the username of the person who sent the message
   key :sender, String
 
   timestamps!
@@ -18,6 +14,10 @@ class Message
 
   private
 
+  # Sending emails is a good thing. We wouldn't want you to not realize you
+  # have a message! Right now, we explicitly test for development mode, because
+  # of some weirdness. I'd much rather remove that `unless`, but I haven't
+  # gotten around to figuring it out yet.
   def send_notification
     unless development?
       recipient_email = Hacker.first(:username => self.recipient).email
