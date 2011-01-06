@@ -34,34 +34,19 @@
         <div class="octowrap">
           <a class="octothorpe" href="#section-1">#</a>
         </div>
-        
-      </td>
-      <td class=code>
-        <div class='highlight'><pre><span class="k">class</span> <span class="nc">Comment</span>
-  <span class="kp">include</span> <span class="no">MongoMapper</span><span class="o">::</span><span class="no">EmbeddedDocument</span></pre></div>
-      </td>
-    </tr>
-    <tr id='section-2'>
-      <td class=docs>
-        <div class="octowrap">
-          <a class="octothorpe" href="#section-2">#</a>
-        </div>
-        <p>the body of the comment</p>
-      </td>
-      <td class=code>
-        <div class='highlight'><pre>  <span class="n">key</span> <span class="ss">:body</span><span class="p">,</span> <span class="nb">String</span></pre></div>
-      </td>
-    </tr>
-    <tr id='section-3'>
-      <td class=docs>
-        <div class="octowrap">
-          <a class="octothorpe" href="#section-3">#</a>
-        </div>
-        <p>the person who wrote it</p>
+        <p> Comments are an embedded document that&rsquo;s inside of a few different things:
+ content, programs, and maybe other stuff in the future. They&rsquo;re really
+ simple: Just some text, the person who said it, and their email address. The
+ author should be the slug. Having the email lets us show their avatar easily.</p>
 
       </td>
       <td class=code>
-        <div class='highlight'><pre>  <span class="n">key</span> <span class="ss">:author</span><span class="p">,</span> <span class="nb">String</span>
+        <div class='highlight'><pre><span class="k">class</span> <span class="nc">Comment</span>
+  <span class="kp">include</span> <span class="no">MongoMapper</span><span class="o">::</span><span class="no">EmbeddedDocument</span>
+
+  <span class="n">key</span> <span class="ss">:body</span><span class="p">,</span> <span class="nb">String</span>
+
+  <span class="n">key</span> <span class="ss">:author</span><span class="p">,</span> <span class="nb">String</span>
   <span class="n">key</span> <span class="ss">:author_email</span><span class="p">,</span> <span class="nb">String</span>
 
 <span class="k">end</span></pre></div>

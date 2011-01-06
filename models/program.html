@@ -34,16 +34,29 @@
         <div class="octowrap">
           <a class="octothorpe" href="#section-1">#</a>
         </div>
-        
-
+        <p> The <code>Program</code> class represents a program that someone&rsquo;s uploaded. Right now
+ we only store the latest version as text, but eventually, I&rsquo;d love for
+ programs to be backed by <code>git</code>.</p>
       </td>
       <td class=code>
         <div class='highlight'><pre><span class="k">class</span> <span class="nc">Program</span>
   <span class="kp">include</span> <span class="no">MongoMapper</span><span class="o">::</span><span class="no">Document</span>
+
   <span class="n">key</span> <span class="ss">:creator_username</span><span class="p">,</span> <span class="nb">String</span>
   <span class="n">key</span> <span class="ss">:title</span><span class="p">,</span> <span class="nb">String</span>
-  <span class="n">key</span> <span class="ss">:slug</span><span class="p">,</span> <span class="nb">String</span>
-  <span class="n">key</span> <span class="ss">:code</span><span class="p">,</span> <span class="nb">String</span>
+  <span class="n">key</span> <span class="ss">:slug</span><span class="p">,</span> <span class="nb">String</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-2'>
+      <td class=docs>
+        <div class="octowrap">
+          <a class="octothorpe" href="#section-2">#</a>
+        </div>
+        <p> this is the source code for the program.</p>
+
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="n">key</span> <span class="ss">:code</span><span class="p">,</span> <span class="nb">String</span>
 
   <span class="n">validate_on_create</span> <span class="ss">:slug_check</span>
   <span class="n">before_save</span> <span class="ss">:make_slug</span>
@@ -59,7 +72,6 @@
       <span class="n">errors</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="ss">:title</span><span class="p">,</span> <span class="s2">&quot;Title needs to be unique&quot;</span><span class="p">)</span>
     <span class="k">end</span>
   <span class="k">end</span>
-
 
   <span class="k">def</span> <span class="nf">make_slug</span>
     <span class="nb">self</span><span class="o">.</span><span class="n">slug</span> <span class="o">=</span> <span class="nb">self</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">to_slug</span>

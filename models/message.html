@@ -34,10 +34,23 @@
         <div class="octowrap">
           <a class="octothorpe" href="#section-1">#</a>
         </div>
-        <p>this is the class for inter-site messages</p>
+        <p> This is the class for inter-site messages.</p>
       </td>
       <td class=code>
-        <div class='highlight'><pre><span class="k">class</span> <span class="nc">Message</span></pre></div>
+        <div class='highlight'><pre><span class="k">class</span> <span class="nc">Message</span>
+  <span class="kp">include</span> <span class="no">MongoMapper</span><span class="o">::</span><span class="no">Document</span>
+
+  <span class="n">key</span> <span class="ss">:body</span><span class="p">,</span> <span class="nb">String</span>
+
+  <span class="n">key</span> <span class="ss">:recipient</span><span class="p">,</span> <span class="nb">String</span>
+
+  <span class="n">key</span> <span class="ss">:sender</span><span class="p">,</span> <span class="nb">String</span>
+
+  <span class="n">timestamps!</span>
+
+  <span class="n">after_create</span> <span class="ss">:send_notification</span>
+
+  <span class="kp">private</span></pre></div>
       </td>
     </tr>
     <tr id='section-2'>
@@ -45,52 +58,14 @@
         <div class="octowrap">
           <a class="octothorpe" href="#section-2">#</a>
         </div>
-        <p>we want to include them in the database!</p>
-      </td>
-      <td class=code>
-        <div class='highlight'><pre>  <span class="kp">include</span> <span class="no">MongoMapper</span><span class="o">::</span><span class="no">Document</span></pre></div>
-      </td>
-    </tr>
-    <tr id='section-3'>
-      <td class=docs>
-        <div class="octowrap">
-          <a class="octothorpe" href="#section-3">#</a>
-        </div>
-        <p>this is the body text of the message</p>
-      </td>
-      <td class=code>
-        <div class='highlight'><pre>  <span class="n">key</span> <span class="ss">:body</span><span class="p">,</span> <span class="nb">String</span></pre></div>
-      </td>
-    </tr>
-    <tr id='section-4'>
-      <td class=docs>
-        <div class="octowrap">
-          <a class="octothorpe" href="#section-4">#</a>
-        </div>
-        <p>this is the username of the person who gets the message</p>
-      </td>
-      <td class=code>
-        <div class='highlight'><pre>  <span class="n">key</span> <span class="ss">:recipient</span><span class="p">,</span> <span class="nb">String</span></pre></div>
-      </td>
-    </tr>
-    <tr id='section-5'>
-      <td class=docs>
-        <div class="octowrap">
-          <a class="octothorpe" href="#section-5">#</a>
-        </div>
-        <p>this is the username of the person who sent the message</p>
+        <p> Sending emails is a good thing. We wouldn&rsquo;t want you to not realize you
+ have a message! Right now, we explicitly test for development mode, because
+ of some weirdness. I&rsquo;d much rather remove that <code>unless</code>, but I haven&rsquo;t
+ gotten around to figuring it out yet.</p>
 
       </td>
       <td class=code>
-        <div class='highlight'><pre>  <span class="n">key</span> <span class="ss">:sender</span><span class="p">,</span> <span class="nb">String</span>
-
-  <span class="n">timestamps!</span>
-
-  <span class="n">after_create</span> <span class="ss">:send_notification</span>
-
-  <span class="kp">private</span>
-
-  <span class="k">def</span> <span class="nf">send_notification</span>
+        <div class='highlight'><pre>  <span class="k">def</span> <span class="nf">send_notification</span>
     <span class="k">unless</span> <span class="n">development?</span>
       <span class="n">recipient_email</span> <span class="o">=</span> <span class="no">Hacker</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="ss">:username</span> <span class="o">=&gt;</span> <span class="nb">self</span><span class="o">.</span><span class="n">recipient</span><span class="p">)</span><span class="o">.</span><span class="n">email</span>
       <span class="no">Notifier</span><span class="o">.</span><span class="n">send_message_notification</span><span class="p">(</span><span class="n">recipient_email</span><span class="p">,</span> <span class="nb">self</span><span class="o">.</span><span class="n">sender</span><span class="p">)</span>
