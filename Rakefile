@@ -32,5 +32,5 @@ task :dox do
   
   # Now that that's over, let's return to master, and pop our changes.
   sh "git checkout master"
-  sh "git stash pop"
+  system "git stash pop"
 end
