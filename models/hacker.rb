@@ -3,8 +3,8 @@
 class Hacker
   include MongoMapper::Document
 
-  key :username, String, :unique => true
-  key :email, String, :unique => true
+  key :username, String, :unique => true, :required => true
+  key :email, String, :unique => true, :required => true
 
   key :about, String
 
