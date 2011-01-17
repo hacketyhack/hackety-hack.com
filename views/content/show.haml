@@ -15,16 +15,19 @@
         :markdown
           #{reply.body}
 %div{:style => "clear:both"}
-%h2 Add a comment
-%form{:action => "/content/#{@content.id}/comment", :method => "POST"}
-  %label{:for => "comment_body"} Body
-  %br
-  %textarea{:id => "comment_body", :name => "comment[body]", :rows => 20, :cols => 50}
-  %br/
-  Comments are formatted via 
-  %a{:href => "http://daringfireball.net/projects/markdown/syntax"} Markdown
-  %br
-  %input{:type => "submit", :value => "Submit", :class => "button"}
+- if logged_in?
+  %h2 Add a comment
+  %form{:action => "/content/#{@content.id}/comment", :method => "POST"}
+    %label{:for => "comment_body"} Body
+    %br
+    %textarea{:id => "comment_body", :name => "comment[body]", :rows => 20, :cols => 50}
+    %br/
+    Comments are formatted via 
+    %a{:href => "http://daringfireball.net/projects/markdown/syntax"} Markdown
+    %br
+    %input{:type => "submit", :value => "Submit", :class => "button"}
+- else
+  %a{:href => "/login"} Please log in to comment.
 %br/
 %br/
-  
+    
