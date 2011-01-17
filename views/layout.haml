@@ -31,6 +31,8 @@
 
           
   %body{:style => "background-image:url('/images/stripe.png')"}
+    #flash{:style => "background-color:#FFF"}
+      = flash[:notice]
     != yield_content :body
     .container{:style => ""}
       .span-18.prepend-3.last{:style => "height:100%"}
