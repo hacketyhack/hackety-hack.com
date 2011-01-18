@@ -57,7 +57,7 @@ helpers do
     if hacker
       session[:hacker_id] = hacker.id
     else
-      require_login!(opts)
+      halt 401
     end
   end
 

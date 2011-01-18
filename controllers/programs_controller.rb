@@ -71,7 +71,7 @@ end
 put "/programs/:username/:slug.json" do
   require_login_or_api! :username => params[:username], :password => params[:password]
   if current_user.username != params[:username]
-    redirect "/"
+    halt 401
   end
   program = Program.first(:creator_username => params[:username], :slug => params[:slug])
   if program.nil?
