@@ -62,3 +62,14 @@ get '/logout' do
   redirect '/'
 end
 
+# This method allows people to check their credentials. This is primarily used
+# by the desktop app to see if you've entered correct information.
+post '/check_credentials' do
+  #let's see if we got a correct username/password:
+  puts "username: #{params[:username]} / #{params[:password]}"
+  if Hacker.authenticate(params[:username], params[:password])
+    "Success"
+  else
+    halt 401
+  end
+end
