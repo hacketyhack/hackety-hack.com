@@ -52,7 +52,8 @@ helpers do
   # site. For this, we allow a username and password to be passed in, and we
   # authenticate directly, rather than relying on a previously logged in
   # session.
-  def require_login_or_api!(opts = {:return => "/"})
+  def require_login_or_api!(opts={})
+    return if session[:hacker_id]
     hacker = Hacker.authenticate(opts[:username], opts[:password])
     if hacker
       session[:hacker_id] = hacker.id

@@ -1,4 +1,11 @@
-# The Rakefile only has one task. The description is pretty good.
+# This file sets up all of our rake tasks
+require 'rubygems'
+require 'bundler'
+Bundler.setup
+
+require 'rspec/core/rake_task'
+
+
 desc "Generate documentation, and put it in the gh-pages branch"
 task :dox do
   # First, we want to stash any changes. We only want stuff that's committed!
@@ -33,4 +40,21 @@ task :dox do
   # Now that that's over, let's return to master, and pop our changes.
   sh "git checkout master"
   system "git stash pop"
+end
+
+
+desc 'Run the code in spec'
+RSpec::Core::RakeTask.new do |t|
+  t.pattern = "spec/**/*_spec.rb"
+  t.rspec_opts = "-r ./spec/spec_helper.rb"
+end
+
+namespace :spec do
+
+  desc "Run the code examples in spec/acceptance"
+  RSpec::Core::RakeTask.new(:acceptance) do |t|
+    t.pattern = "spec/acceptance/**/*_spec.rb"
+    t.rspec_opts = "-r spec/spec_helper.rb"
+  end
+
 end
