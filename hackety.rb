@@ -161,16 +161,16 @@ end
 # our local server running on localhost.
 configure do
   if ENV['MONGOHQ_URL']
-    MongoMapper.connection = Mongo::Connection.new(ENV['MONGOHQ_HOST'], ENV['MONGOHQ_PORT'])
+    MongoMapper.config = {ENV['RACK_ENV'] => {'uri' => ENV['MONGOHQ_URL']}}
     MongoMapper.database = ENV['MONGOHQ_DATABASE']
-    MongoMapper.database.authenticate(ENV['MONGOHQ_USER'],ENV['MONGOHQ_PASSWORD'])
-    
-    MongoMapper.database = ENV['MONGOHQ_DATABASE']
+    MongoMapper.connect("production")
   else
     MongoMapper.connection = Mongo::Connection.new('localhost')
-    MongoMapper.database = "hackety-development"
+    MongoMapper.database = "hackety-#{environ}"
   end
 end
+
+
 
 # Since Sinatra doesn't automatically load anything, we have to do it
 # ourselves. Remember that helpers.rb file? Well, we made a handy 
