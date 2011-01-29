@@ -21,6 +21,11 @@ h3 {
 h3 a {color:#3C3E9B}
 h3 a:visited {color:#3C3E6B}
 
+p.title { 
+  font: 1.5em 'ChunkFiveRegular', Arial, sans-serif; letter-spacing: 0;
+  color:#3C3E3B
+}
+
 p.body { 
   font: 1.5em 'Helvetica', Arial, sans-serif; letter-spacing: 0;
   color:#3C3E3B
