@@ -17,6 +17,7 @@ gem "bson_ext", "~>1.1.5"
 gem "pony", "~>1.0.1"
 gem "sinatra-content-for"
 gem "exceptional"
+gem "newrelic_rpm"
 
 group :development do
   gem "rocco"
