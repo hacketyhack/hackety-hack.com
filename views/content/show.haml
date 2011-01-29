@@ -1,5 +1,6 @@
 .span-18
 %h1 A #{@content.type}, from #{@content.author}
+%p Posted on #{@content.created_at.strftime("%m/%d/%Y at %I:%M%p")}
 %p
   :markdown
     #{@content.body}
