@@ -4,6 +4,7 @@ class Hacker
   include MongoMapper::Document
 
   key :username, String, :unique => true, :required => true
+  key :slug, String, :unique => true
   key :email, String, :unique => true, :required => true
 
   key :about, String
@@ -24,6 +25,9 @@ class Hacker
 
   #after we create a hacker, we want to have them follow steve, and vice versa!
   after_create :follow_steve
+  
+  # We need to generate a slug so that we can have a proper URL for our hacker
+  before_create :generate_slug
 
   #we don't want to store the password (or the confirmation), so we just make an accessor
   attr_accessor :password, :password_confirmation
@@ -124,6 +128,11 @@ class Hacker
 
     follow! steve
     steve.follow! self
+  end
+
+  # This sets up our slug.
+  def generate_slug
+    self.slug = username.to_slug
   end
 
 end
