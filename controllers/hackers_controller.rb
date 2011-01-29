@@ -1,8 +1,8 @@
 #This is the 'hackers' controller. "Hackers" are what we call "Users" in HH.
 
 # We want to give our Hackers a profile page.
-get '/hackers/:name' do
-  @hacker = Hacker.first(:username => params[:name])
+get '/hackers/:slug' do
+  @hacker = Hacker.first(:slug => params[:slug])
 
   haml :"hackers/show"
 end

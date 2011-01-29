@@ -22,6 +22,12 @@ feature "Hackers" do
     page.should have_content "steve's page"
   end
 
+  scenario "use the slug in their url" do
+    hacker = Factory(:hacker, :username => "NEEDS SLUG BADLY")
+    visit "/hackers/#{hacker.slug}"
+    page.should have_content "#{hacker.username}'s page"
+  end
+
   scenario "can't send messages to themselves" do
     @hacker = Factory(:hacker)
     log_in @hacker
