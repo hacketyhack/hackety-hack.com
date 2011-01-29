@@ -118,6 +118,13 @@ if ENV['RACK_ENV'] == 'production'
   use Rack::Exceptional, ENV['EXCEPTIONAL_API_KEY']
 end
 
+# We're using [New Relic RPM](http://newrelic.com/) for statistics gathering
+# and such. This code is from the [Heroku add-on documentation](http://docs.heroku.com/newrelic).
+configure :production do
+  require 'newrelic_rpm'
+end
+
+
 # This makes [Haml escape any html](http://haml-lang.com/docs/yardoc/file.HAML_REFERENCE.html#options) by default.
 set :haml, :escape_html => true
 
