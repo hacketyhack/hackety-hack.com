@@ -214,3 +214,8 @@ get '/stream' do
   haml :stream
 end
 
+# We want a minimal Terms of Service, at least.
+get '/tos' do
+  haml :tos
+end
+
