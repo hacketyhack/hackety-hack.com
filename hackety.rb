@@ -166,7 +166,7 @@ configure do
     MongoMapper.connect("production")
   else
     MongoMapper.connection = Mongo::Connection.new('localhost')
-    MongoMapper.database = "hackety-#{environ}"
+    MongoMapper.database = "hackety-#{settings.environment}"
   end
 end
 
