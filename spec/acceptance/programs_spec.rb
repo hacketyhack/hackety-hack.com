@@ -35,4 +35,25 @@ feature "Programs" do
       page.should have_content program.title
     end
   end
+
+  describe "has comments" do
+    scenario "can't be commented on when not logged in" do
+      @hacker = Factory(:hacker)
+
+      program = Factory(:program, :creator_username => @hacker.username)
+
+      visit "/programs/#{@hacker.slug}/#{@hacker.programs.first.slug}"
+      page.should_not have_content "Add a comment"
+    end
+
+    scenario "can be commented on when you are logged in" do
+      @hacker = Factory(:hacker)
+      log_in @hacker
+
+      program = Factory(:program, :creator_username => @hacker.username)
+
+      visit "/programs/#{@hacker.slug}/#{@hacker.programs.first.slug}"
+      page.should have_content "Add a comment"
+    end
+  end
 end

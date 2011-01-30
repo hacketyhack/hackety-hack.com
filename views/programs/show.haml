@@ -21,12 +21,13 @@
             #{reply.body}
   %br/
   %br/
-  %h2 Add a comment
-  %form{:action => "/programs/#{@program.creator_username}/#{@program.slug}/comment", :method => "POST"}
-    %label{:for => "comment_body"} Body
-    %br
-    %textarea{:id => "comment_body", :name => "comment[body]", :rows => 20, :cols => 50}
-    %br
-    %input{:type => "submit", :value => "Submit", :class => "button"}
+  - if logged_in?
+    %h2 Add a comment
+    %form{:action => "/programs/#{@program.creator_username}/#{@program.slug}/comment", :method => "POST"}
+      %label{:for => "comment_body"} Body
+      %br
+      %textarea{:id => "comment_body", :name => "comment[body]", :rows => 20, :cols => 50}
+      %br
+      %input{:type => "submit", :value => "Submit", :class => "button"}
   %br/
   %br/
