@@ -219,3 +219,8 @@ get '/tos' do
   haml :tos
 end
 
+# This is used by the desktop app to see if we should upgrade or not.
+get "/version.json" do
+ content_type :json
+  {:current_version => 1.0}.to_json
+end
