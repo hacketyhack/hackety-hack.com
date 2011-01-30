@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/acceptance_helper'
+require File.expand_path(File.dirname(__FILE__) + '/acceptance_helper')
 
 feature "Programs" do
 
