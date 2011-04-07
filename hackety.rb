@@ -100,6 +100,13 @@ require 'rdiscount'
 # [a Sinatra version](https://github.com/foca/sinatra-content-for).
 require 'sinatra/content_for'
 
+# will_paginate can work with Sinatra 
+# https://gist.github.com/553473
+require 'will_paginate'
+require 'will_paginate/collection'
+require 'will_paginate/view_helpers'
+
+
 # We moved lots of helpers into a separate file. These are all things that are
 # useful throughout the rest of the application. This file
 require_relative 'helpers'
@@ -210,7 +217,14 @@ end
 # the content that others have posted. So we grab it all, and sort it in the
 # opposite order that it's been updated. Wouldn't want to see old stuff!
 get '/stream' do
-  @content_list = Content.all.sort{|a, b| b.updated_at <=> a.updated_at }
+  limit = 20
+  page = params[:page] || 1
+  page = page.to_i
+  page -= 1
+  offset = limit * page
+  content_list = Content.sort(:updated_at.desc).all( :limit => limit, :offset => offset)
+
+  @content_list = WillPaginate::Collection.create(page + 1, limit, Content.count) {|p| p.replace content_list }
   haml :stream
 end
 
