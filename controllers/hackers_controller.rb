@@ -24,7 +24,6 @@ post '/hackers/update' do
     end
   else
     current_user.update_attributes(:about => params[:hacker][:about])
-    current_user.save
     flash[:notice] = "About information updated!"
   end
 
