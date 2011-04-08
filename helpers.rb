@@ -19,8 +19,12 @@ helpers do
   # keep track of that by just setting a session variable with their id. If it
   # doesn't exist, we just want to return nil.
   def current_user
-    return Hacker.first(:id => session[:hacker_id]) if session[:hacker_id]
-    nil
+    return nil unless session[:hacker_id]
+
+    # Memoize to make sure code like this works properly:
+    # current_user.password = 'foo'
+    # current_user.save
+    @current_user ||= Hacker.first(:id => session[:hacker_id]) if session[:hacker_id]
   end
 
   # This very simple method checks if we've got a logged in user. That's pretty
