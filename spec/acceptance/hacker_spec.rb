@@ -92,4 +92,19 @@ feature "Hackers" do
     page.should have_content "Following: 0"
   end
 
+  scenario "can change password" do
+    @andy = Factory(:hacker, :username => "alindeman")
+    log_in @andy
+
+    visit "/hackers/alindeman"
+    fill_in "password[new]", :with => "abc123"
+    fill_in "password[confirm]", :with => "abc123"
+    click_button "Change password"
+
+    page.should have_content "Password updated!"
+
+    # Verify password was changed in the underlying datastore
+    Hacker.authenticate("alindeman", "abc123").should be
+  end
+
 end
