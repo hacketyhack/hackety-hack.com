@@ -74,9 +74,6 @@ helpers do
     "http://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(email.downcase)}"
   end
 
-  # Will_paginate helpers
-  include WillPaginate::ViewHelpers
-
 end
 
 # This handy helper method lets us require an entire directory of `rb` files.

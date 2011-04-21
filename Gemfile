@@ -18,7 +18,6 @@ gem "pony", "~>1.0.1"
 gem "sinatra-content-for"
 gem "exceptional"
 gem "newrelic_rpm"
-gem "will_paginate"
 
 group :development do
   gem "rocco"

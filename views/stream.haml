@@ -53,8 +53,13 @@
           shared a
           %a{:href => "/content/#{content.id}"}= content.type
           \: "#{content.body[0,50]}..." (#{content.comments.length} comments)
-  != will_paginate @content_list
+  - unless @prev_page.nil?
+    %a.button{:href => @prev_page, :id => "prev_button"}
+      &laquo; Previous
 
+  - unless @next_page.nil?
+    %a.button{:href => @next_page, :id => "next_button"}
+      Next &raquo;
 
 - content_for :head do
   :javascript
