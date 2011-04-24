@@ -29,6 +29,9 @@
       %a{:href => "http://daringfireball.net/projects/markdown/syntax"} Markdown
       %br/
       %input.button{:type => "submit"}
+      %br/
+      %label Preview
+      .preview
     %form#question_form{:action => "/content", :style => "display:none", :method => "POST"}
       %label{:for => "question"} Ask a question
       %a.cancel{:href => "#"} x
@@ -40,6 +43,9 @@
       %a{:href => "http://daringfireball.net/projects/markdown/syntax"} Markdown
       %br/
       %input.button{:type => "submit"}
+      %br/
+      %label Preview
+      .preview
   - else
     %a{:href => "/login"} Please log in to post something.
 .span-18
@@ -99,5 +105,20 @@
           }
         });
       });
+
+       // Markdown Preview
+       var $post_textarea = $('#post'),
+       $post_preview = $('#post_form .preview'),
+         converter = new Showdown.converter();
+       $post_textarea.keyup(function() {
+         $post_preview.html(converter.makeHtml($post_textarea.val()));
+       }).trigger('keyup');
+       var $question_textarea = $('#question'),
+         $question_preview = $('#question_form .preview'),
+           converter = new Showdown.converter();
+       $question_textarea.keyup(function() {
+         $question_preview.html(converter.makeHtml($question_textarea.val()));
+       }).trigger('keyup');
+
     });
 
