@@ -2,7 +2,7 @@
 
 # We want to give our Hackers a profile page.
 get '/hackers/:name' do
-  @hacker = Hacker.first(:username=> params[:name])
+  @hacker = Hacker.first(:username => params[:name])
 # Fix "Application Error" when visiting a users profile page
   haml :"hackers/show"
 end
