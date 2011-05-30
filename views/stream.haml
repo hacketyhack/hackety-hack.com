@@ -53,12 +53,15 @@
   %ul{:style => "list-style:none"}
     - @content_list.each do |content|
       %li{:style => "height:70px"}
-        %img{:height => "64", :src => content.image, :style => "float:left"}/
+        %img{:height => "64", :src => content.image, :class => "gravatar"}/
         %p{:class => "vertical-center-text"}
           %a{:href => "/hackers/#{content.author}"}= content.author
           shared a
           %a{:href => "/content/#{content.id}"}= content.type
           \: "#{content.body[0,50]}..." (#{content.comments.length} comments)
+        %p{:class => "vertical-center-text"}
+          Posted on #{content.created_at.strftime("%m/%d/%Y at %I:%M%p")}
+      %br/
   - unless @prev_page.nil?
     %a.button{:href => @prev_page, :id => "prev_button"}
       &laquo; Previous

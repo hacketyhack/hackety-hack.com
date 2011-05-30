@@ -41,11 +41,20 @@ hr {
   background-color:#000;
 }
 .vertical-center-text {
-  padding-top:20px;
+  /*padding-top:20px;*/
   padding-left:80px;
 }
 
 
 .preview {
   background-color: #fff;
+}
+
+.gravatar {
+float: left;
+border-radius:4px;
+}
+
+.hacker-gravatar {
+border-radius: 4px;
 }
