@@ -12,7 +12,7 @@
     .comment{:style => "clear:both;padding-bottom:1em"}
       %div{:style => "float:left;padding-right:1em"}
         %a{:href => "/hackers/#{reply.author}"}
-          %img{:src => gravatar_url_for(reply.author_email), :alt => "#{reply.author.downcase}_gravatar", :class => "comment_gravatar"}
+          %img{:src => gravatar_url_for(reply.author_email), :alt => "#{reply.author.downcase}_gravatar", :class => "hacker-gravatar"}
       %div{:style => "width:500px"}
         %p
           <a href="/hackers/#{reply.author}">#{reply.author}</a> says:
