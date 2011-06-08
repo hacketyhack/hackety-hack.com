@@ -1,6 +1,6 @@
 .span-18
 %h1= @hacker.username + "'s page"
-%img{:src => @hacker.gravatar_url}
+%img{:src => @hacker.gravatar_url, :class => "hacker-gravatar"}
 %h2 About #{@hacker.username}:
 %p= @hacker.about
 %hr
