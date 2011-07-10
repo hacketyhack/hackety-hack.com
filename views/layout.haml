@@ -44,10 +44,13 @@
             %img{:height => "64", :src => "/images/logo.png", :style => "float:left"}/
           %p.title{:style => "padding-top:20px;padding-left:80px"} Hackety Hack
         - if logged_in?
-          .span-6.prepend-3.last
+          .span-8.prepend-1.last
             %ul
               %li{:style => "display:inline"}
                 %a{:href => "/download"} Download
+              |
+              %li{:style => "display:inline"}
+                %a{:href => "/faq"} FAQ
               |
               %li{:style => "display:inline"}
                 %a{:href => "/hackers/#{current_user.slug}"} My Page
@@ -55,10 +58,13 @@
               %li{:style => "display:inline"}
                 %a{:href => "/logout"} Log out
         - else
-          .span-4.prepend-5.last
+          .span-6.prepend-3.last
             %ul
               %li{:style => "display:inline"}
                 %a{:href => "/download"} Download
+              |
+              %li{:style => "display:inline"}
+                %a{:href => "/faq"} FAQ
               |
               %li{:style => "display:inline"}
                 %a{:href => "/login"} Log in
