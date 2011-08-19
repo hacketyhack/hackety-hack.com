@@ -14,7 +14,7 @@
       %a{:href => "/programs/#{@hacker.username}/#{program.slug}"}= program.title
 
 %hr
-- if logged_in? 
+- if logged_in?
   - if @hacker.username != current_user.username
     %a{:href => "/messages/new/to/#{@hacker.username}" }= "Send #{@hacker.username} a message"
     - if current_user.following? @hacker
@@ -47,7 +47,7 @@
       %form{:action => "/hackers/update", :method => "POST"}
         %label{:for => "hacker[about]"} About Me
         %br
-        %textarea{:name => "hacker[about]", :rows => 10, :cols => 40}
+        %textarea{:name => "hacker[about]", :rows => 10, :cols => 40}=@hacker.about
         %br
         %input{:type => "submit", :value => "Update About"}
     %br
@@ -62,3 +62,4 @@
         $('#account_settings').toggle("blinds");
       });
     });
+
