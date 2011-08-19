@@ -26,7 +26,7 @@ end
 
 # People can log in by going to /login
 get '/login' do
-  haml :"sessions/login", :layout => :plain
+  haml :index
 end
 
 # The form at /login sends a POST request to /login

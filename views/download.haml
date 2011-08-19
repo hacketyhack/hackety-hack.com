@@ -4,56 +4,62 @@
 
 %p.body I am working on supporting more platforms at the moment. If you already know how to code and you'd like to help out, please <a href="mailto:steve+hackety@steveklabnik.com">send me an email</a>, I'd love a hand.
 %hr/
-%br/
 %h3 Common Issues
 %p I've got a lot of great feedback from some people, and there are a few problems that have been raised. Here's some common solutions:
-%ul
-  %ul
-    %li Q: It crashes on Windows sometimes.
-    %li A: Try installing to C:\apps. This has fixed crashes for some users.
-  %ul
-    %li Q: I just get a bunch of boxes on the opening Screen!
-    %li A: Make sure you drag it out of the .dmg and onto your computer.
-  %ul
-    %li Q: The icon bounces once, and then doesn't open!
-    %li A: Make sure you're using OSX 10.6, on a 64 bit machine. Others coming soon!
-  %ul
-    %li Q: On Ubuntu, I get an error about libssh2
-    %li A: Try sudo apt-get install libssh2-1. Sorry about that!
+%ul.issues
+  %li
+    %p 
+      %b Q: It crashes on Windows sometimes.
+      %br
+      A: Try installing to C:\apps. This has fixed crashes for some users.
+  %li
+    %p 
+      %b Q: I just get a bunch of boxes on the opening Screen!
+      %br
+      A: Make sure you drag it out of the .dmg and onto your computer.
+  %li
+    %p 
+      %b Q: The icon bounces once, and then doesn't open!
+      %br
+      A: Make sure you're using OSX 10.6, on a 64 bit machine. Others coming soon!
+  %li
+    %p 
+      %b Q: On Ubuntu, I get an error about libssh2
+      %br
+      A: Try sudo apt-get install libssh2-1. Sorry about that!
 %p I am currently working to resolve all of these issues. Please <a href="/stream">let me know</a> if you have any other problems. I'll be releasing updated versions on a regular basis.
-
+%a{:name => "signup"}
 %h1 Make a Hackety Hack Account
 %p.body
   Hackety Hack has close integration with this website. You can sign up with an account here, and you'll be able to upload and share the programs you create with others.
-%form{:action => "/signup", :method => "post"}
+%form{:action => "/signup", :method => "post", :class => "sign_up"}
   %table
     %tr
       %td
         %label{:for => "user_email"} Email (required)
-      %td
+        %br
         %input{ :id => "user_email", :name => "user[email]", :size => 30, :type => "text" }
     %tr
       %td
         %label{:for => "user_username"} Username (required)
-      %td
+        %br
         %input{ :id => "user_username", :name => "user[username]", :size => 30, :type => "text" }
     %tr
       %td
         %label{:for => "user_password"} Password
-      %td
+        %br
         %input{ :id => "user_password", :name => "user[password]", :size => 30, :type => "password" }
     %tr
       %td
         %label{:for => "user_password_confirmation"} Confirm Password
-      %td
+        %br
         %input{ :id => "user_password_confirmation", :name => "user[password_confirmation]", :size => 30, :type => "password" }
     %tr
       %td
         %label{:for => "user_about"} About Yourself
-      %td
+        %br
         %textarea{ :id => "user_about", :name => "user[about]", :rows => 10, :cols => 30 }
     %tr
-      %td
       %td
         %input{ :value => "Create account", :type => "submit", :class => "button" }
         or 

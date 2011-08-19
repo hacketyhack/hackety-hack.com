@@ -10,6 +10,7 @@
     %script{:src => "/js/showdown.js", :type => "text/javascript"}
     %link{:href => "/css/black-tie/jquery-ui-1.8.7.custom.css", :rel => "stylesheet", :type => "text/css"}/
     %link{:href => "/css/site.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "http://fonts.googleapis.com/css?family=Aldrich", :rel => "stylesheet", :type => "text/css"}/
 
     %title Hackety Hack!
 
@@ -31,43 +32,98 @@
     != yield_content :head
 
           
-  %body{:style => "background-image:url('/images/stripe.png')"}
-    #flash{:style => "background-color:#FFF"}
-      = flash[:notice]
+  %body
+    .black_bar
     != yield_content :body
-    .container{:style => ""}
-      .span-18.prepend-3.last{:style => "height:100%"}
-        <br />
-        <br />
-        .span-9
-          %a{:href => "/"}
-            %img{:height => "64", :src => "/images/logo.png", :style => "float:left"}/
-          %p.title{:style => "padding-top:20px;padding-left:80px"} Hackety Hack
+    .container
+      .top_bar
         - if logged_in?
-          .span-8.prepend-1.last
-            %ul
-              %li{:style => "display:inline"}
-                %a{:href => "/download"} Download
-              |
-              %li{:style => "display:inline"}
-                %a{:href => "/faq"} FAQ
-              |
-              %li{:style => "display:inline"}
-                %a{:href => "/hackers/#{current_user.slug}"} My Page
-              |
-              %li{:style => "display:inline"}
-                %a{:href => "/logout"} Log out
+          %ul.nav
+            %li{:style => "display:inline"}
+              %a{:href => "/download"} Download
+            %li{:style => "display:inline"}
+              %a{:href => "/faq"} FAQ
+            %li{:style => "display:inline"}
+              %a{:href => "/hackers/#{current_user.slug}"} My Page
+            %li{:style => "display:inline"}
+              %a{:href => "/logout"} Log out
         - else
-          .span-6.prepend-3.last
-            %ul
-              %li{:style => "display:inline"}
-                %a{:href => "/download"} Download
-              |
-              %li{:style => "display:inline"}
-                %a{:href => "/faq"} FAQ
-              |
-              %li{:style => "display:inline"}
-                %a{:href => "/login"} Log in
-        %div{:style => "clear:both"}
-        != yield
-
+          %ul.nav
+            %li{:style => "display:inline"}
+              %a{:href => "/download"} Download
+            %li{:style => "display:inline"}
+              %a{:href => "/faq"} FAQ
+            %li{:style => "display:inline"}
+              %a{:href => "/stream"} Ask a question
+            %li{:style => "display:inline"}
+              %a{:href => "/login"} Log in
+        %a{:href => "/"}
+          %img{:height => "64", :src => "/images/logo.png", :class => "logo"}/
+        %h1.title Hackety Hack
+      .content
+        .sidebar
+          .login
+            %h2 Hackety Hack Login
+            %form{:action => "/login", :method => "POST"}
+              %table
+                %tr
+                  %td
+                    %label{:for => "user_username"} Username
+                    %br
+                    %input{:id => "user_username", :name => "username", :size => 30, :type => "text", :autofocus => "focus"}
+                %tr
+                  %td
+                    %label{:for => "user_password"} Password
+                    %br
+                    %input{:id => "user_password", :name => "password", :size => 30, :type => "password"}
+                %tr
+                  %td
+                    %input{:value => "Log in", :type => "submit", :class => "button"}
+                    or 
+                    %a{:href => "/download#signup"} Sign up
+          .twitter
+            <script src="http://widgets.twimg.com/j/2/widget.js"></script>
+            :javascript 
+              new TWTR.Widget({
+                version: 2,
+                type: 'profile',
+                rpp: 4,
+                interval: 6000,
+                width: 280,
+                height: 300,
+                theme: {
+                  shell: {
+                    background: '#333333',
+                    color: '#ffffff'
+                  },
+                  tweets: {
+                    background: '#000000',
+                    color: '#ffffff',
+                    links: '#e5445b'
+                  }
+                },
+                features: {
+                  scrollbar: false,
+                  loop: false,
+                  live: false,
+                  hashtags: true,
+                  timestamp: true,
+                  avatars: false,
+                  behavior: 'all'
+                }
+              }).render().setUser('hacketyhack').start();
+        .main_content
+          - if flash[:notice]
+            #flash{:class => "flash"}
+              = flash[:notice]
+          != yield
+      .footer
+        %ul
+          %li
+            %a{:href => "/tos"} Terms of Service
+          %li{:style => "display:inline"}
+            %a{:href => "/download"} Download
+          %li{:style => "display:inline"}
+            %a{:href => "/faq"} FAQ
+          %li{:style => "display:inline"}
+            %a{:href => "/stream"} Ask a question

@@ -6,40 +6,63 @@
   font-style: normal;
 }
 
+html
+{
+  height:100%;
+}
+
+body
+{
+  margin:0;
+  padding:0;
+  background:url("/images/bg.jpg");
+  height:100%;
+}
+
+h1, h2, h3, h4, p.title
+{
+  font-family: 'Aldrich', sans-serif;
+}
+
 h1 { 
-  font-family: 'ChunkFiveRegular', arial, serif;
   font-size: 3em;
 }
 h2 { 
-  font: 2em 'ChunkFiveRegular', Arial, sans-serif;letter-spacing: 0;
+  font: 2em;
   color:#3C3E3B
 }
 h3 { 
-  font: 2em 'ChunkFiveRegular', Arial, sans-serif; letter-spacing: 0;
+  font: 2em;
   color:#3C3E3B
 }
 h3 a {color:#3C3E9B}
 h3 a:visited {color:#3C3E6B}
 
 p.title { 
-  font: 1.5em 'ChunkFiveRegular', Arial, sans-serif; letter-spacing: 0;
+  font: 1.5em;
   color:#3C3E3B
 }
 
-p.body { 
-  font: 1.5em 'Helvetica', Arial, sans-serif; letter-spacing: 0;
-  color:#3C3E3B
+p { 
+  font: 14px 'Helvetica', Arial, sans-serif; letter-spacing: 0;
+  color:#3C3E3B;
+  line-height:1.3;
 }
 
 div.container {
-  background:#DCDCDC;
-  background-repeat: no-repeat;
-  background-position: 100% 0%;
+  position:relative;
+  z-index:1;
 }
 hr {
   height:1px;
   background-color:#000;
 }
+
+a
+{
+  color:#e5445b;
+}
+
 .vertical-center-text {
   /*padding-top:20px;*/
   padding-left:80px;
@@ -57,4 +80,188 @@ border-radius:4px;
 
 .hacker-gravatar {
 border-radius: 4px;
+}
+
+/* Top Bar Area */
+
+.black_bar
+{
+  height:72px;
+  position:absolute;
+  background:#000;
+  width:100%;
+}
+
+.top_bar
+{
+  height:72px;
+}
+
+img.logo
+{
+  margin:8px 15px 0 0;
+  float:left;
+}
+
+h1.title
+{
+  font-size:24px;
+  color:#d1ccc8;
+  padding:25px 0 0;
+}
+
+ul.nav
+{
+  list-style:none;
+  float:right;
+  margin: 25px 0 0 0;
+}
+
+ul.nav li, .footer ul li
+{
+  border-left: 1px solid #515151;
+  padding:0 7px;
+}
+
+ul.nav li:first-child, .footer ul li:first-child
+{
+  border:none;
+  padding-left:0;
+}
+
+ul.nav li a, .footer ul li a
+{
+  font-size:14px;
+  text-decoration:none;
+}
+
+ul.nav li a:hover
+{
+  text-decoration:underline;
+}
+
+/* Login */
+.login
+{
+  background:#000;
+  width:250px;
+  padding:15px;
+  color:#d1d1d1;
+  margin:0 0 15px;
+}
+
+.login h2
+{
+  margin:0;
+  color:#d1d1d1;
+}
+
+.login label
+{
+  font-size:14px;
+}
+
+.login input[type="text"], .login input[type="password"]
+{
+  height:20px;
+  width:240px;
+  background:#e9e9e9;
+}
+
+/* SideBar */
+.sidebar
+{
+  width:280px;
+  float:right;
+}
+
+/* Content Section Styles */
+.container
+{
+  min-height:100%;
+  overflow:hidden;
+}
+
+.content
+{
+  clear:left;
+
+}
+
+.main_content
+{
+  padding-top:10px;
+  width:670px;
+  padding-right:30px;
+}
+
+.left
+{
+  float:left;
+  margin-right:20px;
+}
+
+ul.issues
+{
+  list-style-type:none;
+  margin:0;
+  padding:0;
+}
+
+form.sign_up input[type="text"], form.sign_up input[type="password"]
+{
+  height:20px;
+}
+
+.flash
+{
+  border:1px solid #383838;
+  padding:5px;
+  margin:5px 0;
+  color:#383838;
+  background:#dcdcdc;
+}
+
+/* footer */
+.footer
+{
+  margin-top:40px;
+  clear:both;
+  width:960px;
+  display:inline-block;
+  position:relative;
+  bottom:0;
+}
+
+.footer ul
+{
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+.footer ul li
+{
+  float:left;
+}
+
+/* clearfix hack */
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clearfix {
+	display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+	display: block;
+}
+ 
+* html .clearfix {
+	height: 1%;
 }

@@ -193,7 +193,7 @@ get '/' do
   if logged_in?
     redirect "/stream"
   end
-  haml :index, :layout => :plain
+  haml :index
 end
 
 # Hopefully, anyone visiting the site will think that Hackety Hack sounds
@@ -202,7 +202,7 @@ end
 #
 # Similar to the home page, we also don't want our layout here, either.
 get '/download' do
-  haml :download, :layout => :plain
+  haml :download
 end
 
 # The main activity stream is the main page for the site when a user is logged
