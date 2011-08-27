@@ -5,7 +5,7 @@ feature "Hackers" do
   scenario "can register" do
 
     visit '/signup'
-    
+
     fill_in "Email", :with => "steve@example.com"
     fill_in "Username", :with => "steve"
     fill_in "Password", :with => "foobar"
@@ -107,4 +107,13 @@ feature "Hackers" do
     Hacker.authenticate("alindeman", "abc123").should be
   end
 
+  scenario "see their current about text in the textarea when editing their profile" do
+    @tobi = Factory(:hacker, :username => "tobi", :about => "loremipsum")
+    log_in @tobi
+    visit "/hackers/tobi"
+
+    page.find_field('hacker[about]').value.should == "loremipsum"
+  end
+
 end
+
