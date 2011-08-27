@@ -11,7 +11,8 @@
         %img{:src => gravatar_url_for(reply.author_email), :alt => "#{reply.author.downcase}_gravatar", :class => "gravatar"}
     %div{:style => "width:500px"}
       %p
-        <a href="/hackers/#{reply.author}">#{reply.author}</a> says:
+        Posted on #{@content.created_at.strftime("%m/%d/%Y at %I:%M%p")}<br />
+        <b><a href="/hackers/#{reply.author}">#{reply.author}</a></b> says:
       %p
         :markdown
           #{reply.body}

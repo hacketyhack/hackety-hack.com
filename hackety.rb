@@ -231,6 +231,10 @@ get "/faq" do
   haml :faq
 end
 
+get "/opensource" do
+  haml :open_source
+end
+
 # This is used by the desktop app to see if we should upgrade or not.
 get "/version.json" do
  content_type :json
