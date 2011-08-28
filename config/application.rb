@@ -24,7 +24,7 @@ module HacketyHackCom
 
       # you can also specify a different test framework or ORM here
       # g.test_framework  :rspec
-      # g.orm             :mongoid
+      g.orm             :mongo_mapper
     end
   end
 end
