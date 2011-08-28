@@ -1,0 +1,2 @@
+Fabricator(:rel) do
+end

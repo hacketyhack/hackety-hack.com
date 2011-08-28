@@ -21,3 +21,8 @@ gem 'jquery-rails'
 # Use unicorn as the web server
 gem 'unicorn'
 
+group :development, :test do
+  gem 'fabrication'
+  gem 'rspec-rails'
+  gem 'cucumber-rails'
+end
