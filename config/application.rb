@@ -21,11 +21,11 @@ module HacketyHackCom
 
     config.generators do |g|
       g.template_engine :haml
-      g.test_framework      :rspec, :fixture => true
-      g.fixture_replacement :fabrication
 
       # you can also specify a different test framework or ORM here
-      # g.orm             :mongoid
+      g.test_framework      :rspec, :fixture => true
+      g.fixture_replacement :fabrication
+      g.orm                 :mongo_mapper
     end
   end
 end
