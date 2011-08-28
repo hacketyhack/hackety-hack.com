@@ -21,6 +21,8 @@ gem 'jnunemaker-validatable', '>= 1.8.4' # Required by mm-devise
 gem 'devise',                 '>= 1.2'
 gem 'mm-devise',              '>= 1.2'
 
+gem "semantic_menu", :git => "git://github.com/michaek/semantic_menu.git"
+
 # Use unicorn as the web server
 gem 'unicorn'
 
