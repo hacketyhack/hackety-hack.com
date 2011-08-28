@@ -5,6 +5,7 @@ gem 'sqlite3'
 gem 'json'
 
 gem 'haml'
+gem 'jquery-rails'
 gem 'mongo_mapper'
 gem 'bson_ext'
 
@@ -16,7 +17,9 @@ group :assets do
   gem 'uglifier'
 end
 
-gem 'jquery-rails'
+gem 'jnunemaker-validatable', '>= 1.8.4' # Required by mm-devise
+gem 'devise',                 '>= 1.2'
+gem 'mm-devise',              '>= 1.2'
 
 # Use unicorn as the web server
 gem 'unicorn'

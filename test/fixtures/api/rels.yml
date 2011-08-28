@@ -1,9 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
-
-one:
-  slug: MyString
-  description: MyText
-
-two:
-  slug: MyString
-  description: MyText

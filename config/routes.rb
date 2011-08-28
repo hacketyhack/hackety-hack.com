@@ -8,6 +8,8 @@ HacketyHackCom::Application.routes.draw do
     end
   end
 
+  devise_for :users
+
   root :to => "static#root"
 
 end
