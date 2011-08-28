@@ -1,10 +1,11 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
-#   Mayor.create(:name => 'Emanuel', :city => cities.first)
+# Drop all the old Rels
 
+Rel.all.each{|r| r.destroy}
+
+#Make our standard ones
 Rel.create :slug        => "current-application-version",
            :description => "The linked resource describes the most recently released version of the desktop application."
+Rel.create :slug        => "rel-index",
+           :description => "This relation is the root resource for rels. It contains the list of all rels we've defined."
+Rel.create :slug        => "rel",
+           :description => "This relation is a link to a rel resource."
