@@ -1,4 +1,4 @@
-class Api::RelsController < ApplicationController
+class Api::RelsController < ApiController
   def index
     @rels = Rel.all
   end
