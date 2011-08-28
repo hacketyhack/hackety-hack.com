@@ -80,8 +80,17 @@ GEM
     gherkin (2.4.16)
       json (>= 1.4.6)
     haml (3.1.2)
+    haml-rails (0.3.4)
+      actionpack (~> 3.0)
+      activesupport (~> 3.0)
+      haml (~> 3.0)
+      railties (~> 3.0)
+    has_scope (0.5.1)
     hike (1.2.1)
     i18n (0.6.0)
+    inherited_resources (1.2.2)
+      has_scope (~> 0.5.0)
+      responders (~> 0.6.0)
     jnunemaker-validatable (1.8.4)
       activesupport (>= 2.3.4)
     jquery-rails (1.0.13)
@@ -137,6 +146,7 @@ GEM
     raindrops (0.7.0)
     rake (0.9.2)
     rdoc (3.9.4)
+    responders (0.6.4)
     rspec (2.6.0)
       rspec-core (~> 2.6.0)
       rspec-expectations (~> 2.6.0)
@@ -194,7 +204,8 @@ DEPENDENCIES
   cucumber-rails
   devise (>= 1.2)
   fabrication
-  haml
+  haml-rails
+  inherited_resources
   jnunemaker-validatable (>= 1.8.4)
   jquery-rails
   json

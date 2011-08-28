@@ -4,7 +4,7 @@ gem 'rails', '3.1.0.rc6'
 gem 'sqlite3'
 gem 'json'
 
-gem 'haml'
+gem 'haml-rails'
 gem 'jquery-rails'
 gem 'mongo_mapper'
 gem 'bson_ext'
@@ -21,6 +21,7 @@ gem 'jnunemaker-validatable', '>= 1.8.4' # Required by mm-devise
 gem 'devise',                 '>= 1.2'
 gem 'mm-devise',              '>= 1.2'
 
+gem 'inherited_resources'
 gem "semantic_menu", :git => "git://github.com/michaek/semantic_menu.git"
 
 # Use unicorn as the web server
