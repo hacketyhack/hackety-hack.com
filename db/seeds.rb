@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Emanuel', :city => cities.first)
+
+Rel.create :slug        => "current-application-version",
+           :description => "The linked resource describes the most recently released version of the desktop application."

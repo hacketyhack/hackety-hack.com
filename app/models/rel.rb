@@ -3,4 +3,8 @@ class Rel
 
   key :slug, String
   key :description, String
+
+  def to_param
+    slug
+  end
 end
