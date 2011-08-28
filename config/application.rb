@@ -11,7 +11,7 @@ end
 
 module HacketyHackCom
   class Application < Rails::Application
-     config.autoload_paths += %W(lib)
+    config.autoload_paths += %W(#{config.root}/lib)
 
     config.encoding = "utf-8"
 
@@ -21,9 +21,10 @@ module HacketyHackCom
 
     config.generators do |g|
       g.template_engine :haml
+      g.test_framework      :rspec, :fixture => true
+      g.fixture_replacement :fabrication
 
       # you can also specify a different test framework or ORM here
-      # g.test_framework  :rspec
       # g.orm             :mongoid
     end
   end
