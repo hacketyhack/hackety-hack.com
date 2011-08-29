@@ -1,7 +1,6 @@
-.span-18
 %h1= @hacker.username + "'s page"
 %img{:src => @hacker.gravatar_url, :class => "hacker-gravatar"}
-%h2 About #{@hacker.username}:
+%h2{:class => "nomargin"} #{@hacker.username}
 %p= @hacker.about
 %hr
 %p Following: <a href="/hackers/#{@hacker.username}/following">#{@hacker.following.count}</a>

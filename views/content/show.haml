@@ -1,4 +1,4 @@
-%h1 A #{@content.type}, from #{@content.author}
+%h1{:class => "nomargin"} #{@content.author}'s #{@content.type}
 %p Posted on #{@content.created_at.strftime("%m/%d/%Y at %I:%M%p")}
 %p
   :markdown
@@ -14,18 +14,17 @@
       %p
         :markdown
           #{reply.body}
-%div{:style => "clear:both"}
 - if logged_in?
-  %h2 Add a comment
+  %h2{:class => "nomargin"} Add a comment
   %form{:action => "/content/#{@content.id}/comment", :method => "POST"}
-    %label{:for => "comment_body"} Body
+    %label{:for => "comment_body"} Comment
     %br
-    %textarea{:id => "comment_body", :name => "comment[body]", :rows => 20, :cols => 50}
+    %textarea{:id => "comment_body", :name => "comment[body]", :rows => 8, :cols => 80}
     %br/
     Comments are formatted via 
     %a{:href => "http://daringfireball.net/projects/markdown/syntax"} Markdown
     %br
-    %input{:type => "submit", :value => "Submit", :class => "button"}
+    %input{:type => "submit", :value => "Add Comment", :class => "button"}
 - else
   %a{:href => "/login"} Please log in to comment.
 

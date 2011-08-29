@@ -1,5 +1,5 @@
 
-#infobox{:style => "border:black 1px solid;padding:10px;"}
+#infobox{:style => "padding:10px;"}
   Hello there! This is the website for Hackety Hack. You can ask a question, share programs that you've made, or just tell everyone something. Don't forget, you should <a href="http://hackety-hack.com/download">download Hackety Hack</a>, it will teach you everything you need to get started with programming! This is just a place to participate in the Hackety Hack community.
   We also have a <a href="/faq">FAQ</a>, if you'd rather read that.
 
@@ -13,15 +13,17 @@
       %a#post_button.button{:href => "#"} Tell everyone something
   %form#link_form{:action => "/content", :style => "display:none", :method => "POST"}
     %label{:for => "link"} Share a link
-    %a.cancel{:href => "#"} x
+    %a.cancel{:href => "#"} 
+      %img{:src => "/images/Close.png"}
     %br/
     %input#link{ :name => "content[body]", :size => "76", :type => "textbox"}/
     %input{ :name => "content[type]", :type => "hidden", :value => "link"}/
     %br/
-    %input.button{:type => "submit"}
+    %input.button{:type => "submit", :value => "Share"}
   %form#post_form{:action => "/content", :style => "display:none", :method => "POST"}
     %label{:for => "post"} Tell everyone something
-    %a.cancel{:href => "#"} x
+    %a.cancel{:href => "#"}
+      %img{:src => "/images/Close.png"}
     %br/
     %textarea#post{ :name => "content[body]" }
     %input{ :name => "content[type]", :type => "hidden", :value => "post"}/
@@ -29,13 +31,14 @@
     Comments are formatted via 
     %a{:href => "http://daringfireball.net/projects/markdown/syntax"} Markdown
     %br/
-    %input.button{:type => "submit"}
+    %input.button{:type => "submit", :value => "Tell Everyone"}
     %br/
     %label Preview
     .preview
   %form#question_form{:action => "/content", :style => "display:none", :method => "POST"}
     %label{:for => "question"} Ask a question
-    %a.cancel{:href => "#"} x
+    %a.cancel{:href => "#"} 
+      %img{:src => "/images/Close.png"}
     %br/
     %textarea#question{:name => "content[body]"}
     %input{ :name => "content[type]", :type => "hidden", :value => "question"}/
@@ -43,14 +46,14 @@
     Comments are formatted via 
     %a{:href => "http://daringfireball.net/projects/markdown/syntax"} Markdown
     %br/
-    %input.button{:type => "submit"}
+    %input.button{:type => "submit", :value => "Ask a Question"}
     %br/
     %label Preview
     .preview
 - else
   %a{:href => "/login"} Please log in to post something.
 
-%h2 Here's what everyone else is up to!
+%h2.marginTop Here's what everyone else is up to!
 %ul{:style => "list-style:none"}
   - @content_list.each do |content|
     %li{:style => "height:70px"}

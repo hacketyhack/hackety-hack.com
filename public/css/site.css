@@ -38,6 +38,11 @@ h3 {
 h3 a {color:#3C3E9B}
 h3 a:visited {color:#3C3E6B}
 
+h2.marginTop
+{
+	margin-top:15px;
+}
+
 p.title { 
   font: 1.5em;
   color:#3C3E3B
@@ -61,6 +66,11 @@ hr {
 a
 {
   color:#e5445b;
+}
+
+.nomargin
+{
+	margin:0;
 }
 
 .vertical-center-text {
@@ -141,7 +151,7 @@ ul.nav li a:hover
 }
 
 /* Login */
-.login
+.login, .userinfo
 {
   background:#000;
   width:250px;
@@ -166,6 +176,25 @@ ul.nav li a:hover
   height:20px;
   width:240px;
   background:#e9e9e9;
+}
+
+/* User info box */
+img.hacker-gravatar
+{
+	float:left;
+	margin:0 15px 0 0;
+}
+
+.userinfo h3
+{
+	margin:0;
+	color:#e9e9e9;
+}
+
+.userinfo p
+{
+	margin:0;
+	color:#ccc;
 }
 
 /* SideBar */
@@ -220,6 +249,23 @@ form.sign_up input[type="text"], form.sign_up input[type="password"]
   margin:5px 0;
   color:#383838;
   background:#dcdcdc;
+}
+
+#question_form textarea, #post_form textarea
+{
+	width:500px;
+}
+
+.preview
+{
+	padding:10px 5px;
+	width:500px;
+	border:#666 1px solid;
+}
+
+.ui-button
+{
+	margin:5px 0;
 }
 
 /* footer */
