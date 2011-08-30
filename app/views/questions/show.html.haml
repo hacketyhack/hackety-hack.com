@@ -1,0 +1,14 @@
+- content_for :title do
+  = resource
+
+- content_for :links do
+  - if can? :update, resource
+    = link_to 'Edit', edit_resource_path
+  - if can? :destroy, resource
+    = link_to 'Delete', resource_path, :confirm => 'Are you sure?', :method => :delete
+
+%dl
+  %dt Title
+  %dd= resource.title
+  %dt Description
+  %dd= resource.description

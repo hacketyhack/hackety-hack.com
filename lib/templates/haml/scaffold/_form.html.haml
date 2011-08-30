@@ -1,0 +1,10 @@
+= simple_form_for(resource, :url => @form_url) do |f|
+  = f.error_notification
+
+  .inputs
+  <%- attributes.each do |attribute| -%>
+    = f.<%= attribute.reference? ? :association : :input %> :<%= attribute.name %>
+  <%- end -%>
+
+  .actions
+    = f.button :submit
