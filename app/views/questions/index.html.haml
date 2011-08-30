@@ -1,0 +1,9 @@
+- content_for :title do
+  Questions
+  
+- content_for :links do
+  - if can? :create, Question
+    = link_to "New question", new_resource_path
+  
+%ol
+  = render :partial => "list", :collection => collection
