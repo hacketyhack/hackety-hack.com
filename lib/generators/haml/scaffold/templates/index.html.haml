@@ -1,0 +1,9 @@
+- content_for :title do
+  <%= plural_table_name.capitalize %>
+  
+- content_for :links do
+  - if can? :create, <%= singular_table_name.classify %>
+    = link_to "New <%= singular_table_name %>", new_resource_path
+  
+%ol
+  = render :partial => "list", :collection => collection
