@@ -1,0 +1,7 @@
+%li.item
+  = link_to list, resource_path(list)
+
+  - if can? :update, list
+    = link_to 'Edit', edit_resource_path(list)
+  - if can? :destroy, list
+    = link_to 'Delete', resource_path(list), :confirm => 'Are you sure?', :method => :delete

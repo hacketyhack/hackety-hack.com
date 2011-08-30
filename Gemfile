@@ -20,15 +20,21 @@ end
 gem 'jnunemaker-validatable', '>= 1.8.4' # Required by mm-devise
 gem 'devise',                 '>= 1.2'
 gem 'mm-devise',              '>= 1.2'
+gem 'cancan'
 
 gem 'inherited_resources'
+gem 'simple_form'
 gem "semantic_menu", :git => "git://github.com/michaek/semantic_menu.git"
 
-# Use unicorn as the web server
-gem 'unicorn'
+group :development do
+  # Use unicorn as the web server
+  gem 'unicorn'
+end
+
 
 group :development, :test do
   gem 'fabrication'
   gem 'rspec-rails'
   gem 'cucumber-rails'
 end
+gem "mocha", :group => :test

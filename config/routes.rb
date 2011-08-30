@@ -1,5 +1,7 @@
 HacketyHackCom::Application.routes.draw do
 
+  resources :questions
+
   constraints(ApiConstraint) do
     match '/' => 'static#api_root'
     match '/versions/newest' => 'static#newest_version', :as => "newest_version"
