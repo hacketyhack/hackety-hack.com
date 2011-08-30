@@ -5,5 +5,13 @@
   - if can? :create, Question
     = link_to "New question", new_resource_path
   
-%ol
+%table
+  %thead
+    %th Title
+    %th Description
+  
+    %th
+    %th
+    %th
+  
   = render :partial => "list", :collection => collection
