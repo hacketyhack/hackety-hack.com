@@ -1,6 +1,5 @@
-%h1= "The '#{@rel.slug}' Relation"
+- title "The '#{@rel.slug}' Relation"
 
 %p= @rel.description
 
 %p= link_to "Back to list of all rels", rels_path, :rel => "/rels/rel-index"
-%p= link_to "Back to API root", root_path, :rel => "root"
