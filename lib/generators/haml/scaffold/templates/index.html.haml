@@ -5,5 +5,13 @@
   - if can? :create, <%= singular_table_name.classify %>
     = link_to "New <%= singular_table_name %>", new_resource_path
   
-%ol
+%table
+  %thead
+<% for attribute in attributes -%>
+    %th <%= attribute.human_name %>
+<% end -%>  
+    %th
+    %th
+    %th
+  
   = render :partial => "list", :collection => collection
