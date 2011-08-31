@@ -1,5 +1,10 @@
 = title "Welcome"
 
-%p!= "For a list of the relations we've defined for this API, go " + link_to("here", rels_path, :rel => "/rels/rel-index")
-%p!= "You can find the latest released version of Hackety Hack " + link_to("here", newest_version_path, :rel => "/rels/current-application-version") + "."
+%p For a list of the relations we've defined for this API, go #{link_to("here", rels_path, :rel => "/rels/rel-index")}.
+%p You can find the latest released version of Hackety Hack #{link_to("here", newest_version_path, :rel => "/rels/current-application-version")}.
+
+%h2 Programs
+
+%p For a list of programs our users have made, go #{link_to("here", programs_path, :rel => "/rels/program-index")}.
+%p To make a new program, you can find a form #{link_to("here", new_program_path, :rel => "/rels/program-new")}.
 

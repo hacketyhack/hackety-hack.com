@@ -1,0 +1,7 @@
+- title "All Programs"
+
+%p Here's a list of all of the programs we have:
+
+%ul
+  - @programs.each do |program|
+    %li= link_to "#{program.author_username}/#{program.slug}", program

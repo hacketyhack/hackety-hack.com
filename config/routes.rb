@@ -7,6 +7,7 @@ HacketyHackCom::Application.routes.draw do
     match '/versions/newest' => 'static#newest_version', :as => "newest_version"
     scope :module => "Api" do
       resources :rels, :only => [:index, :show]
+      resources :programs
     end
   end
 
