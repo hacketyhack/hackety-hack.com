@@ -202,6 +202,8 @@ end
 #
 # Similar to the home page, we also don't want our layout here, either.
 get '/download' do
+  request.user_agent.match(/Mac|Linux|Windows/)
+  @platform = $&
   haml :download, :layout => :plain
 end
 
