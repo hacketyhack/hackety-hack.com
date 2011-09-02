@@ -1,3 +1,11 @@
+:javascript
+  $(document).ready(function(){
+    $('#ask_button').click(
+      function(){
+        $('#the_form').show();
+        $('#ask_button').remove();
+      });
+  });
 - content_for :title do
   Questions
   
@@ -15,3 +23,7 @@
     %th
   
   = render :partial => "list", :collection => collection
+%div#the_form{:style=>'display:none'}
+  = render "form"
+- if current_user
+  %h3#ask_button Ask a question
