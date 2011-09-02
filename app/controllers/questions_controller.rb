@@ -2,6 +2,7 @@ class QuestionsController < InheritedController
 
   def index
     @question = Question.new
+    index!
   end
 
   def create
