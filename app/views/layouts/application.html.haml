@@ -8,4 +8,5 @@
     = csrf_meta_tags
   %body
     = render "shared/menu/user"
+    .flash #{flash[:notice]}
     = yield
