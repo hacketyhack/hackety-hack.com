@@ -2,16 +2,11 @@ require 'spec_helper'
 
 describe "questions/index.html.haml" do
   before(:each) do
-    assign(:questions, [
-      stub_model(Question,
-        :title => "Title",
-        :description => "Description"
-      ),
-      stub_model(Question,
-        :title => "Title",
-        :description => "Description"
-      )
-    ])
+    questions = []
+    2.times do
+      questions = Fabricate(:question)
+    end
+    assign("collection", questions)
   end
 
   it "renders a list of questions" do

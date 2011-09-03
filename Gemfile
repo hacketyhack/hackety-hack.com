@@ -41,4 +41,5 @@ end
 
 group :test do
   gem "mocha"
+  gem "database_cleaner"
 end

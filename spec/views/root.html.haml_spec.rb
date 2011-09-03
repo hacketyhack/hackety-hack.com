@@ -2,9 +2,9 @@ require 'spec_helper'
 
 describe "static/root" do
   
-  it "links to questions" do
+  it "has homepage content" do
     render
-    rendered.should have_selector('a', :href => '/questions')
+    rendered.should have_selector('h1', :content => "Home!")
   end
   
 end

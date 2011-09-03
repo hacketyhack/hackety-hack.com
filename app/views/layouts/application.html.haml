@@ -13,5 +13,8 @@
     - if flash[:notice]
       .flash #{flash[:notice]}
 
+    %h1.title
+      = yield :title
+
     = yield :links
     = yield
