@@ -36,5 +36,9 @@ group :development, :test do
   gem 'fabrication'
   gem 'rspec-rails'
   gem 'cucumber-rails'
+  gem "faker"
 end
-gem "mocha", :group => :test
+
+group :test do
+  gem "mocha"
+end
