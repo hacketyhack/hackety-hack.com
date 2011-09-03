@@ -17,11 +17,17 @@ RSpec.configure do |config|
   # config.mock_with :rr
   config.mock_with :rspec
 
-  # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
-  # config.fixture_path = "#{::Rails.root}/spec/fixtures"
-
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   # config.use_transactional_fixtures = true
+
+  config.after(:each) do
+    MongoMapper.database.collections.each do |collection|
+      unless collection.name.match(/^system\./)
+        collection.remove
+      end
+    end
+  end
 end
+

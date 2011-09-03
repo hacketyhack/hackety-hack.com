@@ -8,5 +8,13 @@
     = csrf_meta_tags
   %body
     = render "shared/menu/user"
-    .flash #{flash[:notice]}
+    = render "shared/menu/main"
+    
+    - if flash[:notice]
+      .flash #{flash[:notice]}
+
+    %h1.title
+      = yield :title
+
+    = yield :links
     = yield

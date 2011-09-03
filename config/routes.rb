@@ -11,7 +11,10 @@ HacketyHackCom::Application.routes.draw do
     end
   end
 
-  devise_for :users
+  devise_for :users do
+    get "login" => "devise/sessions#new", :as => "login"
+    get "logout" => "devise/sessions#destroy", :as => "logout"
+  end
 
   root :to => "static#root"
 
