@@ -10,7 +10,6 @@ Feature: CRUD actions for question
     And show me the page
     And I follow "Show"
   
-  @wip
   Scenario: Create an answer
     When I fill in the following:
       | Answer | My Answer |
