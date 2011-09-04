@@ -23,7 +23,7 @@ gem 'mm-devise',              '>= 1.2'
 gem 'cancan'
 
 gem 'inherited_resources'
-gem 'simple_form'
+gem 'simple_form', :git => "https://github.com/bitzesty/bootstrap_form.git"
 gem "semantic_menu", :git => "git://github.com/michaek/semantic_menu.git"
 
 group :development do
