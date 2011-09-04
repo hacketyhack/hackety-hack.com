@@ -1,6 +1,6 @@
 = semantic_menu do |root|
   - if current_user
-    = current_user.email
-    - root.add "Log Out", destroy_user_session_path, :method => :delete
+    = current_user.username
+    - root.add "Log Out", logout_path
   - else
-    - root.add "Log In", new_user_session_path 
+    - root.add "Log In", login_path

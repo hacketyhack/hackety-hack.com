@@ -1,17 +1,9 @@
-:javascript
-  $(document).ready(function(){
-    $('#ask_button').click(
-      function(){
-        $('#the_form').show();
-        $('#ask_button').remove();
-      });
-  });
 - content_for :title do
   Questions
   
 - content_for :links do
   - if can? :create, Question
-    = link_to "New question", new_resource_path
+    = link_to "Ask a Question", new_resource_path
   
 %table
   %thead
@@ -23,7 +15,3 @@
     %th
   
   = render :partial => "list", :collection => collection
-%div#the_form{:style=>'display:none'}
-  = render "form"
-- if current_user
-  %h3#ask_button Ask a question

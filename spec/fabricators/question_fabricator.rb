@@ -1,4 +1,5 @@
 Fabricator(:question) do
-  title "MyString"
-  description "MyString"
+  title "Title"
+  description "Description"
+  user
 end

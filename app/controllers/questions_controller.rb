@@ -1,11 +1,9 @@
 class QuestionsController < InheritedController
-
-  def index
-    @question = Question.new
-    index!
-  end
+  load_and_authorize_resource
 
   def create
-    create!(:notice => "Question Asked!"){collection_url}
+    @question = Question.create params[:question]
+    @question.user = current_user
+    create!(:notice => "Question Asked!"){ collection_url }
   end
 end

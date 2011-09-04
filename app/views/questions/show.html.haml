@@ -1,5 +1,5 @@
 - content_for :title do
-  = resource
+  = resource.title
 
 - content_for :links do
   - if can? :update, resource
@@ -7,8 +7,8 @@
   - if can? :destroy, resource
     = link_to 'Delete', resource_path, :confirm => 'Are you sure?', :method => :delete
 
-%dl
-  %dt Title
-  %dd= resource.title
-  %dt Description
-  %dd= resource.description
+- if resource.user
+  .author Created by #{resource.user.username} 
+
+.description
+  = resource.description
