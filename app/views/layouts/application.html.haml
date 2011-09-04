@@ -20,7 +20,9 @@
     
     .container
       - if flash[:notice]
-        .flash #{flash[:notice]}
+        .alert-message.success
+          #{flash[:notice]}
+          = link_to "x", "#", :class => "close"
 
       %h1.title
         = yield :title

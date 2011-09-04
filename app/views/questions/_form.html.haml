@@ -2,8 +2,8 @@
   = f.error_notification
 
   .inputs
-    = f.input :title
-    = f.input :description, :as => :text
+    = f.input :title, :hint => "What's your question?"
+    = f.input :description, :as => :text, :hint => "Provide some details about your problem to help diagnose it"
 
   .actions
     = f.button :submit , 'Ask Everyone', :class => "primary btn"
