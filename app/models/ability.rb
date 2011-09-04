@@ -2,10 +2,11 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)  
+    user ||= User.new
     
     can :read, Question
     
-    if user
+    unless user.new_record?
       can :create, Question
       can :manage, Question, :user => user
     end  
