@@ -6,4 +6,9 @@ class QuestionsController < InheritedController
     @question.user = current_user
     create!(:notice => "Question Asked!"){ collection_url }
   end
+  
+  def show
+    @answer = Answer.new
+    show!
+  end
 end

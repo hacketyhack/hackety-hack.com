@@ -1,6 +1,9 @@
 HacketyHackCom::Application.routes.draw do
 
-  resources :questions
+
+  resources :questions do
+    resources :answers
+  end
 
   constraints(ApiConstraint) do
     match '/' => 'static#api_root'

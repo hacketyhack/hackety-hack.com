@@ -3,7 +3,7 @@
   
 - content_for :links do
   - if can? :create, Question
-    = link_to "Ask a Question", new_resource_path
+    = link_to "Ask a Question", new_resource_path, :class => "btn"
   
 %table
   %thead
