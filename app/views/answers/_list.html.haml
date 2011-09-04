@@ -1,0 +1,10 @@
+%li.answer
+  .author 
+    Answered by #{list.user.username if list.user} 
+  .description
+    = list.description
+  
+  - if can? :update, list
+    = link_to 'Edit', edit_question_answer_path(@question, list)
+  - if can? :destroy, list
+    = link_to 'Delete', question_answer_path(@question, list), :confirm => 'Are you sure?', :method => :delete

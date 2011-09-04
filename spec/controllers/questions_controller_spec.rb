@@ -24,7 +24,16 @@ describe QuestionsController do
   # Question. As you add validations to Question, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    {
+      :title => "Title",
+      :description => "Description",
+      :user => @user
+    }
+  end
+  
+  before(:each) do
+    @user = User.create!(:username => "test", :email => "test@example.com", :password => "password", :password_confirmation => "password")
+    sign_in @user
   end
 
   describe "GET index" do

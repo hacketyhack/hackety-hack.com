@@ -1,6 +1,6 @@
-= semantic_menu do |root|
+= semantic_menu :class => "nav secondary-nav" do |root|
   - if current_user
-    = current_user.username
+    - root.add current_user.username, root_path
     - root.add "Log Out", logout_path
   - else
     - root.add "Log In", login_path

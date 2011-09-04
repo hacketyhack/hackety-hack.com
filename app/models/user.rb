@@ -8,4 +8,7 @@ class User
   key :username, String
   key :email, String
 
+  many :questions
+  many :answers
+
 end

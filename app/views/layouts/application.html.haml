@@ -2,19 +2,35 @@
 %html
   %head
     %title Hackety Hack!
-    <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap-1.1.1.min.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap-1.2.0.min.css">
+
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    = render "shared/menu/user"
-    = render "shared/menu/main"
+    %header.topbar
+      .topbar-inner
+        .container
+          %h3 
+            = link_to "Hackety Hack", root_path
+          = render "shared/menu/main"
+          = render "shared/menu/user"
     
-    - if flash[:notice]
-      .flash #{flash[:notice]}
+    .container
+      - if flash[:notice]
+        .alert-message.success
+          #{flash[:notice]}
+          = link_to "x", "#", :class => "close"
 
-    %h1.title
-      = yield :title
+      %h1.title
+        = yield :title
 
-    = yield :links
-    = yield
+      = yield :links
+      = yield
+
+
+    %footer
+      .container 
+        Footer

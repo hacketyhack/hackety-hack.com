@@ -2,7 +2,8 @@
   %td= list.title
   %td= list.description
   %td= link_to "Show", resource_path(list)
-  - if can? :update, list
-    %td= link_to 'Edit', edit_resource_path(list)
-  - if can? :destroy, list
-    %td= link_to 'Delete', resource_path(list), :confirm => 'Are you sure?', :method => :delete
+  %td
+    = link_to('Edit', edit_resource_path(list)) if can? :update, list
+  %td
+    = link_to('Delete', resource_path(list), :confirm => 'Are you sure?', :method => :delete) if can? :destroy, list
+    

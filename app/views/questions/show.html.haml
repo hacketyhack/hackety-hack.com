@@ -12,3 +12,9 @@
 
 .description
   = resource.description
+
+%h2 Answers
+%ul.answers  
+  = render :partial => "answers/list", :collection => resource.answers
+
+= render :partial => "answers/form"
