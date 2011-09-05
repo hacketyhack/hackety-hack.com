@@ -9,7 +9,6 @@
 
     h1 {
       font-size: 1.6em;
-/*      text-transform: uppercase;*/
     }
     p {
       font-size: 1em;
@@ -34,4 +33,10 @@
     border: none;
     margin-bottom: 0;
   }
+}
+
+.links {
+  position: absolute;
+  top: 6px;
+  right: 0;
 }

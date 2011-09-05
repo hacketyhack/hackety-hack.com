@@ -30,6 +30,15 @@ header .topbar-inner {
 
 #content-wrap {
   padding-top: 105px;
-  width: 980px;
+/*  width: 980px;*/
   margin: auto;
+  
+  .container {
+    position: relative;
+  }
+}
+
+.alert-message {
+  margin-top: -18px;
+  margin-bottom: 30px;
 }

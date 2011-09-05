@@ -19,18 +19,18 @@
           = render "shared/menu/user"
     
     #content-wrap{:class => @page_class}
+      - if flash[:notice]
+        .container.alert-message.success
+          #{flash[:notice]}
+          = link_to "x", "#", :class => "close"
+      
       #content.container
-        - if flash[:notice]
-          .alert-message.success
-            #{flash[:notice]}
-            = link_to "x", "#", :class => "close"
 
         - title = yield :title
         - unless title.empty?
-          %h1.title
-            = title
+          %h1.title= title
 
-        = yield :links
+        .links= yield :links
         = yield
 
     %footer
