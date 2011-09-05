@@ -1,27 +1,35 @@
-body {
-  padding-top: 105px;
-}
-
-header .topbar-inner {
-  padding: 1em 0;
+header .topbar-inner {  
+  .container {
+    padding: 0.75em 0;
+  }
+  
   li a {
     border-radius: 8px;
+    font-size: 14px;
+    padding: 11px 11px 10px;
+  }
+
+  #logo {
+    float: left;
+    margin-left: -40px;
+    width: 185px;
+    height: 40px;
+  
+    a {
+      position: absolute;
+      top: -2px;
+      height: 75px;
+      padding: 0;
+      width: 100%;
+      display: block;
+      background: url('/assets/logo-star.png') no-repeat;
+      text-indent: -9999px;
+    }
   }
 }
 
-#logo {
-  float: left;
-  width: 97px;
-  height: 40px;
-}
-
-#logo a {
-  position: absolute;
-  padding: 0;
-  top: -7px;
-  width: 97px;
-  height: 90px;
-  display: block;
-  background: url('/assets/logo-star.png') no-repeat;
-  text-indent: -9999px;
+#content-wrap {
+  padding-top: 105px;
+  width: 980px;
+  margin: auto;
 }

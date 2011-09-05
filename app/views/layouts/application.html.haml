@@ -13,25 +13,25 @@
     %header.topbar
       .topbar-inner
         .container
-          %h3#logo 
+          #logo 
             = link_to "Hackety Hack", root_path
           = render "shared/menu/main"
           = render "shared/menu/user"
     
-    .container
-      - if flash[:notice]
-        .alert-message.success
-          #{flash[:notice]}
-          = link_to "x", "#", :class => "close"
+    #content-wrap{:class => @page_class}
+      #content.container
+        - if flash[:notice]
+          .alert-message.success
+            #{flash[:notice]}
+            = link_to "x", "#", :class => "close"
 
-      - title = yield :title
-      - unless title.empty?
-        %h1.title
-          = title
+        - title = yield :title
+        - unless title.empty?
+          %h1.title
+            = title
 
-      = yield :links
-      = yield
-
+        = yield :links
+        = yield
 
     %footer
       .container 

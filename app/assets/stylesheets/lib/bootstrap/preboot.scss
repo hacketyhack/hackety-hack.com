@@ -7,7 +7,7 @@
 // ---------
 
 // Links
-$linkColor:         #0069d6;
+$linkColor:         #04BFBF;
 $linkColorHover:    darken($linkColor, 10);
 
 // Grays
@@ -19,8 +19,8 @@ $grayLighter:       lighten($black, 90%);
 $white:             #fff;
 
 // Accent Colors
-$blue:              #049CDB;
-$blueDark:          #0064CD;
+$blue:              #04BFBF;
+$blueDark:          #008a8a;
 $green:             #46a546;
 $red:               #9d261d;
 $yellow:            #ffc40d;
@@ -258,7 +258,7 @@ $analog2:           spin($baseColor, -22);
   }
   // Success appears as green
   &.success {
-    @include gradient-bar(#62c462, #57a957);
+    @include gradient-bar(#C0D966 - #111, #C0D966 - #222);
   }
   // Info appears as a neutral blue
   &.info {
