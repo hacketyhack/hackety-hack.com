@@ -1,3 +1,27 @@
 body {
-  padding-top: 50px;
+  padding-top: 105px;
+}
+
+header .topbar-inner {
+  padding: 1em 0;
+  li a {
+    border-radius: 8px;
+  }
+}
+
+#logo {
+  float: left;
+  width: 97px;
+  height: 40px;
+}
+
+#logo a {
+  position: absolute;
+  padding: 0;
+  top: -7px;
+  width: 97px;
+  height: 90px;
+  display: block;
+  background: url('/assets/logo-star.png') no-repeat;
+  text-indent: -9999px;
 }
