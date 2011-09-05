@@ -3,10 +3,11 @@ Given /^no user exists with an email of "(.*)"$/ do |email|
 end
 
 Given /^I am a user with username "([^"]*)" and password "([^"]*)"$/ do |username, password|
-  User.new(:username => username,
+  @user = User.new(:username => username,
             :email => "#{username}@example.com",
             :password => password,
-            :password_confirmation => password).save!
+            :password_confirmation => password)
+  @user.save!
 end
 
 Then /^I should be already signed in$/ do

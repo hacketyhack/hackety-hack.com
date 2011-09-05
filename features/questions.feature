@@ -19,4 +19,15 @@ Feature: CRUD actions for question
     And I should see "Created by test"
     
   Scenario: Edit an existing question
-    Given I have created a question
+    Given I have created a question with title "My Title" and description "My Description"
+    And I am on the questions index
+    When I follow "Edit" within "table"
+    And I fill in the following:
+      | Title | My Edited Question|
+      | Description | My Edited Description|
+    And I press "Ask Everyone"
+    Then I should see "Question was successfully updated."
+    And I should see "My Edited Question" within ".title"
+    And I should see "My Edited Description" within ".description"
+    And I should be on question
+    
