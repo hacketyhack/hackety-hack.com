@@ -1,0 +1,37 @@
+.home {
+  section {
+    @include clearfix;
+    margin: 0 36px 36px;
+    padding-bottom: 36px;
+    border-bottom: 6px dotted $linkColor;
+    
+    font-size: 1.7em;
+
+    h1 {
+      font-size: 1.6em;
+/*      text-transform: uppercase;*/
+    }
+    p {
+      font-size: 1em;
+      line-height: 1.5em;
+      margin-bottom: 1em;
+    }
+    
+    img.new_program {
+      float: left;
+      @include columns(5);
+      margin-right: $gridGutterWidth*2;
+    }
+    img.lesson {
+      float: right;
+      @include columns(8);
+      margin-left: $gridGutterWidth*2;
+
+    }
+  }
+  
+  section.last {
+    border: none;
+    margin-bottom: 0;
+  }
+}

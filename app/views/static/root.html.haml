@@ -1,3 +1,14 @@
-%p Hackety Hack will teach you the absolute basics of programming from the ground up. No previous programming experience is needed!
-%p With Hackety Hack, you'll learn the Ruby programming language Ruby is used for all kinds of programs, including desktop applications and websites.
+- @page_class = "home"
+%section
+  %img.left.new_program{:src => "assets/screenshots/new_program.png"}
 
+  %h1 Want to learn programming?
+  %p Hackety Hack will teach you the absolute basics of programming from the ground up. No previous programming experience is needed!
+  %p With Hackety Hack, you'll learn the #{link_to "Ruby programming language", "http://www.ruby-lang.org/"}. Ruby is used for all kinds of programs, including desktop applications and websites.
+  = link_to "Download Now - Version 1.0", "/", :class => "btn primary large"
+
+%section.last
+  %img.right.lesson{:src => "assets/screenshots/lesson.png"}
+  %p Hackety Hack uses the #{link_to "Shoes", "http://shoesrb.com/"} toolkit to make it really easy and fun to build graphical interfaces.
+  %p Several lessons and example programs are provided, showing you how to make all kinds of fun things!
+  %img{:src => "assets/rubyplusshoes.png"}
