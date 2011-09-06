@@ -29,5 +29,4 @@ Feature: CRUD actions for question
     Then I should see "Question was successfully updated."
     And I should see "My Edited Question" within ".title"
     And I should see "My Edited Description" within ".description"
-    And I should be on question
     
