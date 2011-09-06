@@ -11,4 +11,8 @@ class QuestionsController < InheritedController
     @answer = Answer.new
     show!
   end
+
+  def update
+    params[:question][:solution_id] != @question.solution_id ? update!(:notice => "Okay! We've selected that answer") : update!
+  end
 end
