@@ -20,9 +20,11 @@ Feature: CRUD actions for question
 
   Scenario: Select an answer
     Given I have created a question with title "My Title" and description "My Description"
-    And that someone has provided an answer for my question
+    And that someone has provided "Some solution" as an answer for my question
     And I am on the questions index
     And I follow "Show" for my question
     And I press "This answer is correct"
     Then I should see "Okay! We've selected that answer"
+    And I should see "Some solution" within ".selected-answer"
+
     
