@@ -15,4 +15,8 @@ class QuestionsController < InheritedController
   def update
     params[:question][:solution_id] != @question.solution_id ? update!(:notice => "Okay! We've selected that answer") : update!
   end
+  
+  def collection
+    @questions ||= end_of_association_chain.newest_first.paginate(:page => params[:page])
+  end
 end
