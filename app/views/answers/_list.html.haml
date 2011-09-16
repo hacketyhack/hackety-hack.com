@@ -1,4 +1,4 @@
-%li.answer
+%li.answer{:class => list.id == @question.solution_id && 'selected-answer'}
   .author 
     Answered by #{list.user.username if list.user} 
   .description
