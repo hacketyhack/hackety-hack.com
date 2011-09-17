@@ -1,17 +1,11 @@
 - content_for :title do
   Questions
   
-- content_for :links do
+- content_for :sidebar do
   - if can? :create, Question
     = link_to "Ask a Question", new_resource_path, :class => "btn success"
-  
-%table
-  %thead
-    %th Title
-    %th Description
-  
-    %th
-    %th
-    %th
-  
+
+%ul.questions
   = render :partial => "list", :collection => collection
+
+= will_paginate

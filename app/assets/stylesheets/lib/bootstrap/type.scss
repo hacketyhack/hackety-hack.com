@@ -41,9 +41,12 @@ h2 {
     font-size: 14px;
   }
 }
+
 h3, h4, h5, h6 {
-  line-height: $baseline * 2;
+/*  line-height: $baseline * 2;*/
+  margin-bottom: 0.5em;
 }
+
 h3 {
   font-size: 18px;
   small {

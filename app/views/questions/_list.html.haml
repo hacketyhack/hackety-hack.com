@@ -1,9 +1,13 @@
-%tr.item{:id=>list.id}
-  %td= list.title
-  %td= list.description
-  %td= link_to "Show", resource_path(list)
-  %td
-    = link_to('Edit', edit_resource_path(list)) if can? :update, list
-  %td
-    = link_to('Delete', resource_path(list), :confirm => 'Are you sure?', :method => :delete) if can? :destroy, list
-    
+%li.item{:id=>list.id}
+  .answer-count{:class => list.answers.count > 0 ? "answered" : "unanswered"}
+    %h3= list.answers.count
+    #{list.answers.count == 1 ? "answer" : "answers"}
+  .summary
+    %h2.title= link_to list.title, resource_path(list)
+    .meta
+      Asked by
+      %span.name= link_to list.user.username, ""
+      
+      %span.date= time_ago_in_words(list.created_at)
+      ago
+    .description= truncate(list.description, :length => 200)

@@ -1,0 +1,53 @@
+.questions, .question {
+  .meta {
+    font-style: italic;
+    padding-bottom: 0.75em;
+  }
+}
+
+.questions {
+  margin: 0;
+  li {
+    @include clearfix;
+    list-style-type: none;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 1em;
+
+    .answer-count {
+      text-align: center;
+      font-size: 0.85em;
+      h3 {
+        margin: 0;
+        font-size: 2em;
+      }
+      @include columns(1);
+      padding: 6px
+    }
+      .unanswered, .unanswered h3 {
+        color: $red;
+      }
+      .answered, .answered h3 {
+        background: $green;
+        color: white;
+      }
+    
+    .summary {
+      @include columns(11, last);
+      
+      h2 {
+        line-height: 1;
+        margin-bottom: 0.15em;
+      }
+      .description {
+        padding-right: 3em;
+      }
+    }
+  }
+}
+
+.question {
+  .selected-answer{
+  	background-color:yellow;
+  }  
+}

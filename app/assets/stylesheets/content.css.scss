@@ -17,13 +17,12 @@
     }
     
     img.new_program {
-      float: left;
       @include columns(5);
-      margin-right: $gridGutterWidth*2;
     }
     img.lesson {
-      float: right;
       @include columns(8);
+      float: right;
+      margin-right: 0;
       margin-left: $gridGutterWidth*2;
 
     }
@@ -33,10 +32,4 @@
     border: none;
     margin-bottom: 0;
   }
-}
-
-.links {
-  position: absolute;
-  top: 6px;
-  right: 0;
 }

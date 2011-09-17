@@ -1,17 +1,25 @@
+- @content_class = "question"
 - content_for :title do
   = resource.title
 
-- content_for :links do
+- content_for :sidebar do
   - if can? :update, resource
     = link_to 'Edit', edit_resource_path
   - if can? :destroy, resource
     = link_to 'Delete', resource_path, :confirm => 'Are you sure?', :method => :delete
 
-- if resource.user
-  .author Created by #{resource.user.username} 
+.meta
+  Asked 
+  - if resource.user
+    by
+    %span.name= link_to resource.user.username, ""
+
+  %span.date= time_ago_in_words(resource.created_at)
+  ago
+
 
 .description
-  = resource.description
+  != RDiscount.new(resource.description).to_html
 
 %h2 Answers
 %ul.answers  

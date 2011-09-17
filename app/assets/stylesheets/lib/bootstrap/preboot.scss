@@ -21,7 +21,7 @@ $white:             #fff;
 // Accent Colors
 $blue:              #04BFBF;
 $blueDark:          #008a8a;
-$green:             #46a546;
+$green:             #C0D966 - #111;
 $red:               #9d261d;
 $yellow:            #ffc40d;
 $orange:            #f89406;
@@ -127,8 +127,17 @@ $analog2:           spin($baseColor, -22);
   margin: 0 auto;
   @include clearfix;
 }
-@mixin columns($columnSpan: 1) {
+@mixin columns($columnSpan: 1, $last: false) {
   width: ($gridColumnWidth * $columnSpan) + ($gridGutterWidth * ($columnSpan - 1));
+  display: inline;
+  float: left;
+  
+  @if $last {
+    margin-right: 0;
+  }
+  @else {
+    margin-right: $gridGutterWidth;
+  }
 }
 
 @mixin offset($columnOffset: 1) {

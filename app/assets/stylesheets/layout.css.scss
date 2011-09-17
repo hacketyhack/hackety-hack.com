@@ -35,7 +35,18 @@ header .topbar-inner {
   
   .container {
     position: relative;
+  }  
+}
+
+.two-column {
+  #content {
+    @include columns(13);
   }
+  
+  #sidebar {
+    @include columns(3, true);
+  }
+  
 }
 
 .alert-message {

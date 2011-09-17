@@ -18,20 +18,26 @@
           = render "shared/menu/main"
           = render "shared/menu/user"
     
+    - sidebar = yield :sidebar
+    
     #content-wrap{:class => @page_class}
       - if flash[:notice]
         .container.alert-message.success
           #{flash[:notice]}
           = link_to "x", "#", :class => "close"
       
-      #content.container
+      .container{:class => sidebar.empty? ? "one-column" : "two-column"}
+        #content{:class => @content_class}
 
-        - title = yield :title
-        - unless title.empty?
-          %h1.title= title
-
-        .links= yield :links
-        = yield
+          - title = yield :title
+          - unless title.empty?
+            %h1.title= title
+        
+          = yield
+        
+        - unless sidebar.empty?
+          #sidebar
+            = sidebar
 
     %footer
       .container 

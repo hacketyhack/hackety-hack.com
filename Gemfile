@@ -26,6 +26,10 @@ gem 'inherited_resources'
 gem 'simple_form', :git => "https://github.com/bitzesty/bootstrap_form.git"
 gem "semantic_menu", :git => "git://github.com/michaek/semantic_menu.git"
 
+gem 'will_paginate'    # Pagination
+gem 'rdiscount'   # Markdown
+
+
 group :development do
   # Use unicorn as the web server
   gem 'unicorn'
