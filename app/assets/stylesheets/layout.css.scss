@@ -40,11 +40,11 @@ header .topbar-inner {
 
 .two-column {
   #content {
-    @include columns(13);
+    @include columns(11);
   }
   
   #sidebar {
-    @include columns(3, true);
+    @include columns(5, true);
   }
   
 }

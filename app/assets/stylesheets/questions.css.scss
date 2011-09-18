@@ -1,5 +1,12 @@
 .questions, .question {
+  h1 {
+    line-height: 1.1;
+    margin-bottom: 0.15em;
+  }
   .meta {
+    a { 
+      font-style: italic;
+    }
     font-style: italic;
     padding-bottom: 0.75em;
   }
@@ -11,7 +18,7 @@
     @include clearfix;
     list-style-type: none;
     padding-bottom: 1em;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #ddd;
     margin-bottom: 1em;
 
     .answer-count {
@@ -33,7 +40,7 @@
       }
     
     .summary {
-      @include columns(11, last);
+      @include columns(9, last);
       
       h2 {
         line-height: 1;
@@ -47,7 +54,36 @@
 }
 
 .question {
+  color: #555;
+  p {
+    font-size: 1.15em;
+    line-height: 1.5;
+    margin-bottom: 1.25em;
+  }
+  
+  h2 {
+    margin-top: 0.5em;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid #bbb;
+  }
+
+  .answers {
+    margin: 0;
+    .answer {
+      position: relative;
+      list-style-type: none;
+      padding: 1em 1em 0;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 1em;
+      
+      .links {
+        position: absolute;
+        top: 1em;
+        right: 1em;
+      }
+    }
+  }
   .selected-answer{
-  	background-color:yellow;
+  	background: #ffc;
   }  
 }

@@ -8,8 +8,6 @@ class Question
 
   belongs_to :user
   many :answers
-  
-  one :answer, :in => :solution_id
 
   validates_presence_of :title, :description
 

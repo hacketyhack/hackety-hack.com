@@ -3,6 +3,7 @@
   = resource.title
 
 - content_for :sidebar do
+  &nbsp;
   - if can? :update, resource
     = link_to 'Edit', edit_resource_path
   - if can? :destroy, resource
@@ -21,8 +22,9 @@
 .description
   != RDiscount.new(resource.description).to_html
 
-%h2 Answers
+%h2= resource.answers.count == 1 ? "1 response" : "#{resource.answers.count} responses"
 %ul.answers  
   = render :partial => "answers/list", :collection => resource.answers
 
-= render :partial => "answers/form"
+- if can? :create, Answer
+  = render :partial => "answers/form"
