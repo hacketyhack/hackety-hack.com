@@ -4,6 +4,7 @@ HacketyHackCom::Application.routes.draw do
   resources :questions do
     resources :answers
   end
+  
 
   constraints(ApiConstraint) do
     match '/' => 'static#api_root'
@@ -19,6 +20,8 @@ HacketyHackCom::Application.routes.draw do
     get "logout" => "devise/sessions#destroy", :as => "logout"
   end
 
+  resources :users, :only => :show
+  
   root :to => "static#root"
 
 end
