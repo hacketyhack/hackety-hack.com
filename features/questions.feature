@@ -14,14 +14,15 @@ Feature: CRUD actions for question
       | Description | My Description |
     And I press "Ask Everyone"
     Then I should see "Question Asked!"
-    When I follow "Show" within "table"
+    When I follow "My Question"
     Then I should see "My Question" within ".title"
-    And I should see "Created by test"
+    And I should see "Asked by test"
     
   Scenario: Edit an existing question
     Given I have created a question with title "My Title" and description "My Description"
     And I am on the questions index
-    When I follow "Edit" within "table"
+    When I follow "My Title"
+    And I follow "Edit" within "#sidebar"
     And I fill in the following:
       | Title | My Edited Question|
       | Description | My Edited Description|

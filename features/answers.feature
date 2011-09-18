@@ -8,22 +8,23 @@ Feature: CRUD actions for question
     And I sign in as "test/password"
     And I am on the questions index
     And show me the page
-    And I follow "Show"
+    And I follow "Title"
   
   Scenario: Create an answer
     When I fill in the following:
       | Answer | My Answer |
     And I press "Post Answer"
     Then I should see "Answer Posted!"
+    And I should see "test says" within ".answer"
     And I should see "My Answer" within ".answers"
-    And I should see "Answered by test" within ".answer"
+
 
   Scenario: Select an answer
     Given I have created a question with title "My Title" and description "My Description"
     And that someone has provided "Some solution" as an answer for my question
     And I am on the questions index
-    And I follow "Show" for my question
-    And I press "This answer is correct"
+    And I follow "My Title"
+    And I press "This answers my question!"
     Then I should see "Okay! We've selected that answer"
     And I should see "Some solution" within ".selected-answer"
 
