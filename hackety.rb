@@ -6,18 +6,18 @@
 #
 # To get started, you'll need to install some prerequisite software:
 #
-# **Ruby** is used to power the site. We're currently using ruby 1.9.2p0. I 
-# highly reccomend that you use [rvm][rvm] to install and manage your Rubies.
-# It's a fantastic tool. If you do decide to use `rvm`, you can install the 
+# **Ruby** is used to power the site. We're currently using Ruby 1.9.2. I
+# highly recommend that you use [rvm][rvm] to install and manage your Rubies.
+# It's a fantastic tool. If you do decide to use `rvm`, you can install the
 # appropriate Ruby and create a gemset by simply `cd`-ing into the root project
 # directory; I have a magical `.rvmrc` file that'll set you up.
 #
 # **MongoDB** is a really awesome document store. We use it to persist all of
-# the data on the website. To get MongoDB, please visit their 
+# the data on the website. To get MongoDB, please visit their
 # [downloads page](http://www.mongodb.org/downloads) to find a package for your
 # system.
 #
-# After installing Ruby and MongoDB, you need to aquire all of the Ruby gems
+# After installing Ruby and MongoDB, you need to acquire all of the Ruby gems
 # that we use. This is pretty easy, since we're using **bundler**. Just do
 # this:
 #
@@ -32,13 +32,13 @@
 # to get this to happen. When you're done hacking, you can hit ^-c to stop
 # `mongod` from running.
 #
-# To actually start up the site, just 
+# To actually start up the site, just
 #
 #     $ rackup
 #
 # and then visit [http://localhost:9292/](http://localhost:9292). You're good
 # to go!
-# 
+#
 # [hw]: http://hackety-hack.com
 # [rvm]: http://rvm.beginrescueend.com/
 
@@ -96,7 +96,7 @@ require 'rdiscount'
 # Rails has a `content_for` helper that lets you place different parts of your
 # view into different places in your template. This helps a lot with
 # javascript, and conditional stylesheets or other includes. It's so nice that
-# foca has written 
+# foca has written
 # [a Sinatra version](https://github.com/foca/sinatra-content-for).
 require 'sinatra/content_for'
 
@@ -107,7 +107,7 @@ require_relative 'helpers'
 #### Configure settings
 
 # We use [Exceptional](http://www.getexceptional.com/) to keep track of errors
-# that happen. This code is from their 
+# that happen. This code is from their
 # [example documentation](http://docs.getexceptional.com/getting-started/sinatra/)
 # for Sinatra. It _might_ be better off inside of a config block, but I haven't
 # tested it in that role yet.
@@ -151,12 +151,12 @@ configure :production do
     :password       => ENV['SENDGRID_PASSWORD'],
     :domain         => ENV['SENDGRID_DOMAIN']
   }
-  
+
 end
 
 # We don't want to bother with running our own MongoDB server in production;
 # that's what The Cloud (tm) is for! So we want to double check our environment
-# variables, and if it appears that we'd like to connect to 
+# variables, and if it appears that we'd like to connect to
 # [MongoHQ](https://mongohq.com/), let's do that. Otherwise, just connect to
 # our local server running on localhost.
 configure do
@@ -173,7 +173,7 @@ end
 
 
 # Since Sinatra doesn't automatically load anything, we have to do it
-# ourselves. Remember that helpers.rb file? Well, we made a handy 
+# ourselves. Remember that helpers.rb file? Well, we made a handy
 # `require_directory` method that, well, `require`s a whole directory. So let's
 # include both of our models as well as our controllers.
 require_directory "models"
@@ -184,7 +184,7 @@ require_directory "controllers"
 # The first thing you'll ever see when going to the website is here. It all
 # starts with `/`. If we're logged in, we want to just redirect to the main
 # activity stream. If not, let's show that pretty splash page that sings all of
-# our praises. 
+# our praises.
 #
 # One small note about rendering, though: Our main layout doesn't exactly work
 # for the main page, it's an exception. So we don't want to use our regular old

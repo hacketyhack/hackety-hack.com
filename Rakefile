@@ -36,7 +36,7 @@ task :dox do
   # adding in both our new versions of files as well as a real commit message.
   sh "git add ."
   sh "git commit --amend -m 'Documentation generated #{Time.now}'"
-  
+
   # Now that that's over, let's return to master, and pop our changes.
   sh "git checkout master"
   system "git stash pop"
@@ -56,5 +56,4 @@ namespace :spec do
     t.pattern = "spec/acceptance/**/*_spec.rb"
     t.rspec_opts = "-r spec/spec_helper.rb"
   end
-
 end
