@@ -7,7 +7,7 @@
 # To get started, you'll need to install some prerequisite software:
 #
 # **Ruby** is used to power the site. We're currently using Ruby 1.9.2. I
-# highly reccomend that you use [rvm][rvm] to install and manage your Rubies.
+# highly recommend that you use [rvm][rvm] to install and manage your Rubies.
 # It's a fantastic tool. If you do decide to use `rvm`, you can install the
 # appropriate Ruby and create a gemset by simply `cd`-ing into the root project
 # directory; I have a magical `.rvmrc` file that'll set you up.
@@ -17,7 +17,7 @@
 # [downloads page](http://www.mongodb.org/downloads) to find a package for your
 # system.
 #
-# After installing Ruby and MongoDB, you need to aquire all of the Ruby gems
+# After installing Ruby and MongoDB, you need to acquire all of the Ruby gems
 # that we use. This is pretty easy, since we're using **bundler**. Just do
 # this:
 #
