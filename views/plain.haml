@@ -29,7 +29,7 @@
         })();
     != yield_content :head
 
-          
+
   %body{:style => "background-image:url('/images/stripe.png')"}
     #flash{:style => "background-color:#FFF"}
       = flash[:notice]
@@ -39,4 +39,11 @@
         <br />
         <br />
         != yield
-
+        .span-18.last.footer
+          %ul
+            %li
+              %a{:href => "/tos"}
+                Terms of Service
+            %li
+              %a{:href => "/opensource"}
+                Open Source

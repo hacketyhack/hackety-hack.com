@@ -63,3 +63,18 @@ border-radius:4px;
 .hacker-gravatar {
 border-radius: 4px;
 }
+
+div.footer {
+  margin: 1em 0;
+}
+
+div.footer ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+div.footer ul li {
+  margin-right: 10px;
+  display: inline;
+  float: left;
+}
