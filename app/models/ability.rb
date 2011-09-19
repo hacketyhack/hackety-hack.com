@@ -9,6 +9,7 @@ class Ability
     unless user.new_record?
       can :create, [Question, Answer]
       can :manage, [Question, Answer], :user => user
+      can :update, user
     end  
     
     # Define abilities for the passed in user here. For example:
