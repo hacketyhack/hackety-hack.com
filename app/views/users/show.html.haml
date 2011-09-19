@@ -1,0 +1,9 @@
+- content_for :title do
+  = "#{resource.username}'s page"
+
+.about-user
+  %img{:src => gravatar_url(resource.email)}
+  %h2= "About #{resource.username}"
+  %h3= resource.about
+  - if can? :update, resource
+    = link_to "Change My Settings", edit_registration_path(resource), :class => "btn success"

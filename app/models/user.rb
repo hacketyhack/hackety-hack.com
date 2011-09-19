@@ -7,6 +7,7 @@ class User
 
   key :username, String
   key :email, String
+  key :about, String
 
   many :questions
   many :answers
