@@ -13,33 +13,33 @@
     %header.topbar
       .topbar-inner
         .container
-          #logo 
+          #logo
             = link_to "Hackety Hack", root_path
           = render "shared/menu/main"
           = render "shared/menu/user"
-    
+
     - sidebar = yield :sidebar
-    
+
     #content-wrap{:class => @page_class}
       - if flash[:notice]
         .container.alert-message.success
           #{flash[:notice]}
           = link_to "x", "#", :class => "close"
-      
+
       .container{:class => sidebar.empty? ? "one-column" : "two-column"}
         #content{:class => @content_class}
 
           - title = yield :title
           - unless title.empty?
             %h1.title= title
-        
+
           = yield
-        
+
         - unless sidebar.empty?
           #sidebar
             = sidebar
 
     %footer
-      .container 
+      .container
         = render "shared/menu/footer"
-        
+

@@ -1,9 +1,9 @@
 - content_for :title do
   Answers
-  
+
 - content_for :links do
   - if can? :create, Answer
     = link_to "New answer", new_resource_path
-  
-%ul.answers  
+
+%ul.answers
   = render :partial => "list", :collection => collection

@@ -1,16 +1,16 @@
 %li.answer{:class => list.id == @question.solution_id && 'selected-answer'}
   - if list.user
-    .meta 
+    .meta
       #{link_to list.user.username, ""} says
   .description
     != RDiscount.new(list.description).to_html
-  
+
   .links
     - if can? :update, list
       = link_to 'Edit', edit_question_answer_path(@question, list)
     - if can? :destroy, list
       = link_to 'Delete', question_answer_path(@question, list), :confirm => 'Are you sure?', :method => :delete
-    
+
   - if can?(:update, @question) && (@question.solution_id != list.id)
     = simple_form_for(@question, :url => question_path(@question)) do |f|
       = f.hidden_field :solution_id, :value => list.id
