@@ -31,14 +31,11 @@ ActionController::Base.allow_rescue = false
 
 # Remove/comment out the lines below if your app doesn't have a database.
 # For some databases (like MongoDB and CouchDB) you may need to use :truncation instead.
-DatabaseCleaner.strategy = :truncation
+DatabaseCleaner.orm = "mongo_mapper"
+DatabaseCleaner[:mongo_mapper].strategy = :truncation
 
 Before do
-  MongoMapper.database.collections.each do |collection|
-    unless collection.name.match(/^system\./)
-      collection.remove
-    end
-  end
+  DatabaseCleaner[:mongo_mapper].clean
 end
 
 # You may also want to configure DatabaseCleaner to use different strategies for certain features and scenarios.
