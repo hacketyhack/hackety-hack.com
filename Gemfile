@@ -41,6 +41,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'cucumber-rails'
   gem "faker"
+  gem 'pry'
 end
 
 group :test do

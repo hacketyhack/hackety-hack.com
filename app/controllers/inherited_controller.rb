@@ -18,14 +18,14 @@ class InheritedController < ApplicationController
       resource.inspect
     rescue
     end
-    # end of bug fix. 
+    # end of bug fix.
 
-    
+
     if ['new','create'].include? params[:action]
       @form_url = collection_path
     elsif
       @form_url = resource_path
     end
   end
-  
+
 end

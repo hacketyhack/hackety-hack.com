@@ -13,7 +13,7 @@ module NavigationHelpers
 
     when /^the sign in page$/
       login_path
-      
+
     when /^the questions index$/
       questions_path
 
