@@ -10,7 +10,7 @@
     = link_to 'Delete', resource_path, :confirm => 'Are you sure?', :method => :delete
 
 .meta
-  Asked 
+  Asked
   - if resource.user
     by
     %span.name= link_to resource.user.username, ""
@@ -23,7 +23,7 @@
   != RDiscount.new(resource.description).to_html
 
 %h2= resource.answers.count == 1 ? "1 response" : "#{resource.answers.count} responses"
-%ul.answers  
+%ul.answers
   = render :partial => "answers/list", :collection => resource.answers
 
 - if can? :create, Answer
