@@ -22,6 +22,8 @@ HacketyHackCom::Application.routes.draw do
 
   resources :users, :only => :show
 
+  match 'users/:id/following', :controller => 'users', :action => 'following'
+  match 'users/:id/followers', :controller => 'users', :action => 'followers'
   root :to => "static#root"
 
 end
