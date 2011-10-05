@@ -6,7 +6,7 @@
     %h2.title= link_to list.title, resource_path(list)
     .meta
       Asked by
-      %span.name= link_to list.user.username, ""
+      %span.name= link_to list.user.username, user_path(list.user)
 
       %span.date= time_ago_in_words(list.created_at)
       ago
