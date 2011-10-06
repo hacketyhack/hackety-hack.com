@@ -25,6 +25,7 @@ class User
 
   # this method makes the hacker follow the followee
   def follow! followee
+    return if following? followee
     following << followee
     save
     followee.followers << self
@@ -33,6 +34,7 @@ class User
 
   # this method makes the hacker unfollow the followee
   def unfollow! followee
+    return if !following? followee
     following_ids.delete(followee.id)
     save
     followee.followers_ids.delete(id)
@@ -45,7 +47,7 @@ class User
     following.include? hacker
   end
   
-  # Everyone should have at least one follower. And I'd like to follow
+  # Everyone should have at least one follower. And steve would like to follow
   # everyone. So let's do that. This runs after_create.
   def follow_steve
     return if username == "steve"
