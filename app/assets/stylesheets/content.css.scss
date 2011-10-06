@@ -33,3 +33,29 @@
     margin-bottom: 0;
   }
 }
+
+@-webkit-keyframes sway {
+  from {
+    -webkit-transform: rotate(-10deg);
+    -webkit-transform-origin: 50% 0;
+  }
+  to {
+    -webkit-transform: rotate(10deg);
+    -webkit-transform-origin: 50% 0;
+  }
+}
+
+#stars {
+  width: 1100px;
+  margin: auto;
+
+  .star {
+    float: left;
+    margin-right: 1em;
+    width:67px;
+    height: 200px;
+    background: url("/assets/star.png");
+    
+    -webkit-animation: sway 7s infinite alternate;
+  }
+}
