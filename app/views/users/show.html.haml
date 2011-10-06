@@ -3,13 +3,25 @@
 
 .about-user
   %img{:src => gravatar_url(resource.email)}
+  - if current_user && current_user != resource
+    -if current_user.following?(resource)
+      = simple_form_for(resource, :url => resource_path(current_user) + '/unfollow') do |f|
+        = f.hidden_field :followee, :value => resource.id
+        = f.button :submit, :value => "Unfollow", :class => "primary btn"          
+    -else
+      = simple_form_for(resource, :url => resource_path(current_user) + '/follow') do |f|
+        = f.hidden_field :followee, :value => resource.id
+        = f.button :submit, :value => "Follow", :class => "primary btn"
+        
   %h2= "About #{resource.username}"
+  %h4= resource.about
+  %hr
   %p 
     Following:
     =link_to resource.following.count, resource_path(resource) + "/following"
   %p 
     Followers:
     = link_to resource.followers.count, resource_path(resource) + "/followers"
-  %h3= resource.about
+  %hr
   - if can? :update, resource
     = link_to "Change My Settings", edit_registration_path(resource), :class => "btn success"
