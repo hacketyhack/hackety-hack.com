@@ -1,7 +1,7 @@
 .home {
   section {
     @include clearfix;
-    margin: 0 36px 36px;
+    margin: 0 36px 36px 18px;
     padding-bottom: 36px;
     border-bottom: 6px dotted $linkColor;
     
@@ -35,27 +35,63 @@
 }
 
 @-webkit-keyframes sway {
-  from {
-    -webkit-transform: rotate(-10deg);
+  0% {
+    -webkit-transform: rotate(-5deg);
     -webkit-transform-origin: 50% 0;
   }
-  to {
-    -webkit-transform: rotate(10deg);
+  100% {
+    -webkit-transform: rotate(5deg);
     -webkit-transform-origin: 50% 0;
   }
 }
 
 #stars {
-  width: 1100px;
+  z-index: 100;
+  width: 960px;
   margin: auto;
+  position: relative;
 
-  .star {
-    float: left;
-    margin-right: 1em;
+  .star, .moon {
+    position: absolute;
+    left: 0;
     width:67px;
     height: 200px;
     background: url("/assets/star.png");
     
     -webkit-animation: sway 7s infinite alternate;
+    -webkit-animation-timing-function: linear; 
   }
+   
+  .moon {
+    background: url("/assets/moon.png");
+    left: -130px;
+    top: -30px;
+  }
+   .star1 {
+     left: -175px;
+     top: -70px;
+   }
+   .star2 {
+     left: -100px;
+   }
+   .star3 {
+     left: -75px;
+     top: -50px;
+   }
+   .star4 {
+     left: auto;
+     right: -100px;
+     top: -80px;
+   }
+   .star5 {
+     left: auto;
+     right: -120px;
+     top: -10px;
+   }
+   .star6 {
+     left: auto;
+     right: -60px;   
+     top: -30px;  
+   }
 }
+

@@ -1,3 +1,7 @@
+body {
+  background: $green;
+}
+
 header .topbar-inner {  
   .container {
     padding: 0.75em 0;
@@ -29,13 +33,18 @@ header .topbar-inner {
 }
 
 #content-wrap {
-  padding-top: 105px;
-/*  width: 980px;*/
+  padding-top: 58px;
   margin: auto;
   
   .container {
     position: relative;
   }  
+}
+
+#content-wrap > .container { 
+  background: white;
+  border-radius: 0 0 8px 8px;
+  padding: 40px 18px 18px;
 }
 
 .two-column {
@@ -52,4 +61,12 @@ header .topbar-inner {
 .alert-message {
   margin-top: -18px;
   margin-bottom: 30px;
+}
+
+footer {
+  background: $linkColor;
+  .pills a {
+    color: white;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+  }
 }

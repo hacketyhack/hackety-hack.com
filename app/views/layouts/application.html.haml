@@ -18,21 +18,25 @@
           = render "shared/menu/main"
           = render "shared/menu/user"
 
-
     #stars
-      .star
+      .star.star1
+      .star.star2
+      .moon
+      .star.star3
+      .star.star4
+      .star.star5
+      .star.star6
 
     - sidebar = yield :sidebar
 
     #content-wrap{:class => @page_class}
-      - if flash[:notice]
-        .container.alert-message.success
-          #{flash[:notice]}
-          = link_to "x", "#", :class => "close"
-
       .container{:class => sidebar.empty? ? "one-column" : "two-column"}
-        #content{:class => @content_class}
+        - if flash[:notice]
+          .container.alert-message.success
+            #{flash[:notice]}
+            = link_to "x", "#", :class => "close"
 
+        #content{:class => @content_class}
           - title = yield :title
           - unless title.empty?
             %h1.title= title
