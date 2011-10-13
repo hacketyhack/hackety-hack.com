@@ -3,7 +3,8 @@
     .meta
       #{link_to list.user.username, ""} says
   .description
-    != RDiscount.new(list.description).to_html
+    :markdown
+      #{list.description}
 
   .links
     - if can? :update, list
