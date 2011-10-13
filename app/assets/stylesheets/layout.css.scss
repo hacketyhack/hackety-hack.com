@@ -1,29 +1,30 @@
 body {
-  background: $linkColor;
+  background: $background;
 }
 
 .topbar {
   position: relative;  
-  margin-bottom: 1.25em;
+  height: auto;
+  box-shadow: 0px 1px 10px rgba(0,0,0,0.5);
+  border-bottom: 1px solid $heading + #444;
 }
 
 header .topbar-inner {  
-  background: $green;
+  background: $heading;
   .container {
     padding: 0.6em 0;
   }
-  border-bottom: 3px solid black;
   
   li a {
     border-radius: 8px;
     font-size: 14px;
     padding: 11px 11px 10px;
-    color: white;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
   }
   
   li a:hover {
-    background-color: #038D8D;
+    background-color: #444;
+    text-shadow: none;
   }
 
   #logo {
@@ -37,7 +38,7 @@ header .topbar-inner {
       top: -2px;
       height: 75px;
       padding: 0;
-      width: 100%;
+      width: 185px;
       display: block;
       background: url('/assets/logo-star.png') no-repeat;
       text-indent: -9999px;
@@ -46,6 +47,7 @@ header .topbar-inner {
 }
 
 #content-wrap {
+  border-top: 1px solid ($heading + #444);
   margin: auto;
   
   .container {
@@ -76,9 +78,17 @@ header .topbar-inner {
 }
 
 footer {
-  background: $green;
-  .pills a {
-    color: white;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
-  }
+  background: $heading;
+  padding: 0.5em 0;
+  
+  .pills {
+    margin: 0;
+    a {
+      color: white;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+    }
+    a:hover {
+      background-color: #444;
+    }
+  } 
 }

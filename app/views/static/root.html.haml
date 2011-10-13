@@ -1,14 +1,42 @@
 - @page_class = "home"
-%section
-  %img.left.new_program{:src => "assets/screenshots/new_program.png"}
 
-  %h1 Want to learn programming?
-  %p Hackety Hack will teach you the absolute basics of programming from the ground up. No previous programming experience is needed!
-  %p With Hackety Hack, you'll learn the #{link_to "Ruby programming language", "http://www.ruby-lang.org/"}. Ruby is used for all kinds of programs, including desktop applications and websites.
-  = link_to "Download Now - Version 1.0", "/", :class => "btn primary large"
+- content_for :top do
+  / #stars
+  /   .star.star1
+  /   .star.star2
+  /   .moon
+  /   .star.star3
+  /   .star.star4
+  /   .star.star5
+  /   .star.star6
 
-%section.last
-  %img.right.lesson{:src => "assets/screenshots/lesson.png"}
-  %p Hackety Hack uses the #{link_to "Shoes", "http://shoesrb.com/"} toolkit to make it really easy and fun to build graphical interfaces.
-  %p Several lessons and example programs are provided, showing you how to make all kinds of fun things!
-  %img{:src => "assets/rubyplusshoes.png"}
+  #home-splash
+    .container
+      = image_tag "splash.jpg"
+
+  #home-top 
+    %section#download
+      %h1 Download
+      %p Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas faucibus mollis interdum.
+
+    %section#explore
+      %h1 Explore
+      %p Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam quis risus eget urna mollis ornare vel eu leo. Maecenas faucibus mollis interdum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec ullamcorper nulla non metus auctor fringilla. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+
+    %section#ask
+      %h1 Ask
+      %p Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Aenean lacinia bibendum nulla sed consectetur. Curabitur blandit tempus porttitor.
+
+/ %section
+/   %img.left.new_program{:src => "assets/screenshots/new_program.png"}
+/ 
+/   %h1 Want to learn programming?
+/   %p Hackety Hack will teach you the absolute basics of programming from the ground up. No previous programming experience is needed!
+/   %p With Hackety Hack, you'll learn the #{link_to "Ruby programming language", "http://www.ruby-lang.org/"}. Ruby is used for all kinds of programs, including desktop applications and websites.
+/   = link_to "Download Now - Version 1.0", "/", :class => "btn primary large"
+/ 
+/ %section.last
+/   %img.right.lesson{:src => "assets/screenshots/lesson.png"}
+/   %p Hackety Hack uses the #{link_to "Shoes", "http://shoesrb.com/"} toolkit to make it really easy and fun to build graphical interfaces.
+/   %p Several lessons and example programs are provided, showing you how to make all kinds of fun things!
+/   %img{:src => "assets/rubyplusshoes.png"}

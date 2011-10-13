@@ -1,3 +1,4 @@
+- @page_class ||= "page"
 !!!
 %html
   %head
@@ -9,7 +10,7 @@
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
     = csrf_meta_tags
-  %body
+  %body{:class => "body-#{@page_class}"}
     %header.topbar
       .topbar-inner
         .container
@@ -18,15 +19,8 @@
           = render "shared/menu/main"
           = render "shared/menu/user"
 
-    #stars
-      .star.star1
-      .star.star2
-      .moon
-      .star.star3
-      .star.star4
-      .star.star5
-      .star.star6
-
+    = yield :top
+    
     - sidebar = yield :sidebar
 
     #content-wrap{:class => @page_class}

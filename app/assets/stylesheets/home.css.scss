@@ -1,0 +1,145 @@
+@-webkit-keyframes sway {
+  0% {
+    -webkit-transform: rotate(-2deg);
+    -webkit-transform-origin: 50% 0;
+  }
+  100% {
+    -webkit-transform: rotate(2deg);
+    -webkit-transform-origin: 50% 0;
+  }
+}
+
+.body-home {
+  #stars {
+    z-index: 100;
+    width: 960px;
+    margin: auto;
+    position: relative;
+/*    overflow: hidden;*/
+
+    .star, .moon {
+      position: absolute;
+      left: 0;
+      width:67px;
+      height: 200px;
+      margin-top: -50px;
+      background: url("/assets/star.png");
+
+      -webkit-animation: sway 2.5s ease-in-out infinite alternate;
+    }
+
+    .star1 {
+      left: -50px;
+      top: -70px;
+    }
+    .moon {
+      background: url("/assets/moon.png");
+      left: -20px;
+      top: -30px;
+    }
+     .star2 {
+       left: 10px;
+     }
+     .star3 {
+       left: 35px;
+       top: -50px;
+     }
+     .star4 {
+       left: auto;
+       right: 20px;
+       top: -80px;
+     }
+     .star5 {
+       left: auto;
+       right: -10px;
+       top: -10px;
+     }
+     .star6 {
+       left: auto;
+       right: -50px;   
+       top: -50px;  
+     }
+  }
+  
+  #home-splash {
+    border-top: 1px solid $heading + #444;
+    .container {
+      padding: 0;
+      width: 976px;
+    }
+  }
+}
+
+#home-top {
+  section {
+    @include container;
+    background: white;
+    p {
+      font-size: 1.5em;
+      line-height: 1.5em;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin: 0 -18px 0.25em;
+      padding: 0.25em 18px;
+      color: white;
+    }
+
+  }
+  
+  #download {
+    h1 {
+      background: $green;
+    }
+  }
+  
+  #explore {
+   h1 {
+     background: $heading;
+   }
+  }
+  
+  #ask {
+    h1 {
+      background: $orangered;
+    }
+  }
+}
+
+.body-home #content-wrap {
+  border-top: none;
+  section {
+    @include clearfix;
+    margin: 0 36px 36px 18px;
+    padding-bottom: 36px;
+    border-bottom: 6px dotted $linkColor;
+    
+    font-size: 1.7em;
+
+    h1 {
+      font-size: 1.6em;
+    }
+    p {
+      font-size: 1em;
+      line-height: 1.5em;
+      margin-bottom: 1em;
+    }
+    
+    img.new_program {
+      @include columns(5);
+    }
+    img.lesson {
+      @include columns(8);
+      float: right;
+      margin-right: 0;
+      margin-left: $gridGutterWidth*2;
+
+    }
+  }
+  
+  section.last {
+    border: none;
+    margin-bottom: 0;
+  }
+}
