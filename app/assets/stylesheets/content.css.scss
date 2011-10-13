@@ -40,7 +40,7 @@
     -webkit-transform-origin: 50% 0;
   }
   100% {
-    -webkit-transform: rotate(3deg);
+    -webkit-transform: rotate(2deg);
     -webkit-transform-origin: 50% 0;
   }
 }
@@ -58,8 +58,7 @@
     height: 200px;
     background: url("/assets/star.png");
     
-    -webkit-animation: sway 1.25s infinite alternate;
-    -webkit-animation-timing-function: ease-in-out; 
+    -webkit-animation: sway 2.5s ease-in-out infinite alternate;
   }
    
   .moon {

@@ -1,16 +1,29 @@
 body {
-  background: $green;
+  background: $linkColor;
+}
+
+.topbar {
+  position: relative;  
+  margin-bottom: 1.25em;
 }
 
 header .topbar-inner {  
+  background: $green;
   .container {
-    padding: 0.75em 0;
+    padding: 0.6em 0;
   }
+  border-bottom: 3px solid black;
   
   li a {
     border-radius: 8px;
     font-size: 14px;
     padding: 11px 11px 10px;
+    color: white;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+  }
+  
+  li a:hover {
+    background-color: #038D8D;
   }
 
   #logo {
@@ -33,7 +46,6 @@ header .topbar-inner {
 }
 
 #content-wrap {
-  padding-top: 58px;
   margin: auto;
   
   .container {
@@ -64,7 +76,7 @@ header .topbar-inner {
 }
 
 footer {
-  background: $linkColor;
+  background: $green;
   .pills a {
     color: white;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
