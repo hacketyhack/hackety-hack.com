@@ -20,9 +20,10 @@
 
 
 .description
-  != RDiscount.new(resource.description).to_html
+  :markdown
+    #{resource.description}
 
-%h2= resource.answers.count == 1 ? "1 response" : "#{resource.answers.count} responses"
+%h2= pluralize(resource.answers.count, "response")
 %ul.answers
   = render :partial => "answers/list", :collection => resource.answers
 
