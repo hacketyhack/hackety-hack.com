@@ -6,4 +6,8 @@ class Program
   key :title, String
   key :source_code, String
 
+  def to_param
+    slug
+  end
+
 end

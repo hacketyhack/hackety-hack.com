@@ -1,0 +1,22 @@
+%h1 Every Awesome Program We've Got
+
+Here's the motherload! Check out these great programs everybody has made!
+
+%h2 The Super Sweet List
+
+We've picked out a few extra-awesome ones for your enjoyment.
+
+%ul
+  %li Foo
+  %li Foo
+  %li Foo
+  %li Foo
+  %li Foo
+
+%h2 Other Great Programs
+
+Here it is: every single program we've got. Check them out!
+
+%ul
+  - @programs.each do |program|
+    %li= link_to program.title, program_path(program.author_username, program)

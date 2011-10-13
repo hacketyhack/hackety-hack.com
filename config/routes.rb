@@ -1,10 +1,10 @@
 HacketyHackCom::Application.routes.draw do
 
-
   resources :questions do
     resources :answers
   end
 
+  resources :programs, :only => [:index]
 
   constraints(ApiConstraint) do
     match '/' => 'static#api_root'
@@ -26,7 +26,9 @@ HacketyHackCom::Application.routes.draw do
   match 'users/:id/followers', :controller => 'users', :action => 'followers'
   match 'users/:id/follow',    :controller => 'users', :action => 'follow'
   match 'users/:id/unfollow',  :controller => 'users', :action => 'unfollow'
-  
+
   root :to => "static#root"
+
+  match ':user_id/:slug', :to => "programs#show", :as => :program
 
 end
