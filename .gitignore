@@ -5,3 +5,4 @@ tmp/
 .sass-cache/
 *.rbc
 .DS_Store
+*.swp
