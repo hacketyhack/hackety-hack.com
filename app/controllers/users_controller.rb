@@ -4,12 +4,16 @@ class UsersController < InheritedController
 
   def follow
     followee = User.first(:id => params[:user][:followee])
-    if current_user == followee
-      redirect_to resource_path(followee), :notice=> "You can't follow yourself silly!"
-      return
+    policy = FollowingPolicy.new(current_user, followee)
+    if policy.can_follow?
+      current_user.follow! followee
+      notice = "You're following #{followee.username} now"
+    elsif policy.following_self?
+      notice = "You can't follow yourself silly!"
+    elsif policy.already_following?
+      notice = "You're already following #{followee.username}"
     end
-    current_user.follow! followee
-    redirect_to resource_path(followee), :notice=> "You're following #{followee.username} now"
+    redirect_to resource_path(followee), :notice=> notice
   end
   
   def unfollow
