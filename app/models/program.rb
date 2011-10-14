@@ -6,6 +6,8 @@ class Program
   key :title, String
   key :source_code, String
 
+  scope :by_username,  lambda { |username| where(:author_username => username) }
+
   def to_param
     slug
   end

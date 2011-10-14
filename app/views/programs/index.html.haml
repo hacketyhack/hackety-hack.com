@@ -19,4 +19,4 @@ Here it is: every single program we've got. Check them out!
 
 %ul
   - @programs.each do |program|
-    %li= link_to program.title, program_path(program.author_username, program)
+    %li= link_to program.title, user_program_path(User.find_by_username(program.author_username).id, program.id)

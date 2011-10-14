@@ -17,6 +17,8 @@
   %h4= resource.about
   %hr
   %p 
+    = link_to "Programs", user_programs_path(resource)
+  %p 
     Following:
     =link_to resource.following.count, resource_path(resource) + "/following"
   %p 

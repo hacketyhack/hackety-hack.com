@@ -12,6 +12,10 @@ class User
   many :questions
   many :answers
   
+  def programs
+    Program.by_username self.username
+  end
+  
   #the list of hackers this hacker is following
   key :following_ids, Array
   many :following, :in => :following_ids, :class_name => 'User'
