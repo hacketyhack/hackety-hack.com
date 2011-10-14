@@ -1,5 +1,5 @@
 body {
-  background: $heading + #999;
+  background: $heading + #999 url("square_bg.png") fixed;
 }
 
 .topbar {
@@ -23,7 +23,7 @@ header .topbar-inner {
   }
   
   li a:hover {
-    background-color: #444;
+    background-color: $heading + #111;
     text-shadow: none;
   }
 
