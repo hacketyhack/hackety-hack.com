@@ -100,7 +100,7 @@
   #download {
     background: white url("download.png") 0 4em no-repeat;
     h1 {
-      background: $green;
+      background: $green url("felt.png");
       border-color: $green - #222;
     }
     .btn {
@@ -127,8 +127,8 @@
   #explore {
     background: white url("explore.png") 95% 7em no-repeat;
     h1 {
-      background: $heading;
-      border-color: $heading - #111;
+      background: $linkColor url("felt.png");
+      border-color: $linkColor - #111;
     }
     .content {
       @include columns(10);
@@ -141,7 +141,7 @@
     min-height: 340px;
 
     h1 {
-      background: $orangered;
+      background: $orangered url("felt.png");
       border-color: $orangered - #222;
     }
     .content {
