@@ -1,18 +1,17 @@
 class FollowingPolicy
-  def initialize(follower, target)
+  def initialize(follower)
     @follower = follower
-    @target = target
   end
   
-  def can_follow?
-    !following_self? && !already_following?
+  def can_follow?(followee)
+    !following_self?(followee) && !already_following?(followee)
   end
   
-  def already_following?
-    @follower.following?(@target)
+  def already_following?(followee) 
+    @follower.following? followee
   end  
   
-  def following_self?
-    @follower == @target
+  def following_self?(followee)
+    @follower == followee
   end
 end
