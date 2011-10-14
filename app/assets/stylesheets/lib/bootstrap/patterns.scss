@@ -449,7 +449,7 @@ footer {
   // Primary Button Type
   &.primary {
     color:#fff;
-    @include gradient-bar($blue, $blueDark)
+    @include gradient-bar($green, $green - #333)
   }
 
    // Transitions
