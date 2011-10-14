@@ -20,12 +20,12 @@ HacketyHackCom::Application.routes.draw do
     get "logout" => "devise/sessions#destroy", :as => "logout"
   end
 
-  resources :users, :only => :show
-
-  match 'users/:id/following', :controller => 'users', :action => 'following'
-  match 'users/:id/followers', :controller => 'users', :action => 'followers'
-  match 'users/:id/follow',    :controller => 'users', :action => 'follow'
-  match 'users/:id/unfollow',  :controller => 'users', :action => 'unfollow'
+  resources :users, :only => :show do
+    get "following" => "users#following", :as => :following
+    get "followers" => "users#followers", :as => :followers
+    post "follow" => "users#follow", :as => :follow
+    post "unfollow" => "users#unfollow", :as => :unfollow
+  end
 
   root :to => "static#root"
 
