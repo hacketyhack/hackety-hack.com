@@ -101,7 +101,7 @@
     background: white url("download.png") 0 4em no-repeat;
     h1 {
       background: $green url("felt.png");
-      border-color: $green - #222;
+      border-color: $green - #111;
     }
     .btn {
       @include columns(4);
@@ -142,7 +142,7 @@
 
     h1 {
       background: $orangered url("felt.png");
-      border-color: $orangered - #222;
+      border-color: $orangered;
     }
     .content {
       @include columns(10);
