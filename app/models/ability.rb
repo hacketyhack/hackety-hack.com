@@ -10,7 +10,7 @@ class Ability
       can :create, [Question, Answer]
       can :manage, [Question, Answer], :user => user
       can :update, user
-      can [:follow,:unfollow], user
+      can [:follow,:unfollow], :all
     end
 
     # Define abilities for the passed in user here. For example:

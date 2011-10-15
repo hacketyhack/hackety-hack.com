@@ -6,3 +6,4 @@ tmp/
 *.rbc
 .DS_Store
 *.swp
+.redcar

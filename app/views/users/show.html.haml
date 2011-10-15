@@ -5,11 +5,11 @@
   %img{:src => gravatar_url(resource.email)}
   - if current_user && current_user != resource
     -if current_user.following?(resource)
-      = simple_form_for(resource, :url => resource_path(current_user) + '/unfollow') do |f|
+      = simple_form_for(resource, :url => resource_path(current_user) + '/unfollow', :method=>:post) do |f|
         = f.hidden_field :followee, :value => resource.id
-        = f.button :submit, :value => "Unfollow", :class => "primary btn"          
+        = f.button :submit, :value => "Unfollow", :class => "primary btn"   
     -else
-      = simple_form_for(resource, :url => resource_path(current_user) + '/follow') do |f|
+      = simple_form_for(resource, :url => resource_path(current_user) + '/follow', :method=>:post) do |f|
         = f.hidden_field :followee, :value => resource.id
         = f.button :submit, :value => "Follow", :class => "primary btn"
         
