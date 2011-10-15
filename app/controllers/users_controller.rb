@@ -3,7 +3,6 @@ class UsersController < InheritedController
   skip_authorize_resource :only => [:following, :followers] #anyone can perform these read-only actions
 
   def follow
-    logger.info "reached follow"
     followee = User.first(:id => params[:user][:followee])
     policy = FollowingPolicy.new(current_user)
     if policy.can_follow? followee
