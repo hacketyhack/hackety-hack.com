@@ -1,14 +1,17 @@
 - content_for :title do
-  Questions
+  -if @support
+    Support Questions
+  -else 
+    Questions
 
 - content_for :sidebar do
   - if can? :create, Question
     %section.ask
       = link_to "Ask a Question", new_resource_path, :class => "btn success"
-  
-  %section.support
-    %h2 Support
-    %p Having a problem running Hackety Hack? Found a bug? Check out our #{link_to "support section", ""}.
+  - unless @support
+    %section.support
+      %h2 Support
+      %p Having a problem running Hackety Hack? Found a bug? Check out our #{link_to "support section", support_questions_path}.
   
 
 %ul.questions
