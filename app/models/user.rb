@@ -12,6 +12,10 @@ class User
   many :questions
   many :answers
   
+  def to_param
+    self.username
+  end
+  
   def programs
     Program.by_username self.username
   end

@@ -30,5 +30,10 @@ class UsersController < InheritedController
     @user = User.first(:id => params[:user_id])
   end
   
+  #################
+  
+  def resource
+    @user ||= end_of_association_chain.find_by_username(params[:id])
+  end
   
 end
