@@ -44,6 +44,10 @@ group :development, :test do
   gem 'sqlite3'
 end
 
+group :production do
+  gem 'pg' # ugh heroku
+end
+
 group :test do
   gem "mocha"
   gem "database_cleaner"
