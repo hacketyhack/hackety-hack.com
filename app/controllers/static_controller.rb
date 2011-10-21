@@ -12,7 +12,7 @@ class StaticController < ApplicationController
 
     @download_url = case @platform
       when 'mac' then 'https://github.com/downloads/hacketyhack/hacketyhack/hacketyhack-1.0.1.dmg'
-      when 'windows' then 'https://github.com/downloads/hacketyhack/hacketyhack/hacketyhack-1.0.1.exe.zip'
+      when 'windows' then 'https://github.com/downloads/hacketyhack/hacketyhack/hacketyhack-1.0.0.exe.zip'
       when 'linux' then 'https://github.com/downloads/hacketyhack/hacketyhack/hacketyhack-1.0.1.run'
       else 'https://github.com/downloads/hacketyhack/hacketyhack/hacketyhack-1.0.1.dmg'
       end
