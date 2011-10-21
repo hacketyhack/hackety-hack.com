@@ -1,13 +1,20 @@
-input, textarea {
-  width: 350px;
-}
+form {
+  input, textarea {
+    width: 350px;
+  }
 
-.help-inline {
-  display: block;
-  padding-top: 5px;
-  margin-left: 150px;
-}
+  input.boolean {
+    margin: 0.75em 0 0 1.5em;
+  }
 
-textarea {
-  height: 200px;
+  .help-inline {
+    display: block;
+    padding-top: 5px;
+    margin-left: 150px;
+  }
+
+  textarea {
+    height: 200px;
+  }
+  
 }

@@ -1,4 +1,6 @@
-%h2 Sign in
+- content_for :title do
+  Sign In
+
 .sign-in
   = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
     .inputs

@@ -1,4 +1,6 @@
-<h2>Resend unlock instructions</h2>
+<% content_for :title do %>
+  Resend unlock instructions
+<% end %>
 
 <%= simple_form_for(resource, :as => resource_name, :url => unlock_path(resource_name), :html => { :method => :post }) do |f| %>
   <%= f.error_notification %>
