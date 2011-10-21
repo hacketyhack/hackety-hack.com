@@ -7,11 +7,18 @@ Here's the motherload! Check out these great programs everybody has made!
 We've picked out a few extra-awesome ones for your enjoyment.
 
 %ul
-  %li Foo
-  %li Foo
-  %li Foo
-  %li Foo
-  %li Foo
+  %li
+    :markdown
+      [Connect Four](http://hackety-hack.com/programs/wilkie/connect_four), by [wilkie](http://hackety-hack.com/users/wilkie)
+  %li
+    :markdown
+      [Calender basic](http://hackety-hack.com/programs/cyber/calender_basic), by [cyber](http://hackety-hack.com/users/cyber)
+  %li
+    :markdown
+      [Space Invaders](http://hackety-hack.com/programs/wilkie/invaders), by [wilkie](http://hackety-hack.com/users/wilkie)
+  %li
+    :markdown
+      [Turtle Fun](http://hackety-hack.com/programs/frog/turtle_fun), by [frog](http://hackety-hack.com/users/frog)
 
 %h2 Other Great Programs
 
@@ -19,4 +26,5 @@ Here it is: every single program we've got. Check them out!
 
 %ul
   - collection.each do |program|
-    %li= link_to program.title, user_program_path(User.find_by_username(program.author_username).id, program.id)
+    - user = User.find_by_username(program.author_username)
+    %li #{link_to program.title, user_program_path(user, program.id)}, by #{link_to user.username, user}
