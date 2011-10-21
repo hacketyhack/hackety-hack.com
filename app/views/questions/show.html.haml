@@ -10,7 +10,10 @@
 
 
   = render :partial => "shared/ask"
-  = render :partial => "shared/support"
+  - if @support
+    = render :partial => "shared/questions_blurb"
+  - else
+    = render :partial => "shared/support_blurb"
 
 .meta
   Asked
