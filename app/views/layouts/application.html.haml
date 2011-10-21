@@ -11,6 +11,18 @@
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
     = csrf_meta_tags
+    - if Rails.env.production?
+      :javascript
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-10499799-1']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+              var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+              ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+            })();
+
   %body{:class => "body-#{@page_class}"}
     %header.topbar
       .topbar-inner
@@ -21,7 +33,7 @@
           = render "shared/menu/user"
 
     = yield :top
-    
+
     - sidebar = yield :sidebar
 
     #content-wrap{:class => @page_class}
