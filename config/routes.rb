@@ -3,11 +3,13 @@ HacketyHackCom::Application.routes.draw do
   resources :questions do
     resources :answers
   end
-  
+
+  get "/downloads/latest/:platform", :to => "static#download", :as => 'download'
+
   scope '/support', :as => 'support' do
     resources :questions, :controller => 'questions'
   end
-  
+
   resources :programs, :only => [:index, :show]
 
   constraints(ApiConstraint) do
