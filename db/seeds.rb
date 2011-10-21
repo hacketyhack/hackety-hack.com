@@ -1,8 +1,3 @@
-Program.all.each(&:destroy)
-Question.all.each(&:destroy)
-Answer.all.each(&:destroy)
-User.all.each(&:destroy)
-
 require 'faker'
 
 users = (0..5).to_a.collect do
