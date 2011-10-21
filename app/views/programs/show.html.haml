@@ -1,4 +1,10 @@
-%h1 #{@program.title}, by #{@program.author_username}
+%h1 '#{@program.title}', a program by #{@program.author_username}
 
 %code
   = @program.source_code
+
+%hr/
+
+%h3 Other Programs
+
+Make sure to check out all the other programs other users have made on the #{link_to "All Programs page", programs_path}!
