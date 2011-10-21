@@ -4,7 +4,9 @@ HacketyHackCom::Application.routes.draw do
     resources :answers
   end
 
-  get "/downloads/latest/:platform", :to => "static#download", :as => 'download'
+  get "/downloads/latest/:platform", :to => "static#download", :as => 'downloads'
+  get "/downloads/latest", :to => "static#download", :as => 'download'
+  match "/download" => redirect("/downloads/latest")
 
   scope '/support', :as => 'support' do
     resources :questions, :controller => 'questions'
