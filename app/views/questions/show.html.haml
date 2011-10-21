@@ -3,11 +3,14 @@
   = resource.title
 
 - content_for :sidebar do
-  &nbsp;
   - if can? :update, resource
-    = link_to 'Edit', edit_resource_path
+    = link_to 'Edit', edit_resource_path, :class => "edit btn"
   - if can? :destroy, resource
-    = link_to 'Delete', resource_path, :confirm => 'Are you sure?', :method => :delete
+    = link_to 'Delete', resource_path, :class => "delete btn", :confirm => 'Are you sure?', :method => :delete
+
+
+  = render :partial => "shared/ask"
+  = render :partial => "shared/support"
 
 .meta
   Asked

@@ -73,8 +73,21 @@ header .topbar-inner {
   
   #sidebar {
     @include columns(5, true);
+    .edit, .delete {
+      margin-bottom: 1em;
+    }
+    section {
+      @include border-radius(8px);
+      background: #f3f3f3;
+      margin-bottom: 8px;
+      padding: 1.5em;
+    }
   }
   
+}
+
+p, h1,h2,h3,h4,h5 {
+  color: #555;
 }
 
 .alert-message {

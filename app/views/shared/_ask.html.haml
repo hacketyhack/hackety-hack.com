@@ -1,0 +1,8 @@
+%section.ask
+  %h2 Have A Question?
+  %p Ask away! No question is too big or too small.
+  - if current_user
+    = link_to "Ask a Question", new_question_path, :class => "btn success"
+  - else
+    %p Log in to ask a question
+    = link_to "Log In", login_path, :class => "btn success"

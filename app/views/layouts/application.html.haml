@@ -27,14 +27,16 @@
     #content-wrap{:class => @page_class}
       .container{:class => sidebar.empty? ? "one-column" : "two-column"}
         - if flash[:notice]
-          .container.alert-message.success
+          .alert-message.success
             #{flash[:notice]}
-            = link_to "x", "#", :class => "close"
+        - if flash[:alert]
+          .alert-message.alert
+            #{flash[:alert]}
+
+        - unless title.empty?
+          %h1.title= title
 
         #content{:class => @content_class}
-          - unless title.empty?
-            %h1.title= title
-
           = yield
 
         - unless sidebar.empty?

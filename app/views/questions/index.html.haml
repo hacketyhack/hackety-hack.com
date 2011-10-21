@@ -5,14 +5,8 @@
     Questions
 
 - content_for :sidebar do
-  - if can? :create, Question
-    %section.ask
-      = link_to "Ask a Question", new_resource_path, :class => "btn success"
-  - unless @support
-    %section.support
-      %h2 Support
-      %p Having a problem running Hackety Hack? Found a bug? Check out our #{link_to "support section", support_questions_path}.
-  
+  = render :partial => "shared/ask"
+  = render :partial => "shared/support"
 
 %ul.questions
   = render :partial => "list", :collection => collection
