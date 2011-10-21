@@ -1,5 +1,5 @@
-%li.item{:id=>list.id}
-  .answer-count{:class => list.answers.count > 0 ? "answered" : "unanswered"}
+%li.item{:id=>list.id, :class => list.answers.count > 0 ? (list.solution_id.nil? ? "answered" : "accepted") : "unanswered"}
+  .answer-count
     %h3= list.answers.count
     #{list.answers.count == 1 ? "answer" : "answers"}
   .summary

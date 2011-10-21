@@ -2,7 +2,8 @@
 !!!
 %html
   %head
-    %title Hackety Hack!
+    - title = yield :title
+    %title #{title.blank? ? "" : "#{title} | "}Hackety Hack!
 
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     / <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap-1.2.0.min.css">
@@ -31,7 +32,6 @@
             = link_to "x", "#", :class => "close"
 
         #content{:class => @content_class}
-          - title = yield :title
           - unless title.empty?
             %h1.title= title
 
