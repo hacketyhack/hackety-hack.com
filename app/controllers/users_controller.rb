@@ -15,23 +15,23 @@ class UsersController < InheritedController
     end
     redirect_to resource_path(followee), :notice=> notice
   end
-  
+
   def unfollow
     followee = User.first(:id => params[:user][:followee])
     current_user.unfollow! followee
     redirect_to resource_path(followee), :notice=> "You're no longer following #{followee.username}"
   end
-  
+
   def following
-    @user = User.first(:id => params[:user_id])  
+    @user = User.first(:id => params[:user_id])
   end
-  
+
   def followers
     @user = User.first(:id => params[:user_id])
   end
-  
+
   #################
-  
+
   def resource
     @user ||= end_of_association_chain.find_by_username(params[:id])
   end

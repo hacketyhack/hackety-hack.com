@@ -11,15 +11,20 @@ class User
 
   many :questions
   many :answers
-  
+
+  validates_format_of :username, :with => /\w+/,
+    :message => "Make your username from letters, numbers, and underscores('_')."
+  validates_length_of :username, :in => (1..32),
+    :message => "Your username needs at least 1 character but no more than 32."
+
   def to_param
     self.username
   end
-  
+
   def programs
     Program.by_username self.username
   end
-  
+
   #the list of hackers this hacker is following
   key :following_ids, Array
   many :following, :in => :following_ids, :class_name => 'User'
@@ -54,7 +59,7 @@ class User
   def following? hacker
     following.include? hacker
   end
-  
+
   # Everyone should have at least one follower. And steve would like to follow
   # everyone. So let's do that. This runs after_create.
   def follow_steve
