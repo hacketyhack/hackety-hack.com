@@ -20,11 +20,11 @@ class User
   def to_param
     self.username
   end
-  
+
   def programs
     Program.by_username self.username
   end
-  
+
   #the list of hackers this hacker is following
   key :following_ids, Array
   many :following, :in => :following_ids, :class_name => 'User'
@@ -59,7 +59,7 @@ class User
   def following? hacker
     following.include? hacker
   end
-  
+
   # Everyone should have at least one follower. And steve would like to follow
   # everyone. So let's do that. This runs after_create.
   def follow_steve
