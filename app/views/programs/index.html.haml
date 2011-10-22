@@ -27,4 +27,4 @@ Here it is: every single program we've got. Check them out!
 %ul
   - collection.each do |program|
     - user = User.find_by_username(program.author_username)
-    %li #{link_to program.title, user_program_path(user.username, program)}, by #{link_to user.username, user_path(user.username)}
+    %li #{link_to program.title, user_program_path(user.slug, program)}, by #{link_to user.username, user_path(user.slug)}

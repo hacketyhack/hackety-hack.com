@@ -7,12 +7,12 @@
     -if current_user.following?(resource)
       = simple_form_for(resource, :url => resource_path(current_user) + '/unfollow', :method=>:post) do |f|
         = f.hidden_field :followee, :value => resource.id
-        = f.button :submit, :value => "Unfollow", :class => "primary btn"
-    - else
+        = f.button :submit, :value => "Unfollow", :class => "primary btn"   
+    -else
       = simple_form_for(resource, :url => resource_path(current_user) + '/follow', :method=>:post) do |f|
         = f.hidden_field :followee, :value => resource.id
         = f.button :submit, :value => "Follow", :class => "primary btn"
-
+        
   %h2= "About #{resource.username}"
   %h4= resource.about
   %hr
