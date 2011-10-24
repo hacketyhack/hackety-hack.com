@@ -19,7 +19,7 @@
   Asked
   - if resource.user
     by
-    %span.name= link_to resource.user.username, ""
+    %span.name= link_to resource.user.username, user_path(resource.user)
 
   %span.date= time_ago_in_words(resource.created_at)
   ago

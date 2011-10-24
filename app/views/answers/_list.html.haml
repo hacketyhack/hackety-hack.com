@@ -1,7 +1,7 @@
 %li.answer{:class => list.id == @question.solution_id && 'selected-answer'}
   - if list.user
     .meta
-      #{link_to list.user.username, ""} says
+      #{link_to list.user.username, user_path(list.user)} says
   .description
     :markdown
       #{list.description}
