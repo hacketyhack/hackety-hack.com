@@ -28,7 +28,7 @@ HacketyHackCom::Application.routes.draw do
     get "logout" => "devise/sessions#destroy", :as => "logout"
   end
 
-  resources :users, :only => :show do
+  resources :users, :constraints => { :id => /.*/ }, :only => :show do
     get "following" => "users#following", :as => :following
     get "followers" => "users#followers", :as => :followers
     post "follow" => "users#follow", :as => :follow
