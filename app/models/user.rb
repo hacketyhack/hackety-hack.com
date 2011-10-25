@@ -12,7 +12,7 @@ class User
   many :questions
   many :answers
 
-  validates_format_of :username, :with => /\w+/,
+  validates_format_of :username, :with => /^\w+$/,
     :message => "Make your username from letters, numbers, and underscores('_')."
   validates_length_of :username, :in => (1..32),
     :message => "Your username needs at least 1 character but no more than 32."
