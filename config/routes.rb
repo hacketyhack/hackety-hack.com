@@ -12,8 +12,6 @@ HacketyHackCom::Application.routes.draw do
     resources :questions, :controller => 'questions'
   end
 
-  resources :programs, :only => [:index, :show]
-
   constraints(ApiConstraint) do
     match '/' => 'static#api_root'
     match '/versions/newest' => 'static#newest_version', :as => "newest_version"
@@ -22,6 +20,8 @@ HacketyHackCom::Application.routes.draw do
         resources :programs
     end
   end
+
+  resources :programs, :only => [:index, :show]
 
   devise_for :users do
     get "login" => "devise/sessions#new", :as => "login"
