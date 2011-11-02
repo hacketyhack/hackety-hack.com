@@ -11,7 +11,7 @@ class Program
   before_create :make_slug
 
   def make_slug
-    unless slug
+    if slug.blank?
       all_slugs = Program.where(:author_username => author_username).map(&:slug)
       self.slug = Sluggifier.generate(title)
     end
