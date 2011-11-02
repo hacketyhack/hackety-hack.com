@@ -13,7 +13,7 @@ class Program
   def make_slug
     if slug.blank?
       all_slugs = Program.where(:author_username => author_username).map(&:slug)
-      self.slug = Sluggifier.generate(title)
+      self.slug = Sluggifier.generate(title, all_slugs)
     end
   end
 

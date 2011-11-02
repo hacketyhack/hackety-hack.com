@@ -8,7 +8,6 @@ describe Sluggifier do
     it "makes a slug from a title" do
       Sluggifier.generate('test a slug').should == 'test-a-slug'
     end
-    
 
     context "doesn't allow multiple slugs to be the same" do
         let(:all_slugs) { ['test'] }
