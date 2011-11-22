@@ -31,6 +31,10 @@ class StaticController < ApplicationController
   protected
 
   def platform
-    request.user_agent.match(/Mac|Linux|Windows/).try(:[], 0).try(:downcase)
+    if Rails.env.test?
+      "mac"
+    else
+      request.user_agent.match(/Mac|Linux|Windows/).try(:[], 0).try(:downcase)
+    end
   end
 end
