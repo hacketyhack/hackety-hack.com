@@ -1,4 +1,4 @@
-script: "rake spec_lolz && rake cucumber"
+script: "rake spec && rake cucumber"
 rvm: 1.9.2
 notifications:
   irc: "irc.freenode.org#hacketyhack"
