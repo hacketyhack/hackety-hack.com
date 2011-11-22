@@ -49,6 +49,7 @@ group :production do
 end
 
 group :test do
+  gem "capybara"
   gem "mocha"
   gem "database_cleaner"
 end

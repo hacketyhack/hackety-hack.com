@@ -234,6 +234,7 @@ PLATFORMS
 DEPENDENCIES
   bson_ext
   cancan
+  capybara
   coffee-rails (~> 3.1.0)
   cucumber-rails
   database_cleaner

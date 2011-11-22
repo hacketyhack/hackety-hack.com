@@ -16,13 +16,13 @@ end
 
 Given /^I am signed up as "(.*)\/(.*)"$/ do |username, password|
   step %{I am not logged in}
-  step %{I go to the sign up page}
-  step %{I fill in "Username" with "#{username}"}
-  step %{I fill in "Email" with "#{username}@example.com"}
-  step %{I fill in "Password" with "#{password}"}
-  step %{I fill in "Password confirmation" with "#{password}"}
-  step %{I press "Sign up"}
-  step %{I should see "You have signed up successfully. If enabled, a confirmation was sent to your e-mail."}
+  visit(signup_path)
+  fill_in("Username", :with => username)
+  fill_in("Email", :with => "#{username}@example.com")
+  fill_in("Password", :with => password)
+  fill_in("Password confirmation", :with => password)
+  click_button("Sign up")
+  BROWSER.html.should include('signed up succesfully')
   step %{I am logout}
 end
 
@@ -40,22 +40,22 @@ end
 
 When /^I sign in as "(.*)\/(.*)"$/ do |username, password|
   step %{I am not logged in}
-  step %{I go to the sign in page}
-  step %{I fill in "Username" with "#{username}"}
-  step %{I fill in "Password" with "#{password}"}
-  step %{I press "Sign in"}
+  visit(login_path)
+  fill_in("Username", :with => username)
+  fill_in("Password", :with => password)
+  click_button("Sign in")
 end
 
 Then /^I should be signed in$/ do
-  step %{I should see "Signed in successfully."}
+  BROWSER.html.should include("Signed in")
 end
 
 When /^I return next time$/ do
-  step %{I go to the home page}
+  visit(root)
 end
 
 Then /^I should be signed out$/ do
-  step %{I should see "Sign up"}
-  step %{I should see "Login"}
-  step %{I should not see "Logout"}
+  BROWSER.html.should include("Sign up")
+  BROWSER.html.should include("Login")
+  BROWSER.html.should_not include("Logout")
 end
