@@ -7,5 +7,6 @@ Feature: CRUD actions for answers
     And I answer that question
     Then I should be notified that my answer was submitted
     And I should be able to see my answer
+    And my answer should show on my profile page
   
   Scenario: Accept an answer

@@ -17,3 +17,9 @@ Then /^I should be able to see my answer$/ do
   page.should have_content("#{@user.username} says")
   page.should have_content("Have you tried turning it off and on again?")
 end
+
+Then /^my answer should show on my profile page$/ do
+  visit user_path(@user)
+  page.should have_content("answered \"#{@question.title}\" with")
+  page.should have_content("Have you tried turning it off and on again?")
+end

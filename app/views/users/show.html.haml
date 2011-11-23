@@ -30,10 +30,19 @@
       = link_to "Change My Settings", edit_registration_path(resource), :class => "btn success"
 
 
-- if @user.questions.count != 0
+- unless @user.questions.empty?
   %section.questions
     %header 
       %h2 Questions
     - @user.questions.each do |question|
       %article.question
         %h4= link_to question.title, question_path(question)
+
+- unless @user.answers.empty?
+  %section.answers
+    %header
+      %h2 Answers
+    - @user.answers.each do |answer|
+      %article.answer
+        %h4= "#{@user.username} answered \"#{answer.question.title}\" with:"
+        %p= answer.description
