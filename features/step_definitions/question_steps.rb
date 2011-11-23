@@ -43,3 +43,8 @@ Then /^I should see that the question was updated$/ do
   page.should have_content('An edited question')
   page.should have_content('Just a quick edit')
 end
+
+Then /^I should be able to see the question on my profile page$/ do
+  visit user_path(@user)
+  page.should have_content("My Question")
+end

@@ -6,6 +6,7 @@ Feature: CRUD actions for question
     When I create a new question
     Then I should be told the question was created
     And I should be able to see the new question
+    And I should be able to see the question on my profile page
 
   Scenario: Update a question
     Given I am a user that has created a question
