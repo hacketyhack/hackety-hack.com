@@ -1,3 +1,10 @@
+def create_question_for(user) 
+  @question = Question.new(:title => "A question",
+                           :description => "The description")
+  @question.user = user
+  @question.save
+end
+
 When /^I create a new question$/ do
   step %{a logged in user}
   visit new_question_path
@@ -18,14 +25,11 @@ end
 
 Given /^I am a user that has created a question$/ do
   step %{a logged in user}
-  @question = Question.new(:title => "A question",
-                           :description => "The description")
-  @question.user = @user
-  @question.save
+  create_question_for(@user)
 end
 
 When /^I edit that question$/ do
-  visit "/questions/#{@question.id.to_s}/edit"
+  visit edit_question_path(@question)
   fill_in "Title", with: "An edited question"
   fill_in "Description", with: "Just a quick edit"
   click_button "Ask Everyone"
