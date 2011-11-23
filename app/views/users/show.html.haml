@@ -30,9 +30,10 @@
       = link_to "Change My Settings", edit_registration_path(resource), :class => "btn success"
 
 
-%section.questions
-  %header 
-    %h2 Questions
-  - @user.questions.each do |question|
-    %article.question
-      %h4= link_to question.title, question_path(question)
+- if @user.questions.count != 0
+  %section.questions
+    %header 
+      %h2 Questions
+    - @user.questions.each do |question|
+      %article.question
+        %h4= link_to question.title, question_path(question)
