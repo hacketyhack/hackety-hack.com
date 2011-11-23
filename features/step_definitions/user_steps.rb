@@ -1,5 +1,5 @@
-Given /^a logged in user$/ do
-  @user = User.create!(username:              "test_user",
+def login_user
+   @user = User.create!(username:              "test_user",
                        email:                 "test_user@example.com",
                        password:              "foobar",
                        password_confirmation: "foobar")
@@ -7,6 +7,10 @@ Given /^a logged in user$/ do
   fill_in("Username", :with => @user.username)
   fill_in("Password", :with => @user.password)
   click_button("Sign in")
+end
+
+Given /^a logged in user$/ do
+  login_user unless @user
 end
 
 When /^I go to look at my profile page$/ do
