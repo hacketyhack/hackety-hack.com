@@ -10,11 +10,6 @@ Feature: Manage account
     Then it should have the right information
    
   Scenario: Edit my profile
-    When I go to change my settings
-    And fill in the following
-      | About            | New users love editing their page |
-      | Current password | foobar                            |
-    And submit the form
+    When I edit my profile
     Then I should be notified that my profile was updated
-    When I look at my page
-    Then I should see my changes reflected
+    And I should see my changes reflected on my profile page

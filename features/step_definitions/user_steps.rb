@@ -17,3 +17,19 @@ Then /^it should have the right information$/ do
   page.should have_selector('title', :content => "#{@user.username}'s page")
   page.should have_content("About #{@user.username}")
 end
+
+When /^I edit my profile$/ do
+  visit('/users/edit')
+  fill_in("About", with: "Test user likes to edit his profile|")
+  fill_in("Current password", with: @user.password)
+  click_button "Update"
+end
+
+Then /^I should be notified that my profile was updated$/ do
+  page.should have_content("updated your account")
+end
+
+Then /^I should see my changes reflected on my profile page$/ do
+  visit("/users/#{@user.username}")
+  page.should have_content("Test user likes to edit his profile")
+end
