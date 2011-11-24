@@ -17,8 +17,18 @@ p {
   }
 }
 
-.alert-message > a {
-  color: white;
-  font-weight: bold;
-  text-decoration: underline;
+#content {
+  margin-top: 32px;
+}
+
+.page-title {
+  margin-bottom: 17px;
+  border-bottom: 1px solid #DDD;
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.page-title h1 {
+  margin-bottom: 0px;
 }

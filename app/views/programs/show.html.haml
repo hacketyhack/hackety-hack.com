@@ -1,16 +1,24 @@
 - unless current_user
-  .alert-message.info
-    = @program.author_username
-    is learning how to program with
-    %strong Hackety Hack!
-    = link_to "Why not join them?", new_user_registration_path 
+  .alert-message.block-message.info
+    %p
+      = @program.author_username
+      and many others are using
+      %strong Hackety Hack
+      to learn how to code.
+    %p Hackety Hack is a free program for Windows, Mac OS X and Linux that can teach you how to make games, applications and more and share those programs with your friends. You can ask other budding programmers questions and follow them to see what code they're working on through the Hackety Hack website.
 
+    = link_to "Sign up", new_user_registration_path, :class => "btn primary"
+    = link_to "Learn More", root_path, :class => "btn"
 
+- content_for :title do
+  = @program.title
 
-%h1 '#{@program.title}', a program by #{@program.author_username}
+- content_for :subtitle do
+  %small
+    by
+    = link_to @program.author_username, user_path(@program.author_username)
 
-%pre.prettyprint
-  = @program.source_code
+%pre.prettyprint= @program.source_code
 
 %hr/
 

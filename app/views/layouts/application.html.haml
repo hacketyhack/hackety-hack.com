@@ -50,7 +50,10 @@
             #{flash[:alert]}
 
         - unless title.empty?
-          %h1.title= title
+          .page-title
+            %h1.title
+              = title
+              %small= yield :subtitle
 
         #content{:class => @content_class}
           = yield
