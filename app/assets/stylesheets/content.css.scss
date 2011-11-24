@@ -16,3 +16,9 @@ p {
     color: $heading;
   }
 }
+
+.alert-message > a {
+  color: white;
+  font-weight: bold;
+  text-decoration: underline;
+}
