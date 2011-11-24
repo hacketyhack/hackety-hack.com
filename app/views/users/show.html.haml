@@ -44,5 +44,8 @@
       %h2 Answers
     - @user.answers.each do |answer|
       %article.answer
-        %h4= "#{@user.username} answered \"#{answer.question.title}\" with:"
+        %h4 
+          = "#{@user.username} answered"
+          = link_to(answer.question.title, answer.question)
+          with:
         %p= answer.description
