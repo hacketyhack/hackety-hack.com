@@ -8,6 +8,7 @@ class User
   key :username, String
   key :email, String
   key :about, String
+  key :moderator, Boolean
 
   many :questions
   many :answers
