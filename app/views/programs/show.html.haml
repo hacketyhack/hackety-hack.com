@@ -9,9 +9,8 @@
 
 %h1 '#{@program.title}', a program by #{@program.author_username}
 
-%pre
-  %code
-    = @program.source_code
+%pre.prettyprint
+  = @program.source_code
 
 %hr/
 
