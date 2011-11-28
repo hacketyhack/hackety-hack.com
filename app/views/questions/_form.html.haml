@@ -4,7 +4,8 @@
 
   .inputs
     = f.input :title, :hint => "What's your question?"
-    = f.input :description, :as => :text, :hint => "Provide some details about your problem to help diagnose it"
+    = f.input :description, :as => :text, 
+    :hint => "Provide some details about your problem to help diagnose it You can format your input with <a href=\"http://daringfireball.net/projects/markdown/\">Markdown</a>".html_safe
 
   .actions
     = f.button :submit , 'Ask Everyone', :class => "primary btn"
