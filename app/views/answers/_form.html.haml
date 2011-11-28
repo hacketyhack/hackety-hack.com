@@ -2,7 +2,8 @@
   = f.error_notification
 
   .inputs
-    = f.input :description, :as => :text, :label => "Answer"
+    = f.input :description, :as => :text, :label => "Answer",
+    :hint => "You can format your input with <a href=\"http://daringfireball.net/projects/markdown/\">Markdown</a>".html_safe
 
   .actions
     = f.button :submit, :value => "Post Answer", :class => "primary btn"
