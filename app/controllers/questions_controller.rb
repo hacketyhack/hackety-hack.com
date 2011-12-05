@@ -1,6 +1,7 @@
 class QuestionsController < InheritedController
-  before_filter :set_support
   load_and_authorize_resource
+  prepend_before_filter :set_presenter
+  prepend_before_filter :set_support
 
   def create
     @question = Question.create params[:question]
@@ -18,22 +19,31 @@ class QuestionsController < InheritedController
   end
 
   def collection
-    if @support
-      @questions ||= end_of_association_chain.supports.newest_first.paginate(:page => params[:page])
-    else
-      @questions ||= end_of_association_chain.no_supports.newest_first.paginate(:page => params[:page])
-    end
+    @questions = @presenter.apply_scope(end_of_association_chain).newest_first.paginate(:page => params[:page])
   end
-  
+
   def collection_url
-    @support ? support_questions_path : questions_path
+    collection_path
   end
+
+  def collection_path
+    @presenter.collection_path
+  end
+
   def new_resource_path
-    @support ? new_support_question_path : new_question_path
+    @presenter.new_resource_path
+  end
+
+  def resource_url(*params)
+    resource_path(params)
   end
   
-  def resource_path(*resource)
-    @support ? support_question_path(*resource) : question_path(*resource)
+  def resource_path(*other)
+    if other[0]
+      @presenter.resource_path(other)
+    else
+      @presenter.resource_path(resource)
+    end
   end
   
   def edit_resource_path
@@ -47,4 +57,12 @@ class QuestionsController < InheritedController
     end
   end
   
+  def set_presenter
+    if @support
+      @presenter = SupportPresenter.new(resource)
+    else
+      @presenter = QuestionPresenter.new(resource)
+    end
+  end
+
 end
