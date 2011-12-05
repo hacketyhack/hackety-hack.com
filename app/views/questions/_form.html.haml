@@ -1,5 +1,4 @@
-- curr_module = @support ? '/support' : ''
-= simple_form_for(resource, :url => curr_module.concat(@form_url)) do |f|
+= simple_form_for(resource, :url => @form_url) do |f|
   = f.error_notification
 
   .inputs

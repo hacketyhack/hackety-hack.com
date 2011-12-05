@@ -9,7 +9,9 @@ HacketyHackCom::Application.routes.draw do
   match "/download" => redirect("/downloads/latest")
 
   scope '/support', :as => 'support' do
-    resources :questions, :controller => 'questions'
+    resources :questions, :controller => 'questions' do
+      resources :answers
+    end
   end
 
   constraints(ApiConstraint) do
