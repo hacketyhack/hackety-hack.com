@@ -11,7 +11,7 @@ end
 
 module HacketyHackCom
   class Application < Rails::Application
-    config.autoload_paths += %W(#{config.root}/lib)
+    config.autoload_paths << "#{config.root}/lib" << "#{config.root}/presenters"
 
     config.encoding = "utf-8"
 
