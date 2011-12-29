@@ -1,5 +1,5 @@
 - content_for :title do
-  = "#{resource.username}'s page"
+  = "#{resource.username}'s Profile"
 
 -content_for :sidebar do
   %section.about-user
@@ -14,9 +14,8 @@
           = f.hidden_field :followee, :value => resource.id
           = f.button :submit, :value => "Follow", :class => "primary btn"
 
-    %h2= "About #{resource.username}"
-    %h4= resource.about
-    %hr
+    - unless resource.about.blank?
+      %p= resource.about
     %p
       = link_to pluralize(resource.programs.count, "Program"), user_programs_path(resource)
     %p
@@ -31,21 +30,25 @@
 
 
 - unless @user.questions.empty?
-  %section.questions
-    %header
-      %h2 Questions
-    - @user.questions.each do |question|
-      %article.question
-        %h4= link_to question.title, question_path(question)
+  %section.user-questions
+    .heading
+      %h3= pluralize(@user.questions.count, "Question")
+    %ul
+      - @user.questions.each do |question|
+        %li
+          .title
+            = link_to question.title, question_path(question)
+          .meta
+            asked #{question.created_at.strftime("%b %e, %l:%M %p")}
 
 - unless @user.answers.empty?
-  %section.answers
-    %header
-      %h2 Answers
-    - @user.answers.each do |answer|
-      %article.answer
-        %h4
-          = "#{@user.username} answered"
-          = link_to(answer.question.title, answer.question)
-          with:
-        %p= answer.description
+  %section.user-answers
+    .heading
+      %h3= pluralize(@user.answers.count, "Answer")
+    %ul
+      - @user.answers.each do |answer|
+        %li
+          .description
+            = answer.description.truncate(100)
+          .meta
+            = link_to("View Answer", answer.question)

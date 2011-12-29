@@ -19,7 +19,7 @@ end
 
 Then /^it should have the right information$/ do
   page.should have_selector('title', :content => "#{@user.username}'s page")
-  page.should have_content("About #{@user.username}")
+  page.should have_content("#{@user.username}'s Profile")
 end
 
 When /^I edit my profile$/ do

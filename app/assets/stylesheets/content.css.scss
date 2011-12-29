@@ -11,6 +11,27 @@ h2 {
   margin-bottom: 0.5em;
 }
 
+.heading {
+  @include clearfix;
+  padding: 0.75em;
+  background: $green;
+
+  h3, .description {
+    color: white;
+  }
+
+  h3 {
+    float: left;
+    margin-bottom: 0;
+    margin-right: 1em;
+  }
+  .description {
+    float: left;
+    margin-top: 0.2em;
+  }
+}
+
+
 .block-message {
   margin-bottom: 0.5em;
   p {
