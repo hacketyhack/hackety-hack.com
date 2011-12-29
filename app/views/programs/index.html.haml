@@ -1,29 +1,25 @@
-%h1 Every Awesome Program We've Got
+- content_for :title do
+  Programs
 
-Here's the motherload! Check out these great programs everybody has made!
+- unless @featured.blank?
+  #featured.programs
+    .heading
+      %h3 Featured
+      .description Our favorite selection of projects.
 
-%h2 The Super Sweet List
+    %ul
+      - @featured.each do |program|
+        %li
+          .title= program_link program
+          .author= author_link program.author_username
 
-We've picked out a few extra-awesome ones for your enjoyment.
+#all-programs.programs
+  .heading
+    %h3 All Programs
+    .description Every program uploaded by our users!
 
-%ul
-  %li
-    :markdown
-      [Connect Four](http://hackety-hack.com/users/wilkie/programs/connect_four), by [wilkie](http://hackety-hack.com/users/wilkie)
-  %li
-    :markdown
-      [Calender basic](http://hackety-hack.com/users/cyber/programs/calender_basic), by [cyber](http://hackety-hack.com/users/cyber)
-  %li
-    :markdown
-      [Space Invaders](http://hackety-hack.com/users/wilkie/programs/invaders), by [wilkie](http://hackety-hack.com/users/wilkie)
-  %li
-    :markdown
-      [Turtle Fun](http://hackety-hack.com/users/frog/programs/turtle_fun), by [frog](http://hackety-hack.com/users/frog)
-
-%h2 Other Great Programs
-
-Here it is: every single program we've got. Check them out!
-
-%ul
-  - collection.each do |program|
-    %li #{link_to program.title, program_path(program)}, by #{link_to program.author_username, "/users/#{program.author_username}"}
+  %ul
+    - @programs.each do |program|
+      %li
+        .title= program_link program
+        .author= author_link program.author_username

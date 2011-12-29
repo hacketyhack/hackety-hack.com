@@ -7,25 +7,25 @@ body {
 }
 
 .topbar {
-  position: relative;  
+  position: relative;
   height: auto;
   @include box-shadow(0px 1px 10px rgba(0,0,0,0.5));
   border-bottom: 1px solid $heading + #444;
 }
 
-header .topbar-inner {  
+header .topbar-inner {
   background: $heading;
   .container {
     padding: 0.6em 0;
   }
-  
+
   li a {
     border-radius: 8px;
     font-size: 14px;
     padding: 11px 11px 10px;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
   }
-  
+
   li a:hover {
     background-color: $heading + #111;
     text-shadow: none;
@@ -36,7 +36,7 @@ header .topbar-inner {
     margin-left: -40px;
     width: 185px;
     height: 40px;
-  
+
     a {
       position: absolute;
       top: -2px;
@@ -53,13 +53,13 @@ header .topbar-inner {
 #content-wrap {
   border-top: 1px solid ($heading + #444);
   margin: auto;
-  
+
   .container {
     position: relative;
-  }  
+  }
 }
 
-#content-wrap > .container { 
+#content-wrap > .container {
   background: white;
   border-radius: 0 0 8px 8px;
   padding: 40px 18px 18px;
@@ -70,7 +70,7 @@ header .topbar-inner {
   #content {
     @include columns(11);
   }
-  
+
   #sidebar {
     @include columns(5, true);
     .edit, .delete {
@@ -83,11 +83,11 @@ header .topbar-inner {
       padding: 1.5em;
     }
   }
-  
+
 }
 
-p, h1,h2,h3,h4,h5 {
-  color: #555;
+p,h1,h2,h3,h4,h5 {
+  color: $text-color;
 }
 
 .alert-message {
@@ -98,7 +98,7 @@ p, h1,h2,h3,h4,h5 {
 footer {
   background: $heading;
   padding: 0.5em 0;
-  
+
   .pills {
     margin: 0;
     a {
@@ -108,5 +108,5 @@ footer {
     a:hover {
       background-color: #444;
     }
-  } 
+  }
 }

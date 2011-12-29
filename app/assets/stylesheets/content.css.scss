@@ -1,33 +1,19 @@
 p {
-  margin: 0;
-  padding-bottom: 0.5em;
+  margin-bottom: 1em;
 }
 
-#faq {
-  h2 {
-    line-height: 1.15;
-    padding: 0.5em 0;
-    margin: 0.5em 0;
-    border-bottom: 1px solid #DDD;
-  }
-  h1 {
-    margin-top: 1em;
-    color: $heading;
-  }
+h1 {
+
 }
 
-.page-title {
-  margin-bottom: 17px;
-  border-bottom: 1px solid #DDD;
-  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-}
-
-.page-title h1 {
-  margin-bottom: 0px;
+h2 {
+  font-size: 1.75em;
+  margin-bottom: 0.5em;
 }
 
 .block-message {
-  margin-top: 18px;
+  margin-bottom: 0.5em;
+  p {
+    margin-bottom: 1em;
+  }
 }

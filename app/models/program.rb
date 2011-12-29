@@ -5,8 +5,10 @@ class Program
   key :slug, String
   key :title, String
   key :source_code, String
+  key :featured, Boolean
 
   scope :by_username,  lambda { |username| where(:author_username => username) }
+  scope :featured, where(:featured => true)
 
   before_create :make_slug
 
@@ -20,5 +22,6 @@ class Program
   def to_param
     slug
   end
+
 
 end

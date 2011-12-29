@@ -23,13 +23,13 @@
   .container {
     padding-top: 0;
   }
-  
+
   border-top: none;
   section {
     @include clearfix;
     background: white;
     padding-bottom: 1em;
-    
+
     p {
       font-size: 1.25em;
       line-height: 1.75em;
@@ -45,7 +45,7 @@
     }
 
   }
-  
+
   #download {
     background: white url("download.png") 0 4em no-repeat;
     h1 {
@@ -58,7 +58,7 @@
       text-align: center;
       margin-top: 1em;
       margin-bottom: 1em;
-      
+
       .download {
         text-transform: uppercase;
         margin-bottom: 1em;
@@ -72,7 +72,7 @@
       @include offset(5);
     }
   }
-  
+
   #explore {
     background: white url("explore.png") 95% 7em no-repeat;
     h1 {
@@ -84,7 +84,7 @@
       margin-left: 2em;
     }
   }
-  
+
   #ask {
     background: white url("ask.png") 0 7em no-repeat;
     min-height: 340px;
@@ -99,40 +99,3 @@
     }
   }
 }
-
-/*.body-home #content-wrap {
-  border-top: none;*/
-/*  section {
-    @include clearfix;
-    margin: 0 36px 36px 18px;
-    padding-bottom: 36px;
-    border-bottom: 6px dotted $linkColor;
-    
-    font-size: 1.7em;
-
-    h1 {
-      font-size: 1.6em;
-    }
-    p {
-      font-size: 1em;
-      line-height: 1.5em;
-      margin-bottom: 1em;
-    }
-    
-    img.new_program {
-      @include columns(5);
-    }
-    img.lesson {
-      @include columns(8);
-      float: right;
-      margin-right: 0;
-      margin-left: $gridGutterWidth*2;
-
-    }
-  }
-  
-  section.last {
-    border: none;
-    margin-bottom: 0;
-  }
-}*/

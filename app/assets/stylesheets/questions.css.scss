@@ -4,7 +4,7 @@
     margin-bottom: 0.15em;
   }
   .meta {
-    a { 
+    a {
       font-style: italic;
     }
     font-style: italic;
@@ -32,10 +32,10 @@
       }
       @include columns(1);
       padding: 6px
-    }    
+    }
     .summary {
       @include columns(9, last);
-      
+
       h2 {
         line-height: 1;
         margin-bottom: 0.15em;
@@ -45,7 +45,7 @@
       }
     }
   }
-  
+
   .unanswered {
     .answer-count, .answer-count h3 {
       color: $orangered;
@@ -59,17 +59,16 @@
   .accepted {
     background-image: url("accepted.png");
   }
-  
+
 }
 
 .question {
-  color: #555;
   p {
     font-size: 1.15em;
     line-height: 1.5;
     margin-bottom: 1.25em;
   }
-  
+
   h2 {
     margin-top: 0.5em;
     padding-bottom: 0.5em;
@@ -83,8 +82,8 @@
       position: relative;
       list-style-type: none;
       padding: 1em 1em;
-      border-bottom: 1px solid #ddd;  
-  
+      border-bottom: 1px solid #ddd;
+
       .choose {
         float: left;
         opacity: 0.5;
@@ -106,5 +105,5 @@
   }
   .selected-answer {
   	background: rgba(158, 183,68, 0.1) url("accepted.png") 99% 0.5em no-repeat;
-  }  
+  }
 }

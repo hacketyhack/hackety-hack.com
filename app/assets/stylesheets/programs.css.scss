@@ -28,14 +28,23 @@
     padding-top: 1em;
 
     li {
-      @include columns(4);
+      @include columns(5);
       padding: 0.75em 0;
       border-top: 1px solid #ddd;
+
+      .title {
+        font-weight: bold;
+        margin-bottom: 0.1em;
+      }
+
+      .author {
+        a {
+          font-style: italic;
+          color: lighten($text-color, 20%);
+        }
+      }
     }
-    li:nth-child(4n) {
-      margin-right: 0;
-    }
-    li:nth-child(4n+1) {
+    li:nth-child(3n+1) {
       clear: both;
     }
   }

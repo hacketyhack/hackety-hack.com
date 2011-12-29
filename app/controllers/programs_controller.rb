@@ -4,9 +4,9 @@ class ProgramsController < InheritedController
   belongs_to :user, :optional => true
   respond_to :html, :only => [:index, :show]
 
-  def show
-    # @program = Program.find_by_slug(params[:slug])
-    show!
+  def index
+    @featured = Program.featured
+    index!
   end
 
   #################

@@ -49,6 +49,8 @@
           .alert-message.alert
             #{flash[:alert]}
 
+        = yield :alert
+
         - unless title.empty?
           .page-title
             %h1.title
