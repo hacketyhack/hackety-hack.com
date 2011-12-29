@@ -1,7 +1,10 @@
 - content_for :title do
-  Programs
+  - if @user
+    #{@user.username}'s Programs
+  - else
+    Programs
 
-- unless @featured.blank?
+- unless @featured.blank? or @user
   #featured.programs
     .heading
       %h3 Featured
@@ -14,12 +17,18 @@
           .author= author_link program.author_username, program
 
 #all-programs.programs
-  .heading
-    %h3 All Programs
-    .description Every program uploaded by our users!
+  - unless @user
+    .heading
+      %h3 All Programs
+      .description Every program uploaded by our users!
 
   %ul
     - @programs.each do |program|
       %li
         .title= program_link program
         .author= author_link program.author_username, program
+
+- if @user
+  %ul.inline-menu.bottom-nav
+    %li= link_to "All Programs", programs_path
+    %li= link_to "#{@user.username}'s profile", user_path(@user)

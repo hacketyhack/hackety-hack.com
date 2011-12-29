@@ -19,10 +19,9 @@
     by
     = link_to @program.author_username, user_path(@program.author_username)
 
-%pre.prettyprint= @program.source_code
+#program
+  %pre.prettyprint= @program.source_code
 
-%hr/
-
-%h3 Other Programs
-
-Make sure to check out all the other programs other users have made on the #{link_to "All Programs page", programs_path}!
+  %ul.inline-menu.bottom-nav
+    %li= link_to "#{@program.author_username}'s programs", user_programs_path(@program.author_username)
+    %li= link_to "All Programs", programs_path

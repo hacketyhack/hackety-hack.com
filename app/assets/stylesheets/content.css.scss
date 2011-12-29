@@ -17,3 +17,25 @@ h2 {
     margin-bottom: 1em;
   }
 }
+
+ul.inline-menu {
+  @include clearfix;
+  list-style-type: none;
+  margin: 0;
+  li {
+    float: left;
+    padding-right: 1em;
+    border-right: 1px solid #ccc;
+    margin-right: 1em;
+  }
+  li:last-child {
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.bottom-nav {
+  border-top: 1px solid #ccc;
+  padding-top: 1.5em;
+}

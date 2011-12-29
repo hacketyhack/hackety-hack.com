@@ -17,12 +17,12 @@
     %h2= "About #{resource.username}"
     %h4= resource.about
     %hr
-    %p 
-      = link_to "Programs", user_programs_path(resource)
-    %p 
+    %p
+      = link_to pluralize(resource.programs.count, "Program"), user_programs_path(resource)
+    %p
       Following:
       =link_to resource.following.count, resource_path(resource) + "/following"
-    %p 
+    %p
       Followers:
       = link_to resource.followers.count, resource_path(resource) + "/followers"
     %hr
@@ -32,7 +32,7 @@
 
 - unless @user.questions.empty?
   %section.questions
-    %header 
+    %header
       %h2 Questions
     - @user.questions.each do |question|
       %article.question
@@ -44,7 +44,7 @@
       %h2 Answers
     - @user.answers.each do |answer|
       %article.answer
-        %h4 
+        %h4
           = "#{@user.username} answered"
           = link_to(answer.question.title, answer.question)
           with:
