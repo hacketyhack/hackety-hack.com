@@ -9,6 +9,7 @@
   .inputs
     = f.input :password, :hint => "Leave it blank if you don't want to change it", :required => false
     = f.input :password_confirmation, :required => false
+    = f.input :current_password, :hint => "we need your current password to confirm your changes", :required => true
   .inputs
     = f.input :about, :as => :text
   .actions
