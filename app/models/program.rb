@@ -6,6 +6,7 @@ class Program
   key :title, String
   key :source_code, String
   key :featured, Boolean
+  timestamps!
 
   scope :by_username,  lambda { |username| where(:author_username => username) }
   scope :featured, where(:featured => true)

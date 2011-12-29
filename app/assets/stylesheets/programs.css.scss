@@ -38,9 +38,8 @@
       }
 
       .author {
-        a {
-          font-style: italic;
-          color: lighten($text-color, 20%);
+        a, & {
+          color: lighten($text-color, 40%);
         }
       }
     }

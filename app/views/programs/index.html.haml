@@ -11,7 +11,7 @@
       - @featured.each do |program|
         %li
           .title= program_link program
-          .author= author_link program.author_username
+          .author= author_link program.author_username, program
 
 #all-programs.programs
   .heading
@@ -22,4 +22,4 @@
     - @programs.each do |program|
       %li
         .title= program_link program
-        .author= author_link program.author_username
+        .author= author_link program.author_username, program
