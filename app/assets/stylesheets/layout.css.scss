@@ -3,12 +3,7 @@ html {
 }
 
 body {
-  color: $text-color;
   background: $background url("square_bg.png") fixed;
-}
-
-p,h1,h2,h3,h4,h5 {
-  color: $text-color;
 }
 
 .topbar {
@@ -91,6 +86,9 @@ header .topbar-inner {
 
 }
 
+p,h1,h2,h3,h4,h5 {
+  color: $text-color;
+}
 
 .alert-message {
   margin-top: -18px;
