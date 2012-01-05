@@ -51,7 +51,7 @@ class QuestionsController < InheritedController
   end
   
   def set_support
-    @support = request.env['PATH_INFO'].include?('support')
+    @support = request.env['PATH_INFO'].include?('support') || params[:support]
     if @support && params[:question]
       params[:question][:support] = true
     end
