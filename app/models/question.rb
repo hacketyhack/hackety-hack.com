@@ -14,5 +14,5 @@ class Question
 
   scope :newest_first, sort(:created_at.desc)
   scope :supports, where(:support => true )
-  scope :no_supports, where(:support => nil)
+  scope :no_supports, where('$or' => [{:support=> false}, {:support => nil}])
 end
