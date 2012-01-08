@@ -23,4 +23,7 @@ RSpec.configure do |config|
   config.before(:each) do
     DatabaseCleaner[:mongo_mapper].clean
   end
+
+  config.include(MailerMacros)
+  config.before(:each) { reset_email }
 end
