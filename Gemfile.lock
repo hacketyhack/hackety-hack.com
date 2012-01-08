@@ -44,6 +44,7 @@ GEM
       activesupport (= 3.1.0)
     activesupport (3.1.0)
       multi_json (~> 1.0)
+    addressable (2.2.6)
     arel (2.2.1)
     bcrypt-ruby (3.0.1)
     bson (1.5.2)
@@ -112,6 +113,8 @@ GEM
       thor (~> 0.14)
     json (1.6.4)
     kgio (2.7.2)
+    launchy (2.0.5)
+      addressable (~> 2.2.6)
     mail (2.3.0)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -244,6 +247,7 @@ DEPENDENCIES
   jnunemaker-validatable (>= 1.8.4)
   jquery-rails
   json
+  launchy
   mm-devise (>= 1.2)
   mocha
   mongo_mapper
