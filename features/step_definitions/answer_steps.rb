@@ -23,3 +23,8 @@ Then /^my answer should show on my profile page$/ do
   page.should have_content(@question.title)
   page.should have_content("Have you tried turning it off and on again?")
 end
+
+Then /^an email should be sent to the author$/ do
+  ActionMailer::Base.deliveries.should_not be_empty
+end
+
