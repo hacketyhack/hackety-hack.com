@@ -1,0 +1,16 @@
+- submit_label ||= "Update"
+= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+  = f.error_notification
+  .inputs
+    = f.input :username, :autofocus => true
+    = f.input :email, :autofocus => true
+  .inputs
+    = f.input :password, :hint => "Leave it blank if you don't want to change it", :required => false
+    = f.input :password_confirmation, :required => false
+  .inputs
+    = f.input :about, :as => :text
+  - unless resource.new_record?
+    .inputs
+      = f.input :current_password, :required => true, :hint => "We need your password to update your account."
+  .actions
+    = f.button :submit, submit_label, :class => "btn primary"
