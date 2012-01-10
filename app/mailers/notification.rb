@@ -1,6 +1,6 @@
 class Notification < ActionMailer::Base
   default from: "steve@hackety.com"
-  default_url_options[:host] = "example.com"
+  default_url_options[:host] = "hackety.com"
 
   def new_answer(question)
     @question = question
