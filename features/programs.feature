@@ -14,3 +14,9 @@ Feature: Access Programs
   Scenario: View another user's programs
     Given a user has uploaded a program
     Then I should be able to view their programs
+
+  Scenario: View a program with a description
+    Given a user has uploaded a program
+    And they have given their program a description
+    Then I should be able to view their programs
+    And I should see the description on their program

@@ -30,6 +30,13 @@ Given /^a user has uploaded a program$/ do
   upload_program(@user)
 end
 
+Given /^they have given their program a description$/ do
+  @program = Program.last
+  @program.description = "A really cool program!"
+  @program.save
+end
+
+
 def visit_user_programs_page
   visit user_path(@user)
   within ".about-user" do
@@ -44,4 +51,8 @@ end
 
 Then /^I should be able to view their programs$/ do
   visit_user_programs_page
+end
+
+Then /^I should see the description on their program$/ do
+  page.should have_content("A really cool program!")
 end
