@@ -1,7 +1,8 @@
 require 'spec_helper'
 
 describe Program do
-    let(:prog) { Program.create(author_username: 'tester', title: 'test title')}
+  let(:prog) { Program.create(author_username: 'tester', title: 'test title')}
+
   it "sets the slug" do
     prog.slug.should == 'test-title'
   end
