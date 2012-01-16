@@ -15,7 +15,8 @@ end
 def upload_program(user)
   @program = Program.create!(:author_username => user.username,
                               :slug => "slug",
-                              :title => "#{user.username}'s program")
+                              :title => "#{user.username}'s program",
+                              :source_code => "puts 'Hello world'")
 end
 
 Given /^I have uploaded a program$/ do
@@ -53,6 +54,18 @@ Then /^I should be able to view their programs$/ do
   visit_user_programs_page
 end
 
-Then /^I should see the description on their program$/ do
+When /^I click the first program link$/ do
+  within ".programs_list" do
+    find("li:first-child a").click()
+  end
+end
+
+Then /^I should see the program source$/ do
+  within("#program") do
+    page.should have_content("puts 'Hello world'")
+  end
+end
+
+Then /^I should see the description of their program$/ do
   page.should have_content("A really cool program!")
 end
