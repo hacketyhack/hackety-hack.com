@@ -19,6 +19,9 @@
     by
     = link_to @program.author_username, user_path(@program.author_username)
 
+.description
+  %p= @program.description
+
 #program
   %pre.prettyprint= @program.source_code
 

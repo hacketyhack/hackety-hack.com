@@ -4,6 +4,7 @@ class Program
   key :author_username, String
   key :slug, String
   key :title, String
+  key :description, String
   key :source_code, String
   key :featured, Boolean
   timestamps!
