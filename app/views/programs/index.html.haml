@@ -10,7 +10,7 @@
       %h3 Featured
       .description Our favorite selection of projects.
 
-    %ul.featured_programs_list
+    %ul
       - @featured.each do |program|
         %li
           .title= program_link program
@@ -22,7 +22,7 @@
       %h3 All Programs
       .description Every program uploaded by our users!
 
-  %ul.programs_list
+  %ul
     - @programs.each do |program|
       %li
         .title= program_link program

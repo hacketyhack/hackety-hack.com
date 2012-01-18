@@ -55,7 +55,7 @@ Then /^I should be able to view their programs$/ do
 end
 
 When /^I click the first program link$/ do
-  within ".programs_list" do
+  within "#all-programs ul" do
     find("li:first-child a").click()
   end
 end

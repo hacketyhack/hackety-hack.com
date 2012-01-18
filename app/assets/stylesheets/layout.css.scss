@@ -3,6 +3,7 @@ html {
 }
 
 body {
+  min-width: 976px;
   color: $text-color;
   background: $background url("square_bg.png") fixed;
 }
