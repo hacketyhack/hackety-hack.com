@@ -1,28 +1,55 @@
-#The first part of any Gemfile is to list sources.
-#Most gems are located at rubygems.org
-source "http://rubygems.org"
+source 'http://rubygems.org'
 
-#after that, we use the 'gem' statement to list what gems we want to use.
-#we can also add version requirements so that we get the exact version.
+gem 'rails', '3.1.0'
+gem 'json'
 
-#see more at http://gembundler.com/
+gem 'haml-rails'
+gem 'jquery-rails'
+gem 'mongo_mapper'
+gem 'bson_ext'
 
-gem "sinatra", "=1.0"
-gem "haml", "3.0.13"
-gem "rspec", "=1.3.0"
-gem "cucumber"
-gem "webrat"
-gem "mongo_mapper", "=0.8.2"
-gem "cucumber-sinatra"
-gem "capybara"
-gem "factory_girl", "=1.3.1"
-gem "database_cleaner", "=0.5.2"
-gem "rack-flash", "=0.1.1"
-gem "rdiscount", "=1.6.5"
-gem "autotest"
-if RUBY_PLATFORM =~ /darwin/
-	gem "autotest-fsevent"
-	gem "autotest-growl"
+# Gems used only for assets and not required
+# in production environments by default.
+group :assets do
+  gem 'sass-rails', "  ~> 3.1.0"
+  gem 'coffee-rails', "~> 3.1.0"
+  gem 'uglifier'
 end
-gem "bson_ext", ">=1.0.4"
-gem "launchy"
+
+gem 'jnunemaker-validatable', '>= 1.8.4' # Required by mm-devise
+gem 'devise',                 '>= 1.2'
+gem 'mm-devise',              '>= 1.2'
+gem 'cancan'
+
+gem 'inherited_resources'
+gem 'simple_form', :git => "https://github.com/bitzesty/bootstrap_form.git"
+gem "semantic_menu", :git => "git://github.com/michaek/semantic_menu.git"
+
+gem 'will_paginate'    # Pagination
+gem 'rdiscount'   # Markdown
+
+
+group :development do
+  # Use unicorn as the web server
+  gem 'unicorn'
+end
+
+
+group :development, :test do
+  gem 'fabrication'
+  gem 'rspec-rails'
+  gem 'cucumber-rails'
+  gem "faker"
+  gem 'pry'
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg' # ugh heroku
+end
+
+group :test do
+  gem "mocha"
+  gem "database_cleaner"
+  gem "launchy"
+end

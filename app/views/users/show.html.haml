@@ -1,0 +1,54 @@
+- content_for :title do
+  = "#{resource.username}'s Profile"
+
+-content_for :sidebar do
+  %section.about-user
+    %img{:src => gravatar_url(resource.email)}
+    - if current_user && current_user != resource
+      -if current_user.following?(resource)
+        = simple_form_for(resource, :url => resource_path(current_user) + '/unfollow', :method=>:post) do |f|
+          = f.hidden_field :followee, :value => resource.id
+          = f.button :submit, :value => "Unfollow", :class => "primary btn"
+      - else
+        = simple_form_for(resource, :url => resource_path(current_user) + '/follow', :method=>:post) do |f|
+          = f.hidden_field :followee, :value => resource.id
+          = f.button :submit, :value => "Follow", :class => "primary btn"
+
+    - unless resource.about.blank?
+      %p= resource.about
+    %p
+      = link_to pluralize(resource.programs.count, "Program"), user_programs_path(resource), :class => "user-programs"
+    %p
+      Following:
+      =link_to resource.following.count, resource_path(resource) + "/following"
+    %p
+      Followers:
+      = link_to resource.followers.count, resource_path(resource) + "/followers"
+    %hr
+    - if can? :update, resource
+      = link_to "Change My Settings", edit_registration_path(resource), :class => "btn success"
+
+
+- unless @user.questions.empty?
+  %section.user-questions
+    .heading
+      %h3= pluralize(@user.questions.count, "Question")
+    %ul
+      - @user.questions.each do |question|
+        %li
+          .title
+            = link_to question.title, question_path(question)
+          .meta
+            asked #{question.created_at.strftime("%b %e, %l:%M %p")}
+
+- unless @user.answers.empty?
+  %section.user-answers
+    .heading
+      %h3= pluralize(@user.answers.count, "Answer")
+    %ul
+      - @user.answers.each do |answer|
+        %li
+          .description
+            = answer.description.truncate(100)
+          .meta
+            = link_to("View Answer", answer.question)

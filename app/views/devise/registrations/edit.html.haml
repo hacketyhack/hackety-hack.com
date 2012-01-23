@@ -1,0 +1,10 @@
+- content_for :title do
+  Edit #{resource_name.to_s.humanize}
+
+= render :partial => "users/form", :locals => {:submit_label => "Update"}
+
+- content_for :sidebar do
+  %section
+    %h2 Cancel my account
+    %p
+      Unhappy? #{link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete}.

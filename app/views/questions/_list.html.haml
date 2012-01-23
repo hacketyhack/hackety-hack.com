@@ -1,0 +1,15 @@
+%li.item{:id=>list.id, :class => list.answers.count > 0 ? (list.solution_id.nil? ? "answered" : "accepted") : "unanswered"}
+  .answer-count
+    %h3= list.answers.count
+    #{list.answers.count == 1 ? "answer" : "answers"}
+  .summary
+    %h2.title= link_to list.title, resource_path(list)
+    .meta
+      Asked by
+      %span.name= link_to list.user.username, user_path(list.user)
+
+      %span.date= time_ago_in_words(list.created_at)
+      ago
+    .description= truncate(list.description, :length => 150)
+    - if current_user && current_user.moderator?
+      %div.move_question= link_to "Move to #{list.support? ? 'Questions' : 'Support'} »", question_path(list, :question => { :support => (list.support? ? "false" : "true") }), :method => :put, :class => "btn small info"

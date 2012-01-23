@@ -1,0 +1,37 @@
+- @content_class = "question"
+- content_for :title do
+  = resource.title
+
+- content_for :sidebar do
+  - if can? :update, resource
+    = link_to 'Edit', edit_resource_path, :class => "edit btn"
+  - if can? :destroy, resource
+    = link_to 'Delete', resource_path, :class => "delete btn", :confirm => 'Are you sure?', :method => :delete
+
+
+  = render :partial => "shared/ask"
+  - if @support
+    = render :partial => "shared/questions_blurb"
+  - else
+    = render :partial => "shared/support_blurb"
+
+.meta
+  Asked
+  - if resource.user
+    by
+    %span.name= link_to resource.user.username, user_path(resource.user)
+
+  %span.date= time_ago_in_words(resource.created_at)
+  ago
+
+
+.description
+  :markdown
+    #{resource.description}
+
+%h2= pluralize(resource.answers.count, "response")
+%ul.answers
+  = render :partial => "answers/list", :collection => resource.answers
+
+- if can? :create, Answer
+  = render :partial => "answers/form"

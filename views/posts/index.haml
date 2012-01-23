@@ -1,8 +1,0 @@
-#content
-	- @posts.each do |post|
-		.post
-			%h1= post.title
-			- markdown = RDiscount.new(post.body, :smart, :filter_html)
-			%p!= markdown.to_html
-			%a{:href => "/posts/#{post.slug}"}= "#{post.comments.count} comments"
-			%hr

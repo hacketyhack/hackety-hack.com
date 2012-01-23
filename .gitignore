@@ -1,6 +1,9 @@
-log/*
+.bundle
 db/*.sqlite3
-rerun.txt
+log/*.log
+tmp/
+.sass-cache/
+*.rbc
+.DS_Store
 *.swp
-*~
-.bundle/*
+.redcar

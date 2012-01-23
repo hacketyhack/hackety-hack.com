@@ -1,0 +1,6 @@
+- title @program.title
+
+%p= @program.title
+%p By #{@program.author_username}
+
+%p= link_to "Back to list of all programs", programs_path, :rel => "/rels/program-index"

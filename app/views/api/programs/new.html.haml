@@ -1,0 +1,12 @@
+= simple_form_for(resource, :url => @form_url) do |f|
+  = f.error_notification
+
+  .inputs
+    = f.input :author_username
+    = f.input :slug
+    = f.input :title
+    = f.input :source_code, :as => :text
+
+  .actions
+    = f.button :submit
+

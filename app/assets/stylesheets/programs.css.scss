@@ -1,0 +1,36 @@
+.programs {
+
+  margin-bottom: 2em;
+
+  ul {
+    @include clearfix;
+    margin: 0;
+    padding-top: 1em;
+
+    li {
+      @include columns(5);
+      padding: 0.75em 0;
+      border-top: 1px solid #ddd;
+
+      .title {
+        font-weight: bold;
+        margin-bottom: 0.1em;
+      }
+
+      .author {
+        a, & {
+          color: lighten($text-color, 40%);
+        }
+      }
+    }
+    li:nth-child(3n+1) {
+      clear: both;
+    }
+  }
+}
+
+#featured {
+  .heading {
+    background: $orangered;
+  }
+}

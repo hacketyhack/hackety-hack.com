@@ -1,0 +1,70 @@
+- @page_class ||= "page"
+!!!
+%html
+  %head
+    - title = yield :title
+    %title #{title.blank? ? "" : "#{title} | "}Hackety Hack!
+
+    <meta name = "viewport" content = "width = device-width">
+    / <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap-1.2.0.min.css">
+
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+    - if Rails.env.production?
+      :javascript
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-10499799-1']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+              var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+              ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+            })();
+
+    <script src="/assets/prettify.js"></script>
+    <script>$(function () { prettyPrint() })</script>
+    <link href="/assets/prettify.css" rel="stylesheet">
+
+  %body{:class => "body-#{@page_class}"}
+    %header.topbar
+      .topbar-inner
+        .container
+          #logo
+            = link_to "Hackety Hack", root_path
+          = render "shared/menu/main"
+          = render "shared/menu/user"
+
+    = yield :top
+
+    - sidebar = yield :sidebar
+
+    #content-wrap{:class => @page_class}
+      .container{:class => sidebar.empty? ? "one-column" : "two-column"}
+        - if flash[:notice]
+          .alert-message.success
+            #{flash[:notice]}
+        - if flash[:alert]
+          .alert-message.alert
+            #{flash[:alert]}
+
+        = yield :alert
+
+        - unless title.empty?
+          .page-title
+            %h1.title
+              = title
+              %small= yield :subtitle
+
+        #content{:class => @content_class}
+          = yield
+
+        - unless sidebar.empty?
+          #sidebar
+            = sidebar
+
+    %footer
+      .container
+        = render "shared/menu/footer"
+

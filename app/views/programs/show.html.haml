@@ -1,0 +1,30 @@
+- unless current_user
+  - content_for :alert do
+    .alert-message.block-message.info
+      %p
+        = author_link @program.author_username
+        and many others are using
+        %strong Hackety Hack
+        to learn how to code.
+      %p Hackety Hack is a free program for Windows, Mac OS X and Linux that can teach you how to make games, applications and more and share those programs with your friends. You can ask other budding programmers questions and follow them to see what code they're working on through the Hackety Hack website.
+
+      = link_to "Sign up", new_user_registration_path, :class => "btn primary"
+      = link_to "Learn More", root_path, :class => "btn"
+
+- content_for :title do
+  = @program.title
+
+- content_for :subtitle do
+  %small
+    by
+    = link_to @program.author_username, user_path(@program.author_username)
+
+.description
+  %p= @program.description
+
+#program
+  %pre.prettyprint= @program.source_code
+
+  %ul.inline-menu.bottom-nav
+    %li= link_to "#{@program.author_username}'s programs", user_programs_path(@program.author_username)
+    %li= link_to "All Programs", programs_path

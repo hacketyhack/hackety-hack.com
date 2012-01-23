@@ -1,7 +1,0 @@
-%h1 Reply to #{@discussion_title}
-%form{:action => "/forums/reply/to/#{@forum}/#{@discussion}", :method => "POST"}
-	%label{:for => "reply_body"} Body
-	%br
-	%textarea{:id => "reply_body", :name => "reply[body]", :rows => 20, :cols => 50}
-	%br
-	%input{:type => "submit", :value => "Create Reply"}

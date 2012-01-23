@@ -1,0 +1,11 @@
+$heading: #253E59;
+$background: $heading + #999;
+$text-color: #555;
+
+$orangered: #BF4904;
+
+@mixin container {
+  width: 940px;
+  padding: 0 18px;
+  margin: auto;
+}

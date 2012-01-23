@@ -1,0 +1,54 @@
+/*
+ * Scaffolding
+ * Basic and global styles for generating a grid system, structural layout, and page templates
+ * ------------------------------------------------------------------------------------------- */
+
+// STRUCTURAL LAYOUT
+// -----------------
+
+html, body {
+  background-color: #fff;
+}
+body {
+  margin: 0;
+  @include font-sans-serif(normal,$basefont,$baseline);
+  color: $gray;
+}
+
+// Container (centered, fixed-width layouts)
+.container {
+  width: 940px;
+  margin: 0 auto;
+}
+
+// Fluid layouts (left aligned, with sidebar, min- & max-width content)
+.container-fluid {
+  padding: 0 20px;
+  @include clearfix;
+  > .sidebar {
+    float: left;
+    width: 220px;
+  }
+  // TODO in v2: rename this and .popover .content to be more specific
+  > .content {
+    min-width: 700px;
+    max-width: 1180px;
+    margin-left: 240px;
+  }
+}
+
+
+// BASE STYLES
+// -----------
+
+// Links
+a {
+  color: $linkColor;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+  &:hover {
+    color: $linkColorHover;
+    text-decoration: underline;
+  }
+}

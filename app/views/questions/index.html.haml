@@ -1,0 +1,17 @@
+- content_for :title do
+  -if @support
+    Support Questions
+  -else
+    Questions
+
+- content_for :sidebar do
+  = render :partial => "shared/ask"
+  - if @support
+    = render :partial => "shared/questions_blurb"
+  - else
+    = render :partial => "shared/support_blurb"
+
+%ul.questions
+  = render :partial => "list", :collection => collection
+
+= will_paginate

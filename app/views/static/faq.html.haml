@@ -1,0 +1,85 @@
+- content_for :sidebar do
+  = render :partial => "shared/ask"
+  = render :partial => "shared/support_blurb"
+
+- content_for :title do
+  Frequently Asked Questions
+
+#faq
+  :markdown
+    ##My install of Hackety-Hack crashes?
+
+    Yes, we noticed that. Sorry. Multi-platform weirdness and all that. There are some known problems with HH on Windows Vista and XP, and they are being worked on.
+
+    Always check you have the latest updates at the [Hackety Hack Downloads page](http://hackety-hack.com/downloads) just in case something has been fixed.
+
+    Also, some Windows users have found that moving HH to C:\apps instead of C:\Programs.... makes HH a little happier.
+
+    ##What tutorials are available after I finish 'Beyond Shoes'?
+
+    There will be more Tutorials added in the future. Meanwhile may I direct your curious minds to the following excellent resources on learning more about Shoes, Ruby and programming:
+
+    + [Shoes website](http://shoesrb.com "Shoooooes!") : links to several things Shoes-y, some repeated below.
+    + [Shoes Manual](http://shoesrb.com/manual/Hello.html "Shoes Manual!") : a light waltz through Shoes. This is available through Hackety Hack's 'Help' menu;
+    + [Nobody Knows Shoes](http://cloud.github.com/downloads/shoes/shoes/nks.pdf "Nobody Knows Shoes, with Midas") : _why's tutorial on Shoes and all the useful bits in it. Many, many, bits.
+    + Chris Pine's [Learn to program](http://pine.fm/LearnToProgram "Learn to program 1st Ed") : 1st Edition is online for free. 2nd Edition Book it as [Pragmatic Programmers](pragprog.com/LearnToProgram "Pragprog - Learn to Program 2nd Ed") is bigger, better and has many more examples)
+    + Poignant Guide to Ruby : the delightful exploration of ruby with some foxes, chunky bacon, and more of _why's stylish examples. [get it here](http://cloud.github.com/downloads/devyn/shoes-web/whys-poignant-guide-to-ruby.pdf "Poignant guide to Ruby")
+    + [Learn Ruby the Hard Way](http://ruby.learncodethehardway.org/book/) : Don't let the title scare you. This book does not assume any programming skills and yet it's great for novices.
+
+    ##Why can't I see the Turtle?
+
+    The tutorial on Turtle graphics uses `Turtle.draw` which gives the Turtle super-speed: it does the job and hides the turtle before you even see it. Turtles can be surprisingly fast.
+
+    Change `Turtle.draw` to `Turtle.start` to see the turtle (whom I have nicknamed 'Chell') perform each of your commands. You can also do things like saying 'Chell! I command thee!' before each step, although it will not change the program outcome. But you might enjoy it.
+
+    ##Where are my programs and samples stored?
+
+    *Linux*
+
+    + My Programs: your home directory, in the hidden folder '.hacketyhack' (eg: \users\jsmith\\.hacketyhack).
+    + Samples are in the 'samples' directory in the My Programs directory.
+
+    *Mac OS X*
+
+    + My Programs: your home directory, in the hidden folder '.hacketyhack' (eg: \Users\jsmith\\.hacketyhack). Quickest way to get there using the Finder menus > Go > Go to Folder > type `~/.hacketyhack/` then click 'Go'. The files are plain text and can be opened in any text editor.
+    + Samples are in the Hackety Hack Package (/Applications then right-click on Hackety Hack > Show Package Contents > Contents > MacOS > app > samples)
+
+    *Windows Vista / XP*
+
+    + My Programs:  In your _username_ 'Documents and Settings' folder (eg: C:\Documents and Settings\jsmith\\.hacketyhack). For the interested, the '.' at the start is left over from Linux and Mac and would otherwise make this folder hidden. But it's not on Windows.
+    + Samples are under the Shoes folder in 'Program Files' (eg: C:\Program Files\Common Files\Shoes\0.r1514\samples)
+
+    ##How do I upload my programs to hackety-hack.com
+
+    1. Create an account on hackety-hack.com. Start by clicking #{link_to 'here', new_user_registration_path}
+    2. In the HH application look for the 'Preferences' icon on the lower left side of the window
+    3. Enter your hackety-hack.com account name and password then click 'Save'
+    4. Now, when you create or edit a program, the 'Upload' button will be available to automatically upload the program to your page.
+
+    ##What is the 'Preferences' page and the 2 text boxes?
+
+    The 'Preferences'  are for you to type your Hackety-hack.com account details, for uploading files to your hackety-hack.com profile page.
+    This is a way for you to show others what you are doing, and a way of sharing code if you are having problems.
+    When you enter any programs there will be an 'Upload' button in the editor (next to Run) which you can use to, well, *upload* the program to your Hackety-Hack.com profile page (on the hackety-hack.com site, click 'My Page' at top-right)
+
+    ##Where is my page on hackety-hack.com?
+
+    Check the upper right hand side of the page: when you're logged in, it has your username. Click it to go to your page.
+
+    You can usually click on another user's name to get to their page, if you're elsewhere on the site.
+
+    ##If I change a sample, does it change the original?
+
+    No. When you click on a Sample program, it is loaded into the Editor and you can change as much of it as you like. When you exit, the sample is not changed.
+
+    You can also click the 'Copy' button in the Editor (next to 'Run') then give it a new name and it will become one of your programs. You can then edit your version as much as you wish.
+
+    (**NOTE**: _There is a small bug you might experience - after the 'Copy', Hackety Hack temporarily renames the sample program as well. The sample reverts to it's correct name after HH is closed/reopened_)
+
+    ## Where'd you get the sweet icons?
+
+    [Raindropmemory](http://raindropmemory.deviantart.com/#/d1xzrog) on Deviant Art made them. They're super great, aren't they?
+
+    ## Thanks!
+
+    Special thanks goes out to Eric Affleck for writing this FAQ.

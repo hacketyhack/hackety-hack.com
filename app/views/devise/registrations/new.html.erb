@@ -1,0 +1,7 @@
+<% content_for :title do %>
+  Sign Up
+<% end %>
+
+<%= render :partial => "users/form", :locals => {:submit_label => "Sign up"} %>
+
+<%= render :partial => "devise/shared/links" %>

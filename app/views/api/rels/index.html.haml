@@ -1,0 +1,7 @@
+- title "All rels"
+
+%p Here's a list of all of the relations the API supports:
+
+%ul
+  - @rels.each do |rel|
+    %li= link_to rel.slug, rel

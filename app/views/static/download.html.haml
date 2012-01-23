@@ -1,0 +1,20 @@
+%h2 Download
+
+%p Click the big green button below to start your download.
+
+%p
+  %a.btn.primary.large{:href => @download_url}
+    %b.download Download Now
+    %br
+    %span.version
+      Version 1.0.1 for #{@platform}
+
+%p Not on #{@platform}? Click #{link_to "here", downloads_path(@other_platforms.first)} for #{@other_platforms.first} and #{link_to "here", downloads_path(@other_platforms.second)} for #{@other_platforms.second}.
+%br/
+
+%h3 Sign up
+
+%p Once you've got that going, you should sign up for the web site. You can use the site to get help, share your programs with others, and other fun stuff!
+
+%br/
+= render :partial => "users/form", :locals => @locals

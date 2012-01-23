@@ -1,0 +1,19 @@
+%li.answer{:class => list.id == @question.solution_id && 'selected-answer'}
+  - if list.user
+    .meta
+      #{link_to list.user.username, user_path(list.user)} says
+  .description
+    :markdown
+      #{list.description}
+
+  .links
+    - if can? :update, list
+      = link_to 'Edit', edit_question_answer_path(@question, list)
+    - if can? :destroy, list
+      = link_to 'Delete', question_answer_path(@question, list), :confirm => 'Are you sure?', :method => :delete
+
+  - if can?(:update, @question) && (@question.solution_id != list.id)
+    .choose
+      = simple_form_for(@question, :url => question_path(@question)) do |f|
+        = f.hidden_field :solution_id, :value => list.id
+        = f.button :submit, :value => "This answers my question!", :class => "primary btn"

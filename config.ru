@@ -1,12 +1,4 @@
-require 'rubygems'
-require 'sinatra'
+# This file is used by Rack-based servers to start the application.
 
-#sass gives us awesome CSS
-require 'sass/plugin/rack'
-use Sass::Plugin::Rack
-
-set :env, :development
-
-require 'hackety'
-
-run Sinatra::Application
+require ::File.expand_path('../config/environment',  __FILE__)
+run HacketyHackCom::Application

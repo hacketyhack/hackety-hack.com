@@ -1,0 +1,12 @@
+= simple_form_for(resource, :url => @form_url) do |f|
+  = f.error_notification
+
+  .inputs
+    = f.input :title, :hint => "What's your question?"
+    - if @support
+      = f.hidden_field :support, :value => true
+    = f.input :description, :as => :text, 
+    :hint => "Provide some details about your problem to help diagnose it You can format your input with <a href=\"http://daringfireball.net/projects/markdown/\">Markdown</a>".html_safe
+
+  .actions
+    = f.button :submit , 'Ask Everyone', :class => "primary btn"
