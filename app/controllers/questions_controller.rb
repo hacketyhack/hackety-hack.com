@@ -65,4 +65,13 @@ class QuestionsController < InheritedController
     end
   end
 
+  def feed
+    @questions = @question.all(:select => "title, description, solution_id, created_at", :order => "created_at DESC", :limit => 20)
+    
+    respond_to do |format|
+      format.html
+      format.rss { render :layout => false }
+    end
+  end
+
 end
