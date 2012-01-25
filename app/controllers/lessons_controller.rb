@@ -1,6 +1,6 @@
 class LessonsController < ApplicationController
   def index
-    @lessons = HacketyHack::Lessons.all.collect{|lesson| [lesson.metadata["title"], lesson.metadata["slug"]]}
+    @lessons = HacketyHack::Lessons.all
   end
 
   def show

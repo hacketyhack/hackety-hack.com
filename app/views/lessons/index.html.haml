@@ -1,9 +1,20 @@
-%h1 Lessons
+- content_for :title do
+  Lessons
+
+- content_for :sidebar do
+  = render :partial => "shared/ask"
+  = render :partial => "shared/lessons"
 
 %p Want to learn programming? Here are some lessons that we've put online.
 
-%ul
-  - @lessons.each do |title, slug|
-    %li= link_to title, lesson_path(slug)
+%ul#lessons
+  - @lessons.each do |lesson|
+    %li
+      .info
+        .title
+          = link_to lesson.metadata["title"], lesson_path(lesson.metadata["slug"])
+        = lesson.metadata["blurb"]
+      .categories
+        = lesson_categories lesson
 
 
