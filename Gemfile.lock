@@ -94,7 +94,7 @@ GEM
     ffi (1.0.11)
     gherkin (2.7.2)
       json (>= 1.4.6)
-    hackety_hack-lessons (1.0.3)
+    hackety_hack-lessons (1.1.0)
       metadown
     haml (3.1.4)
     haml-rails (0.3.4)
@@ -247,7 +247,7 @@ DEPENDENCIES
   devise (>= 1.2)
   fabrication
   faker
-  hackety_hack-lessons
+  hackety_hack-lessons (~> 1.1)
   haml-rails
   inherited_resources
   jnunemaker-validatable (>= 1.8.4)
