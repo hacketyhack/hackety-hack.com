@@ -1,5 +1,7 @@
 HacketyHackCom::Application.routes.draw do
 
+  resources :lessons, :only => [:index, :show]
+
   resources :questions do
     resources :answers
   end

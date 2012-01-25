@@ -3,6 +3,8 @@ source 'http://rubygems.org'
 gem 'rails', '3.1.0'
 gem 'json'
 
+gem 'hackety_hack-lessons', :require => 'hackety_hack/lessons'
+
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'mongo_mapper'
