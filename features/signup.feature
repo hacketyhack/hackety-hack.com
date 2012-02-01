@@ -5,3 +5,7 @@ Feature: Sign up for an account
   Scenario: Create an account via the signup form
     When I register a new account
     Then I should be logged in with my new account
+
+  Scenario: Try to sign up using existing user name
+    When I register a duplicate account
+    Then I should see validation errors

@@ -3,7 +3,7 @@ SimpleForm.setup do |config|
   # Components used by the form builder to generate a complete input. You can remove
   # any of them, change the order, or even add your own components to the stack.
   # config.components = [ :placeholder, :label_input, :hint, :error ]
-  config.components = [ :placeholder, :label_input, :hint ]
+  config.components = [ :placeholder, :label_input, :hint, :error ]
 
   # Default tag used on hints.
   # config.hint_tag = :span
