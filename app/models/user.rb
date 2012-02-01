@@ -17,6 +17,8 @@ class User
     :message => "Make your username from letters, numbers, underscores('_'), and dots('.')."
   validates_length_of :username, :in => (1..32),
     :message => "Your username needs at least 1 character but no more than 32."
+  validates_uniqueness_of :username,
+    :message => "User name has been taken already. Please try another"
 
   def to_param
     self.username
