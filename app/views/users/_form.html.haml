@@ -5,7 +5,8 @@
     = f.input :username, :autofocus => true
     = f.input :email, :autofocus => true
   .inputs
-    = f.input :password, :hint => "Leave it blank if you don't want to change it", :required => false
+    - pwd_options = resource.new_record? ? {} : {:hint => "Leave it blank if you don't want to change it"}
+    = f.input :password, pwd_options.merge({:required => false})
     = f.input :password_confirmation, :required => false
   .inputs
     = f.input :about, :as => :text
