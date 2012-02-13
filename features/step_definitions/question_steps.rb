@@ -48,3 +48,30 @@ Then /^I should be able to see the question on my profile page$/ do
   visit user_path(@user)
   page.should have_content("My Question")
 end
+
+Given /^I am a moderator$/ do
+  step %{a logged in user}
+  @user.moderator = true
+  @user.save
+end
+
+Given /^I am not a moderator$/ do
+  step %{a logged in user}
+  @user.moderator = false
+  @user.save
+end
+
+Given /^there is a question from someone else$/ do
+  @question = Question.create(:title => "A question to delete",
+                  :description => "moderator should delete me!")
+end
+
+Then /^I can delete that question$/ do
+  visit question_path(@question)
+  page.should have_content('Delete')
+end
+
+Then /^I cannot delete that question$/ do
+  visit question_path(@question)
+  page.should_not have_content('Delete')
+end

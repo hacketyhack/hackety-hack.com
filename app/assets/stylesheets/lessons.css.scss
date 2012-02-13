@@ -1,0 +1,82 @@
+/* Lessons menu */
+ul#lessons {
+  list-style-type: none;
+  margin: 0;
+  > li {
+    @include clearfix;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 1em;
+    .info {
+      @include columns(7);
+      .title {
+        font-size: 1.1em;
+        font-weight: bold;
+        margin-bottom: 0.2em;
+      }
+    }
+    .categories {
+      @include columns(4, last);
+      li {
+        float: right;
+      }
+    }
+  }
+}
+
+/* Lesson content styles */
+#content-wrap.lesson {
+  .page-title {
+    margin-left: 3em;
+  }
+  #lesson-content {
+    padding-left: 3em;
+    max-width: 500px;
+
+    h2 {
+      margin-top: 0.75em;
+      border-top: 1px solid #ccc;
+      padding-top: 0.5em;
+    }
+
+    img {
+      @include border-radius;
+      @include box-shadow;
+      border: 1px solid #ccc;
+      padding: 0.75em;
+    }
+  }
+}
+
+/* Category pills */
+ul.lesson-categories {
+  @include clearfix;
+  list-style-type: none;
+  margin: 0;
+  font-size: 0.9em;
+
+  li {
+    float: left;
+    @include border-radius(50px);
+    padding: 0.25em 0.75em;
+    margin-right: 0.5em;
+    background: #ddd;
+    border: 1px solid #ccc;
+  }
+
+  .beginner {
+    background-color: $green;
+    border-color: darken($green, 10%);
+    color: white;
+  }
+  .hackety {
+    background-color: $blue;
+    border-color: darken($blue, 10%);
+    color: white;
+  }
+  .shoes {
+    background-color: $orangered;
+    border-color: darken($orangered, 10%);
+    color: white;
+  }
+}

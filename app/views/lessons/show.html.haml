@@ -1,0 +1,14 @@
+- @page_class = "lesson"
+
+- content_for :title do
+  = @lesson.metadata["title"]
+
+- content_for :sidebar do
+  = render :partial => "shared/ask"
+  = render :partial => "shared/lessons"
+
+#lesson-content
+  = lesson_categories @lesson
+
+  :markdown
+    #{@lesson.output}

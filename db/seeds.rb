@@ -73,3 +73,23 @@ answers << [%Q{I like [_why's poignant guide to ruby](http://mislav.uniqpath.com
   question.save!
   questions[i] = question
 end
+
+program_code = "
+Turtle.draw do
+  background maroon
+  pencolor honeydew
+  450.times do
+    forward 100
+    turnright 70
+  end
+end
+"
+
+5.times do |i|
+  program = Program.new(:author_username => users[i].username,
+                        :title => Faker::Lorem.sentence,
+                        :description => Faker::Lorem.sentences.join(" "),
+                        :source_code => program_code)
+  program.save!
+end
+
