@@ -2,10 +2,15 @@ HacketyHackCom::Application.routes.draw do
 
   resources :lessons, :only => [:index, :show]
 
+  resources :questions
+    match '/feed' => 'questions#feed',
+      :as => :feed,
+      :defaults => { :format => 'atom' }
+
   resources :questions do
     resources :answers
   end
-
+  
   get "/downloads/latest/:platform", :to => "static#download", :as => 'downloads'
   get "/downloads/latest", :to => "static#download", :as => 'download'
   match "/download" => redirect("/downloads/latest")
