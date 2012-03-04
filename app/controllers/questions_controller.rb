@@ -69,15 +69,14 @@ class QuestionsController < InheritedController
   def feed
     @title = "Questions Feed"
 
-    @questions = Question.all(:select => "title, description, solution_id, created_at", :order => "created_at DESC", :limit => 20)
+    @questions = Question.all(:select => "title, description, solution_id, created_at", :order => "created_at DESC", :limit => 20) unless @support
 
     @updated = @questions.first.updated_at unless @questions.empty?
 
     respond_to do |format|
-  #    format.html #{ render :layout => false }
-      format.atom #{ render :layout => "application" }
-  #    format.rss { redirect_to feed_path(:format => :atom), :status => :moved_permanently }
-  #    format.xml { render :xml => @questions }
+      format.html
+      format.atom
+      format.xml { render :xml => @questions }
     end
   end
 
