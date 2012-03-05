@@ -6,6 +6,8 @@ HacketyHackCom::Application.routes.draw do
     resources :answers
   end
 
+  match "/blog", :to => "blog#show"
+
   get "/downloads/latest/:platform", :to => "static#download", :as => 'downloads'
   get "/downloads/latest", :to => "static#download", :as => 'download'
   match "/download" => redirect("/downloads/latest")
