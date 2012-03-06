@@ -19,6 +19,18 @@ class QuestionsController < InheritedController
     params[:question][:solution_id] != @question.solution_id ? update!(:notice => "Okay! We've selected that answer") : update!
   end
 
+  def feed
+    @title = "Questions Feed"
+
+    @questions = Question.sort(:created_at.desc).limit(20).all
+
+    @updated = @questions.first.updated_at
+
+    respond_to do |format|
+      format.atom
+    end
+  end
+
   def collection
     @questions = @presenter.apply_scope(end_of_association_chain).newest_first.paginate(:page => params[:page])
   end
@@ -63,20 +75,6 @@ class QuestionsController < InheritedController
       @presenter = SupportPresenter.new(resource)
     else
       @presenter = QuestionPresenter.new(resource)
-    end
-  end
-
-  def feed
-    @title = "Questions Feed"
-
-    @questions = Question.all(:select => "title, description, solution_id, created_at", :order => "created_at DESC", :limit => 20) unless @support
-
-    @updated = @questions.first.updated_at unless @questions.empty?
-
-    respond_to do |format|
-      format.html
-      format.atom
-      format.xml { render :xml => @questions }
     end
   end
 

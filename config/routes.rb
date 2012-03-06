@@ -3,9 +3,9 @@ HacketyHackCom::Application.routes.draw do
   resources :lessons, :only => [:index, :show]
 
   resources :questions do
-    match '/feed' => 'questions#feed',
+    match 'feed' => 'questions#feed',
       :as => :feed,
-      :defaults => { :format => 'atom' }
+      :on => :collection
   end
 
   resources :questions do
