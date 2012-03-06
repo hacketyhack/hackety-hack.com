@@ -73,7 +73,7 @@ header .topbar-inner {
 }
 
 .two-column {
-  #content {
+  .page-title, #content {
     @include columns(11);
   }
 
@@ -87,6 +87,27 @@ header .topbar-inner {
       background: #f3f3f3;
       margin-bottom: 8px;
       padding: 1.5em;
+
+      a {
+        color: darken($blue, 10%);
+      }
+      
+      a.btn {
+        color: white;
+      }
+
+      ul {
+        margin: 0;
+        li {
+          list-style-type: none;
+          margin-bottom: 0.5em;
+          border-bottom: 1px solid #ddd;
+          padding-bottom: 0.5em;
+        }
+        li:last-child {
+          border: none;
+        }
+      }
     }
   }
 

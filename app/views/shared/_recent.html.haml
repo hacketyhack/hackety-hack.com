@@ -1,0 +1,6 @@
+%section.recent
+  %h2 Recent Posts
+  %ul
+    - BlogPost.sort("created_at DESC").limit(5).each do |post|
+      %li
+        = link_to post.title, blog_path(post)
