@@ -9,6 +9,7 @@ class User
   key :email, String
   key :about, String
   key :moderator, Boolean
+  key :blog_poster, Boolean
 
   many :questions
   many :answers

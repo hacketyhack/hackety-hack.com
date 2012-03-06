@@ -1,0 +1,15 @@
+%h1 Blog Admin
+
+%h2 New Post
+= form_for @post, :url => blog_path do |f|
+  = f.label :title
+  = f.text_field :title
+  = f.label :content
+  = f.text_area :content
+  = f.submit
+
+%h2 All Posts
+%ul
+  - @posts.each do |post|
+    %li= post.title
+  
