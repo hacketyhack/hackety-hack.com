@@ -2,6 +2,9 @@
 !!!
 %html
   %head
+    = auto_discovery_link_tag :atom, feed_path
+    = auto_discovery_link_tag :rss, feed_path
+
     - title = yield :title
     %title #{title.blank? ? "" : "#{title} | "}Hackety Hack!
 

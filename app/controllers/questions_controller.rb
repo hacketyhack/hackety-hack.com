@@ -10,6 +10,7 @@ class QuestionsController < InheritedController
   end
 
   def show
+    @title = "Questions"
     @answer = Answer.new
     show!
   end
@@ -62,6 +63,20 @@ class QuestionsController < InheritedController
       @presenter = SupportPresenter.new(resource)
     else
       @presenter = QuestionPresenter.new(resource)
+    end
+  end
+
+  def feed
+    @title = "Questions Feed"
+
+    @questions = Question.all(:select => "title, description, solution_id, created_at", :order => "created_at DESC", :limit => 20) unless @support
+
+    @updated = @questions.first.updated_at unless @questions.empty?
+
+    respond_to do |format|
+      format.html
+      format.atom
+      format.xml { render :xml => @questions }
     end
   end
 
