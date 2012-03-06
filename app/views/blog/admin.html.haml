@@ -1,7 +1,7 @@
 %h1 Blog Admin
 
 %h2 New Post
-= form_for @post, :url => blog_path do |f|
+= form_for @post, :url => blog_index_path do |f|
   = f.label :title
   = f.text_field :title
   = f.label :content

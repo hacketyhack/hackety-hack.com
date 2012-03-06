@@ -40,3 +40,8 @@ end
 Then /^I should see that my post has been created$/ do
   page.should have_content("Post created!")
 end
+
+When /^I visit a blog post$/ do
+  visit blog_path(@post)
+end
+

@@ -6,8 +6,8 @@ HacketyHackCom::Application.routes.draw do
     resources :answers
   end
 
-  resource :blog, :controller => "blog" do
-    match "/admin", :to => "blog#admin"
+  resources :blog, :controller => "blog" do
+    match "admin", :on => :collection, :controller => "blog", :action => "admin"
   end
 
   get "/downloads/latest/:platform", :to => "static#download", :as => 'downloads'

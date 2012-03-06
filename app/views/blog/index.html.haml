@@ -1,0 +1,9 @@
+%h1 The Hackety Blog!
+
+- @posts.each do |post|
+  %h2= post.title
+  %h3= post.created_at
+  :markdown
+    #{post.content}
+  %hr/
+  
