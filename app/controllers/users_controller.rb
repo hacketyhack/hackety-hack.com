@@ -23,9 +23,7 @@ class UsersController < InheritedController
   end
 
   def following
-    puts "called"
     @user = User.first(:username => params[:user_id])
-    puts "@user: #{@user}"
   end
 
   def followers
