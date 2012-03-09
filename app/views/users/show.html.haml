@@ -20,10 +20,10 @@
       = link_to pluralize(resource.programs.count, "Program"), user_programs_path(resource), :class => "user-programs"
     %p
       Following:
-      =link_to resource.following.count, resource_path(resource) + "/following"
+      =link_to resource.following.count, resource_path(resource) + "/following", :class => 'user-following'
     %p
       Followers:
-      = link_to resource.followers.count, resource_path(resource) + "/followers"
+      = link_to resource.followers.count, resource_path(resource) + "/followers", :class => 'user-followers'
     %hr
     - if can? :update, resource
       = link_to "Change My Settings", edit_registration_path(resource), :class => "btn success"
@@ -52,3 +52,4 @@
             = answer.description.truncate(100)
           .meta
             = link_to("View Answer", answer.question)
+
