@@ -1,6 +1,6 @@
 Feature: Manage account
 
-  As a user of this site, I can view and update my profile
+  As a user of this site, I can view and update my profile, see my followers
 
   Background: The user is logged in
     Given a logged in user
@@ -13,3 +13,12 @@ Feature: Manage account
     When I edit my profile
     Then I should be notified that my profile was updated
     And I should see my changes reflected on my profile page
+
+  Scenario: See my followers
+    When I click on the number of followers on my profile
+    Then I should see a list of my followers
+
+  Scenario: See who is following me
+    When I click on the number of people I am following on my profile
+    Then I should see a list of the people I'm following
+

@@ -23,11 +23,13 @@ class UsersController < InheritedController
   end
 
   def following
-    @user = User.first(:id => params[:user_id])
+    puts "called"
+    @user = User.first(:username => params[:user_id])
+    puts "@user: #{@user}"
   end
 
   def followers
-    @user = User.first(:id => params[:user_id])
+    @user = User.first(:username => params[:user_id])
   end
 
   #################
@@ -35,5 +37,6 @@ class UsersController < InheritedController
   def resource
     @user ||= end_of_association_chain.find_by_username(params[:id])
   end
-  
+
 end
+

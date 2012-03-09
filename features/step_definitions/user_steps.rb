@@ -29,6 +29,24 @@ When /^I edit my profile$/ do
   click_button "Update"
 end
 
+When /^I click on the number of followers on my profile$/ do
+  step 'I go to look at my profile page'
+  first('.user-followers').click
+end
+
+When /^I click on the number of people I am following on my profile$/ do
+  step 'I go to look at my profile page'
+  first('.user-following').click
+end
+
+Then /^I should see a list of the people I'm following$/ do
+  page.should have_content "#{@user.username} is following"
+end
+
+Then /^I should see a list of my followers$/ do
+  page.should have_content "#{@user.username}'s followers"
+end
+
 Then /^I should be notified that my profile was updated$/ do
   page.should have_content("updated your account")
 end
@@ -37,3 +55,4 @@ Then /^I should see my changes reflected on my profile page$/ do
   visit("/users/#{@user.username}")
   page.should have_content("Test user likes to edit his profile")
 end
+
