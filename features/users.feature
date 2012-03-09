@@ -15,10 +15,12 @@ Feature: Manage account
     And I should see my changes reflected on my profile page
 
   Scenario: See my followers
-    When I click on the number of followers on my profile
-    Then I should see a list of my followers
+    When I have a follower
+    And I click on the number of followers on my profile
+    Then I should see my follower
 
-  Scenario: See who is following me
-    When I click on the number of people I am following on my profile
-    Then I should see a list of the people I'm following
+  Scenario: See who I am following
+    When I am following someone
+    And I click on the number of people I am following on my profile
+    Then I should see someone I'm following
 
