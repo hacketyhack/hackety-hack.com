@@ -9,5 +9,4 @@ Feature: CRUD actions for answers
     And an email should be sent to the author
     And I should be able to see my answer
     And my answer should show on my profile page
-  
-  Scenario: Accept an answer
+
