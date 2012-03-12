@@ -13,5 +13,13 @@ class AnswersController < InheritedController
     create!(:notice => "Answer Posted!"){ question_url(params[:question_id]) }
   end
 
+  def update
+    # inherited resorces (gem) magic
+    super do |format|
+      format.html { redirect_to question_url(resource.question) }
+    end
+  end
+
 
 end
+

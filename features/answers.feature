@@ -10,3 +10,9 @@ Feature: CRUD actions for answers
     And I should be able to see my answer
     And my answer should show on my profile page
 
+  Scenario: Edit an answer
+    Given a question exists
+    And I answer that question
+    When I edit that answer
+    Then I should see the updated answer
+

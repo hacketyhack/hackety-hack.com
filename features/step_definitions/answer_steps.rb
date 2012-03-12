@@ -28,3 +28,15 @@ Then /^an email should be sent to the author$/ do
   ActionMailer::Base.deliveries.should_not be_empty
 end
 
+When /^I edit that answer$/ do
+  visit question_path(@question)
+  page.find('.answer > .links').click_link('Edit')
+  fill_in 'Answer', with: 'Edit: Did you try magic?'
+  click_button 'Post Answer'
+end
+
+Then /^I should see the updated answer$/ do
+  page.should have_content("#{@user.username} says")
+  page.should have_content('Edit: Did you try magic?')
+end
+
