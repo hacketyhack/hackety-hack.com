@@ -40,7 +40,7 @@ end
 group :development, :test do
   gem 'fabrication'
   gem 'rspec-rails'
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', require: false
   gem "faker"
   gem 'pry'
   gem 'sqlite3'
