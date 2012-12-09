@@ -3,6 +3,8 @@ class QuestionsController < InheritedController
   prepend_before_filter :set_presenter
   prepend_before_filter :set_support
 
+  respond_to :atom, :only => :index
+
   def create
     @question = Question.create params[:question]
     @question.user = current_user
@@ -37,7 +39,7 @@ class QuestionsController < InheritedController
   def resource_url(*params)
     resource_path(params)
   end
-  
+
   def resource_path(*other)
     if other[0]
       @presenter.resource_path(other)
@@ -45,18 +47,18 @@ class QuestionsController < InheritedController
       @presenter.resource_path(resource)
     end
   end
-  
+
   def edit_resource_path
     @support ? edit_support_question_path : edit_question_path
   end
-  
+
   def set_support
     @support = request.env['PATH_INFO'].include?('support') || params[:support]
     if @support && params[:question]
       params[:question][:support] = true
     end
   end
-  
+
   def set_presenter
     if @support
       @presenter = SupportPresenter.new(resource)
