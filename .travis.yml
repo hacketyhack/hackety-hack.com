@@ -2,5 +2,7 @@ script: "rake spec && rake cucumber"
 rvm: 1.9.2
 services: mongodb
 notifications:
+  email:
+    - tobias.pfeiffer@student.hpi.uni-potsdam.de
   irc: "irc.freenode.org#hacketyhack"
 
