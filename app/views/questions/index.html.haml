@@ -1,3 +1,7 @@
+- content_for :head do
+  - unless @support
+    = auto_discovery_link_tag :atom, questions_url(format: :atom)
+
 - content_for :title do
   -if @support
     Support Questions
