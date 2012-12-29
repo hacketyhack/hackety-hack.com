@@ -1,5 +1,6 @@
 script: "rake spec && rake cucumber"
 rvm: 1.9.2
+services: mongodb
 notifications:
   irc: "irc.freenode.org#hacketyhack"
 
