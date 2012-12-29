@@ -27,6 +27,8 @@
     <script>$(function () { prettyPrint() })</script>
     <link href="/assets/prettify.css" rel="stylesheet">
 
+    = yield(:head)
+
   %body{:class => "body-#{@page_class}"}
     %header.topbar
       .topbar-inner
