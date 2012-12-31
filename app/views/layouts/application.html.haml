@@ -58,6 +58,8 @@
             %h1.title
               = title
               %small= yield :subtitle
+            .feed
+              = yield :feed
 
         #content{:class => @content_class}
           = yield

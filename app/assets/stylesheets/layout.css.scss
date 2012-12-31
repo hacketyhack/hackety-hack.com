@@ -75,6 +75,31 @@ header .topbar-inner {
 .two-column {
   .page-title, #content {
     @include columns(11);
+    h1.title {
+      float: left;
+    }
+    .feed {
+      float: right;
+      margin-top: 5px;
+
+      a {
+        display: block;
+        height: 24px;
+        background: url('feed_icon.png') no-repeat 6px 4px;
+        color: #4c8acd;
+        font-size: 11px;
+        text-align: right;
+        border: 1px solid #eee;
+        line-height: 25px;
+        padding: 0 8px 0 25px;
+        @include border-radius(3px);
+
+        &:hover {
+          background: #f3f3f3 url('feed_icon.png') no-repeat 6px 4px;
+          text-decoration: none;
+        }
+      }
+    }
   }
 
   #sidebar {
