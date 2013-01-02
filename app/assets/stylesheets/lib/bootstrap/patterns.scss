@@ -603,9 +603,10 @@ input[type=submit].btn {
   li {
     display: inline;
   }
-  a {
+  a, em, .disabled {
     float: left;
     padding: 0 14px;
+    font-style: normal;
     line-height: ($baseline * 2) - 2;
     border-right: 1px solid;
     border-right-color: #ddd;
