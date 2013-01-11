@@ -6,5 +6,6 @@ notifications:
   email:
     - tobias.pfeiffer@student.hpi.uni-potsdam.de
     - james+travis-ci-broken@jamesrgifford.com
+    - kh@kalonhinds.com
   irc: "irc.freenode.org#hacketyhack"
 
