@@ -1,6 +1,6 @@
 language: ruby
 script: "rake spec && rake cucumber"
-rvm: 1.9.2
+rvm: 1.9.3
 services: mongodb
 notifications:
   email:
