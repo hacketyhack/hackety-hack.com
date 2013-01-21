@@ -31,7 +31,8 @@ HacketyHackCom::Application.routes.draw do
 
   resources :programs, :only => [:index, :show]
 
-  devise_for :users do
+  devise_for :users
+  devise_scope :user do
     get "login" => "devise/sessions#new", :as => "login"
     get "logout" => "devise/sessions#destroy", :as => "logout"
   end

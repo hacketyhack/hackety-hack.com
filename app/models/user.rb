@@ -11,6 +11,24 @@ class User
   key :moderator, Boolean
   key :blog_poster, Boolean
 
+  ## Database authenticatable
+  key :email,              :type => String, :null => false
+  key :encrypted_password, :type => String, :null => false
+
+  ## Recoverable
+  key :reset_password_token,   :type => String
+  key :reset_password_sent_at, :type => Time
+
+  ## Rememberable
+  key :remember_created_at, :type => Time
+
+  ## Trackable
+  key :sign_in_count,      :type => Integer
+  key :current_sign_in_at, :type => Time
+  key :last_sign_in_at,    :type => Time
+  key :current_sign_in_ip, :type => String
+  key :last_sign_in_ip,    :type => String
+
   many :questions
   many :answers
 
