@@ -1,0 +1,18 @@
+<% if ENV['MONGOHQ_URL'] %>
+defaults: &defaults
+  url: <%= ENV['MONGOHQ_URL'] %>
+<% else %>
+defaults: &defaults
+  host: 127.0.0.1
+  port: 27017
+  database: hackety_hack_com_<%= ENV['RAILS_ENV'] %>
+<% end %>
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
