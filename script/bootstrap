@@ -1,0 +1,58 @@
+#!/bin/dash
+
+go_go_gadget_bootstrap() {
+	check_ruby
+	check_mongo
+	check_bundler
+	bail_unless_chill
+	good_luck_have_fun
+}
+
+check_mongo() {
+	which mongo > /dev/null 2>&1
+	if [ $? -ne 0 ]; then
+		NOMONGO="Hey, in order to remember stuff I need MongoDB"
+	fi
+}
+
+check_bundler() {
+	if [ -z "$NORUBY" ]; then
+		which bundle  > /dev/null 2>&1
+		if [ $? -ne 0 ]; then
+			gem install bundler || exit 2
+		fi
+	fi
+}
+
+good_luck_have_fun() {
+	bundle install --path .bundle --binstubs bin
+	bin/rake spec cucumber
+}
+
+check_ruby() {
+	which ruby > /dev/null 2>&1
+	if [ $? -ne 0 ]; then
+		NORUBY="Whoa there, looks like you're missing Ruby!"
+	else
+		ruby -v  |  grep '^ruby 1.9.3' > /dev/null 2>&1
+		if [ $? -ne 0 ]; then
+			NORUBY="Hrmm, your Ruby version isn't Ruby 1.9.3, that's really what I prefer."
+		fi
+	fi
+}
+
+bail_unless_chill() {
+	if [ "$NORUBY" -a "$NOMONGO" ]; then
+		echo "$NORUBY"
+		echo "$NOMONGO"
+		exit 1
+	elif [ "$NORUBY" ]; then
+		echo "$NORUBY"
+		exit 1
+	elif [ "$NOMONGO" ]; then
+		echo "$NOMONGO"
+		exit 1
+	fi
+}
+
+go_go_gadget_bootstrap
