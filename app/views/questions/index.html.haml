@@ -1,5 +1,7 @@
 - content_for :head do
-  - unless @support
+  - if @support
+    = auto_discovery_link_tag :atom, support_questions_url(format: :atom)
+  - else
     = auto_discovery_link_tag :atom, questions_url(format: :atom)
 
 - content_for :title do
@@ -16,7 +18,10 @@
     = render :partial => "shared/support_blurb"
 
 - content_for :feed do
-  = link_to "Feed", questions_url(format: :atom)
+  - if @support
+    = link_to "Feed", support_questions_url(format: :atom)
+  - else
+    = link_to "Feed", questions_url(format: :atom)
 
 %ul.questions
   = render :partial => "list", :collection => collection
