@@ -45,11 +45,6 @@ group :development, :test do
   gem 'cucumber-rails', require: false
   gem "faker"
   gem 'pry'
-  gem 'sqlite3'
-end
-
-group :production do
-  gem 'pg' # ugh heroku
 end
 
 group :test do

@@ -50,9 +50,6 @@ begin
     STDERR.puts "*** The 'features' task is deprecated. See rake -T cucumber ***"
   end
 
-  # In case we don't have ActiveRecord, append a no-op task that we can depend upon.
-  task 'db:test:prepare' do
-  end
 
   task :stats => 'cucumber:statsetup'
 rescue LoadError
