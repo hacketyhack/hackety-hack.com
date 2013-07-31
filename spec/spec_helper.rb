@@ -1,7 +1,18 @@
+require 'simplecov'
+SimpleCov.start do
+ coverage_dir('public/publix')
+#add_filter '/spec/'
+ add_filter '/config/'
+ add_filter '/lib/'
+ add_filter '/vendor/'
+ add_filter '/features/'
+end
+
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'database_cleaner'
+require 'capybara/rspec'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -28,4 +39,5 @@ RSpec.configure do |config|
   config.before(:each) { reset_email }
 
   config.include Devise::TestHelpers, :type => :controller
+  config.include Capybara::DSL 
 end
