@@ -15,6 +15,14 @@ If you have any experience writing Rails apps, feel free to help out, we're open
 
 Once you've cloned this repository, running `script/bootstrap` should tell you everything you need to know.
 
+In case you prefer gems to be managed entirely by bundler run this before bootstrapping:
+
+    bundle config --global path .bundle
+    bundle config --global binstubs bin
+    export PATH="$PWD/bin:$PATH"
+
+Be careful with using `bin` in `$PATH` it is very risky when used with public projects.
+
 Dependencies for the curious:
 
 - Ruby: 1.9.3 is preferred.

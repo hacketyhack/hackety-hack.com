@@ -25,8 +25,8 @@ check_bundler() {
 }
 
 good_luck_have_fun() {
-	bundle install --path .bundle --binstubs bin
-	bin/rake spec cucumber
+	bundle install
+	rake spec cucumber
 }
 
 check_ruby() {
