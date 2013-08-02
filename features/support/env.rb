@@ -3,7 +3,7 @@
 # newer version of cucumber-rails. Consider adding your own code to a new file 
 # instead of editing this one. Cucumber will automatically load all features/**/*.rb
 # files.
-
+#
 
 require 'simplecov'
 SimpleCov.start do
