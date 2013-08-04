@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-#ruby=1.9.3-p392
+#ruby=1.9.3-p448
 #ruby-gemset=hackety-hack.com
 
 ruby '1.9.3'
