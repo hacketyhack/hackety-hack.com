@@ -5,19 +5,7 @@
 # files.
 #
 
-require 'simplecov'
-require 'coveralls'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
-    Coveralls::SimpleCov::Formatter,
-    SimpleCov::Formatter::HTMLFormatter
-]
-
-SimpleCov.start do
-  add_filter '/spec/'
-  add_filter '/config/'
-  add_filter '/vendor/'
-end
+require_relative '../../spec/code_coverage'
 
 require 'cucumber/rails'
 
