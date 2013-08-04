@@ -42,10 +42,13 @@ end
 group :development, :test do
   gem 'fabrication'
   gem 'rspec-rails'
+  gem 'capybara'
   gem 'cucumber-rails', require: false
   gem "faker"
   gem 'pry'
   gem 'sqlite3'
+  
+  
 end
 
 group :production do
@@ -53,6 +56,7 @@ group :production do
 end
 
 group :test do
+  gem "simplecov", :require => false
   gem "mocha"
   gem "database_cleaner"
   gem "launchy"
