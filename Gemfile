@@ -57,6 +57,7 @@ end
 
 group :test do
   gem "simplecov", :require => false
+  gem "coveralls"
   gem "mocha"
   gem "database_cleaner"
   gem "launchy"
