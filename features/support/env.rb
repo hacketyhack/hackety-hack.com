@@ -5,12 +5,7 @@
 # files.
 #
 
-require 'simplecov'
-SimpleCov.start do
-  add_filter '/spec/'
-  add_filter '/config/'
-  add_filter '/vendor/'
-end
+require_relative '../../spec/code_coverage'
 
 require 'cucumber/rails'
 
