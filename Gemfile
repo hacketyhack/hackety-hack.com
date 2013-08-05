@@ -52,7 +52,7 @@ group :development, :test do
 end
 
 group :production do
-  gem 'pg' # ugh heroku
+  gem 'pg' # ugh heroku..
 end
 
 group :test do
