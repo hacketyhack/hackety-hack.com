@@ -1,6 +1,6 @@
 # hackety-hack.com #
 
-[![Build status](https://secure.travis-ci.org/hacketyhack/hackety-hack.com.png)](http://travis-ci.org/#!/hacketyhack/hackety-hack.com)
+[![Build status](https://secure.travis-ci.org/hacketyhack/hackety-hack.com.png)](http://travis-ci.org/#!/hacketyhack/hackety-hack.com)[![Code Climate](https://codeclimate.com/github/hacketyhack/hackety-hack.com.png)](https://codeclimate.com/github/hacketyhack/hackety-hack.com)[![Coverage Status](https://coveralls.io/repos/hacketyhack/hackety-hack.com/badge.png?branch=master)](https://coveralls.io/r/hacketyhack/hackety-hack.com?branch=master)
 
 [hackety-hack.com][hh.com] is the web backend powering the collaborative features of [Hackety Hack][hh]. It is written in Rails 3 and continues to be under active development (see 'Helping Out'), the switch to Rails 3 happened quite recently so there's still lots to be done.
 
@@ -14,6 +14,14 @@ If you have any experience writing Rails apps, feel free to help out, we're open
 ## Getting Started ##
 
 Once you've cloned this repository, running `script/bootstrap` should tell you everything you need to know.
+
+In case you prefer gems to be managed entirely by bundler run this before bootstrapping:
+
+    bundle config --global path .bundle
+    bundle config --global binstubs bin
+    export PATH="$PWD/bin:$PATH"
+
+Be careful with using `bin` in `$PATH` it is very risky when used with public projects.
 
 Dependencies for the curious:
 

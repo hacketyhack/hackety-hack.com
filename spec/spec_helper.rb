@@ -1,3 +1,4 @@
+
 require 'simplecov'
 SimpleCov.start do
  coverage_dir('public/publix')

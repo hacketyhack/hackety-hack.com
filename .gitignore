@@ -8,3 +8,4 @@ tmp/
 *.swp
 .redcar
 bin/
+coverage
