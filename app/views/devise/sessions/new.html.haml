@@ -4,6 +4,10 @@
 .sign-in
   = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
     .inputs
+      = link_to image_tag("authbuttons/twitter_32.png", :size => "32x32"),  user_omniauth_authorize_path(:twitter), :id => 'twitter_login'      
+      = link_to image_tag("authbuttons/github_32.png",  :size => "32x32"),  user_omniauth_authorize_path(:github),   :id => 'github_login'   
+      = link_to image_tag("authbuttons/facebook_32.png", :size => "32x32"), user_omniauth_authorize_path(:facebook), :id => 'facebook_login'      
+      = link_to image_tag("authbuttons/linkedin_32.png", :size => "32x32"), user_omniauth_authorize_path(:linkedin), :id => 'linkedin_login'    
       = f.input :username, :required => false, :autofocus => true
       = f.input :password, :required => false
       = f.input :remember_me, :as => :boolean if devise_mapping.rememberable?

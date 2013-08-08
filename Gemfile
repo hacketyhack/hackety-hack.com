@@ -9,11 +9,12 @@ gem 'rails', '3.1.11'
 gem 'json'
 
 gem 'hackety_hack-lessons', '~> 1.1', :require => 'hackety_hack/lessons'
-
+gem 'prawn'
 # Authentication gems for making features "omniauthable"
+
 gem 'omniauth'
 gem 'omniauth-linkedin'
-gem 'omniauth-twitter'
+gem 'omniauth-twitter', '1.0.0'
 gem 'twitter'
 gem 'fb_graph'
 gem 'omniauth-facebook'
@@ -47,12 +48,14 @@ gem 'will_paginate'    # Pagination
 gem 'rdiscount'   # Markdown
 
 group :development do
+  gem 'binding_of_caller'
+  gem 'better_errors'
   # Use unicorn as the web server
   gem 'unicorn'
 end
 
 group :development, :test do
-  gem 'better_errors'
+ 
   gem 'fabrication'
   gem 'rspec-rails'
   gem 'capybara'
