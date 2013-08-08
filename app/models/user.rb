@@ -2,14 +2,18 @@ class User
   include MongoMapper::Document
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+  devise :database_authenticatable, :registerable, :omniauthable, :authentications, :recoverable, :rememberable, :trackable, :validatable
 
   key :username, String
   key :email, String
   key :about, String
   key :moderator, Boolean
   key :blog_poster, Boolean
+  
+  ## Omniauthable
+  key :provider, String
+  key :uid,      String
+  
 
   ## Database authenticatable
   key :email,              :type => String, :null => false
@@ -91,5 +95,30 @@ class User
 
     follow! steve
     steve.follow! self
+  end
+  def self.from_omniauth(auth)
+    #binding.pry
+    # here we'll try first_or_... -- if that doesn't work we'll try find_or_ ...
+    user = User.find_or_initialize_by_provider_and_uid(auth[:provider], auth[:uid])
+    user.username = auth.info.nickname
+    # if they are trying authentication for the first time ever, 
+    #   the save will fail due to validation failure
+    user.save
+    user
+  end
+
+  def password_required?
+    super && provider.blank?
+  end
+
+  def self.new_with_session(params, session)
+    if session["devise.user_attributes"]  
+      new(session["devise.user_attributes"]) do |user|
+        user.attributes = params
+        user.valid?
+      end
+    else
+      super
+    end
   end
 end
