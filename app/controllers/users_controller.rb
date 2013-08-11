@@ -1,6 +1,15 @@
 class UsersController < InheritedController
   load_and_authorize_resource
   skip_authorize_resource :only => [:following, :followers] #anyone can perform these read-only actions
+  #Index pagination
+  require 'will_paginate/array'
+
+  def index
+    @users = User.all.paginate(:page => params[:page], :per_page => 10)
+    respond_to do |format|
+      format.html
+    end  
+  end
 
   def follow
     followee = User.first(:id => params[:user][:followee])

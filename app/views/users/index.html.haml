@@ -1,0 +1,8 @@
+%ul
+	- @users.each do |user|
+		%li
+			.info
+				.title= user.username
+			.categories
+				.btn.success= link_to "Email him", mailer_path(:user => user)
+= will_paginate @users
