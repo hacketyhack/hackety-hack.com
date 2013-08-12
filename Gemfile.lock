@@ -122,6 +122,8 @@ GEM
     kgio (2.7.2)
     launchy (2.0.5)
       addressable (~> 2.2.6)
+    letter_opener (1.0.0)
+      launchy (>= 2.0.4)
     mail (2.3.3)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -261,6 +263,7 @@ DEPENDENCIES
   jquery-rails
   json
   launchy
+  letter_opener
   mm-devise (~> 2.0)
   mocha
   mongo_mapper
