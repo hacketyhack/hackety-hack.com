@@ -2,10 +2,6 @@ HacketyHackCom::Application.routes.draw do
 
   get "users/index"
 
-  get "mailer/new"
-
-  get "mailer/create"
-
   match 'mailer' => 'mailer#new', :as => 'mailer', :via => :get
   match 'mailer' => 'mailer#create', :as => 'mailer', :via => :post
 

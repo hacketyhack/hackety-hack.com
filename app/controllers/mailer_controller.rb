@@ -6,7 +6,6 @@ class MailerController < ApplicationController
 
   def create
   	@message = Message.new(params[:message])
- #   @message.email = params[:email]
 
   	if @message.valid?
   		MessageMailer.new_message(@message).deliver

@@ -1,5 +1,5 @@
 Fabricator(:message) do
-	email:"justa@proof.com"
+	email:"proof@example.com"
 	subject:"Hackety-hack email"
 	body:"This is an email from hackety-hack.com"
 end
