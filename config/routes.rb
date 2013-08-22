@@ -1,5 +1,10 @@
 HacketyHackCom::Application.routes.draw do
 
+  get "users/index"
+
+  match 'mailer' => 'mailer#new', :as => 'mailer', :via => :get
+  match 'mailer' => 'mailer#create', :as => 'mailer', :via => :post
+
   resources :lessons, :only => [:index, :show]
 
   resources :questions do
