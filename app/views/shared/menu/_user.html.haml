@@ -1,5 +1,7 @@
 = semantic_menu :class => "nav secondary-nav" do |root|
   - if current_user
+    - if current_user.moderator
+      - root.add "Send an Email", users_index_path
     - root.add current_user.username, user_path(current_user)
     - root.add "Log Out", logout_path
   - else
