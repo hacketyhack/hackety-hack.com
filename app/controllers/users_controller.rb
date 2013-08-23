@@ -1,6 +1,6 @@
 class UsersController < InheritedController
   load_and_authorize_resource
-  skip_authorize_resource :only => [:following, :followers] #anyone can perform these read-only actions
+  skip_authorize_resource :only => [:following, :followers, :deleted_user] #anyone can perform these read-only actions
   require 'will_paginate/array'
 
   def index
@@ -36,6 +36,10 @@ class UsersController < InheritedController
 
   def followers
     @user = User.first(:username => params[:user_id])
+  end
+
+  def deleted_user
+    @user = DeletedUser.new
   end
 
   #################

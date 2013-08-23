@@ -1,15 +1,15 @@
-%li.item{:id=>list.id, :class => list.answers.count > 0 ? (list.solution_id.nil? ? "answered" : "accepted") : "unanswered"}
+%li.item{:id=>question.id, :class => question.answers.count > 0 ? (question.solution_id.nil? ? "answered" : "accepted") : "unanswered"}
   .answer-count
-    %h3= list.answers.count
-    #{list.answers.count == 1 ? "answer" : "answers"}
+    %h3= question.answers.count
+    #{question.answers.count == 1 ? "answer" : "answers"}
   .summary
-    %h2.title= link_to list.title, resource_path(list)
+    %h2.title= link_to question.title, resource_path(question)
     .meta
       Asked by
-      %span.name= link_to list.user.username, user_path(list.user)
+      %span.name= link_to question.user.username, user_path(question.user)
 
-      %span.date= time_ago_in_words(list.created_at)
+      %span.date= time_ago_in_words(question.created_at)
       ago
-    .description= truncate(list.description, :length => 150)
+    .description= truncate(question.description, :length => 150)
     - if current_user && current_user.moderator?
-      %div.move_question= link_to "Move to #{list.support? ? 'Questions' : 'Support'} »", question_path(list, :question => { :support => (list.support? ? "false" : "true") }), :method => :put, :class => "btn small info"
+      %div.move_question= link_to "Move to #{question.support? ? 'Questions' : 'Support'} »", question_path(question, :question => { :support => (question.support? ? "false" : "true") }), :method => :put, :class => "btn small info"
