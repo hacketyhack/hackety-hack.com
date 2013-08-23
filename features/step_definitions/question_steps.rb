@@ -63,7 +63,8 @@ end
 
 Given /^there is a question from someone else$/ do
   @question = Question.create(:title => "A question to delete",
-                  :description => "moderator should delete me!")
+                  :description => "moderator should delete me!",
+                  :user => Fabricate(:user))
 end
 
 Then /^I can delete that question$/ do
