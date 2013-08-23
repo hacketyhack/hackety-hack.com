@@ -3,6 +3,8 @@ class MessageMailer < ActionMailer::Base
 
   def new_message message 
   	@message = message
-  	mail(:to => @message.email, :subject => @message.subject)
+  	@message.email.each do |email|
+  		mail(:to => email, :subject => @message.subject)
+  	end
   end
 end

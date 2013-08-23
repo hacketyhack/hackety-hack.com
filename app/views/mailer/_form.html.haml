@@ -3,6 +3,6 @@
 	.inputs
 		=f.input :subject, :hint => "Write the subject here!"
 		=f.input :body, :as => :text
-		=f.input :email, :as => :hidden, :input_html => { :value => @user.email }
+		=f.input :email, :as => :hidden, :input_html => { :value => @emails }
 	.actions
 		=f.button :submit , 'Send Email', :class => "primary btn"
