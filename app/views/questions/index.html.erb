@@ -1,0 +1,21 @@
+<h1>Listing Questions</h1>
+<p><a class="btn" href="#?filtered=1">Unanswered Questions</a></p>
+<table>
+  <tr>
+  	<th>Questions</th>
+      <th></th>
+      <th></th>
+      <th></th>
+   </tr>
+
+<% @questions.each do |question| %>
+  <tr>
+  	<td><%= question.description %></td>
+  	<td><%= link_to 'Show', question %></td>
+  	<td><%= link_to 'Edit', edit_question_path(question) %></td>
+  	<td><%= link_to 'Destroy', question, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />  	

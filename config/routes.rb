@@ -1,7 +1,7 @@
 HacketyHackCom::Application.routes.draw do
   match '/auth/:provider/callback' => 'authentications#create'
  
-  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}, controllers: {omniauth_callbacks: "omniauth_callbacks"}
+  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}, controllers: {omniauth_callbacks: "authentication"} ## Changed "omniauth_callback" to "authentication"
 
   get "users/index"
 

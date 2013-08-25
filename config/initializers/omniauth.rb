@@ -1,5 +1,5 @@
-puts "builder: #{require 'omniauth/builder'}", OmniAuth::Builder #"  
-
+# puts "builder: #{require 'omniauth/builder'}", OmniAuth::Builder #"  
+OmniAuth.config.logger = Rails.logger
 Rails.application.config.middleware.use OmniAuth::Builder do |variable|
   #provider :developer unless Rails.env.production?
 
@@ -12,3 +12,4 @@ Rails.application.config.middleware.use OmniAuth::Builder do |variable|
 # PROVIDER :openid, ENV['HH_OPID_KEY'], ENV['HH_OPID_SECRET']   
 
 end 
+
