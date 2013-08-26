@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"program_name:EFI"OptionParser#program_name;FI"W;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"DProgram name to be emitted in error message and default banner,;TI"defaults to $0.;T:
+@file0FI"lib/optparse.rb;T

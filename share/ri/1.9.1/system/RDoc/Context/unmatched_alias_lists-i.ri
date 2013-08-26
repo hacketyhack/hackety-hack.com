@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"unmatched_alias_lists:EFI"(RDoc::Context#unmatched_alias_lists;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"5Hash <tt>old_name => [aliases]</tt>, for aliases;TI"<that haven't (yet) been resolved to a method/attribute.;TI":(Not to be confused with the aliases of the context.);T:
+@file0FI"lib/rdoc/context.rb;T

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"uri:EFI"DRb::DRbTCPSocket#uri;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"*Get the URI that we are connected to.;T:
+@file0FI"lib/drb/drb.rb;T

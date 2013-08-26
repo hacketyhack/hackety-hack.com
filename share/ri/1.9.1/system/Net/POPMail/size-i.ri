@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	size:EFI"Net::POPMail#size;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I")The length of the message in octets.;T:
+@file0FI"lib/net/pop.rb;T

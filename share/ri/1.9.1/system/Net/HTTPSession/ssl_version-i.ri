@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"ssl_version:EFI"Net::HTTP#ssl_version;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"ESets the SSL version.  See OpenSSL::SSL::SSLContext#ssl_version=;T:
+@file0FI"lib/net/http.rb;T

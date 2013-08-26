@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"create_id:EFI"JSON::create_id;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"LThis is create identifier, which is used to decide if the _json_create_;TI"Chook of a class should be called. It defaults to 'json_class'.;T:
+@file0TI" ext/json/lib/json/common.rb;T

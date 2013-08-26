@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"prefix:EFI" RDoc::Markup::ToRdoc#prefix;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"4Prefix for the next list item.  See #use_prefix;T:
+@file0FI"lib/rdoc/markup/to_rdoc.rb;T

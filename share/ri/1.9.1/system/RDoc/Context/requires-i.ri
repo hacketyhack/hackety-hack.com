@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"requires:EFI"RDoc::Context#requires;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I" Files this context requires;T:
+@file0FI"lib/rdoc/context.rb;T

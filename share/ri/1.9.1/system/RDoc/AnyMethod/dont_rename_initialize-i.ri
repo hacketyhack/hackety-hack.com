@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"dont_rename_initialize:EFI"+RDoc::AnyMethod#dont_rename_initialize;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"(Don't rename \#initialize to \::new;T:
+@file0FI"lib/rdoc/any_method.rb;T

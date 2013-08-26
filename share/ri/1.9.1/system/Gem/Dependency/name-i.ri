@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	name:EFI"Gem::Dependency#name;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"+Dependency name or regular expression.;T:
+@file0FI"lib/rubygems/dependency.rb;T

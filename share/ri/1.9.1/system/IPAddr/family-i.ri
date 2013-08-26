@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"family:EFI"IPAddr#family;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"3Returns the address family of this IP address.;T:
+@file0FI"lib/ipaddr.rb;T

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"template:EFI"RDoc::Task#template;FI"RW;F:privateo:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"FName of template to be used by rdoc. (defaults to rdoc's default);T:
+@file0FI"lib/rdoc/task.rb;T

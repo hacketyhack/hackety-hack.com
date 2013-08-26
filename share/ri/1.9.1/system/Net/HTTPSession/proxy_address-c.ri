@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"proxy_address:EFI"Net::HTTP::proxy_address;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"CAddress of proxy host. If Net::HTTP does not use a proxy, nil.;T:
+@file0TI"lib/net/http.rb;T

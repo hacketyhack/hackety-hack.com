@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"passive:EFI"Net::FTP#passive;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"GWhen +true+, the connection is in passive mode.  Default: +false+.;T:
+@file0FI"lib/net/ftp.rb;T

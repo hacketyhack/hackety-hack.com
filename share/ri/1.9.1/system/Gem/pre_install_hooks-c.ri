@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"pre_install_hooks:EFI"Gem::pre_install_hooks;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"GThe list of hooks to be run after Gem::Install#install is finished;T:
+@file0TI"lib/rubygems.rb;T

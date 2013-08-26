@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"last_response:EFI"Net::FTP#last_response;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I" The server's last response.;T:
+@file0FI"lib/net/ftp.rb;T

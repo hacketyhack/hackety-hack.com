@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"terminal_columns:EFI"'Rake::Application#terminal_columns;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"&Number of columns on the terminal;T:
+@file0FI"lib/rake/application.rb;T

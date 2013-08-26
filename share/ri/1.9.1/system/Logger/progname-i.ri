@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"progname:EFI"Logger#progname;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"-program name to include in log messages.;T:
+@file0FI"lib/logger.rb;T

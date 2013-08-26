@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"spec_dirs:EFI"Gem::SourceIndex#spec_dirs;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"IDirectories to use to refresh this SourceIndex when calling refresh!;T:
+@file0FI"!lib/rubygems/source_index.rb;T

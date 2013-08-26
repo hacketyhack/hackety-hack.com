@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"stdout_mutex:EFI"Tracer::stdout_mutex;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I":mutex lock used by tracer for displaying trace output;T:
+@file0TI"lib/tracer.rb;T

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"build_legacy:EFI"Gem::Indexer#build_legacy;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I":Build indexes for RubyGems older than 1.2.0 when true;T:
+@file0FI"lib/rubygems/indexer.rb;T

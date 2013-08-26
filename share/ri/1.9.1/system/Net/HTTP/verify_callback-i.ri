@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"verify_callback:EFI"Net::HTTP#verify_callback;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"HSets the verify callback for the server certification verification.;T:
+@file0FI"lib/net/http.rb;T

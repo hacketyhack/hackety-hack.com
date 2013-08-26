@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"normalized:EFI" REXML::Attribute#normalized;FI"W;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"IThe normalized value of this attribute.  That is, the attribute with;TI"entities intact.;T:
+@file0FI"lib/rexml/attribute.rb;T

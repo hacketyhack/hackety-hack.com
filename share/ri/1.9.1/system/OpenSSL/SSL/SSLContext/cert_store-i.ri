@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"cert_store:ETI"(OpenSSL::SSL::SSLContext#cert_store;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I">An OpenSSL::X509::Store used for certificate verification;T:
+@file0FI"ext/openssl/ossl_ssl.c;T

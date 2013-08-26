@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"display_c_call:EFI"Tracer::display_c_call;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"@display C-routine calls in trace output (defaults to false);T:
+@file0TI"lib/tracer.rb;T

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"prerelease:EFI"Gem::Dependency#prerelease;FI"W;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"<Allows you to force this dependency to be a prerelease.;T:
+@file0FI"lib/rubygems/dependency.rb;T

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"verify_depth:ETI"*OpenSSL::SSL::SSLContext#verify_depth;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"JNumber of CA certificates to walk when verifying a certificate chain.;T:
+@file0FI"ext/openssl/ossl_ssl.c;T

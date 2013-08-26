@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"cert_store:EFI"Net::HTTP#cert_store;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"5Sets the X509::Store to verify peer certificate.;T:
+@file0FI"lib/net/http.rb;T

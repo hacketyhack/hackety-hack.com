@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"activated?:EFI""Gem::Specification#activated?;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"PTrue when this gemspec has been activated. This attribute is not persisted.;T:
+@file0FI""lib/rubygems/specification.rb;T

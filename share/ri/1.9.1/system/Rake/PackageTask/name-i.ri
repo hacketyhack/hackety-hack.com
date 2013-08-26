@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	name:EFI"Rake::PackageTask#name;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"-Name of the package (from the GEM Spec).;T:
+@file0FI"lib/rake/packagetask.rb;T

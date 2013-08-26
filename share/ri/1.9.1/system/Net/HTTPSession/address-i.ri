@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"address:EFI"Net::HTTP#address;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"3The DNS host name or IP address to connect to.;T:
+@file0FI"lib/net/http.rb;T

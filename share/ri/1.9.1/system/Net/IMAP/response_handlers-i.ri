@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"response_handlers:EFI" Net::IMAP#response_handlers;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"#Returns all response handlers.;T:
+@file0FI"lib/net/imap.rb;T

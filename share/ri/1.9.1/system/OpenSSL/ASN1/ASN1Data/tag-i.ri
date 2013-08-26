@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"tag:ETI" OpenSSL::ASN1::ASN1Data#tag;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"JA +Number+ representing the tag number of this ASN1Data. Never +nil+.;T:
+@file0FI"ext/openssl/ossl_asn1.c;T

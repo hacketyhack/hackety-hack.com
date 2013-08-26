@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"set_summary_indent:EFI"$OptionParser#set_summary_indent;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"GIndentation for summary. Must be String (or have + String method).;T:
+@file0FI"lib/optparse.rb;T

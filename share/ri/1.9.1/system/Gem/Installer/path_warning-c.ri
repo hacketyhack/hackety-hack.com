@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"path_warning:EFI"!Gem::Installer::path_warning;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"=True if we've warned about PATH not including Gem.bindir;T:
+@file0TI"lib/rubygems/installer.rb;T

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"rdoc_files:EFI"RDoc::Task#rdoc_files;FI"RW;F:privateo:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"IList of files to be included in the rdoc generation. (default is []);T:
+@file0FI"lib/rdoc/task.rb;T

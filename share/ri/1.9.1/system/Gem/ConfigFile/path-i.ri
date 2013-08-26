@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	path:EFI"Gem::ConfigFile#path;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"(Where to look for gems (deprecated);T:
+@file0FI" lib/rubygems/config_file.rb;T

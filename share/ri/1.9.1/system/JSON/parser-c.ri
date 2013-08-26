@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"parser:EFI"JSON::parser;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"GReturns the JSON parser class that is used by JSON. This is either;TI"-JSON::Ext::Parser or JSON::Pure::Parser.;T:
+@file0TI" ext/json/lib/json/common.rb;T

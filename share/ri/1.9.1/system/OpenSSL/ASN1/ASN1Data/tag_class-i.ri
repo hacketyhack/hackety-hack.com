@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"tag_class:ETI"&OpenSSL::ASN1::ASN1Data#tag_class;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"IA +Symbol+ representing the tag class of this ASN1Data. Never +nil+.;TI"&See ASN1Data for possible values.;T:
+@file0FI"ext/openssl/ossl_asn1.c;T

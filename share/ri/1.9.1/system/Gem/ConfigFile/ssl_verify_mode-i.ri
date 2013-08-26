@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"ssl_verify_mode:EFI"$Gem::ConfigFile#ssl_verify_mode;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"@openssl verify mode value, used for remote https connection;T:
+@file0FI" lib/rubygems/config_file.rb;T

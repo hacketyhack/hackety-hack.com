@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"string:EFI"Net::SMTP::Response#string;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"7The human readable reply text of the SMTP response;T:
+@file0FI"lib/net/smtp.rb;T

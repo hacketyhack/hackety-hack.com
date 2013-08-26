@@ -1,0 +1,5 @@
+U:RDoc::AnyMethod[iI"pop:EFI"SizedQueue#pop;FF:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"ERetrieves data from the queue and runs a waiting thread, if any.;T:
+@file000[[I"
+shift;Fo;;	[o;
+;	[I"Alias of pop;T;0[I"deq;Fo;;	[o;
+;	[I"Alias of pop;T;0I"(*args);TI"lib/thread.rb;T

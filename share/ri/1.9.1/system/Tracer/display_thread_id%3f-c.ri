@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"display_thread_id?:EFI"Tracer::display_thread_id?;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"9display thread id in trace output (defaults to true);T:
+@file0TI"lib/tracer.rb;T

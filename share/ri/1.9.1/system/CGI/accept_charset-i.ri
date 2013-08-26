@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"accept_charset:EFI"CGI#accept_charset;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I";Return the accept character set for this CGI instance.;T:
+@file0FI"lib/cgi/core.rb;T

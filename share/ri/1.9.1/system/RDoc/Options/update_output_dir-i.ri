@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"update_output_dir:EFI"$RDoc::Options#update_output_dir;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"9Should RDoc update the timestamps in the output dir?;T:
+@file0FI"lib/rdoc/options.rb;T

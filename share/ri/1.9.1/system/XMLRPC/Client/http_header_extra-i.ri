@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"http_header_extra:EFI"%XMLRPC::Client#http_header_extra;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"/add additional HTTP headers to the request;T:
+@file0FI"lib/xmlrpc/client.rb;T

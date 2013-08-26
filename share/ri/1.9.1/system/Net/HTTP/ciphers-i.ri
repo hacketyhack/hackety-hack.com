@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"ciphers:EFI"Net::HTTP#ciphers;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"GSets the available ciphers.  See OpenSSL::SSL::SSLContext#ciphers=;T:
+@file0FI"lib/net/http.rb;T

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"hyperlink_all:EFI" RDoc::Options#hyperlink_all;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"EOld rdoc behavior: hyperlink all words that match a method name,;TI"(even if not preceded by '#' or '::';T:
+@file0FI"lib/rdoc/options.rb;T

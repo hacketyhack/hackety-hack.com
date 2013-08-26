@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"greeting:EFI"Net::IMAP#greeting;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I":Returns an initial greeting response from the server.;T:
+@file0FI"lib/net/imap.rb;T

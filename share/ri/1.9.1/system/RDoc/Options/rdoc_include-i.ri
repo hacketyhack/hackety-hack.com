@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"rdoc_include:EFI"RDoc::Options#rdoc_include;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"EArray of directories to search for files to satisfy an :include:;T:
+@file0FI"lib/rdoc/options.rb;T

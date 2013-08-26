@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	name:EFI"RDoc::Context#name;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"@Name of this class excluding namespace.  See also full_name;T:
+@file0FI"lib/rdoc/context.rb;T

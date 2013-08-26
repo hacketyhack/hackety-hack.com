@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"need_zip:EFI"Rake::PackageTask#need_zip;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"=True if a zip file should be produced (default is false);T:
+@file0FI"lib/rake/packagetask.rb;T

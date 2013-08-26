@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"address:EFI"Resolv::IPv4#address;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"&The raw IPv4 address as a String.;T:
+@file0FI"lib/resolv.rb;T

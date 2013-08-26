@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	port:EFI"GServer#port;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I")Port on which to listen, as a FixNum;T:
+@file0FI"lib/gserver.rb;T

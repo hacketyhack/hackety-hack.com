@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"generator:EFI"JSON::generator;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"DReturns the JSON generator module that is used by JSON. This is;TI":either JSON::Ext::Generator or JSON::Pure::Generator.;T:
+@file0TI" ext/json/lib/json/common.rb;T

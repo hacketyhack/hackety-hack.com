@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	path:EFI"Gem::PathSupport#path;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"'Array of paths to search for Gems.;T:
+@file0FI"!lib/rubygems/path_support.rb;T

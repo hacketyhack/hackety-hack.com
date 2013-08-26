@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"verbosity:EFI"RDoc::Options#verbosity;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I" Verbosity, zero means quiet;T:
+@file0FI"lib/rdoc/options.rb;T

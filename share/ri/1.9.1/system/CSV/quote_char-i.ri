@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"quote_char:EFI"CSV#quote_char;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"PThe encoded <tt>:quote_char</tt> used in parsing and writing.  See CSV::new;TI"for details.;T:
+@file0FI"lib/csv.rb;T

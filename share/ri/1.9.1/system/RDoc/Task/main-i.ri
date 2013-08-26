@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	main:EFI"RDoc::Task#main;FI"RW;F:privateo:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"NName of file to be used as the main, top level file of the RDoc. (default;TI"is none);T:
+@file0FI"lib/rdoc/task.rb;T

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"broadcast_list:EFI"%Rinda::RingFinger#broadcast_list;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"DThe list of addresses where RingFinger will send query packets.;T:
+@file0FI"lib/rinda/ring.rb;T

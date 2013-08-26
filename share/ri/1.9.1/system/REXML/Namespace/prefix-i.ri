@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"prefix:EFI"REXML::Namespace#prefix;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I":The expanded name of the object, valid if name is set;T:
+@file0FI"lib/rexml/namespace.rb;T

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"received_nodoc:EFI"$RDoc::CodeObject#received_nodoc;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"/Did we ever receive a +:nodoc:+ directive?;T:
+@file0FI"lib/rdoc/code_object.rb;T

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"session_id:EFI"CGI::Session#session_id;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"The id of this session.;T:
+@file0FI"lib/cgi/session.rb;T

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"quiet?:EFI"GetoptLong#quiet?;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"Set/Unset `quiet' mode.;T:
+@file0FI"lib/getoptlong.rb;T

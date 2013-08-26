@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"local_name:EFI" REXML::Namespace#local_name;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I")The name of the object, valid if set;T:
+@file0FI"lib/rexml/namespace.rb;T

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"sev_threshold=:EFI"Logger#sev_threshold=;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"=Logging severity threshold (e.g. <tt>Logger::INFO</tt>).;T:
+@file0FI"lib/logger.rb;T

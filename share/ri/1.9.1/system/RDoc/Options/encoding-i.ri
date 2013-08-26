@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"encoding:EFI"RDoc::Options#encoding;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I";Encoding of output where.  This is set via --encoding.;T:
+@file0FI"lib/rdoc/options.rb;T

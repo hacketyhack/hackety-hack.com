@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"pattern:EFI"Rake::TestTask#pattern;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"CGlob pattern to match test files. (default is 'test/test*.rb');T:
+@file0FI"lib/rake/testtask.rb;T

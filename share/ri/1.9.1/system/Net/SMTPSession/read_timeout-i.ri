@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"read_timeout:EFI"Net::SMTP#read_timeout;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"CSeconds to wait while reading one block (by one read(2) call).;TI">If the read(2) call does not complete within this time, a;TI"TimeoutError is raised.;T:
+@file0FI"lib/net/smtp.rb;T

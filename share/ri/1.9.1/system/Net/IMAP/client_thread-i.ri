@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"client_thread:EFI"Net::IMAP#client_thread;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"&The thread to receive exceptions.;T:
+@file0FI"lib/net/imap.rb;T

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"proxy_pass:EFI"Net::HTTP::proxy_pass;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"JUser password for accessing proxy. If Net::HTTP does not use a proxy,;TI"	nil.;T:
+@file0TI"lib/net/http.rb;T

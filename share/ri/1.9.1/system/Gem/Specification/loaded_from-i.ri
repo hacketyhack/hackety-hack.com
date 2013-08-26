@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"loaded_from:EFI"#Gem::Specification#loaded_from;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"IPath this gemspec was loaded from.  This attribute is not persisted.;T:
+@file0FI""lib/rubygems/specification.rb;T

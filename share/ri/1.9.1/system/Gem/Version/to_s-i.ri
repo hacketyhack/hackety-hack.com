@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	to_s:EFI"Gem::Version#to_s;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"-A string representation of this Version.;T:
+@file0FI"lib/rubygems/version.rb;T

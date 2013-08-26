@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"disposition:EFI" Win32::Registry#disposition;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"HDisposition value (REG_CREATED_NEW_KEY or REG_OPENED_EXISTING_KEY).;T:
+@file0FI"'ext/dl/win32/lib/win32/registry.rb;T

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"viewer:EFI"RDoc::CodeObject#viewer;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"LWe are the model of the code, but we know that at some point we will be;TI"Mworked on by viewers. By implementing the Viewable protocol, viewers can;TI".associated themselves with these objects.;T:
+@file0FI"lib/rdoc/code_object.rb;T

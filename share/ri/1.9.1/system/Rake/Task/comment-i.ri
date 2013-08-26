@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"comment:EFI"Rake::Task#comment;FI"R;F:privateo:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"KComment for this task.  Restricted to a single line of no more than 50;TI"characters.;T:
+@file0FI"lib/rake/task.rb;T

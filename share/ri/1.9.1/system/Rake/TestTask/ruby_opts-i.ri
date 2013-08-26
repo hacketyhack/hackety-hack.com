@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"ruby_opts:EFI"Rake::TestTask#ruby_opts;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"KArray of commandline options to pass to ruby when running test loader.;T:
+@file0FI"lib/rake/testtask.rb;T

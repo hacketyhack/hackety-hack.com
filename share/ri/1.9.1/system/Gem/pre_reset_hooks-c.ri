@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"pre_reset_hooks:EFI"Gem::pre_reset_hooks;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"HThe list of hooks to be run before Gem::Specification.reset is run.;T:
+@file0TI"lib/rubygems.rb;T

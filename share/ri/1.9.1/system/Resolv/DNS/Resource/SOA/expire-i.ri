@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"expire:EFI"&Resolv::DNS::Resource::SOA#expire;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"DTime in seconds that a secondary name server is to use the data;TI"4before refreshing from the primary name server.;T:
+@file0FI"lib/resolv.rb;T

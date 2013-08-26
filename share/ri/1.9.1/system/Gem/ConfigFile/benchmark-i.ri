@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"benchmark:EFI"Gem::ConfigFile#benchmark;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"*True if we are benchmarking this run.;T:
+@file0FI" lib/rubygems/config_file.rb;T

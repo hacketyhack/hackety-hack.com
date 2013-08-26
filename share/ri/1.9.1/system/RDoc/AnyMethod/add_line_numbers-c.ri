@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"add_line_numbers:EFI"&RDoc::AnyMethod::add_line_numbers;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"JAllows controlling whether <tt>#markup_code</tt> adds line numbers to;TI"the source code.;T:
+@file0TI"!lib/rdoc/generator/markup.rb;T

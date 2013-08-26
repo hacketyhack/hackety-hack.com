@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"address:EFI"Net::POP3#address;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"The address to connect to.;T:
+@file0FI"lib/net/pop.rb;T

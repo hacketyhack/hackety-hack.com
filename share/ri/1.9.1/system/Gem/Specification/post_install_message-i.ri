@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"post_install_message:EFI",Gem::Specification#post_install_message;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"=A message that gets displayed after the gem is installed;T:
+@file0FI""lib/rubygems/specification.rb;T

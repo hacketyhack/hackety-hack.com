@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"prerequisites:EFI"Rake::Task#prerequisites;FI"R;F:privateo:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"&List of prerequisites for a task.;T:
+@file0FI"lib/rake/task.rb;T

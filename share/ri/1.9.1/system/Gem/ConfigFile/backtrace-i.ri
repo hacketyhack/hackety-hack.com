@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"backtrace:EFI"Gem::ConfigFile#backtrace;FI"W;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"+True if we print backtraces on errors.;T:
+@file0FI" lib/rubygems/config_file.rb;T

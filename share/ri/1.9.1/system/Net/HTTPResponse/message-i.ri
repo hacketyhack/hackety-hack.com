@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"message:EFI"Net::HTTPResponse#message;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"JThe HTTP result message sent by the server. For example, 'Not Found'.;T:
+@file0FI"lib/net/http.rb;T

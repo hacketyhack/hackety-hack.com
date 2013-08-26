@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"set_summary_width:EFI"#OptionParser#set_summary_width;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"?Width for option list portion of summary. Must be Numeric.;T:
+@file0FI"lib/optparse.rb;T

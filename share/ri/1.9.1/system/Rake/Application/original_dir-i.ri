@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"original_dir:EFI"#Rake::Application#original_dir;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"3The original directory where rake was invoked.;T:
+@file0FI"lib/rake/application.rb;T

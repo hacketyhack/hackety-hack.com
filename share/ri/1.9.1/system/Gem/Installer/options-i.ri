@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"options:EFI"Gem::Installer#options;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"AThe options passed when the Gem::Installer was instantiated.;T:
+@file0FI"lib/rubygems/installer.rb;T

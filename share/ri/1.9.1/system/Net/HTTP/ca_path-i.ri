@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"ca_path:EFI"Net::HTTP#ca_path;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"KSets path of a CA certification directory containing certifications in;TI"PEM format.;T:
+@file0FI"lib/net/http.rb;T

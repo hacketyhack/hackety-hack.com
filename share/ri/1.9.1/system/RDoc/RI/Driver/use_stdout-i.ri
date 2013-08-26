@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"use_stdout:EFI" RDoc::RI::Driver#use_stdout;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I".Controls the user of the pager vs $stdout;T:
+@file0FI"lib/rdoc/ri/driver.rb;T

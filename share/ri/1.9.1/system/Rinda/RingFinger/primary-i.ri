@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"primary:EFI"Rinda::RingFinger#primary;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"MContain the first advertised TupleSpace after lookup_ring_any is called.;T:
+@file0FI"lib/rinda/ring.rb;T

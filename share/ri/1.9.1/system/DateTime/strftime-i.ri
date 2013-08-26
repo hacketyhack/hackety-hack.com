@@ -1,0 +1,173 @@
+U:RDoc::AnyMethod[iI"strftime:ETI"DateTime#strftime;TF:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Verbatim;	[ªI"BFormats date according to the directives in the given format
+;FI"string.
+;FI"9The directives begins with a percent (%) character.
+;FI"FAny text not listed as a directive will be passed through to the
+;FI"output string.
+;FI"
+;FI"8The directive consists of a percent (%) character,
+;FI"7zero or more flags, optional minimum field width,
+;FI"2optional modifier and a conversion specifier
+;FI"as follows.
+;FI"
+;FI"-  %<flags><width><modifier><conversion>
+;FI"
+;FI"Flags:
+;FI"(  -  don't pad a numerical output.
+;FI""  _  use spaces for padding.
+;FI"!  0  use zeros for padding.
+;FI"$  ^  upcase the result string.
+;FI"  #  change case.
+;FI"  :  use colons for %z.
+;FI"
+;FI":The minimum field width specifies the minimum width.
+;FI"
+;FI""The modifier is "E" and "O".
+;FI"They are ignored.
+;FI"
+;FI"Format directives:
+;FI"
+;FI"   Date (Year, Month, Day):
+;FI"E    %Y - Year with century (can be negative, 4 digits at least)
+;FI"6            -0001, 0000, 1995, 2009, 14292, etc.
+;FI"3    %C - year / 100 (round down.  20 in 2009)
+;FI""    %y - year % 100 (00..99)
+;FI"
+;FI"6    %m - Month of the year, zero-padded (01..12)
+;FI",            %_m  blank-padded ( 1..12)
+;FI"(            %-m  no-padded (1..12)
+;FI"0    %B - The full month name (``January'')
+;FI"/            %^B  uppercased (``JANUARY'')
+;FI"3    %b - The abbreviated month name (``Jan'')
+;FI"+            %^b  uppercased (``JAN'')
+;FI"    %h - Equivalent to %b
+;FI"
+;FI"5    %d - Day of the month, zero-padded (01..31)
+;FI"(            %-d  no-padded (1..31)
+;FI"6    %e - Day of the month, blank-padded ( 1..31)
+;FI"
+;FI")    %j - Day of the year (001..366)
+;FI"
+;FI"/  Time (Hour, Minute, Second, Subsecond):
+;FI"C    %H - Hour of the day, 24-hour clock, zero-padded (00..23)
+;FI"D    %k - Hour of the day, 24-hour clock, blank-padded ( 0..23)
+;FI"C    %I - Hour of the day, 12-hour clock, zero-padded (01..12)
+;FI"D    %l - Hour of the day, 12-hour clock, blank-padded ( 1..12)
+;FI"?    %P - Meridian indicator, lowercase (``am'' or ``pm'')
+;FI"?    %p - Meridian indicator, uppercase (``AM'' or ``PM'')
+;FI"
+;FI"*    %M - Minute of the hour (00..59)
+;FI"
+;FI",    %S - Second of the minute (00..59)
+;FI"
+;FI"3    %L - Millisecond of the second (000..999)
+;FI"J    %N - Fractional seconds digits, default is 9 digits (nanosecond)
+;FI"-            %3N  millisecond (3 digits)
+;FI"-            %6N  microsecond (6 digits)
+;FI",            %9N  nanosecond (9 digits)
+;FI"-            %12N picosecond (12 digits)
+;FI"
+;FI"  Time zone:
+;FI"H    %z - Time zone as hour and minute offset from UTC (e.g. +0900)
+;FI"R            %:z - hour and minute offset from UTC with a colon (e.g. +09:00)
+;FI"Q            %::z - hour, minute and second offset from UTC (e.g. +09:00:00)
+;FI"A            %:::z - hour, minute and second offset from UTC
+;FI"Q                                              (e.g. +09, +09:30, +09:30:30)
+;FI"*    %Z - Time zone abbreviation name
+;FI"
+;FI"  Weekday:
+;FI"1    %A - The full weekday name (``Sunday'')
+;FI".            %^A  uppercased (``SUNDAY'')
+;FI"-    %a - The abbreviated name (``Sun'')
+;FI"+            %^a  uppercased (``SUN'')
+;FI"2    %u - Day of the week (Monday is 1, 1..7)
+;FI"2    %w - Day of the week (Sunday is 0, 0..6)
+;FI"
+;FI"1  ISO 8601 week-based year and week number:
+;FI"H  The week 1 of YYYY starts with a Monday and includes YYYY-01-04.
+;FI"J  The days in the year before the first week are in the last week of
+;FI"  the previous year.
+;FI""    %G - The week-based year
+;FI"@    %g - The last 2 digits of the week-based year (00..99)
+;FI":    %V - Week number of the week-based year (01..53)
+;FI"
+;FI"  Week number:
+;FI"J  The week 1 of YYYY starts with a Sunday or Monday (according to %U
+;FI"J  or %W).  The days in the year before the first week are in week 0.
+;FI"O    %U - Week number of the year.  The week starts with Sunday.  (00..53)
+;FI"O    %W - Week number of the year.  The week starts with Monday.  (00..53)
+;FI"
+;FI"%  Seconds since the Unix Epoch:
+;FI"?    %s - Number of seconds since 1970-01-01 00:00:00 UTC.
+;FI"D    %Q - Number of microseconds since 1970-01-01 00:00:00 UTC.
+;FI"
+;FI"  Literal string:
+;FI"%    %n - Newline character (\n)
+;FI"!    %t - Tab character (\t)
+;FI"&    %% - Literal ``%'' character
+;FI"
+;FI"  Combination:
+;FI"-    %c - date and time (%a %b %e %T %Y)
+;FI"    %D - Date (%m/%d/%y)
+;FI"2    %F - The ISO 8601 date format (%Y-%m-%d)
+;FI""    %v - VMS date (%e-%b-%Y)
+;FI"    %x - Same as %D
+;FI"    %X - Same as %T
+;FI")    %r - 12-hour time (%I:%M:%S %p)
+;FI"#    %R - 24-hour time (%H:%M)
+;FI"&    %T - 24-hour time (%H:%M:%S)
+;FI"0    %+ - date(1) (%a %b %e %H:%M:%S %Z %Y)
+;FI"
+;FI"OThis method is similar to strftime() function defined in ISO C and POSIX.
+;FI"NSeveral directives (%a, %A, %b, %B, %c, %p, %r, %x, %X, %E*, %O* and %Z)
+;FI"+are locale dependent in the function.
+;FI"0However this method is locale independent.
+;FI"MSo, the result may differ even if a same format string is used in other
+;FI"systems such as C.
+;FI"LIt is good practice to avoid %x and %X because there are corresponding
+;FI"4locale independent representations, %D and %T.
+;FI"
+;FI"Examples:
+;FI"
+;FI"5  d = DateTime.new(2007,11,19,8,37,48,"-06:00")
+;FI"O                            #=> #<DateTime: 2007-11-19T08:37:48-0600 ...>
+;FI"G  d.strftime("Printed on %m/%d/%Y")   #=> "Printed on 11/19/2007"
+;FI"<  d.strftime("at %I:%M%p")            #=> "at 08:37AM"
+;FI"
+;FI"Various ISO 8601 formats:
+;FI"K  %Y%m%d           => 20071119                  Calendar date (basic)
+;FI"N  %F               => 2007-11-19                Calendar date (extended)
+;FI"e  %Y-%m            => 2007-11                   Calendar date, reduced accuracy, specific month
+;FI"d  %Y               => 2007                      Calendar date, reduced accuracy, specific year
+;FI"g  %C               => 20                        Calendar date, reduced accuracy, specific century
+;FI"J  %Y%j             => 2007323                   Ordinal date (basic)
+;FI"M  %Y-%j            => 2007-323                  Ordinal date (extended)
+;FI"G  %GW%V%u          => 2007W471                  Week date (basic)
+;FI"J  %G-W%V-%u        => 2007-W47-1                Week date (extended)
+;FI"h  %GW%V            => 2007W47                   Week date, reduced accuracy, specific week (basic)
+;FI"k  %G-W%V           => 2007-W47                  Week date, reduced accuracy, specific week (extended)
+;FI"H  %H%M%S           => 083748                    Local time (basic)
+;FI"K  %T               => 08:37:48                  Local time (extended)
+;FI"k  %H%M             => 0837                      Local time, reduced accuracy, specific minute (basic)
+;FI"n  %H:%M            => 08:37                     Local time, reduced accuracy, specific minute (extended)
+;FI"a  %H               => 08                        Local time, reduced accuracy, specific hour
+;FI"u  %H%M%S,%L        => 083748,000                Local time with decimal fraction, comma as decimal sign (basic)
+;FI"x  %T,%L            => 08:37:48,000              Local time with decimal fraction, comma as decimal sign (extended)
+;FI"y  %H%M%S.%L        => 083748.000                Local time with decimal fraction, full stop as decimal sign (basic)
+;FI"|  %T.%L            => 08:37:48.000              Local time with decimal fraction, full stop as decimal sign (extended)
+;FI"d  %H%M%S%z         => 083748-0600               Local time and the difference from UTC (basic)
+;FI"g  %T%:z            => 08:37:48-06:00            Local time and the difference from UTC (extended)
+;FI"d  %Y%m%dT%H%M%S%z  => 20071119T083748-0600      Date and time of day for calendar date (basic)
+;FI"g  %FT%T%:z         => 2007-11-19T08:37:48-06:00 Date and time of day for calendar date (extended)
+;FI"c  %Y%jT%H%M%S%z    => 2007323T083748-0600       Date and time of day for ordinal date (basic)
+;FI"f  %Y-%jT%T%:z      => 2007-323T08:37:48-06:00   Date and time of day for ordinal date (extended)
+;FI"`  %GW%V%uT%H%M%S%z => 2007W471T083748-0600      Date and time of day for week date (basic)
+;FI"c  %G-W%V-%uT%T%:z  => 2007-W47-1T08:37:48-06:00 Date and time of day for week date (extended)
+;FI"Z  %Y%m%dT%H%M      => 20071119T0837             Calendar date and local time (basic)
+;FI"]  %FT%R            => 2007-11-19T08:37          Calendar date and local time (extended)
+;FI"Y  %Y%jT%H%MZ       => 2007323T0837Z             Ordinal date and UTC of day (basic)
+;FI"\  %Y-%jT%RZ        => 2007-323T08:37Z           Ordinal date and UTC of day (extended)
+;FI"n  %GW%V%uT%H%M%z   => 2007W471T0837-0600        Week date and local time and difference from UTC (basic)
+;FI"q  %G-W%V-%uT%R%:z  => 2007-W47-1T08:37-06:00    Week date and local time and difference from UTC (extended)
+;Fo:RDoc::Markup::Paragraph;	[I"'See also strftime(3) and strptime.;T:
+@file0I"3dt.strftime([format='%FT%T%:z'])  ->  string
+ ;T0[ I"(*args);FI"ext/date/date_core.c;T

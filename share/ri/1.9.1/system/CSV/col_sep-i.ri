@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"col_sep:EFI"CSV#col_sep;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"MThe encoded <tt>:col_sep</tt> used in parsing and writing.  See CSV::new;TI"for details.;T:
+@file0FI"lib/csv.rb;T

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	home:EFI"Gem::PathSupport#home;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"/The default system path for managing Gems.;T:
+@file0FI"!lib/rubygems/path_support.rb;T

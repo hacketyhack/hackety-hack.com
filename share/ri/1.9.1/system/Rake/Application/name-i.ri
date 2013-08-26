@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	name:EFI"Rake::Application#name;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"3The name of the application (typically 'rake');T:
+@file0FI"lib/rake/application.rb;T

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"field_size_limit:EFI"CSV#field_size_limit;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"AThe limit for field size, if any.  See CSV::new for details.;T:
+@file0FI"lib/csv.rb;T

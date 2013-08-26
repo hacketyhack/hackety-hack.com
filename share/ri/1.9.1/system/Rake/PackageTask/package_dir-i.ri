@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"package_dir:EFI""Rake::PackageTask#package_dir;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"BDirectory used to store the package files (default is 'pkg').;T:
+@file0FI"lib/rake/packagetask.rb;T

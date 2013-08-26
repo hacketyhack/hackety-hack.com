@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"read_timeout:EFI"Net::POP3#read_timeout;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"CSeconds to wait until reading one block (by one read(1) call).;TI"BIf the POP3 object cannot complete a read() within this time,;TI"(it raises a TimeoutError exception.;T:
+@file0FI"lib/net/pop.rb;T

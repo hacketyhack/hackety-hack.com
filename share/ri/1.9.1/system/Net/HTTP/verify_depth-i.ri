@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"verify_depth:EFI"Net::HTTP#verify_depth;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"CSets the maximum depth for the certificate chain verification.;T:
+@file0FI"lib/net/http.rb;T

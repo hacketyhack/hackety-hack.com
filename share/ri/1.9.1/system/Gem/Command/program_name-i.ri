@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"program_name:EFI"Gem::Command#program_name;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"9The name of the command for command-line invocation.;T:
+@file0FI"lib/rubygems/command.rb;T

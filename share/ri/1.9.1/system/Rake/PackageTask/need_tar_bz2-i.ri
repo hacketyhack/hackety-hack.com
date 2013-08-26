@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"need_tar_bz2:EFI"#Rake::PackageTask#need_tar_bz2;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"PTrue if a bzip2'd tar file (tar.bz2) should be produced (default is false).;T:
+@file0FI"lib/rake/packagetask.rb;T

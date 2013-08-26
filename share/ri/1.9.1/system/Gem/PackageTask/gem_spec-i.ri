@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"gem_spec:EFI"Gem::PackageTask#gem_spec;FI"RW;F:privateo:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"KRuby Gem::Specification containing the metadata for this package.  The;TI"Jname, version and package_files are automatically determined from the;TI"6gemspec and don't need to be explicitly provided.;T:
+@file0FI"!lib/rubygems/package_task.rb;T

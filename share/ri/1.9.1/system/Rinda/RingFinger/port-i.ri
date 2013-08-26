@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	port:EFI"Rinda::RingFinger#port;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"9The port that RingFinger will send query packets to.;T:
+@file0FI"lib/rinda/ring.rb;T

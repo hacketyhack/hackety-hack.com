@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"bulk_threshold:EFI"#Gem::ConfigFile#bulk_threshold;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"HBulk threshold value.  If the number of missing gems are above this;TI"Kthreshold value, then a bulk download technique is used.  (deprecated);T:
+@file0FI" lib/rubygems/config_file.rb;T

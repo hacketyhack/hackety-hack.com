@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"open_timeout:EFI"Net::HTTP#open_timeout;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[	I"ENumber of seconds to wait for the connection to open. Any number;TI"Fmay be used, including Floats for fractional seconds. If the HTTP;TI"Fobject cannot open a connection in this many seconds, it raises a;TI"TimeoutError exception.;T:
+@file0FI"lib/net/http.rb;T

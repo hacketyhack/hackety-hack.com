@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"binary:EFI"Net::FTP#binary;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"KWhen +true+, transfers are performed in binary mode.  Default: +true+.;T:
+@file0FI"lib/net/ftp.rb;T

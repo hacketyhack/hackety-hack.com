@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	libs:EFI"Rake::TestTask#libs;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"BList of directories to added to $LOAD_PATH before running the;TI"tests. (default is 'lib');T:
+@file0FI"lib/rake/testtask.rb;T

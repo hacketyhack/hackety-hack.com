@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"threads:EFI"ThreadsWait#threads;FI"R;F:privateo:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"?Returns the array of threads that have not terminated yet.;T:
+@file0FI"lib/thwait.rb;T

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"context:EFI"REXML::Element#context;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"LThe context holds information about the processing environment, such as;TI"whitespace handling.;T:
+@file0FI"lib/rexml/element.rb;T

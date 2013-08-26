@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"stdout:EFI"Tracer::stdout;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"<output stream used to output trace (defaults to STDOUT);T:
+@file0TI"lib/tracer.rb;T

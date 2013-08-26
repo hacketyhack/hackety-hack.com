@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"options:ETI"%OpenSSL::SSL::SSLContext#options;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I""Sets various OpenSSL options.;T:
+@file0FI"ext/openssl/ossl_ssl.c;T

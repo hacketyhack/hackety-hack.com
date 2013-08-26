@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	path:EFI"CGI::Cookie#path;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"6Path for which this cookie applies, as a +String+;T:
+@file0FI"lib/cgi/cookie.rb;T

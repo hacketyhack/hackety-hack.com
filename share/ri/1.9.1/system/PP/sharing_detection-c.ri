@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"sharing_detection:EFI"PP::sharing_detection;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I";Returns the sharing detection flag as a boolean value.;TI"It is false by default.;T:
+@file0TI"lib/pp.rb;T

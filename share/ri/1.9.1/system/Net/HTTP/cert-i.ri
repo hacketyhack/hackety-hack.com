@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	cert:EFI"Net::HTTP#cert;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"ESets an OpenSSL::X509::Certificate object as client certificate.;TI"C(This method is appeared in Michal Rokos's OpenSSL extension).;T:
+@file0FI"lib/net/http.rb;T

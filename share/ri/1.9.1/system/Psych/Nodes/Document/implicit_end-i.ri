@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"implicit_end:EFI"(Psych::Nodes::Document#implicit_end;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I")Is the end of the document implicit?;T:
+@file0FI"*ext/psych/lib/psych/nodes/document.rb;T

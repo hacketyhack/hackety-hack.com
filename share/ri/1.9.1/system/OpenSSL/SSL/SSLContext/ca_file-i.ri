@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"ca_file:ETI"%OpenSSL::SSL::SSLContext#ca_file;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I">The path to a file containing a PEM-format CA certificate;T:
+@file0FI"ext/openssl/ossl_ssl.c;T

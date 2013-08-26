@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"package_files:EFI"$Rake::PackageTask#package_files;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"1List of files to be included in the package.;T:
+@file0FI"lib/rake/packagetask.rb;T

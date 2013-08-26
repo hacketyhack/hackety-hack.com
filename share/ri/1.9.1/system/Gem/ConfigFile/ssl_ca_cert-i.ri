@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"ssl_ca_cert:EFI" Gem::ConfigFile#ssl_ca_cert;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"_Path name of directory or file of openssl CA certificate, used for remote https connection;T:
+@file0FI" lib/rubygems/config_file.rb;T

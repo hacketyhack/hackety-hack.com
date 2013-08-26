@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"is_alias_for:EFI"#RDoc::ClassModule#is_alias_for;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"2Class or module this constant is an alias for;T:
+@file0FI"lib/rdoc/class_module.rb;T

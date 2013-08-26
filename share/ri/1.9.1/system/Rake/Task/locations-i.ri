@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"locations:EFI"Rake::Task#locations;FI"R;F:privateo:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"AFile/Line locations of each of the task definitions for this;TI"=task (only valid if the task was defined with the detect;TI"location option set).;T:
+@file0FI"lib/rake/task.rb;T

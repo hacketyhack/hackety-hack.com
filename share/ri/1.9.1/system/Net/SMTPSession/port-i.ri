@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	port:EFI"Net::SMTP#port;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"6The port number of the SMTP server to connect to.;T:
+@file0FI"lib/net/smtp.rb;T

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"generator:EFI"RDoc::Task#generator;FI"RW;F:privateo:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"PName of format generator (--fmt) used by rdoc. (defaults to rdoc's default);T:
+@file0FI"lib/rdoc/task.rb;T

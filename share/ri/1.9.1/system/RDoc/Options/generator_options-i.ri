@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"generator_options:EFI"$RDoc::Options#generator_options;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"LLoaded generator options.  Used to prevent --help from loading the same;TI"options multiple times.;T:
+@file0FI"lib/rdoc/options.rb;T

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"reason:EFI"DRb::DRbRemoteError#reason;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I")the class of the error, as a string.;T:
+@file0FI"lib/drb/drb.rb;T

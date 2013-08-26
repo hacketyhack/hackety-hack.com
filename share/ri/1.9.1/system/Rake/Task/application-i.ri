@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"application:EFI"Rake::Task#application;FI"RW;F:privateo:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I""Application owning this task.;T:
+@file0FI"lib/rake/task.rb;T

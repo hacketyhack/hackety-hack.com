@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	body:EFI"WEBrick::HTTPResponse#body;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I")Body may be a String or IO subclass.;T:
+@file0FI" lib/webrick/httpresponse.rb;T

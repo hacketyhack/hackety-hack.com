@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"bindir:EFI"Gem::Specification#bindir;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"?The path in the gem for executable scripts.  Usually 'bin';T:
+@file0FI""lib/rubygems/specification.rb;T

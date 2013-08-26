@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"parent:EFI"Win32::Registry#parent;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"EWin32::Registry object of parent key, or nil if predefeined key.;T:
+@file0FI"'ext/dl/win32/lib/win32/registry.rb;T

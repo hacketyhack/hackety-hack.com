@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"lineno:EFI"CSV#lineno;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"MThe line number of the last row read from this file.  Fields with nested;TI"4line-end characters will not affect this count.;T:
+@file0FI"lib/csv.rb;T

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"signing_key:EFI"#Gem::Specification#signing_key;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"CThe key used to sign this gem.  See Gem::Security for details.;T:
+@file0FI""lib/rubygems/specification.rb;T

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"update_sources:EFI"#Gem::ConfigFile#update_sources;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"NTrue if we want to update the SourceInfoCache every time, false otherwise;T:
+@file0FI" lib/rubygems/config_file.rb;T

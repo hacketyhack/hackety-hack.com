@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"secure:ETI"CGI::Cookie#secure;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"3True if this cookie is secure; false otherwise;T:
+@file0FI"lib/cgi/cookie.rb;T

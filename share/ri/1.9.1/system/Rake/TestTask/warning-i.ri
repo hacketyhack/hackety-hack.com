@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"warning:EFI"Rake::TestTask#warning;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"=Request that the tests be run with the warning flag set.;TI"?E.g. warning=true implies "ruby -w" used to run the tests.;T:
+@file0FI"lib/rake/testtask.rb;T

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"handler:EFI"Psych::Parser#handler;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"/The handler on which events will be called;T:
+@file0FI""ext/psych/lib/psych/parser.rb;T

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"show_hash:EFI"RDoc::Options#show_hash;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"FInclude the '#' at the front of hyperlinked instance method names;T:
+@file0FI"lib/rdoc/options.rb;T

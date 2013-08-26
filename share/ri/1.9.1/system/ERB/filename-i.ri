@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"filename:EFI"ERB#filename;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"MThe optional _filename_ argument passed to Kernel#eval when the ERB code;TI"is run;T:
+@file0FI"lib/erb.rb;T

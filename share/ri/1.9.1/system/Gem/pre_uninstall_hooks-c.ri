@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"pre_uninstall_hooks:EFI"Gem::pre_uninstall_hooks;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"KThe list of hooks to be run after Gem::Uninstall#uninstall is finished;T:
+@file0TI"lib/rubygems.rb;T

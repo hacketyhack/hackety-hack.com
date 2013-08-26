@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"rubyforge_project:EFI")Gem::Specification#rubyforge_project;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"@The rubyforge project this gem lives under.  i.e. RubyGems';TI"%rubyforge_project is "rubygems".;T:
+@file0FI""lib/rubygems/specification.rb;T

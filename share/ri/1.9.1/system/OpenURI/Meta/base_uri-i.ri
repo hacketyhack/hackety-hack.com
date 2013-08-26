@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"base_uri:EFI"OpenURI::Meta#base_uri;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"Areturns a URI that is the base of relative URIs in the data.;TI"FIt may differ from the URI supplied by a user due to redirection.;T:
+@file0FI"lib/open-uri.rb;T

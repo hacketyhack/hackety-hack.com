@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"rubygems_api_key:EFI"%Gem::ConfigFile#rubygems_api_key;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"API key for RubyGems.org;T:
+@file0FI" lib/rubygems/config_file.rb;T

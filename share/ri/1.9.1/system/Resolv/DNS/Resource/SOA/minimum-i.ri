@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"minimum:EFI"'Resolv::DNS::Resource::SOA#minimum;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"DThe minimum number of seconds to be used for TTL values in RRs.;T:
+@file0FI"lib/resolv.rb;T

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"main_page:EFI"RDoc::Options#main_page;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"OName of the file, class or module to display in the initial index page (if;TI"7not specified the first file we encounter is used);T:
+@file0FI"lib/rdoc/options.rb;T

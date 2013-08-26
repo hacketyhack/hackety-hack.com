@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	long:EFI"OptionParser::List#long;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"BMap from long style option switches to actual switch objects.;T:
+@file0FI"lib/optparse.rb;T

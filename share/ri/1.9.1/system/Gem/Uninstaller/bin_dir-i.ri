@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"bin_dir:EFI"Gem::Uninstaller#bin_dir;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"=The directory a gem's executables will be installed into;T:
+@file0FI" lib/rubygems/uninstaller.rb;T

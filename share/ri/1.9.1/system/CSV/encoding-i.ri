@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"encoding:EFI"CSV#encoding;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"NThe Encoding CSV is parsing or writing in.  This will be the Encoding you;TI"Hreceive parsed data in and/or the Encoding data will be written in.;T:
+@file0FI"lib/csv.rb;T

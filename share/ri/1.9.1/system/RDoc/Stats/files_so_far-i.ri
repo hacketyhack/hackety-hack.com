@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"files_so_far:EFI"RDoc::Stats#files_so_far;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I")Count of files parsed during parsing;T:
+@file0FI"lib/rdoc/stats.rb;T

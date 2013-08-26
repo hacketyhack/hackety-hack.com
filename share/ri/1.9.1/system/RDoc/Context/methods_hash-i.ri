@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"methods_hash:EFI"RDoc::Context#methods_hash;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"EHash of registered methods. Attributes are also registered here,;TI"twice if they are RW.;T:
+@file0FI"lib/rdoc/context.rb;T

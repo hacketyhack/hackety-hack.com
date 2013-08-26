@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"defaults:EFI"Gem::Command#defaults;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I")The default options for the command.;T:
+@file0FI"lib/rubygems/command.rb;T

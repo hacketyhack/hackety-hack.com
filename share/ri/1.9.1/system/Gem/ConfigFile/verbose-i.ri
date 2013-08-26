@@ -1,0 +1,6 @@
+U:RDoc::Attr[iI"verbose:EFI"Gem::ConfigFile#verbose;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"Verbose level of output:;To:RDoc::Markup::List:
+@type:BULLET:@items[o:RDoc::Markup::ListItem:@label0;	[o;
+;	[I"false -- No output;To;;0;	[o;
+;	[I"true -- Normal output;To;;0;	[o;
+;	[I":loud -- Extra output;T:
+@file0FI" lib/rubygems/config_file.rb;T

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	name:EFI"CGI::Cookie#name;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"'Name of this cookie, as a +String+;T:
+@file0FI"lib/cgi/cookie.rb;T

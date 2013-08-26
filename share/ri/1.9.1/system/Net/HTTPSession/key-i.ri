@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"key:EFI"Net::HTTP#key;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"=Sets an OpenSSL::PKey::RSA or OpenSSL::PKey::DSA object.;TI"C(This method is appeared in Michal Rokos's OpenSSL extension.);T:
+@file0FI"lib/net/http.rb;T

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"force_update:EFI"RDoc::Options#force_update;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"3Scan newer sources than the flag file if true.;T:
+@file0FI"lib/rdoc/options.rb;T

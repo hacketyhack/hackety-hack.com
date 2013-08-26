@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"visibility:EFI"RDoc::Options#visibility;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"AMinimum visibility of a documented method. One of +:public+,;TI"@+:protected+, +:private+. May be overridden on a per-method;TI"$basis with the :doc: directive.;T:
+@file0FI"lib/rdoc/options.rb;T

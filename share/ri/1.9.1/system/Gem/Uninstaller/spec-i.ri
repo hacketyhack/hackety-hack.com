@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	spec:EFI"Gem::Uninstaller#spec;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"JThe Gem::Specification for the gem being uninstalled, only set during;TI"#uninstall_gem;T:
+@file0FI" lib/rubygems/uninstaller.rb;T

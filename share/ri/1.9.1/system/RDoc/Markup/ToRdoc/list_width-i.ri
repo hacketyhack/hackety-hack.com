@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"list_width:EFI"$RDoc::Markup::ToRdoc#list_width;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I")Stack of list widths for indentation;T:
+@file0FI"lib/rdoc/markup/to_rdoc.rb;T

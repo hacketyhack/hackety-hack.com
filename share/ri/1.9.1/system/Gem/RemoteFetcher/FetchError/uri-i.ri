@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"uri:EFI"'Gem::RemoteFetcher::FetchError#uri;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"BThe URI which was being accessed when the exception happened.;T:
+@file0FI"#lib/rubygems/remote_fetcher.rb;T

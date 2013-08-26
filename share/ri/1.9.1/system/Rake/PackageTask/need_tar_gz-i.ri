@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"need_tar_gz:EFI""Rake::PackageTask#need_tar_gz;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"OTrue if a gzipped tar file (tar.gz) should be produced (default is false).;T:
+@file0FI"lib/rake/packagetask.rb;T

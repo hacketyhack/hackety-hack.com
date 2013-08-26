@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"read_timeout:EFI"Net::HTTP#read_timeout;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[	I"HNumber of seconds to wait for one block to be read (via one read(2);TI"Ccall). Any number may be used, including Floats for fractional;TI"Gseconds. If the HTTP object cannot read data in this many seconds,;TI"(it raises a TimeoutError exception.;T:
+@file0FI"lib/net/http.rb;T

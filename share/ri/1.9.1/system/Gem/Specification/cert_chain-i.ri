@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"cert_chain:EFI""Gem::Specification#cert_chain;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"HThe certificate chain used to sign this gem.  See Gem::Security for;TI"details.;T:
+@file0FI""lib/rubygems/specification.rb;T

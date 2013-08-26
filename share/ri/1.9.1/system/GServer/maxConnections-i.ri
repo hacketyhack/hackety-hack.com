@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"maxConnections:EFI"GServer#maxConnections;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"CMaximum number of connections to accept at at ime, as a FixNum;T:
+@file0FI"lib/gserver.rb;T

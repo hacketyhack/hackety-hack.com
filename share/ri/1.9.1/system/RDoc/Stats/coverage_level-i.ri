@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"coverage_level:EFI"RDoc::Stats#coverage_level;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I")Output level for the coverage report;T:
+@file0FI"lib/rdoc/stats.rb;T

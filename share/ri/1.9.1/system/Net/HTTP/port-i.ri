@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	port:EFI"Net::HTTP#port;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"#The port number to connect to.;T:
+@file0FI"lib/net/http.rb;T

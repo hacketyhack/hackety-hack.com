@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"client_ca:ETI"'OpenSSL::SSL::SSLContext#client_ca;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"LA certificate or Array of certificates that will be sent to the client.;T:
+@file0FI"ext/openssl/ossl_ssl.c;T

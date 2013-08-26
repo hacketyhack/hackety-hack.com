@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"done_documenting:EFI"&RDoc::CodeObject#done_documenting;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"AAre we done documenting (ie, did we come across a :enddoc:)?;T:
+@file0FI"lib/rdoc/code_object.rb;T

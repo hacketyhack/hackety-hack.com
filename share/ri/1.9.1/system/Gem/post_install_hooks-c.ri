@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"post_install_hooks:EFI"Gem::post_install_hooks;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"JThe list of hooks to be run before Gem::Install#install does any work;T:
+@file0TI"lib/rubygems.rb;T

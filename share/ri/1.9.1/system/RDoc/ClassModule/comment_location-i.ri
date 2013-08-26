@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"comment_location:EFI"'RDoc::ClassModule#comment_location;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"MComment and the location it came from.  Use #add_comment to add comments;T:
+@file0FI"lib/rdoc/class_module.rb;T

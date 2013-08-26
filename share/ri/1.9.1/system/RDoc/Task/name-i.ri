@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	name:EFI"RDoc::Task#name;FI"RW;F:privateo:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I":Name of the main, top level task.  (default is :rdoc);T:
+@file0FI"lib/rdoc/task.rb;T

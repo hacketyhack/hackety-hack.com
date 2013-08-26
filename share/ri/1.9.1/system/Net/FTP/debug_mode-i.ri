@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"debug_mode:EFI"Net::FTP#debug_mode;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"?When +true+, all traffic to and from the server is written;TI"%to +$stdout+.  Default: +false+.;T:
+@file0FI"lib/net/ftp.rb;T

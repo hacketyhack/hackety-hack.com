@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"rw:EFI"RDoc::Attr#rw;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"DIs the attribute readable ('R'), writable ('W') or both ('RW')?;T:
+@file0FI"lib/rdoc/attr.rb;T
