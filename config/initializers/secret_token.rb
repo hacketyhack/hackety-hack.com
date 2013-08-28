@@ -6,6 +6,10 @@ if ENV["SECRET_TOKEN"].blank?
     ENV["SECRET_TOKEN"] = HacketyHackCom::Application.config.secret_token = SecureRandom.hex(30)
   else
     config_file = File.expand_path(File.join(Rails.root, '/config/config.yml'))
+    unless File.exist? config_file
+      require 'fileutils'
+      FileUtils.cp config_file + '.sample', config_file
+    end
     config = YAML.load_file(config_file)
     # Generate the key, set it for the current environment, update the yaml file and move on
     ENV["SECRET_TOKEN"] = config[Rails.env]['SECRET_TOKEN'] = SecureRandom.hex(30)

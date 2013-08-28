@@ -9,3 +9,4 @@ tmp/
 .redcar
 bin/
 coverage
+config/config.yml
