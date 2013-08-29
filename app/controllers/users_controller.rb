@@ -1,11 +1,10 @@
 class UsersController < InheritedController
   load_and_authorize_resource
   skip_authorize_resource :only => [:following, :followers] #anyone can perform these read-only actions
-
   require 'will_paginate/array'
 
   def index
-    redirect_to root_path unless current_user and current_user.moderator
+    redirect_to root_path unless can? :manage, @users
     @users = User.all.paginate(:page => params[:page], :per_page => 10)
   end
 

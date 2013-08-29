@@ -4,11 +4,8 @@
 		=f.input :subject, :hint => "Write the subject here!"
 		=f.input :body, :as => :text
 
-		-if(@emails.class == Array.new.class)
-			-@emails.each do |email|
-				=f.input "email[#{email}]", :as => :text, :as => :hidden, :input_html => { :value => ""}		
-		-else
-			=f.input "email[#{@emails}]", :as => :text, :as => :hidden, :input_html => { :value => ""}		
+		-@emails.each do |email|
+			=f.input "email[#{email}]", :as => :text, :as => :hidden, :input_html => { :value => ""}		
 
 	.actions
 		=f.button :submit , 'Send Email', :class => "primary btn"
