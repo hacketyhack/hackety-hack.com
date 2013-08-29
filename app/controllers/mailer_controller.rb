@@ -1,7 +1,10 @@
 class MailerController < ApplicationController
   def new
-    #@user = User.find_by_username(params[:user])
-    @users = params[:user]
+    @users = Array.new 
+    Array(params[:user]).each do |user|
+      @users << user
+    end
+
     @emails = Array.new
     @users.each do |user|
       @emails << User.find_by_username(user).email
