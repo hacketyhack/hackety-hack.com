@@ -3,13 +3,10 @@ class MailerController < ApplicationController
     #@user = User.find_by_username(params[:user])
     @users = params[:user]
     @emails = Array.new
-    if @users.is_a? Array
-      @users.each do |user|
-        @emails << User.find_by_username(user).email
-      end
-    else
-      @emails << User.find_by_username(@users).email
+    @users.each do |user|
+      @emails << User.find_by_username(user).email
     end
+
   	@message = Message.new
   end
 
