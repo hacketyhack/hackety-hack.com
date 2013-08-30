@@ -19,6 +19,7 @@ gem 'twitter'
 gem 'fb_graph'
 gem 'omniauth-facebook'
 gem 'omniauth-github'
+gem 'omniauth-google'
 gem 'omniauth-yahoo'
 
 gem 'haml-rails'
@@ -31,8 +32,8 @@ gem "letter_opener", group: :development
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   "~> 3.1.0"
-  gem 'coffee-rails', "~> 3.1.0"
+  gem 'sass-rails', "~> 3.1.1"
+  gem 'coffee-rails', "~> 3.1.1 "
   gem 'uglifier'
 end
 
@@ -55,16 +56,18 @@ group :development do
 end
 
 group :development, :test do
- 
-  gem 'fabrication'
-  gem 'rspec-rails'
+
   gem 'capybara'
   gem 'cucumber-rails', require: false
+  gem 'fabrication'
+  gem 'factory_girl_rails'
   gem "faker"
+  gem 'rspec-rails'
+
+
   gem 'pry'
   gem 'sqlite3'
-  
-  
+
 end
 
 group :production do
@@ -77,4 +80,5 @@ group :test do
   gem "mocha"
   gem "database_cleaner"
   gem "launchy"
+  gem 'mongoid-rspec'
 end

@@ -1,13 +1,7 @@
 HacketyHackCom::Application.routes.draw do
-  #match '/auth/:provider/callback' => 'authentications#create'
-
+  match '/auth/:provider/callback' => 'authentications#create'
+  match 'registrations' => 'registrations#email'
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}, controllers: {omniauth_callbacks: "authentication"} ## Changed "omniauth_callback" to "authentication"
-
-  get "users/index"
-
-  match 'mailer' => 'mailer#new', :as => 'mailer', :via => :get
-  match 'mailer' => 'mailer#create', :as => 'mailer', :via => :post
-  get 'users/deleted_user', :to => 'users#deleted_user'
 
   resources :lessons, :only => [:index, :show]
 
@@ -54,12 +48,8 @@ HacketyHackCom::Application.routes.draw do
 
     resources :programs
   end
-
+  
   match '/auth/:provider/callback', :to => 'sessions#create'
-  match '/auth/failure' => 'sessions#failure'
-  match '/login' => 'sessions#new', :as => "login"
-  match '/logout' => 'sessions#destroy', :as => "logout"
-
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}, controllers: {omniauth_callbacks: "omniauth_callbacks"}
   devise_scope :user do
     get "login" => "devise/sessions#new", :as => "login"
