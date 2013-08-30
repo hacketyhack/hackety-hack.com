@@ -3,7 +3,6 @@ OmniAuth.config.logger = Rails.logger
 Rails.application.config.middleware.use OmniAuth::Builder do |variable|
   #provider :developer unless Rails.env.production?
 
-
   provider :twitter, ENV['HH_TWITTER_KEY'], ENV['HH_TWITTER_SECRET']
   provider :github, ENV['HH_GITHUB_KEY'], ENV['HH_GITHUB_SECRET']
   provider :facebook, ENV['HH_FB_KEY'], ENV['HH_FB_SECRET']
