@@ -1,7 +1,9 @@
 require File.expand_path('../boot', __FILE__)
 
-require 'rails/all'
-# require 'active_record/railtie'
+#require 'rails/all'
+require 'action_controller'
+require 'action_mailer/railtie'
+require 'active_resource/railtie'
 require 'devise'
 
 if defined?(Bundler)
