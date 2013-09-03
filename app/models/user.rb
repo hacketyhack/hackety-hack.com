@@ -12,12 +12,21 @@ class User
   #field :provider, :type => String
 
   validates_uniqueness_of :email #****Trying this thru Line 52 JFTFOI 
-  attr_accessible :email, :password, :password_comfirmation, :remember_me, :username 
-
+  #attr_accessible :email, :password, :password_comfirmation, :remember_me, :username 
+  attr_protected :uid, :name, :email
   #index({email: 1}, {background: true,  unique: true})
   #index({"authentications.provider" => 1}, {background: true})
   #index({"authentications.uid" => 1}, {background: true})
-
+  def self.create_with_omniauth(auth)
+  create! do |user|
+    user.provider = auth['provider']
+    user.uid = auth['uid']
+    if auth['info']
+       user.name = auth['info']['name'] || ""
+       user.email = auth['info']['email'] || ""
+    end
+  end
+end
   def self.new_with_session(params, session) ## When Omniauth is generating user data, this methid is requested
     if session["devise.user_attributes"]
       auth = session["devise.user_attributes"]

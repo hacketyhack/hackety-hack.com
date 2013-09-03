@@ -363,7 +363,7 @@ DEPENDENCIES
   letter_opener
   mm-devise (~> 2.0)
   mocha
-  mongo_mapper
+  mongoid
   mongoid-rspec
   omniauth
   omniauth-facebook
