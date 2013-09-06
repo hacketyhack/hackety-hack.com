@@ -55,6 +55,7 @@ HacketyHackCom::Application.routes.draw do
   # match ':user_id/:slug', :to => "programs#show", :as => :program
 
   match 'faq' => 'static#faq'
+  match 'contribute' => 'static#contribute'
   root :to => "static#root"
 
 end
