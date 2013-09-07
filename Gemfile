@@ -24,8 +24,8 @@ gem 'omniauth-yahoo'
 
 gem 'haml-rails'
 gem 'jquery-rails'
-gem 'mongoid'
-#gem 'mongo_mapper'
+#gem 'mongoid'
+gem 'mongo_mapper'
 gem 'bson_ext'
 
 gem "letter_opener", group: :development
