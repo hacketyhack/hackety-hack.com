@@ -33,6 +33,7 @@ gem "letter_opener", group: :development
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
+
   gem 'sass-rails', "~> 3.1.1"   
   gem 'coffee-rails', "~> 3.1.1 " 
   gem 'uglifier'
@@ -63,7 +64,7 @@ group :development do
 end
 
 group :development, :test do
- 
+
   gem 'capybara'
   gem 'cucumber-rails', require: false
   gem 'fabrication'
@@ -75,6 +76,7 @@ group :development, :test do
   gem 'pry'
   gem 'sqlite3'
     
+
 end
 
 group :production do

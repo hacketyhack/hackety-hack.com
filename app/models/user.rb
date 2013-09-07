@@ -3,6 +3,7 @@ class User
   #****many :authentications
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
+
   devise :database_authenticatable, :registerable, 
          :omniauthable, :recoverable, :rememberable, :trackable, :validatable
 
@@ -11,8 +12,9 @@ class User
   #field :name, :type => String
   #field :provider, :type => String
 
-  validates_uniqueness_of :email #****Trying this thru Line 52 JFTFOI 
-  #attr_accessible :email, :password, :password_comfirmation, :remember_me, :username 
+  validates_uniqueness_of :email #****Trying this thru Line 52 JFTFOI
+  #attr_accessible :email, :password, :password_comfirmation, :remember_me, :username
+
   attr_protected :uid, :name, :email
   #index({email: 1}, {background: true,  unique: true})
   #index({"authentications.provider" => 1}, {background: true})
@@ -60,7 +62,6 @@ end
     end
   end
 
-
   validates_presence_of :username
   validates_uniqueness_of :username
   
@@ -75,7 +76,7 @@ end
   key :uid,      String
   
 
-  ## Database authenticatable
+   ## Database authenticatable
   key :email,              :type => String, :null => false
   key :encrypted_password, :type => String, :null => false
 
@@ -157,26 +158,17 @@ end
     steve.follow! self
   end
 
-
+      
   def self.from_omniauth(auth)
-    ## Trying this JFTFOI
-    where(auth.slice(:provider, :uid)).first_or_create do |user|
-      user.provider = auth.provider
-      user.uid = auth.id
-      user.email = auth.info.email
-      user.firstname = auth.info.first_name
-      user.lastname = auth.info.last_name
-      # here we'll try first_or_... -- if that doesn't work we'll try find_or_ ...
-
-      #user = User.find_or_initialize_by_provider_and_uid(auth[:provider], auth[:uid])
-      user.username = auth.info.nickname
-    # if they are trying authentication for the first time ever, 
+    #binding.pry
+    # here we'll try first_or_... -- if that doesn't work we'll try find_or_ ...
+    user = User.find_or_initialize_by_provider_and_uid(auth[:provider], auth[:uid])
+    user.username = auth.info.nickname
+    # if they are trying authentication for the first time ever,
     #   the save will fail due to validation failure
-      user.save
-      user
+    user.save
+    user
 
-    end   
-    
   end
 
   def password_required?
@@ -184,6 +176,7 @@ end
   end
 
   def self.new_with_session(params, session)
+
     if session["devise.user_attributes"]  
       new(session["devise.user_attributes"]) do |user|
         user.attributes = params

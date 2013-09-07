@@ -1,8 +1,7 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def all
-     
-    #binding.pry 
+
     auth = request.env["omniauth.auth"]
     user = User.from_omniauth(auth)
     checkUser = User.find_by_provider_and_uid auth[:provider], auth[:uid]
@@ -12,6 +11,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     else
       session["devise.user_attributes"] = user.attributes
       #binding.pry
+
       redirect_to new_user_registration_url
     end
 
@@ -21,7 +21,6 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   alias_method :facebook, :all
   alias_method :github,   :all
   alias_method :linkedin, :all
-  alias_method :google, :all? 
+  alias_method :google, :all 
   alias_method :yahoo, :all
-  
 end

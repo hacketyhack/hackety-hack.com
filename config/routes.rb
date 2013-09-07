@@ -2,7 +2,7 @@ HacketyHackCom::Application.routes.draw do
   root :to => "home/index"
 
   #match '/auth/:provider/callback' => 'authentications#create'
-   
+
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}, controllers: {omniauth_callbacks: "authentication"} ## Changed "omniauth_callback" to "authentication"
 
   get "users/index"
@@ -56,12 +56,12 @@ HacketyHackCom::Application.routes.draw do
 
     resources :programs
   end
-  
+
   match '/auth/:provider/callback', :to => 'sessions#create'
   match '/auth/failure' => 'sessions#failure'
   match '/login' => 'sessions#new', :as => "login"
   match '/logout' => 'sessions#destroy', :as => "logout"
-  
+
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}, controllers: {omniauth_callbacks: "omniauth_callbacks"}
   devise_scope :user do
     get "login" => "devise/sessions#new", :as => "login"
