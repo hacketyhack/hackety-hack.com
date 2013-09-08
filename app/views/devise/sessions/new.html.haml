@@ -1,6 +1,7 @@
 - content_for :title do
   Log In
-
+  %p
+  %h4 (Optional Login with these accounts coming soon!)
 .sign-in
   = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
     .inputs  
