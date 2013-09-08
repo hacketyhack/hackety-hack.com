@@ -9,9 +9,22 @@ gem 'rails', '3.1.11'
 gem 'json'
 
 gem 'hackety_hack-lessons', '~> 1.1', :require => 'hackety_hack/lessons'
+gem 'prawn'
+# Authentication gems for making features "omniauthable"
+
+gem 'omniauth-twitter', '1.0.0'
+gem 'omniauth-linkedin'
+gem 'omniauth'
+gem 'twitter'
+gem 'fb_graph'
+gem 'omniauth-facebook'
+gem 'omniauth-github'
+gem 'omniauth-google'
+gem 'omniauth-yahoo'
 
 gem 'haml-rails'
 gem 'jquery-rails'
+#gem 'mongoid'
 gem 'mongo_mapper'
 gem 'bson_ext'
 
@@ -20,8 +33,9 @@ gem "letter_opener", group: :development
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   "~> 3.1.0"
-  gem 'coffee-rails', "~> 3.1.0"
+
+  gem 'sass-rails', "~> 3.1.1"   
+  gem 'coffee-rails', "~> 3.1.1 " 
   gem 'uglifier'
 end
 
@@ -36,21 +50,33 @@ gem "semantic_menu",  git: "git://github.com/michaek/semantic_menu.git"
 gem 'will_paginate'    # Pagination
 gem 'rdiscount'   # Markdown
 
+#gem 'web_video', '~> 1.2.0' 
+#gem 'rshot'
+#gem 'imgkit'
+#gem 'Jekyll'
+#gem 'and_preview'
+
 group :development do
+  gem 'binding_of_caller'
+  gem 'better_errors'
   # Use unicorn as the web server
   gem 'unicorn'
 end
 
 group :development, :test do
-  gem 'fabrication'
-  gem 'rspec-rails'
+
   gem 'capybara'
   gem 'cucumber-rails', require: false
+  gem 'fabrication'
+  gem 'factory_girl_rails'
   gem "faker"
+  gem 'rspec-rails'
+
+ 
   gem 'pry'
   gem 'sqlite3'
-  
-  
+    
+
 end
 
 group :production do
@@ -63,4 +89,5 @@ group :test do
   gem "mocha"
   gem "database_cleaner"
   gem "launchy"
+  gem 'mongoid-rspec'
 end

@@ -8,8 +8,17 @@
   -if @support
     Support Questions
   -else
-    Questions
-
+    
+%h1 Questions
+%p
+  %a.btn{:href => "#?filtered=1"} Unanswered
+  %a.btn{:href => "#?filtered=1"} Answered
+%table
+  %tr
+    %th Questions 
+    %th
+    %th
+    %th
 - content_for :sidebar do
   = render :partial => "shared/ask"
   - if @support

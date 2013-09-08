@@ -1,0 +1,44 @@
+arch=x86_64-linux
+sitearch=${arch}
+prefix=/home/jacqueline/project/hackety-hack.com
+exec_prefix=${prefix}
+bindir=${exec_prefix}/bin
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+MAJOR=1
+MINOR=9
+TEENY=1
+ruby_version=1.9.1
+RUBY_PROGRAM_VERSION=1.9.3
+RUBY_BASE_NAME=ruby
+RUBY_SO_NAME=${RUBY_BASE_NAME}
+RUBY_INSTALL_NAME=${RUBY_BASE_NAME}
+DEFFILE=
+LIBPATH=
+LIBRUBY_A=lib${RUBY_SO_NAME}-static.a
+LIBRUBY_SO=lib${RUBY_SO_NAME}.so.${MAJOR}.${MINOR}.${TEENY}
+LIBRUBY=${LIBRUBY_A}
+LIBRUBYARG_SHARED=-Wl,-R -Wl,${libdir} -L${libdir} 
+LIBRUBYARG_STATIC=-Wl,-R -Wl,${libdir} -L${libdir} -l${RUBY_SO_NAME}-static
+LIBRUBYARG=${LIBRUBYARG_STATIC}
+LIBS=-lpthread -lrt -ldl -lcrypt -lm 
+DLDFLAGS=
+ruby=${bindir}/${RUBY_INSTALL_NAME}
+rubylibprefix=${libdir}/${RUBY_BASE_NAME}
+rubylibdir=${rubylibprefix}/${ruby_version}
+vendordir=${rubylibprefix}/vendor_ruby
+sitedir=${rubylibprefix}/site_ruby
+rubyarchdir=${rubylibdir}/${arch}
+vendorarchdir=${vendordir}/${sitearch}
+sitearchdir=${sitedir}/${sitearch}
+rubyhdrdir=${includedir}/${RUBY_BASE_NAME}-${ruby_version}
+vendorhdrdir=${rubyhdrdir}/vendor_ruby
+sitehdrdir=${rubyhdrdir}/site_ruby
+
+Name: Ruby
+Description: Object Oriented Script Language
+Version: ${ruby_version}
+URL: http://www.ruby-lang.org
+Cflags: -I${rubyhdrdir}/${arch} -I${rubyhdrdir}
+Libs: ${DLDFLAGS} ${LIBRUBYARG_SHARED} ${LIBS}
+Requires:

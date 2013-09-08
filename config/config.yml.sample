@@ -6,4 +6,4 @@ development:
   # no regular words or you'll be exposed to dictionary attacks.
   # Used in config/initializers/secret_token.rb.
   # You can generate a good value for this by running `rake secret`.
-  SECRET_TOKEN:
+  SECRET_TOKEN: 65eefd2e79e0b2f02421975364626b7d64120ce89456bd5ed313c8650f66155e57361c288dba9d963e8496a9b7ade03d8f006b9225c18feae3334d66afee2536

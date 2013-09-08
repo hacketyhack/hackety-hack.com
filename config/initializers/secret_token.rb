@@ -17,4 +17,7 @@ if ENV["SECRET_TOKEN"].blank?
   end
 end
 
-HacketyHackCom::Application.config.secret_token = ENV["SECRET_TOKEN"]
+
+# Be sure to restart your server when you modify this file.
+
+HacketyHackCom::Application.config.secret_token = ENV['SECRET_TOKEN']

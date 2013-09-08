@@ -1,0 +1,2 @@
+Fabricator(:authentication) do
+end
