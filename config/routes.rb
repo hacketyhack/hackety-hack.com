@@ -4,7 +4,6 @@ HacketyHackCom::Application.routes.draw do
 
   match 'mailer' => 'mailer#new', :as => 'mailer', :via => :get
   match 'mailer' => 'mailer#create', :as => 'mailer', :via => :post
-  # match 'mailer' => 'mailer#diffusion', :as => 'mailer', :via => :get
 
   resources :lessons, :only => [:index, :show]
 
