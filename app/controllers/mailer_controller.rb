@@ -1,10 +1,7 @@
 class MailerController < ApplicationController
   def new
     @users = Array(params[:user])
-
-    @emails = Array.new
     @emails = User.where(:username => @users).all.map(&:email);
-
   	@message = Message.new
   end
 
