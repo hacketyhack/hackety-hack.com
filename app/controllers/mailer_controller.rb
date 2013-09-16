@@ -1,14 +1,9 @@
 class MailerController < ApplicationController
   def new
-    @users = Array.new 
-    Array(params[:user]).each do |user|
-      @users << user
-    end
+    @users = Array(params[:user])
 
     @emails = Array.new
-    @users.each do |user|
-      @emails << User.find_by_username(user).email
-    end
+    @emails = User.where(:username => @users).all.map(&:email);
 
   	@message = Message.new
   end
