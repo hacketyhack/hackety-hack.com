@@ -20,7 +20,7 @@ describe MailerController do
 
   describe "POST 'create' for a single user email" do
     it "returns http success" do
-      get 'create', message: Fabricate.build(:message)
+      post 'create', message: Fabricate.build(:message)
       response.should be_success
     end
   end
