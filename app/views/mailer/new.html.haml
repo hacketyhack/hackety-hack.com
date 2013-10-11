@@ -2,6 +2,6 @@
 = render "form"
 
 This email will send to: 
-=@user.username 
-with email: 
-=@user.email 
+-@emails.each do |email|
+	= email
+	= "  "

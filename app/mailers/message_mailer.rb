@@ -1,8 +1,9 @@
 class MessageMailer < ActionMailer::Base
   default from: "steve@hackety.com"
 
-  def new_message message 
+  def new_message message, email
   	@message = message
-  	mail(:to => @message.email, :subject => @message.subject)
+  	@email = email
+  	mail(:to => @email, :subject => @message.subject)
   end
 end

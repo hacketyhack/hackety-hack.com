@@ -1,3 +1,4 @@
+=link_to "Create a diffusion", mailer_path(:user => User.all)
 %ul
 	- @users.each do |user|
 		%li
@@ -5,4 +6,5 @@
 				.title= user.username
 			.categories
 				.btn.success= link_to "Email him", mailer_path(:user => user)
+
 = will_paginate @users
