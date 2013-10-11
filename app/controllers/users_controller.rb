@@ -4,10 +4,8 @@ class UsersController < InheritedController
   require 'will_paginate/array'
 
   def index
-    @users = User.all.paginate(:page => params[:page], :per_page => 1)
-    respond_to do |format|
-      format.html
-    end  
+    redirect_to root_path unless can? :manage, @users
+    @users = User.all.paginate(:page => params[:page], :per_page => 10)
   end
 
   def follow
