@@ -6,39 +6,54 @@ describe MailerController do
 
   describe "GET 'new' for a single user email" do
     it "returns http success" do
-      get 'new', user: Array(user)
+      get :new, user: Array(user)
       response.should be_success
     end
   end
 
   describe "GET 'new' for a diffusion" do
     it "returns http success" do
-      get 'new', user: Array(users)
+      get :new, user: Array(users)
       response.should be_success
     end
   end
 
   describe "POST 'create' for a single user email" do
-    it "returns http success" do
+    before :each do
       @message = Fabricate.build(:message)
-      post 'create', message: @message
-      response.should be_success
-      #We expect after send a message that the deliveries raise one
-      expect { MessageMailer.new_message(@message, @message.email).deliver }.to change { ActionMailer::Base.deliveries.size }.by(1)
+    end
+
+    it 'delivers the email' do
+      expect {
+        post :create, message: @message
+      }.to change {ActionMailer::Base.deliveries.size}.by(1)
+    end
+
+    describe 'delivered message' do
+      before :each do
+        post :create, message: @message
+      end
+
+      it "returns http success" do
+        response.should be_redirect
+      end
+
+      it 'delivers the mail with the subject that we wanted to' do
+        ActionMailer::Base.deliveries.last.subject.should == @message.subject
+      end
+
+      it 'delivers the mail with the body that we wanted to' do
+        ActionMailer::Base.deliveries.last.body.to_s.should match @message.body
+      end
     end
   end
 
   describe "POST 'create' for a diffusion" do
     it "returns http success" do
       @diffusion = Fabricate.build(:diffusion)
-      post 'create', message: @diffusion
-      response.should be_success
-
-      @before_send = ActionMailer::Base.deliveries.size
-      @diffusion.email.each do |email|
-        MessageMailer.new_message(@diffusion, email).deliver
-      end
-      ActionMailer::Base.deliveries.size.should eq @before_send + @diffusion.email.size
+      expect {
+        post 'create', message: @diffusion
+      }.to change {ActionMailer::Base.deliveries.size}.by(@diffusion.email.size)
     end
   end
 end

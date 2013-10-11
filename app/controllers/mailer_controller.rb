@@ -1,7 +1,7 @@
 class MailerController < ApplicationController
   def new
     @users = Array(params[:user])
-    @emails = User.where(:username => @users).all.map(&:email);
+    @emails = User.where(:username => @users).all.map(&:email)
   	@message = Message.new
   end
 
@@ -14,8 +14,7 @@ class MailerController < ApplicationController
       end
   		redirect_to users_index_path, :notice => "Email sent correctly"
   	else
-  		notice = "There was an error"
-  		render :new
-  	end
+  		render :new, notice: "There was an error"
+    end
   end
 end
