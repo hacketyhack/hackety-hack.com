@@ -20,15 +20,25 @@ describe MailerController do
 
   describe "POST 'create' for a single user email" do
     it "returns http success" do
-      post 'create', message: Fabricate.build(:message)
+      @message = Fabricate.build(:message)
+      post 'create', message: @message
       response.should be_success
+      #We expect after send a message that the deliveries raise one
+      expect { MessageMailer.new_message(@message, @message.email).deliver }.to change { ActionMailer::Base.deliveries.size }.by(1)
     end
   end
 
   describe "POST 'create' for a diffusion" do
     it "returns http success" do
-      post 'create', message: Fabricate.build(:diffusion)
+      @diffusion = Fabricate.build(:diffusion)
+      post 'create', message: @diffusion
       response.should be_success
+
+      @before_send = ActionMailer::Base.deliveries.size
+      @diffusion.email.each do |email|
+        MessageMailer.new_message(@diffusion, email).deliver
+      end
+      ActionMailer::Base.deliveries.size.should eq @before_send + @diffusion.email.size
     end
   end
 end
