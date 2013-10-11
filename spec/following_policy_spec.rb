@@ -2,8 +2,8 @@ require_relative '../app/models/following_policy'
 
 describe FollowingPolicy do
   before(:each) do 
-    @followee = stub()
-    @follower = stub()
+    @followee = double 'followee'
+    @follower = double 'follower'
   end
   
   it 'can follow another' do

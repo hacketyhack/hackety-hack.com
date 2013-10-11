@@ -8,7 +8,7 @@ describe 'questions/index.html.haml' do
     stub_template "shared/_ask" => ""
     stub_template "questions/_list" => ""
 
-    view.stub! :will_paginate
+    view.stub :will_paginate
   end
 
   it "renders an autodiscovery link in for the head content" do
