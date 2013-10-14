@@ -3,8 +3,7 @@
     .meta
       #{link_to list.user.username, user_path(list.user)} says
   .description
-    :markdown
-      #{list.description}
+    =markdown(list.description)
 
   .links
     - if can? :update, list

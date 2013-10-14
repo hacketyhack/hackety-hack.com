@@ -13,6 +13,5 @@
       = post.created_at.strftime("Posted %B %d, %Y at %l:%M %p")
 
     .content
-      :markdown
-        #{post.content}
+      =markdown(post.content)
     

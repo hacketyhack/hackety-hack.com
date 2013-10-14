@@ -181,10 +181,9 @@ GEM
       thor (~> 0.14.6)
     raindrops (0.8.0)
     rake (10.1.0)
-    rdiscount (1.6.8)
     rdoc (3.12.2)
       json (~> 1.4)
-    redcarpet (2.1.0)
+    redcarpet (3.0.0)
     responders (0.6.5)
     rest-client (1.6.7)
       mime-types (>= 1.16)
@@ -215,7 +214,7 @@ GEM
       multi_json (~> 1.0)
       simplecov-html (~> 0.7.1)
     simplecov-html (0.7.1)
-    slop (2.4.3)
+    slop (2.4.4)
     sprockets (2.0.4)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -268,7 +267,7 @@ DEPENDENCIES
   pg
   pry
   rails (= 3.1.11)
-  rdiscount
+  redcarpet (~> 3.0)
   rspec-rails
   sass-rails (~> 3.1.0)
   semantic_menu!
