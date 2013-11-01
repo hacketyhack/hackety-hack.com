@@ -1,4 +1,6 @@
 class MailerController < ApplicationController
+  load_and_authorize_resource class: Message
+
   def new
     @users = Array(params[:user])
     @emails = User.where(:username => @users).all.map(&:email)
