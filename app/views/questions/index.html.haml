@@ -26,4 +26,4 @@
 %ul.questions
   = render :partial => "list", :collection => collection, :as => :question
 
-= will_paginate
+= will_paginate(@questions, renderer: @support ? PrefixLinkRenderer.new('/support') : nil)
