@@ -76,3 +76,19 @@ Then /^I cannot delete that question$/ do
   visit question_path(@question)
   page.should_not have_content('Delete')
 end
+
+Given /^(\w*)\s?questions exist$/ do |type|
+  30.times do
+    Question.create(title: 'Test', description: 'Test',
+    support: type == 'support' ? true : false)
+  end
+end
+
+When /^I visit the (\w*)\s?questions page$/ do |type|
+  visit(type == 'support' ? support_questions_path : questions_path)
+end
+
+Then /^I should see a link to the next page of (\w*)\s?questions$/ do |type|
+  href = type == 'support' ? '/support/questions?page=2' : '/questions?page=2'
+  page.should have_link '2', href: href
+end
