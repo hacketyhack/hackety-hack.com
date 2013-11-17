@@ -21,3 +21,18 @@
     }
   }
 }
+
+.title {
+  display: inline;
+  margin-right: 10px;
+  margin: 0px;
+}
+
+#user-list {
+  li {
+    list-style-type: none;
+    padding-bottom: 3px;
+    padding-top: 3px;
+  }
+}
+
