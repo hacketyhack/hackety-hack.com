@@ -10,5 +10,4 @@
 #lesson-content
   = lesson_categories @lesson
 
-  :markdown
-    #{@lesson.output}
+  =markdown(@lesson.output)
