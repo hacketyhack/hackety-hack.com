@@ -5,7 +5,7 @@ source 'http://rubygems.org'
 
 ruby '1.9.3'
 
-gem 'rails', '3.1.11'
+gem 'rails', '~>3.1.11'
 gem 'json'
 
 gem 'hackety_hack-lessons', '~> 1.1', :require => 'hackety_hack/lessons'
@@ -49,8 +49,8 @@ group :development, :test do
   gem "faker"
   gem 'pry'
   gem 'sqlite3'
-  
-  
+
+
 end
 
 group :production do
