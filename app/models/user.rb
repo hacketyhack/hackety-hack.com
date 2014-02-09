@@ -79,7 +79,7 @@ class User
   # this method returns true if we're following the given Hacker, and
   # false otherwise
   def following? hacker
-    following.include? hacker
+    following_ids.include? hacker.id
   end
 
   # Everyone should have at least one follower. And steve would like to follow
