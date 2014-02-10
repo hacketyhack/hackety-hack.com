@@ -14,6 +14,7 @@ describe User do
     bob.follow!(mozart)
     bob.following?(mozart).should be_true
     bob.unfollow!(mozart)
+    bob.reload
     bob.following?(mozart).should be_false
   end
 end
