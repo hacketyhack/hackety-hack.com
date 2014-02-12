@@ -1,5 +1,5 @@
 language: ruby
-script: "rake spec && rake cucumber"
+script: "bundle exec rake spec cucumber"
 rvm: 1.9.3
 services: mongodb
 notifications:
