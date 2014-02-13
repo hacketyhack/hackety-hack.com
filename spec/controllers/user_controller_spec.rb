@@ -20,4 +20,12 @@ describe UsersController do
 			end
 		end
 	end
+
+	describe 'Following actions' do
+		before { sign_in bob }
+		it('#follow') do
+			post :follow, user_id: bob, :user => {:followee => mozart.id}
+			expect(flash[:notice]).to eq("You're following #{mozart.username} now")
+		end
+	end
 end
