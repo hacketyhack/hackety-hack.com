@@ -27,5 +27,13 @@ describe UsersController do
 			post :follow, user_id: bob, :user => {:followee => mozart.id}
 			expect(flash[:notice]).to eq("You're following #{mozart.username} now")
 		end
+		it('#following?') do
+			get :following, user_id: bob
+  			response.should be_success
+		end
+		it ('#followers') do
+			get :followers, user_id: bob
+			response.should be_success
+		end
 	end
 end
