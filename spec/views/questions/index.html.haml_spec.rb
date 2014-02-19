@@ -13,6 +13,7 @@ describe 'questions/index.html.haml' do
 
   it "renders an autodiscovery link in for the head content" do
     render :template => "questions/index.html.haml", :locals => {:collection => [question]}
-    view.content_for(:head).should have_selector("link", :href => questions_url(format: :atom))
+    
+    view.content_for(:head).should include(questions_url(format: :atom))
   end
 end

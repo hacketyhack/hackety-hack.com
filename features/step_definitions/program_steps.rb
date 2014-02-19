@@ -1,4 +1,4 @@
-Given /^there is a featured program$/ do
+  Given /^there is a featured program$/ do
   @program = Program.create!(:author_username => "username",
                               :slug => "slug",
                               :title => "My Featured Program",
@@ -56,7 +56,7 @@ end
 
 When /^I click the first program link$/ do
   within "#all-programs ul" do
-    find("li:first-child a").click()
+    first("li:first-child a").click()
   end
 end
 
