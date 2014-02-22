@@ -27,6 +27,7 @@ gem "semantic_menu",  git: "git://github.com/michaek/semantic_menu.git"
 
 gem 'will_paginate'    # Pagination
 gem 'redcarpet', '~> 3.0'   # Markdown
+gem 'simple_captcha', :git => 'git://github.com/ArturG/simple-captcha.git'
 
 # Gems used only for assets and not required
 # in production environments by default.

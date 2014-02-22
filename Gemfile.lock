@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/ArturG/simple-captcha.git
+  revision: 707e56a96c7f44af7f4da77099ab1c53d2860044
+  specs:
+    simple_captcha (0.1.6)
+
+GIT
   remote: git://github.com/michaek/semantic_menu.git
   revision: 5298f586467cc9a91e85befcca673b8406c8846f
   specs:
@@ -126,7 +132,7 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    metaclass (0.0.3)
+    metaclass (0.0.4)
     metadown (1.0.1)
       redcarpet
     method_source (0.8.2)
@@ -190,7 +196,7 @@ GEM
     rspec-core (2.14.7)
     rspec-expectations (2.14.5)
       diff-lcs (>= 1.1.3, < 2.0)
-    rspec-mocks (2.14.5)
+    rspec-mocks (2.14.6)
     rspec-rails (2.14.1)
       actionpack (>= 3.0)
       activemodel (>= 3.0)
@@ -269,6 +275,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails
   semantic_menu!
+  simple_captcha!
   simple_form!
   simplecov
   sqlite3

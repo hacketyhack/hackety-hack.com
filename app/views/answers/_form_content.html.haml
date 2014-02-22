@@ -3,7 +3,8 @@
 .inputs
   = f.input :description, :as => :text, :label => "Answer",
   :hint => "You can format your input with <a href=\"http://daringfireball.net/projects/markdown/\">Markdown</a>".html_safe
-
+.inputs
+  = f.show_simple_captcha
 .actions
   = f.button :submit, :value => "Post Answer", :class => "primary btn"
 
