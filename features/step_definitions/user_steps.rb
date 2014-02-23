@@ -25,7 +25,7 @@ When /^I go to look at my profile page$/ do
 end
 
 Then /^it should have the right information$/ do
-  page.should have_selector('title', :content => "#{@user.username}'s page")
+  page.should have_title("#{@user.username}'s Profile\n | Hackety Hack!")
   page.should have_content("#{@user.username}'s Profile")
 end
 

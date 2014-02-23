@@ -3,7 +3,7 @@
 %html
   %head
     - title = yield :title
-    %title #{title.blank? ? "" : "#{title} | "}Hackety Hack!
+    %title=(title.blank? ? "" : title.gsub("\n", "")) + " | Hackety Hack!"
 
     <meta name = "viewport" content = "width = device-width">
     / <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap-1.2.0.min.css">

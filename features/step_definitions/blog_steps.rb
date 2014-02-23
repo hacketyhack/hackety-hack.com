@@ -29,8 +29,8 @@ When /^I fill out the new blog form$/ do
   @post = OpenStruct.new
   @post.title = "A title"
 
-  fill_in :title, :with => "A title"
-  fill_in :content, :with => "Some content"
+  fill_in :blog_post_title, :with => "A title"
+  fill_in :blog_post_content, :with => "Some content"
 end
 
 When /^I press "([^"]*)"$/ do |name|
