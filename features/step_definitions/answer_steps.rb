@@ -40,3 +40,8 @@ Then /^I should see the updated answer$/ do
   page.should have_content('Edit: Did you try magic?')
 end
 
+Then(/^I should see captcha$/) do
+  page.should have_css('.simple_captcha')
+  page.should have_css('.simple_captcha_image')
+  page.should have_css('.simple_captcha_field')
+end

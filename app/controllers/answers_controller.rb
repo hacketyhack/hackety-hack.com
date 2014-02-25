@@ -7,7 +7,7 @@ class AnswersController < InheritedController
     @answer = Answer.create params[:answer]
     @answer.question = @question
     @answer.user = current_user
-    
+ 
     captcha = params[:answer][:captcha]
     captcha_key = params[:answer][:captcha_key]
     
