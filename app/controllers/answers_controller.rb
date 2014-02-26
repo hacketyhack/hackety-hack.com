@@ -11,7 +11,7 @@ class AnswersController < InheritedController
     captcha = params[:answer][:captcha]
     captcha_key = params[:answer][:captcha_key]
     
-    if simple_captcha_valid?(captcha, captcha_key)
+    if simple_captcha_valid?(captcha, captcha_key) && !captcha_key.nil? && !captcha_key.nil?
       Notification.new_answer(@question).deliver
       create!(:notice => "Answer Posted!"){ question_url(params[:question_id]) }
     else
@@ -25,7 +25,5 @@ class AnswersController < InheritedController
       format.html { redirect_to question_url(resource.question) }
     end
   end
-
-
 end
 

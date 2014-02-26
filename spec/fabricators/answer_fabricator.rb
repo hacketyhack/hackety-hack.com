@@ -1,4 +1,4 @@
 Fabricator(:answer) do
   description "MyString"
-  user ""
+  question_id question
 end
