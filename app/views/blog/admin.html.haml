@@ -1,12 +1,13 @@
 %h1 Blog Admin
 
 %h2 New Post
-= form_for @post, :url => blog_index_path do |f|
-  = f.label :title
-  = f.text_field :title
-  = f.label :content
-  = f.text_area :content
-  = f.submit
+= simple_form_for @post, :url => blog_index_path do |f|
+  .inputs
+    = f.input :title
+    = f.input :content, :as => :text
+
+  .actions  
+    = f.button :submit, :value => "Create Blog post", :class => "primary btn"
 
 %h2 All Posts
 %ul
