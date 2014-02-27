@@ -40,7 +40,6 @@ DatabaseCleaner[:mongo_mapper].strategy = :truncation
 
 Before do
   DatabaseCleaner[:mongo_mapper].clean
-  page.driver.header('User-Agent', "Mac")
 end
 
 # You may also want to configure DatabaseCleaner to use different strategies for certain features and scenarios.

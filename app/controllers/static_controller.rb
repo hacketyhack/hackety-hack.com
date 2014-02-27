@@ -34,6 +34,6 @@ class StaticController < ApplicationController
   protected
 
   def platform
-    request.user_agent.downcase
+    request.user_agent.nil? ? nil : request.user_agent.downcase
   end
 end
