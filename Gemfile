@@ -42,6 +42,7 @@ group :development do
 end
 
 group :development, :test do
+  gem 'debugger'
   gem 'fabrication'
   gem 'rspec-rails'
   gem 'capybara'

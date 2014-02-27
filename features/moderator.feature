@@ -3,7 +3,8 @@ Feature: Moderate questions
   As a moderator, I should be able to delete questions from the site.
 
   Background:
-    Given there is a question from someone else
+    Given "Mac" user agent
+    And there is a question from someone else
 
   Scenario: Delete a question
     Given I am a moderator

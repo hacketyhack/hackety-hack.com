@@ -1,6 +1,9 @@
 Feature: Access Programs
 
   As a user of the site, I want to access users' programs
+  
+  Background:
+    Given "Mac" user agent
 
   Scenario: View a featured program
     Given there is a featured program

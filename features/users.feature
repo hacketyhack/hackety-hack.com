@@ -2,8 +2,9 @@ Feature: Manage account
 
   As a user of this site, I can view and update my profile, see my followers
 
-  Background: The user is logged in
-    Given a logged in user
+  Background:
+    Given "Mac" user agent
+    And a logged in user
 
   Scenario: View my profile
     When I go to look at my profile page
