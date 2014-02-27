@@ -2,9 +2,6 @@ Feature: CRUD actions for question
 
   As a user of the site, I can perform standard CRUD actions on questions
   
-  Background:
-    Given "Mac" user agent
-
   Scenario: Create a question
     When I create a new question
     Then I should be told the question was created

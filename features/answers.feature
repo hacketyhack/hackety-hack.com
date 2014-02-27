@@ -2,9 +2,6 @@ Feature: CRUD actions for answers
 
   As a user of the site, I can perform standard CRUD actions on answers
   
-  Background:
-    Given "Mac" user agent
-
   Scenario: Create an answer
     And a question exists
     And I answer that question

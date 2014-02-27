@@ -1,10 +1,7 @@
 Feature: Hackety Blog
 
   As an admin, I can post to the hackety blog.
-  
-  Background:
-    Given "Mac" user agent
-    
+
   Scenario: Read the blog
     Given a blog post exists
     When I visit the blog
