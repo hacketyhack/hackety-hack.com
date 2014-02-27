@@ -2,7 +2,7 @@ Feature: Manage account
 
   As a user of this site, I can view and update my profile, see my followers
 
-  Background: The user is logged in
+  Background:
     Given a logged in user
 
   Scenario: View my profile

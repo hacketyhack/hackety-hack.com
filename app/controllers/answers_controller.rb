@@ -19,7 +19,5 @@ class AnswersController < InheritedController
       format.html { redirect_to question_url(resource.question) }
     end
   end
-
-
 end
 

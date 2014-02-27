@@ -23,7 +23,10 @@ class StaticController < ApplicationController
     @other_platforms = ["mac", "windows", "linux"] - [@platform]
   end
 
-  def api_root; render :layout => "api"; end
+  def api_root
+    render :layout => "api"
+  end
+
   def newest_version
     render :json => {:version => "1.0.0"}
   end
@@ -31,10 +34,6 @@ class StaticController < ApplicationController
   protected
 
   def platform
-    if Rails.env.test?
-      "mac"
-    else
-      request.user_agent.match(/Mac|Linux|Windows/).try(:[], 0).try(:downcase)
-    end
+    request.user_agent.nil? ? nil : request.user_agent.downcase
   end
 end
