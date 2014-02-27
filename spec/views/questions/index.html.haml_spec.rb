@@ -12,7 +12,7 @@ describe 'questions/index.html.haml' do
   end
 
   it "renders an autodiscovery link in for the head content" do
-    render :template => "questions/index.html.haml", :locals => {:collection => [question]}
+    render :template => "questions/index", :handlers => [:haml], :locals => {:collection => [question]}
     
     view.content_for(:head).should include(questions_url(format: :atom))
   end
