@@ -22,7 +22,7 @@ class QuestionPresenter
   end
 
   def edit_resource_path
-    edit_question_path
+    edit_question_path(@question)
   end
 
   def apply_scope(chain)
@@ -30,6 +30,6 @@ class QuestionPresenter
   end
 
   def answers_path
-    question_answer_path(@question)
+    question_answers_path(@question)
   end
 end
