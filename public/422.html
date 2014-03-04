@@ -1,26 +1,44 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>The change you wanted was rejected (422)</title>
-  <style type="text/css">
-    body { background-color: #fff; color: #666; text-align: center; font-family: arial, sans-serif; }
-    div.dialog {
-      width: 25em;
-      padding: 0 4em;
-      margin: 4em auto 0 auto;
-      border: 1px solid #ccc;
-      border-right-color: #999;
-      border-bottom-color: #999;
-    }
-    h1 { font-size: 100%; color: #f00; line-height: 1.5em; }
-  </style>
-</head>
-
-<body>
-  <!-- This file lives in public/422.html -->
-  <div class="dialog">
-    <h1>The change you wanted was rejected.</h1>
-    <p>Maybe you tried to change something you didn't have access to.</p>
-  </div>
-</body>
+  <head>
+    <title>The change you wanted was rejected (422)</title>
+    <meta name = "viewport" content = "width = device-width">
+    <!-- <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap-1.2.0.min.css"> -->
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <script src="/assets/application.js" type="text/javascript"></script>
+    <script src="/assets/prettify.js"></script>
+    <script>$(function () { prettyPrint() })</script>
+    <link href="/assets/prettify.css" rel="stylesheet">
+    
+  </head>
+  <body class='body-home'>
+    <header class='topbar'>
+      <div class='topbar-inner'>
+        <div class='container'>
+          <div id='logo'>
+            <a href="/">Hackety Hack</a>
+          </div>
+          <ul class="nav"><li><a href="/blog" class="first">Blog</a></li><li><a href="/questions" class="">Questions</a></li><li><a href="/lessons" class="">Lessons</a></li><li><a href="/programs" class="">Programs</a></li><li><a href="/faq" class="">FAQ</a></li><li><a href="/support/questions" class="">Support</a></li><li><a href="/contribute" class="last">Contribute</a></li></ul>
+          <ul class="nav secondary-nav"><li><a href="/login" class="first">Log In</a></li><li><a href="/users/sign_up" class="last">Sign Up</a></li></ul>
+        </div>
+      </div>
+    </header>
+    <div class='home' id='content-wrap'>
+      <div class='container one-column'>
+        
+        <div id='content'>
+          <br />
+          <section>
+            <h2>The change you wanted was rejected.</h2>
+            <p>Maybe you tried to change something you didn't have access to.</p>
+          </section>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class='container'>
+        <ul class="pills"><li><a href="/" class="active current first">Home</a></li><li><a href="/blog" class="">Blog</a></li><li><a href="/questions" class="">Questions</a></li><li><a href="/programs" class="">Programs</a></li><li><a href="/faq" class="">FAQ</a></li><li><a href="/support/questions" class="last">Support</a></li></ul>
+      </div>
+    </footer>
+  </body>
 </html>
