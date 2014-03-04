@@ -18,14 +18,14 @@ class SupportPresenter
   end
 
   def edit_resource_path
-    edit_support_question_path
+    edit_support_question_path(@support_question)
   end
 
   def resource_path(question)
     if question
       support_question_path(question)
     else
-      support_question_path(@question)
+      support_question_path(@support_question)
     end
   end
 
