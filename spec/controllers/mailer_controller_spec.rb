@@ -88,6 +88,13 @@ describe MailerController do
           ActionMailer::Base.deliveries.last.body.to_s.should match @message.body
         end
       end
+
+      describe 'empty message' do
+        it "returns exception" do
+          post :create
+          expect(subject).to render_template(:new)
+        end
+      end
     end
 
     context 'when user is not a moderator' do

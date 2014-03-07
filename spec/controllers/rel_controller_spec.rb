@@ -1,9 +1,7 @@
 require 'spec_helper'
 
 describe Api::RelsController do
-
   let(:slug){Fabricate(:rel)}
-
 
   describe "GET index" do
     it "responds with success" do

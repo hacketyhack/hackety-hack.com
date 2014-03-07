@@ -50,4 +50,11 @@ describe UsersController do
       expect(flash[:notice]).to eq("You're no longer following #{mozart.username}")
     end
   end
+
+  describe 'Deleted user' do
+    it 'should create new deleted user' do
+      get :deleted_user
+      response.should be_success
+    end
+  end
 end
