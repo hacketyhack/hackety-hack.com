@@ -1,5 +1,5 @@
 def login_user
-   @user = User.create!(username:              "test_user",
+  @user = User.create!(username:              "test_user",
                         email:                 "test_user@example.com",
                         password:              "foobar",
                         password_confirmation: "foobar")
@@ -18,6 +18,13 @@ end
 
 Given /^a logged in user$/ do
   login_user unless @user
+end
+
+Given /^a steve exists$/ do
+  @steve = User.create!(username:              "steve",
+                        email:                 "steve_user@example.com",
+                        password:              "foobar",
+                        password_confirmation: "foobar")
 end
 
 When /^I go to look at my profile page$/ do
@@ -73,3 +80,7 @@ Then /^I should see my changes reflected on my profile page$/ do
   page.should have_content("Test user likes to edit his profile")
 end
 
+Then(/^I should see 'Steve'$/) do
+  @user.following?(@steve).should == true
+  page.should have_link @steve.username
+end

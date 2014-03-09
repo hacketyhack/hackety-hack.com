@@ -3,7 +3,8 @@ Feature: Manage account
   As a user of this site, I can view and update my profile, see my followers
 
   Background:
-    Given a logged in user
+    Given a steve exists
+    And a logged in user
 
   Scenario: View my profile
     When I go to look at my profile page
@@ -23,4 +24,7 @@ Feature: Manage account
     When I am following someone
     And I click on the number of people I am following on my profile
     Then I should see someone I'm following
-
+  
+  Scenario: I should always follow steve and vice versa
+    When I click on the number of people I am following on my profile
+    Then I should see 'Steve'
