@@ -22,6 +22,4 @@ describe Sluggifier do
       end
     end
   end
-
-
 end
