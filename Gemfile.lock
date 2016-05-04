@@ -4,14 +4,6 @@ GIT
   specs:
     semantic_menu (0.1.0)
 
-GIT
-  remote: https://github.com/bitzesty/bootstrap_form.git
-  revision: 1b33bf01c7daf56bb42e3f944d745ee25d620cca
-  specs:
-    simple_form (1.5.0.dev)
-      actionpack (~> 3.0)
-      activemodel (~> 3.0)
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -211,6 +203,9 @@ GEM
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
+    simple_form (2.1.3)
+      actionpack (~> 3.0)
+      activemodel (~> 3.0)
     simplecov (0.8.2)
       docile (~> 1.1.0)
       multi_json
@@ -277,9 +272,15 @@ DEPENDENCIES
   rspec-rails
   sass-rails
   semantic_menu!
-  simple_form!
+  simple_form
   simplecov
   sqlite3
   uglifier
   unicorn
   will_paginate
+
+RUBY VERSION
+   ruby 1.9.3p448
+
+BUNDLED WITH
+   1.12.1
