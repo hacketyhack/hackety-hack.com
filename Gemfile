@@ -22,7 +22,7 @@ gem 'mm-devise',  '~> 2.0'
 gem 'cancan'
 
 gem 'inherited_resources'
-gem 'simple_form',    git: "https://github.com/bitzesty/bootstrap_form.git"
+gem 'simple_form'
 gem "semantic_menu",  git: "git://github.com/michaek/semantic_menu.git"
 
 gem 'will_paginate'    # Pagination
