@@ -53,12 +53,15 @@ group :development, :test do
 end
 
 group :production do
-  gem 'pg' # ugh heroku
+  gem 'pg' # ugh heroku..
 end
 
 group :test do
   gem "simplecov", :require => false
+
+
   gem "coveralls"
+
   gem "mocha"
   gem "database_cleaner"
   gem "launchy"

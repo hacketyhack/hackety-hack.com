@@ -2,10 +2,27 @@
 # It is recommended to regenerate this file in the future when you upgrade to a 
 # newer version of cucumber-rails. Consider adding your own code to a new file 
 # instead of editing this one. Cucumber will automatically load all features/**/*.rb
+
+# files..
+#
+
+require 'simplecov'
+SimpleCov.start do
+coverage_dir ('public/publix')
+ #add_filter '/features/'
+ add_filter '/spec/'
+ add_filter '/config/'
+ add_filter '/lib/'
+ add_filter '/vendor/'
+ #add_filter '/app/'
+
+end
+
 # files.
 #
 
-require_relative '../../spec/code_coverage'
+
+
 
 require 'cucumber/rails'
 require 'ruby-debug'
@@ -13,7 +30,7 @@ require 'ruby-debug'
 # Capybara defaults to XPath selectors rather than Webrat's default of CSS3. In
 # order to ease the transition to Capybara we set the default here. If you'd
 # prefer to use XPath just remove this line and adjust any selectors in your
-# steps to use the XPath syntax.
+# steps to use the XPath syntax
 Capybara.default_selector = :css
 
 # By default, any exception happening in your Rails application will bubble up
