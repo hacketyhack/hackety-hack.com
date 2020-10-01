@@ -13,15 +13,15 @@ If you have any experience writing Rails apps, feel free to help out, we're open
 
 ## Translations ##
 
-Hello everyone!
+*Hello everyone!*
 
-We are in the process of translating Hackety Hack into as many foreign languages as possible so that people around the world would be able to use the site with ease. If you are bilingual and interested in helping us make Hackety Hack a truly global phenomenon, accessible by all regardless of location or nationality, and make learning Ruby even more fun! then please sign up here http://crowdin.net/project/hackety-hackcom/invite
+We are in the process of translating Hackety Hack into as many foreign languages as possible so that people around the world would be able to use the site with ease. If you are bilingual and interested in helping us make Hackety Hack a truly global phenomenon, accessible by all regardless of location or nationality, and make learning Ruby even more fun! then please sign up here *http://crowdin.net/project/hackety-hackcom/invite*
 
 ## Getting Started ##
 
 Once you've cloned this repository, running `script/bootstrap` should tell you everything you need to know.
 
-In case you prefer gems to be managed entirely by bundler run this before bootstrapping:
+#### In case you prefer gems to be managed entirely by bundler run this before bootstrapping:
 
     bundle config --global path .bundle
     bundle config --global binstubs bin
@@ -29,7 +29,7 @@ In case you prefer gems to be managed entirely by bundler run this before bootst
 
 Be careful with using `bin` in `$PATH` it is very risky when used with public projects.
 
-Dependencies for the curious:
+### Dependencies for the curious:
 
 - Ruby: 1.9.3 is preferred.
 - MongoDB: 2.2.x or 2.4.x
@@ -41,8 +41,8 @@ If the tests aren't passing when you clone, open [an issue][issues] or drop into
 
 Additionally, if you're _not_ a developer and you have a feature you'd really like to see on the site, file [an issue][issues] and we'll be sure to look into it on your behalf.
 
-[hh.com]: http://hackety-hack.com/
-[hh]:     https://github.com/hacketyhack/hacketyhack
-[irc]: http://webchat.freenode.net/?channels=#hacketyhack
-[issues]: https://github.com/hacketyhack/hackety-hack.com/issues
-[tdd]:    http://en.wikipedia.org/wiki/Test-driven_development
+#### [hh.com]: http://hackety-hack.com/
+#### [hh]:     https://github.com/hacketyhack/hacketyhack
+#### [irc]: http://webchat.freenode.net/?channels=#hacketyhack
+#### [issues]: https://github.com/hacketyhack/hackety-hack.com/issues
+#### [tdd]:    http://en.wikipedia.org/wiki/Test-driven_development
