@@ -1,4 +1,4 @@
-# hackety-hack.com #
+# HacketyHack.com #
 
 [![Build status](https://img.shields.io/travis/hacketyhack/hackety-hack.com.svg)](http://travis-ci.org/#!/hacketyhack/hackety-hack.com)[![Code Climate](https://img.shields.io/codeclimate/github/hacketyhack/hackety-hack.com.svg)](https://codeclimate.com/github/hacketyhack/hackety-hack.com)[![Coverage Status](https://img.shields.io/coveralls/hacketyhack/hackety-hack.com/master.svg)](https://coveralls.io/r/hacketyhack/hackety-hack.com?branch=master)
 
