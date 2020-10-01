@@ -40,7 +40,7 @@ If the tests aren't passing when you clone, open [an issue][issues] or drop into
 [#hacketyhack on freenode][irc].
 
 Additionally, if you're _not_ a developer and you have a feature you'd really like to see on the site, file [an issue][issues] and we'll be sure to look into it on your behalf.
-Thanks.
+Thanks:)
 
 [hh.com]: http://hackety-hack.com/
 [hh]:     https://github.com/hacketyhack/hacketyhack
