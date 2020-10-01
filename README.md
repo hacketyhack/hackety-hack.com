@@ -46,3 +46,4 @@ Additionally, if you're _not_ a developer and you have a feature you'd really li
 [irc]: http://webchat.freenode.net/?channels=#hacketyhack
 [issues]: https://github.com/hacketyhack/hackety-hack.com/issues
 [tdd]:    http://en.wikipedia.org/wiki/Test-driven_development
+Thankyou!
