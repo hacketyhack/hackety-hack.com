@@ -1,4 +1,4 @@
-# Thanks for helping! #
+# Thanks for helping us! #
 
 ## Questions ##
 
